@@ -1,14 +1,13 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-import Ticket from './prioritisation';
+import React, { Component } from 'react';
 
-function App() {
-  return (
-    <>
-    <Ticket />
-    </>
-  );
+class App extends Component {
+
+  render() {
+    return(
+      <>
+      </>
+
+    )}
 }
 
 export default App;
