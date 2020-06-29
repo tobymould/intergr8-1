@@ -6,25 +6,31 @@ class CreateTicket extends Component {
   render() {
     return(
       <>
-      <button>New Ticket +</button>
+      <h2>New Ticket +</h2>
       <h2>Integr8HR</h2>
       <section>
         <form action="">
-          <label For="">Select category</label>
-            <option value="1">1</option>
-            <option value="2">2</option>
-          <label For="">sub-category</label>
-            <option value="a">a</option>
-            <option value="b"b></option>
+          <label For="">Select category
+            <select name="" id="">
+              <option value="1">1</option>
+              <option value="2">2</option>
+            </select>
+            </label>
+          <label For="">sub-category
+            <select name="" id="">
+              <option value="a">a</option>
+              <option value="b">b</option>
+            </select>
+          </label>
+        <label For="">Description
+        <textarea></textarea>
+        </label>
+        <input type="submit" value="submit"/>
         </form>
-        <label For="">Description</label>
-        <textarea name="" id="" cols="30" rows="10"></textarea>
-        <button>Create Ticket</button>
       
       </section>
       </>
-    );
-    
+    );  
   }
 }
 
