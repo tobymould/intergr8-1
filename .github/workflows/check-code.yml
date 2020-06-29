@@ -3,7 +3,7 @@ name: Check code
 on:
   pull_request:
     branches:
-      - master
+      - master<remove to make it work>
 
 jobs:
   test:
