@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,GAAG,CAAC;EACA,aAAa,EAAE,GAAG;EAClB,KAAK,EAAE,KAAK;EACZ,MAAM,EAAE,KAAK;CAYhB;;AAfD,AAII,GAJD,CAIC,MAAM,CAAC;EACH,gBAAgB,EAAE,KAAK;CAC1B;;AANL,AAQI,GARD,CAQC,MAAM,CAAC;EACH,gBAAgB,EAAE,MAAM;CAC3B;;AAVL,AAYI,GAZD,CAYC,IAAI,CAAC;EACD,gBAAgB,EAAE,GAAG;CACxB",
+    "sources": [
+        "Ticket-prioritisation.scss"
+    ],
+    "names": [],
+    "file": "Ticket-prioritisation.css"
+}

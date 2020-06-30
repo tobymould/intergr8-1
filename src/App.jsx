@@ -12,7 +12,6 @@ class App extends Component {
     <TicketCatStage1 />
     <TicketCatStage2 />
     <TicketCatStage3 />
-    <p>Hello!</p>
     </>
   );
 }

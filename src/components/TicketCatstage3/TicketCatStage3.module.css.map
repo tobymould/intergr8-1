@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "TicketCatStage3.module.scss",
+        "../../variables.scss"
+    ],
+    "names": [],
+    "file": "TicketCatStage3.module.css"
+}

@@ -5,7 +5,10 @@ class Tile extends Component {
   state = {  }
   render() { 
     return ( 
-      <div></div>
+      
+      <article className={styles.tileStyles}>
+        <p>L&D</p>
+      </article>
      );
   }
 }

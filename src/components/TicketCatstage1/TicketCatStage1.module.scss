@@ -1,1 +1,10 @@
 @import "../../variables.scss";
+
+h1{
+    padding: 20px;
+}
+.tileParent {
+  display: flex;
+  justify-content: space-around;
+}
+
