@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import styles from './TicketCatStage1.module.scss';
+import styles from './TicketCatStageOne.module.scss';
 import Tile from '../Tile'
 
-class TicketCatStage1 extends Component {
+class TicketCatStageOne extends Component {
   state = {  }
   render() { 
     return ( 
@@ -20,6 +20,6 @@ class TicketCatStage1 extends Component {
   }
 }
  
-export default TicketCatStage1;
+export default TicketCatStageOne;
 
 
