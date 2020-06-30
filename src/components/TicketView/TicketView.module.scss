@@ -1,0 +1,56 @@
+article {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid grey;
+
+
+    section {
+        display: flex;
+        flex-direction: row;
+        width: 600px;
+
+        div {
+          
+          &.ticketHeader {
+            width: 100%
+            
+          }
+          
+          &.messageContent {
+            border: 1px solid black;
+            width: 80%
+          }
+
+          &.nameAndDate {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+          }
+
+
+        }
+
+        img {
+            width: 20%;
+            
+        }
+    }
+}
+
+.circle {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+  }
+  
+  .green {
+      background-color: green;
+  }
+  
+  .amber {
+      background-color: orange;
+  }
+  
+  .red {
+      background-color: red;
+  }
