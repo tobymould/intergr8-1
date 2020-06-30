@@ -18,8 +18,8 @@ class TicketTile extends Component {
           </div>
           <div>
             <select name="" id="">
-              <option value="1">1</option>
-              <option value="2">2</option>
+              <option value="Agent1">Agent1</option>
+              <option value="Agent2">Agent2</option>
             </select>
           </div>
         </section>
