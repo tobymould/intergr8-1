@@ -1,9 +1,10 @@
 import React from 'react';
 import './App.css';
-import TicketCatStage1 from './TicketCatStage1';
+import TicketView from './components/TicketView'
 
 function App() {
   return (
+    <TicketView />
     
   );
 }

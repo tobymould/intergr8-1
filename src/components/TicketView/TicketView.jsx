@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import styles from './TicketView.module.scss';
 import olly from './olly.jpg';
+import Message from './Message';
 
 class TicketView extends Component {
     constructor() {
@@ -47,8 +48,8 @@ class TicketView extends Component {
         if (this.state.priority === 3) {
         return styles.red
         } else if (this.state.priority === 2) {
-        return styles.amber
-        } else {
+          return styles.amber
+          } else {
             return styles.green
         }
     }
@@ -74,39 +75,17 @@ class TicketView extends Component {
 
             <div className={styles.messageContainer}>
 
-                <section>
-                    <img src={olly} alt="Employee pic"/>
-                    <div className={styles.messageContent}>
-                        <div className={styles.nameAndDate}>
-                            <h3>Ticket and Employee name</h3>
-                            <p>Date and time</p>
-                        </div>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id nam maxime sit. At est magnam voluptates, minus iusto sit inventore nisi illum laudantium sed in ullam, vitae rerum beatae officia?</p>
-                    </div>
-                </section>
+              <Message userType="Employee"/>
+              <Message userType="HR"/>
 
-                <section>
-                <div className={styles.messageContent}>
-                <div  className={styles.nameAndDate}>
-                    <h3>Ticket and Employee name</h3>
-                    <p>Date and time</p>
-                </div>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id nam maxime sit. At est magnam voluptates, minus iusto sit inventore nisi illum laudantium sed in ullam, vitae rerum beatae officia?</p>
-                </div>
-                    <img src={olly} alt="HR person pic"/>
-                </section>
+              <section className={styles.writingMessage}>
+                  <div className={styles.messageContent}>
+                      <textarea/>
+                      <button>Send</button>
+                  </div>
+                      <img src={olly} alt="HR person pic"/>
+              </section>
 
-                <section>
-                <div className={styles.messageContent}>
-                    <div className={styles.nameAndDate}>
-                    <h3>Ticket and HR person name</h3>
-                    <p>Date and time</p>
-                    </div>
-                    <textarea/>
-                    <button>Send</button>
-                </div>
-                    <img src={olly} alt="HR person pic"/>
-                </section>
             </div>
         </article>
         </>

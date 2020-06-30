@@ -1,0 +1,52 @@
+$base-padding: 10px;
+$dark-grey: #222222;
+$yellow: #F2B432;
+$white: #FCFCFB;
+
+*{
+  box-sizing: border-box;
+}
+section {
+    display: flex;
+    flex-direction: row;
+    margin: $base-padding;
+    // padding: $base-padding;
+
+    div {
+    
+    h3 {
+        padding: 0;
+        margin: 4px;
+    }
+    
+    &.messageContent {
+        border: 1px solid black;
+        width: 80%;
+        padding: $base-padding/2;
+    }
+
+    &.nameAndDate {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        p {
+            margin: 4px;
+        }
+    }
+
+
+    }
+
+    img {
+        width: 20%;
+        border-radius: 50%;
+
+        
+    }
+
+    textarea {
+        width: 100%;
+        height: 80px;
+        padding: $base-padding;
+    }
+}
