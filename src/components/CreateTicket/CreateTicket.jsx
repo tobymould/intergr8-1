@@ -6,19 +6,21 @@ class CreateTicket extends Component {
   render() {
     return(
       <>
-      <div>
-        <h2>New Ticket +</h2>
-        <h3>Integr8HR</h3>
+      <div className={styles.backGround}>
+        <section className={styles.topField}>
+          <p className={styles.topBanner}>New Ticket +</p>
+          <p>Integr8HR</p>
+        </section>
         <section>
-          <form action="">
-            <label For="">Select category
-              <select name="" id="">
+          <form action="" className={styles.formCreateTicket}>
+            <label For="mainCategory">Select category
+              <select name="" id="mainCategory">
                 <option value="1">1</option>
                 <option value="2">2</option>
               </select>
               </label>
-            <label For="">sub-category
-              <select name="" id="">
+            <label For="subCategory">sub-category
+              <select name="" id="subCategory">
                 <option value="a">a</option>
                 <option value="b">b</option>
               </select>
