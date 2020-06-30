@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import styles from 'TicketCatStage3.module.scss';
+import styles from './TicketCatStage3.module.scss';
 
 
 class TicketCatStage3 extends Component {
@@ -7,8 +7,6 @@ class TicketCatStage3 extends Component {
   render() { 
     return ( 
       <>
-      <Choose />
-      <Choose />
       </>
      );
   }

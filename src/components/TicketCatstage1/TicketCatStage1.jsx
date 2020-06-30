@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import styles from 'TicketCatStage1.module.scss';
-
+import styles from './TicketCatStage1.module.scss';
+import Tile from '../Tile'
 
 class TicketCatStage1 extends Component {
   state = {  }
