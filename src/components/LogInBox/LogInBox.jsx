@@ -3,7 +3,11 @@ import styles from "./LogInBox.module.scss";
 import Button from "../Button"
 import logo from "../../assets/intergr8-logo.jpg";
 
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faUser, faLock } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
+library.add(faUser, faLock);
 
 class LogInBox extends Component {
   render() {
