@@ -7,7 +7,7 @@ class NavBar extends Component {
         return (  
           <>
             <nav>
-              <h1>Ticketing Dashboard</h1>
+              <h1>Nav Bar</h1>
               <div className="menu">
                 <button className="menu-btn">Menu</button>
               </div>
