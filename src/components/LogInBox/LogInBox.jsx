@@ -18,7 +18,7 @@ class LogInBox extends Component {
             <div className={styles.welcomePanel}>
               <div className={styles.welcomeContent}>
                 <h2>Built by HR professionals,
-                  <span className={styles.colorOrange}>for HR professionals.
+                  <span className={styles.primaryYellow}>for HR professionals.
                   </span>
                 </h2>
                 <p>
@@ -38,14 +38,14 @@ class LogInBox extends Component {
                       <label htmlFor="email">
                         <FontAwesomeIcon icon="user" />
                       </label>
-                      </div>
-                      <div className={styles.inputWrapper}>
+                    </div>
+                    <div className={styles.inputWrapper}>
                       <input className="password" type="password" name="password" placeholder="Password" />
                       <label htmlFor="password">
                         <FontAwesomeIcon icon="lock" />
                       </label>
-                      </div>
-                      <Button text="Sign In" />
+                    </div>
+                    <Button text="Sign In" />
                   </form>
                 </div>
               </div>
@@ -56,5 +56,5 @@ class LogInBox extends Component {
     );
   }
 }
-        
+
 export default LogInBox;

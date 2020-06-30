@@ -3,11 +3,11 @@ import styles from "./Button.module.scss";
 
 class Button extends Component {
 
-    render() { 
+    render() {
         return (
-            <button>{this.props.text}</button>
+            <button className={styles.button}>{this.props.text}</button>
         );
     }
 }
- 
+
 export default Button;
