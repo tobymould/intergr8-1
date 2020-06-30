@@ -25,8 +25,8 @@ class CreateTicket extends Component {
                 <option value="b">b</option>
               </select>
             </label>
-            <label For="subCategory">Sub-Sub-category
-              <select name="" id="subCategory">
+            <label For="subSubCategory">Sub-Sub-category
+              <select name="" id="subSubCategory">
                 <option value="££">££</option>
                 <option value="$$">$$</option>
               </select>
