@@ -170,7 +170,7 @@
 
             &:-webkit-autofill ~ label {
                 color: $secondary-yellow;
-                background-color: $secondary-black;
+                background-color: $secondary-black-opacity-nine;
             }
         }
     }
