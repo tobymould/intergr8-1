@@ -12,10 +12,24 @@
   justify-content: space-around;
   width: 150px;
   height: 200px;
+  margin-top: 40px;
   background-color:$primary-yellow;
   color: $primary-black;
   border-radius: 10px;
-  p {
-    text-align: center;
+  &:hover {
+    cursor: pointer;
+    text-decoration: underline;
   }
+  .catTitle {
+    text-align: center;
+    font-size: $base-value;
+    font-weight: bold;
+  
+  }
+}
+
+.icon {
+  font-size: 80px;
+  text-align: center;
+
 }
