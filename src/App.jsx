@@ -1,4 +1,5 @@
 import React from 'react';
+import LogInBox from './components/LogInBox';
 import './App.css';
 // import TicketCatStage1 from './TicketCatStage1';
 import CreateTicket from './components/CreateTicket';
@@ -8,10 +9,9 @@ function App() {
   return (
     <>
     <CreateTicket />
-    <br/><br/>
-    <TicketTile />
+    
     </>
-  );
+  )
 }
 
 export default App;
