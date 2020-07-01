@@ -5,8 +5,8 @@ import Routes from './containers/Routes/Routes';
 
 function App() {
   return (
-    <LogInBox />
-    // <Routes />
+//     <LogInBox />
+    <Routes />
   );
 }
 
