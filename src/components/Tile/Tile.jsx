@@ -1,27 +1,33 @@
 import React, { Component } from "react";
 import styles from "./Tile.module.scss";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 class Tile extends Component {
   tiledata = [
       {
         title: "Payroll",
-        icon: "Icon",
+        icon: <FontAwesomeIcon icon={"pound-sign"} />,
+        tileId: 1
       },
       {
-        title: "Holiday",
-        icon: "Icon",
+        title: "General HR",
+        icon: <FontAwesomeIcon icon={"network-wired"} />,
+        tileId: 2
       },
       {
         title: "Health & Safety",
-        icon: "Icon",
+        icon: <FontAwesomeIcon icon={"medkit"} />,
+        tileId: 3
       },
       {
         title: "L&D",
-        icon: "Icon",
+        icon: <FontAwesomeIcon icon={"book-open"} />,
+        tileId: 4
       },
       {
         title: "Recruitment",
-        icon: "Icon",
+        icon: <FontAwesomeIcon icon={"users"} />,
+        tileId: 5
       },
     ]
     
@@ -30,8 +36,8 @@ class Tile extends Component {
       <>
         {this.tiledata.map((titleObj) => (
           <article className={styles.tileStyles}>
-            <p>{titleObj.icon}</p>
-            <p>{titleObj.title}</p>
+            <p className={styles.icon}>{titleObj.icon}</p>
+            <p className={styles.catTitle}>{titleObj.title}</p>
           </article>
         ))}
       </>
