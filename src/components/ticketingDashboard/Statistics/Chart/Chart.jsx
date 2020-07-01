@@ -4,7 +4,10 @@ import styles from './Chart.module.scss';
 class Chart extends Component {
   render() {
     return (
-      <div className={styles.chart}></div>
+        <svg className={styles.chart} width="200" height="200">
+        <circle r="80" cx="100" cy="100" />
+        </svg>
+
     );
   }
 }

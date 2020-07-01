@@ -1,10 +1,13 @@
 @import "../../../../variables.scss";
 
 .chart {
-  width: 200px;
-  height: 200px;
-  border: 2px solid $primary-yellow;
-  background-color: cornsilk;
-  border-radius: 50%;
-  box-shadow: $shea-shadow;
-}
+    transform: rotate(-90deg);
+    border-radius: 50%;
+    background: $primary-yellow;
+    circle {
+      fill: $primary-yellow;
+      stroke: forestgreen;
+      stroke-width: 50;
+      stroke-dasharray: 460 503;
+    }
+  }
