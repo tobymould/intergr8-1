@@ -3,6 +3,10 @@ import styles from "./CreateTicket.module.scss";
 
 class CreateTicket extends Component {
 
+  // getDataForm = () => {
+
+  // }
+
   render() {
     return(
       <>
@@ -15,26 +19,29 @@ class CreateTicket extends Component {
           <form action="" className={styles.formCreateTicket}>
             <label For="mainCategory">Select category
               <select name="" id="mainCategory">
-                <option value="1">1</option>
-                <option value="2">2</option>
+                <option value="L&D">L&D</option>
+                <option value="Payroll">Payroll</option>
+                <option value="General HR">General HR</option>
+                <option value="Recruitment">Recruitment</option>
+                <option value="Health & Safety">Health & Safety</option>
               </select>
               </label>
             <label For="subCategory">Sub-category
               <select name="" id="subCategory">
-                <option value="a">a</option>
+                <option value="CPD">CPD</option>
                 <option value="b">b</option>
               </select>
             </label>
             <label For="subSubCategory">Sub-Sub-category
               <select name="" id="subSubCategory">
-                <option value="££">££</option>
+                <option value="Training Support Request">Training Support Request</option>
                 <option value="$$">$$</option>
               </select>
             </label>
           <label For="">Description
-          <textarea></textarea>
+          <textarea placeholder="Type here..."></textarea>
           </label>
-          <input type="submit" value="Create ticket"/>
+          <input type="submit" value="Create ticket" onclick={() => this.getDataForm()}/>
           </form>
         </section>
       </div>
