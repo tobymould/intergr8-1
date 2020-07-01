@@ -10,10 +10,6 @@ class TicketCatStageOne extends Component {
       <h1>What is your query regarding?</h1>
       <section className={styles.tileParent}>
       <Tile />
-      <Tile />
-      <Tile />
-      <Tile />
-      <Tile />
       </section>
       </>
      );
