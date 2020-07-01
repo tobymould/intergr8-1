@@ -1,10 +1,10 @@
 {
     "version": 3,
-    "mappings": "AAEA,AAAA,EAAE,CAAA;EACE,OAAO,EAAE,IAAI;CAChB;;AACD,AAAA,WAAW,CAAC;EACV,OAAO,EAAE,IAAI;EACb,eAAe,EAAE,YAAY;CAC9B",
+    "mappings": "ACEA,aAAa;AAKb,sBAAsB;AAatB,YAAY;ADlBZ,AAAA,EAAE,CAAA;EACE,OAAO,EAAE,IAAI;CAChB;;AACD,AAAA,WAAW,CAAC;EACV,OAAO,EAAE,IAAI;EACb,eAAe,EAAE,YAAY;CAC9B",
     "sources": [
-        "TicketCatStage1.module.scss",
+        "TicketCatStageOne.module.scss",
         "../../variables.scss"
     ],
     "names": [],
-    "file": "TicketCatStage1.module.css"
+    "file": "TicketCatStageOne.module.css"
 }

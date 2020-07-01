@@ -1,0 +1,334 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+/* Yellows */
+/* Blacks and greys */
+/* Whites */
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+.primaryYellow {
+  color: #f2b423;
+}
+
+.logInPage {
+  background-color: white;
+  background-image: url("../../assets/intergr8-login-background.svg");
+  background-size: cover;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+.logInWrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 60%;
+  width: 100vw;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.box {
+  width: 800px;
+  height: 430px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  border-radius: 6px;
+  overflow: hidden;
+  -webkit-box-shadow: 0 10px 20px #14141433, 0 6px 6px #14141433;
+          box-shadow: 0 10px 20px #14141433, 0 6px 6px #14141433;
+  background-color: transparent;
+}
+
+.welcomePanel {
+  width: 50%;
+  height: 100%;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#141414e6), to(#141414e6)), url("../../assets/people.png");
+  background-image: linear-gradient(to bottom, #141414e6 0%, #141414e6 100%), url("../../assets/people.png");
+  background-size: cover;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.welcomePanel .welcomeContent {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 75%;
+  width: 100%;
+  padding: 10%;
+  color: white;
+}
+
+.welcomePanel .welcomeContent h2 {
+  width: 100%;
+  text-align: left;
+  line-height: 1.5em;
+  padding-bottom: 25px;
+}
+
+.welcomePanel .welcomeContent h2 span {
+  display: block;
+}
+
+.welcomePanel .welcomeContent p {
+  width: 100%;
+  text-align: justify;
+  line-height: 1.8em;
+}
+
+.welcomePanel .welcomeContent p span {
+  font-weight: bold;
+}
+
+.loginPanel {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(white), color-stop(30%, white), color-stop(35%, #ffffff40), to(#ffffff40));
+  background-image: linear-gradient(to bottom, white 0%, white 30%, #ffffff40 35%, #ffffff40 100%);
+  width: 50%;
+  height: 100%;
+  background-size: cover;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.loginPanel .logInContent {
+  width: 75%;
+  height: 85%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.loginPanel .logInContent .logInTitle {
+  height: 25%;
+  width: 100%;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.loginPanel .logInContent .logInTitle img {
+  max-height: 66px;
+}
+
+.formSection {
+  padding: 5% 10%;
+  background-color: #222222e6;
+  height: 65%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 0 10%;
+  border-radius: 4px;
+}
+
+.formSection form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  height: 100%;
+  width: 100%;
+}
+
+.formSection form input {
+  padding: 10px 5px;
+  border: 1px solid #9a9a9a;
+  border-left: none;
+  border-radius: 0px 2px 2px 0px;
+  background-color: transparent;
+  color: #656565;
+  -webkit-text-fill-color: #656565;
+  width: 100%;
+  outline: none;
+  -webkit-transition: color ease-in-out 1s, background-color ease-in-out 1s, border-color ease-in-out 1s;
+  transition: color ease-in-out 1s, background-color ease-in-out 1s, border-color ease-in-out 1s;
+}
+
+.formSection form input:focus,
+.formSection form input:focus ~ label {
+  color: #fcfcfb;
+  background-color: #222222e6;
+  outline: none;
+  border-color: #f2b423;
+}
+
+.formSection form input:-webkit-autofill,
+.formSection form input:-webkit-autofill ~ label, .formSection form input:-webkit-autofill:focus,
+.formSection form input:-webkit-autofill:focus ~ label {
+  color: #e39816;
+  background-color: #222222e6;
+  -webkit-transition-duration: 0ms;
+          transition-duration: 0ms;
+}
+
+.inputWrapper {
+  border-radius: 2px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: white;
+}
+
+.inputWrapper label {
+  background-color: transparent;
+  height: 100%;
+  padding: 0 7px 0 7px;
+  border-radius: 2px 0px 0px 2px;
+  border: 1px solid #9a9a9a;
+  border-right: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #656565;
+  -webkit-transition: color ease-in-out 1s, background-color ease-in-out 1s, border-color ease-in-out 1s;
+  transition: color ease-in-out 1s, background-color ease-in-out 1s, border-color ease-in-out 1s;
+}
+
+.inputWrapper label svg {
+  height: 14px;
+}
+
+@media only screen and (max-width: 897px) {
+  .box {
+    width: 80vw;
+    height: 60vh;
+    min-height: 380px;
+  }
+  .logInWrapper {
+    width: 440px;
+  }
+  .loginPanel {
+    width: 100%;
+  }
+  .welcomePanel {
+    display: none;
+  }
+}
+
+@media all and (max-width: 568px) {
+  .box {
+    min-height: 300px;
+  }
+  .logInContent {
+    width: auto;
+    padding: 0;
+  }
+}
+/*# sourceMappingURL=LogInBox.module.css.map */
