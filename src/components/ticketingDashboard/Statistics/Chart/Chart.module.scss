@@ -3,11 +3,14 @@
 .chart {
     transform: rotate(-90deg);
     border-radius: 50%;
-    background: $primary-yellow;
-    circle {
+    background: forestgreen;
+    .innerCircle{
       fill: $primary-yellow;
-      stroke: forestgreen;
-      stroke-width: 50;
-      stroke-dasharray: 460 503;
-    }
   }
+  .outerCircle{
+    fill: forestgreen;
+    stroke: red;
+    stroke-width: 120;
+    stroke-dasharray: 50 377;
+  }
+}
