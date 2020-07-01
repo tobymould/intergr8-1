@@ -1,12 +1,12 @@
 import React from 'react';
-// import './App.css';
-import LogInBox from './components/LogInBox';
-import TicketView from './components/TicketView'
+import './App.css';
+// import LogInBox from './components/LogInBox';
+import Routes from './containers/Routes/Routes';
 
 function App() {
   return (
-    // <LogInBox />
-    <TicketView />
+    <LogInBox />
+    // <Routes />
   );
 }
 
