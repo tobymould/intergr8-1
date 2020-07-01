@@ -1,6 +1,6 @@
 {
     "version": 3,
-    "mappings": "",
+    "mappings": "ACEA,aAAa;AAKb,sBAAsB;AAatB,YAAY",
     "sources": [
         "TicketCatStageTwo.module.scss",
         "../../variables.scss"

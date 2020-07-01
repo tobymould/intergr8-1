@@ -2,8 +2,7 @@ import React, { Component } from "react";
 import styles from "./Tile.module.scss";
 
 class Tile extends Component {
-  tiledata = {
-    titles: [
+  tiledata = [
       {
         title: "Payroll",
         icon: "Icon",
@@ -24,13 +23,12 @@ class Tile extends Component {
         title: "Recruitment",
         icon: "Icon",
       },
-    ],
-  };
-
+    ]
+    
   render() {
     return (
       <>
-        {this.tiledata.titles.map((titleObj) => (
+        {this.tiledata.map((titleObj) => (
           <article className={styles.tileStyles}>
             <p>{titleObj.icon}</p>
             <p>{titleObj.title}</p>
