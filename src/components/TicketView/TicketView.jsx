@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import styles from './TicketView.module.scss';
 import olly from './olly.jpg';
 import Message from './Message';
+import Button from '../Button'
 
 class TicketView extends Component {
     constructor() {
@@ -25,12 +26,12 @@ class TicketView extends Component {
     
     automaticUpdateState = () => {
         if (!this.state.manualOverRide) {
-        if (this.hoursFromCreation() > 48 && this.state.priority !== 3) {
-            this.setState({priority: 3,})
-            } else if (this.hoursFromCreation() > 24 && this.state.priority !== 2) {
-                this.setState({priority: 2,})
-            } 
-        }
+            if (this.hoursFromCreation() > 48 && this.state.priority !== 3) {
+                this.setState({priority: 3,})
+                } else if (this.hoursFromCreation() > 24 && this.state.priority !== 2) {
+                    this.setState({priority: 2,})
+                } 
+            }
         }
         
     manualUpdateState = (newPriority) => {
@@ -62,28 +63,29 @@ class TicketView extends Component {
         <>
         <article>
             <section className={styles.ticketTop}>
-              <div className={styles.ticketHeader}>
-                <h2>Title</h2>
-                <h3>Category</h3>
-                <h3>Assigned User</h3>
-            </div>
-            <div>
-                <p>Ticket ID</p>
-                <div className={`${styles.circle} ${this.setColour()}`}></div>
-              </div>
+                <div className={styles.ticketHeader}>
+                    <h2>Title</h2>
+                    <h3>Category</h3>
+                    <h3>Assigned User</h3>
+                </div>
+                <div className={styles.ticketId}>
+                    <p>Ticket ID</p>
+                    <div className={`${styles.circle} ${this.setColour()}`}></div>
+                </div>
             </section>
 
             <div className={styles.messageContainer}>
 
-              <Message userType="Employee"/>
-              <Message userType="HR"/>
+              <Message userType={"Employee"}/>
+              <Message userType={"HR"}/>
+              <Message userType={"Employee"}/>
+              <Message userType={"HR"}/>
 
               <section className={styles.writingMessage}>
                   <div className={styles.messageContent}>
                       <textarea/>
-                      <button>Send</button>
+                      <Button text={"Send"}/>
                   </div>
-                      <img src={olly} alt="HR person pic"/>
               </section>
 
             </div>

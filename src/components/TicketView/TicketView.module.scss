@@ -1,21 +1,68 @@
+@import "../../variables.scss";
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+
+
 $base-padding: 10px;
 $dark-grey: #222222;
-$yellow: #F2B432;
 $white: #FCFCFB;
 
 *{
   box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+
 }
 
 article {
     display: flex;
     flex-direction: column;
-    border: 2px solid grey;
+    box-shadow: 0 10px 10px $primary-black-opacity-two, 0 5px 5px $primary-black-opacity-two;
     justify-content: center;
-    width: 600px;
+    width: 100%;
+    max-width: 700px;
+    max-height: 100vh;
+    margin: 0 auto;
+
+    // @media screen and (min-width: 900px) {
+    //   width: 900px;
+    // }
 
     .ticketTop {
-        background-color: $yellow;
+        background-color: $primary-yellow;
+        padding: 0.5*$base-padding;
+        margin: 0;
+        display: flex;
+        justify-content: space-between;
+
+        .ticketId {
+          display: flex; 
+          flex-direction: column;
+          justify-content: space-evenly;
+          padding-right: 5px;
+
+          .circle {
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            box-shadow: 0 3px 3px $primary-black-opacity-two, 0 1px 1px $primary-black-opacity-two;
+            border: 2px solid white;
+          }
+          
+          .green {
+              background-color: green;
+          }
+          
+          .amber {
+              background-color: orange;
+          }
+          
+          .red {
+              background-color: red;
+          }
+
+        }
+
+
+        
     }
 
     section {
@@ -24,61 +71,41 @@ article {
       
       div {
       &.ticketHeader {
-        width: 100%;
         justify-content: space-around;
         padding: 5px;
-
-        
-          }
+        }
        }
     }
 
 
     div.messageContainer {
         overflow-y: scroll;
-        background-color: $white;
+        padding-left: 0.5*$base-padding;
+        padding-right: 0.5*$base-padding;
+
 
         section {
           &.writingMessage {
             display: flex;
             justify-content: space-between;
 
-            &.messageContent {
-            width: 80%;
+            .messageContent {
+            width: 100%;
               
-            &textarea {
+            textarea {
                 width: 100%;
                 height: 80px;
                 padding: $base-padding;
+                margin-bottom: $base-padding;
+                resize: none;
+                border: 1px solid $light-grey;
+                border-radius:4px;
             }
           }
           }
-        
-        
-          img {
-            width: 20%;
-            border-radius: 50%;
-        }
-
         }
 
     }
   }
 
-.circle {
-    border-radius: 50%;
-    width: 20px;
-    height: 20px;
-  }
-  
-  .green {
-      background-color: green;
-  }
-  
-  .amber {
-      background-color: orange;
-  }
-  
-  .red {
-      background-color: red;
-  }
+
