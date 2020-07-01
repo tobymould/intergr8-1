@@ -34,13 +34,13 @@ class LogInBox extends Component {
                 <div className={styles.formSection}>
                   <form>
                     <div className={styles.inputWrapper}>
-                      <input className={styles.email} type="text" name="username" placeholder="Email" />
+                      <input id="email" className={styles.email} type="text" name="username" placeholder="Email" />
                       <label htmlFor="email">
                         <FontAwesomeIcon icon="user" />
                       </label>
                     </div>
                     <div className={styles.inputWrapper}>
-                      <input className={styles.password} type="password" name="password" placeholder="Password" />
+                      <input id="password" className={styles.password} type="password" name="password" placeholder="Password" />
                       <label htmlFor="password">
                         <FontAwesomeIcon icon="lock" />
                       </label>
