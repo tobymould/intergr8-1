@@ -2,9 +2,9 @@
     "version": 3,
     "mappings": "",
     "sources": [
-        "TicketCatStage3.module.scss",
+        "TicketCatStageThree.module.scss",
         "../../variables.scss"
     ],
     "names": [],
-    "file": "TicketCatStage3.module.css"
+    "file": "TicketCatStageThree.module.css"
 }
