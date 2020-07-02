@@ -29,11 +29,11 @@ class CreateTicket extends Component {
             <form action="" className={styles.formCreateTicket}>
               <label For="mainCategory">Select category
               <select name="" id="mainCategory">
-                  <option value="LnD">LnD</option>
+                  <option value="L&D">L&D</option>
                   <option value="Payroll">Payroll</option>
                   <option value="General HR">General HR</option>
                   <option value="Recruitment">Recruitment</option>
-                  <option value="Health n Safety">Health n Safety</option>
+                  <option value="Health & Safety">Health & Safety</option>
                 </select>
               </label>
               <label For="subCategory">Sub-category
