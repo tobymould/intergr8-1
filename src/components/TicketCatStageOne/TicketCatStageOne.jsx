@@ -6,7 +6,7 @@ class TicketCatStageOne extends Component {
   state = {  }
   render() { 
     return ( 
-      <>
+      <div>
       <h1>What is your query regarding?</h1>
       <section className={styles.tileParent}>
         {Object.entries(this.props.data).map((data) => {
@@ -18,7 +18,7 @@ class TicketCatStageOne extends Component {
           />
         })}
       </section>
-      </>
+      </div>
      );
   }
 }
