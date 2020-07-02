@@ -10,7 +10,15 @@ class NavBar extends Component {
         <nav>
           <h1>Nav Bar</h1>
           <div className="menu">
-            <button className="menu-btn">Menu</button>
+            <Link to="/">
+              <button className="menu-btn">Login</button>
+            </Link>
+            <Link to="/dashboard">
+              <button className="menu-btn">Dashboard</button>
+            </Link>
+            <Link to="/ticket">
+              <button className="menu-btn">Ticket</button>
+            </Link>
           </div>
         </nav>
       </>
