@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './App.css';
 import Routes from './containers/Routes/Routes';
 import library from './data/fa-library';
 
-function App() {
+class App extends Component {
   render() {
   return (
     <Routes />
