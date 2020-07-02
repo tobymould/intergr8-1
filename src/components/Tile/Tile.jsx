@@ -3,11 +3,7 @@ import styles from "./Tile.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 class Tile extends Component {
-
-
-
-  // tileData[type].queries
-    
+  // tileData[type].queries    
   render() {
     const { data, selector, handleClick } = this.props;
     return (
