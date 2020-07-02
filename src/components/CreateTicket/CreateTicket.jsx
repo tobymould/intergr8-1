@@ -49,9 +49,9 @@ class CreateTicket extends Component {
                 </select>
               </label>
               <label For="">Description
-          <textarea placeholder="Type here..."></textarea>
+          <textarea placeholder="Type here..." onChange={this.props.updateInput}></textarea>
               </label>
-              <input type="submit" value="Create ticket" onClick={this.toggleClicked} />
+              <button className={styles.btnCreateTicket} onClick={this.toggleClicked}>Create Ticket</button>
             </form>
           </section>
         </div>
