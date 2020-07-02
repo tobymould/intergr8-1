@@ -10,8 +10,8 @@ class Routes extends Component {
     return (
       <Router>
         <Login path="/" />
-        <Dashboard path="dashboard" />
-        <TicketCatStage1 path="ticket" />
+        {/* <Dashboard path="dashboard" />
+        <TicketCatStage1 path="ticket" /> */}
         <Login default />
       </Router>
     );
