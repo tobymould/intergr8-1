@@ -8,7 +8,8 @@ class CreateTicket extends Component {
     beenClicked: false,
   };
 
-  toggleClicked = () => {
+  toggleClicked = (e) => { 
+    e.preventDefault();
     this.setState({ beenClicked: !this.state.beenClicked }
     )
   }

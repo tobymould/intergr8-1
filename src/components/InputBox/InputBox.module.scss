@@ -1,0 +1,34 @@
+@import "../../variables.scss";
+
+.inputBox {
+    padding: 10px 5px;
+    border: 1px solid $light-grey;
+    border-left: none;
+    border-radius: 0px 2px 2px 0px;
+    background-color: transparent;
+    color: $dark-grey;
+    width: 100%;
+    outline: none;
+    transition: color ease-in-out 1s, background-color ease-in-out 1s, border-color ease-in-out 1s;
+
+    &:focus,
+    &:focus ~ label {
+        color: $white;
+        background-color: $secondary-black-opaque;
+        outline: none;
+        border-color: $primary-yellow;
+
+        &::placeholder {
+            color: $light-grey;
+        }
+    }
+
+    &:-webkit-autofill,
+    &:-webkit-autofill ~ label,
+    &:-webkit-autofill:focus,
+    &:-webkit-autofill:focus ~ label {
+        color: $secondary-yellow;
+        background-color: $secondary-black-opaque;
+        transition-duration: 0ms;
+    }
+}
