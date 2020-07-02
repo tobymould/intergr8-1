@@ -3,7 +3,6 @@ import styles from "./TicketTile.module.scss";
 // import CreateTicket from "./CreateTicket";
 
 class TicketTile extends Component {
-  // state = {  }
   render() { 
     return (  
       <>
