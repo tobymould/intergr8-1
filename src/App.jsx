@@ -7,7 +7,7 @@ function App() {
   render() {
   return (
     <Routes />
-  );
+  )
 }
 }
 
