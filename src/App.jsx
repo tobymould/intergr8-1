@@ -1,11 +1,13 @@
 import React from 'react';
 import './App.css';
-import TicketCatStage1 from './TicketCatStage1';
+import TicketColumn from "./components/ticketingDashboard/TicketColumn";
 
 function App() {
+  render() {
   return (
-    
+    <TicketColumn />
   );
+}
 }
 
 export default App;
