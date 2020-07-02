@@ -1,13 +1,15 @@
 import React from 'react';
 import './App.css';
-import TicketColumn from "./components/ticketingDashboard/TicketColumn";
+import Routes from './containers/Routes/Routes';
+import library from './data/fa-library';
 
 function App() {
   render() {
   return (
-    <TicketColumn />
+    <Routes />
   );
 }
 }
 
 export default App;
+console.log(library);
