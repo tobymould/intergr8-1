@@ -4,7 +4,6 @@ import { Router } from '@reach/router';
 import Login from '../../components/LogInBox';
 // import Dashboard from '../../components/ticketingDashboard';
 // import TicketCatStage1 from '../../components/TicketCatstage1';
-// import NotFound from '../../components/NotFound';
 
 class Routes extends Component {
   render() {
@@ -12,7 +11,8 @@ class Routes extends Component {
       <Router>
         <Login path="/" />
         {/* <Dashboard path="dashboard" />
-        <TicketCatStage1 path="ticketcategory1" /> */}
+        <TicketCatStage1 path="ticket" /> */}
+        <Login default />
       </Router>
     );
   }
