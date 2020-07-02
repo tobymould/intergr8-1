@@ -6,6 +6,7 @@ class Statistics extends Component {
   state = {}
   render() {
     return (
+      <div className={styles.statisticsWrapper}>
       <section>
         <article className='all-in-progess'>
             <h3 className='statistic-title'>All in Progress</h3>
@@ -20,6 +21,7 @@ class Statistics extends Component {
             <Chart />
         </article>
       </section>
+      </div>
     );
   }
 }
