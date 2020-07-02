@@ -1,0 +1,16 @@
+@import "../../../../variables.scss";
+
+.TicketColumn {
+    height: 90vh;
+    width: 100%;
+    padding: 5px;
+    margin: 10px;
+    box-shadow: $primary-shadow;
+    border-radius: 5px;
+    overflow-y: auto;
+    padding: $base-value;
+}
+
+.topOfColumn {
+  height: 10vh;
+}
