@@ -1,16 +1,19 @@
 @import "../../../../variables.scss";
 
 .chart {
-    transform: rotate(-90deg);
-    border-radius: 50%;
-    background: forestgreen;
-    .innerCircle{
-      fill: $primary-yellow;
+  box-shadow: 0 10px 20px $primary-black-opacity-two, 0 6px 6px $primary-black-opacity-two;
+  transform: rotate(-90deg);
+  border-radius: 50%;
+  background: $primary-green;
+
+  .innerCircle{
+    fill: $primary-yellow;
   }
+
   .outerCircle{
-    fill: forestgreen;
-    stroke: red;
+    fill: $primary-green;
+    stroke: $primary-red;
     stroke-width: 120;
-    stroke-dasharray: 50 377;
+    stroke-dasharray: 170 377;
   }
 }
