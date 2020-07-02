@@ -2,7 +2,7 @@
 
 
 .chart {
-  box-shadow: 0 10px 20px $primary-black-opacity-two, 0 6px 6px $primary-black-opacity-two;
+  box-shadow: 0 10px 20px $primary-black-transparent, 0 6px 6px $primary-black-transparent;
   transform: rotate(-90deg);
   border-radius: 50%;
   background: $primary-yellow;
@@ -19,5 +19,3 @@
     stroke-dasharray: 170 377;
   }
 }
-
-// background: linear-gradient(to left, #333, #333 50%, #eee 75%, #333 75%);
