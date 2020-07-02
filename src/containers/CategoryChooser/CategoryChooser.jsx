@@ -57,6 +57,7 @@ class CategoryChooser extends Component {
     console.log(selector);
     // IN here you have everything you need to move to the next step on a click
     /// (You'll need to set State)
+    this.setState( )
   }
 
   render() {
