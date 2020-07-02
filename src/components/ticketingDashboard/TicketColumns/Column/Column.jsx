@@ -4,7 +4,7 @@ import styles from './Column.module.scss';
 class Column extends Component {
     state = {  }
 
-renderFilter = () => this.props.filter ? <p>Filter (date/urgency) (category)</p> : <p>{''}</p>;
+renderFilter = () => this.props.filter ? <p>Filter (date/urgency) (category)</p> : <p>{}</p>;
 
     render() { 
         return (

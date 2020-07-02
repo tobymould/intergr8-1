@@ -12,7 +12,7 @@ class TicketView extends Component {
     // Three priority levels: 1,2,3.
 
     state = {
-        priority: 1,
+        priority: 3,
         manualOverRide: false,
     }        
     
