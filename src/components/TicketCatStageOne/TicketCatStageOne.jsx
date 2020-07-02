@@ -9,7 +9,14 @@ class TicketCatStageOne extends Component {
       <div>
       <h1>What is your query regarding?</h1>
       <section className={styles.tileParent}>
-      <Tile />
+        {Object.entries(this.props.data).map((data) => {
+          return <Tile 
+            key={data[1].id} 
+            selector={data[0]} 
+            data={data[1]}
+            handleClick={() => this.props.tileClick(data[0])}
+          />
+        })}
       </section>
       </div>
      );
@@ -17,5 +24,3 @@ class TicketCatStageOne extends Component {
 }
  
 export default TicketCatStageOne;
-
-

@@ -15,21 +15,25 @@
   margin-top: 40px;
   background-color:$primary-yellow;
   color: $primary-black;
+  border: $primary-black 3px solid;
   border-radius: 10px;
   &:hover {
     cursor: pointer;
     text-decoration: underline;
+    font-weight: bold;
+    border: $primary-black 5px solid;
   }
   .catTitle {
     text-align: center;
     font-size: $base-value;
-    font-weight: bold;
-  
-  }
 }
 
 .icon {
   font-size: 80px;
   text-align: center;
+  &:hover {
+    // font-size: 100px;
+}
 
+}
 }

@@ -6,35 +6,13 @@ class Tile extends Component {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 class Tile extends Component {
-  tiledata = [
-      {
-        title: "Payroll",
-        icon: <FontAwesomeIcon icon={"pound-sign"} />,
-        tileId: 1
-      },
-      {
-        title: "General HR",
-        icon: <FontAwesomeIcon icon={"network-wired"} />,
-        tileId: 2
-      },
-      {
-        title: "Health & Safety",
-        icon: <FontAwesomeIcon icon={"medkit"} />,
-        tileId: 3
-      },
-      {
-        title: "L&D",
-        icon: <FontAwesomeIcon icon={"book-open"} />,
-        tileId: 4
-      },
-      {
-        title: "Recruitment",
-        icon: <FontAwesomeIcon icon={"users"} />,
-        tileId: 5
-      },
-    ]
+
+
+
+  // tileData[type].queries
     
   render() {
+    const { data, selector, handleClick } = this.props;
     return (
       <>
         {tileData.map((titleObj) => (
