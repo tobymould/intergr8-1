@@ -1,19 +1,23 @@
 @import "../../../../variables.scss";
 
+
 .chart {
   box-shadow: 0 10px 20px $primary-black-opacity-two, 0 6px 6px $primary-black-opacity-two;
   transform: rotate(-90deg);
   border-radius: 50%;
-  background: $primary-green;
+  background: $primary-yellow;
 
   .innerCircle{
-    fill: $primary-yellow;
+    // filter: drop-shadow(inset 0 10px 20px $primary-black-opacity-two, 0 6px 6px $primary-black-opacity-two);
+    fill: #F1F1F1;
   }
 
   .outerCircle{
-    fill: $primary-green;
-    stroke: $primary-red;
+    fill: $primary-yellow;
+    stroke: #c6bfaf;
     stroke-width: 120;
     stroke-dasharray: 170 377;
   }
 }
+
+// background: linear-gradient(to left, #333, #333 50%, #eee 75%, #333 75%);
