@@ -3,7 +3,6 @@ import styles from './TicketColumns.module.scss';
 import Column from './Column';
 
 class TicketColumns extends Component {
-    state = {  }
     render() { 
         return (  
           <section className={styles.TicketColumns}>

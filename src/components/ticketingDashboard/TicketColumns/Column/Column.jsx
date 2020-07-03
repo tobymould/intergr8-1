@@ -3,7 +3,6 @@ import styles from './Column.module.scss';
 import DropDown from '../../../DropDown';
 
 class Column extends Component {
-  state = {  }
 
   renderFilter = () => this.props.filter ? <DropDown filterOptions={['Date: earliest', 'Date: latest', 'Category']} /> : <p>{}</p>;
 

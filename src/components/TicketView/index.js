@@ -1,2 +1,2 @@
-import TicketView from './TicketView';
+import TicketView from "./TicketView";
 export default TicketView;

@@ -1,2 +1,2 @@
-import TicketColumns from './TicketColumns';
+import TicketColumns from "./TicketColumns";
 export default TicketColumns;
