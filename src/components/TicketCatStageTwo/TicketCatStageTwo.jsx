@@ -3,11 +3,13 @@ import styles from "./TicketCatStageTwo.module.scss";
 import Options from "../Options/Options/Options";
 
 class TicketCatStageTwo extends Component {
-  state = {}
+  state = {};
   render() {
-    console.log(this.props.data)
+    // console.log(this.props.data);
     return (
-      <h1>Please select one of the following options...</h1>
+      <div>
+        <Options />
+      </div>
     );
   }
 }

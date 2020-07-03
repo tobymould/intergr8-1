@@ -49,29 +49,42 @@ class CategoryChooser extends Component {
   }
 
   state = {
-    stage: 1
+    stage: 0,
+    firstTile: ""
   }
 
   tileClick = (selector) => {
     this.setState ({
-      stage: this.state.stage + 1
+      stage: this.state.stage + 1,
+      firstTile: selector
     })
-    // IN here you have everything you need to move to the next step on a click
-    /// (You'll need to set State)
-    // How's it going guys? excellent
+  }
 
+  getCategory() {
+    if (this.state.stage === 0) {
+      return <TicketCatStageOne data={this.tileData} tileClick={this.tileClick}/>
+    } else if (this.state.stage === 1) { 
+      return < TicketCatStageTwo data={this.tileData[this.state.firstTile]}/>
+    } else if (this.state.stage === 2) { 
+      return < TicketCatStageThree />
+    }
   }
 
   render() {
-    // If (event.target.this.state.stage === 1 {
-    //   return <TicketCatStageOne />
+    console.log(this.state);
+    
+    // const display = (this.state.selector.id == this.state.stage) ? (<TicketCatStageTwo data={this.state.selector} />) : null;
+    
+
     return (
       <>
-        <TicketCatStageOne data={this.tileData} tileClick={this.tileClick}/>
-        <TicketCatStageTwo data={this.tileData} />
-        <TicketCatStageThree data={this.tileData} />
+        <TicketCatStageOne />
+        {this.getCategory()}
       </>
     )
   }
 }
 export default CategoryChooser;
+
+
+// if (event.target.state === landd) {landd.map(option)=>{<Option />}}
