@@ -44,26 +44,26 @@ const data = [
   {
     id: 8,
     owner: 'Ollie_Holden',
-    inProgress: false,
+    inProgress: true,
     assigned: false,
   },
   {
     id: 9,
     owner: 'Ollie_Holden',
-    inProgress: false,
+    inProgress: true,
     assigned: false,
   },
   {
     id: 10,
     owner: 'Ollie_Holden',
     inProgress: false,
-    assigned: false,
+    assigned: true,
   },
   {
     id: 11,
     owner: 'Shea_Murphey',
     inProgress: true,
-    assigned: true,
+    assigned: false,
   },
   {
     id: 12,

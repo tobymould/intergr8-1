@@ -1,2 +1,2 @@
-import TicketData from './TicketData.js';
-export default TicketData;
+import mockData from './mockData.js';
+export default mockData;
