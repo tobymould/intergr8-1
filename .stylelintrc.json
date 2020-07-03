@@ -1,0 +1,15 @@
+{
+  "extends": "stylelint-config-sass-guidelines",
+  "rules": {
+    "order/properties-alphabetical-order": null,
+    "color-named": "always-where-possible",
+    "selector-max-id": null,
+    "max-nesting-depth": null,
+    "selector-max-compound-selectors": null,
+    "string-quotes": null,
+    "declaration-property-value-blacklist": {},
+    "selector-no-qualifying-type": null,
+    "property-no-vendor-prefix": null,
+    "value-no-vendor-prefix": null
+  }
+}
