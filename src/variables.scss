@@ -18,9 +18,8 @@ $dark-grey: #656565;
 $light-grey: #9a9a9a;
 /* Whites */
 $white: white;
-$white-opaque:#ffffffcc;
+$white-opaque: #ffffffcc;
 $white-transparent: #ffffff40;
-
 
 ////// Borders and shaddows //////
 
@@ -52,7 +51,6 @@ $large: 1.5rem;
 $small: 0.85rem;
 $tiny: 0.75rem;
 
-
 ////// Designs and layouts //////
 
 /* Forms, boxes, lists */
@@ -72,9 +70,9 @@ $tiny: 0.75rem;
 
 /* Waves background */
 @mixin wavy_background {
-    background-color: $white;
-    background-image: url("./assets/intergr8-login-background.svg");
-    background-size: cover;
-    background-position: bottom;
-    background-repeat: no-repeat;
-    }
+  background-color: $white;
+  background-image: url("./assets/intergr8-login-background.svg");
+  background-size: cover;
+  background-position: bottom;
+  background-repeat: no-repeat;
+}
