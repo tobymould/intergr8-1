@@ -3,21 +3,13 @@ import styles from "./TicketCatStageTwo.module.scss";
 import Options from "../Options/Options/Options";
 
 class TicketCatStageTwo extends Component {
-  state = {};
+  state = {}
   render() {
+    console.log(this.props.data)
     return (
-      <div className={styles.optionsCont}>
-        <section className={styles.tileParent}>
-          <h1>Please choose from one of these options:</h1>
-          <Options />
-        </section>
-      </div>
+      <h1>Please select one of the following options...</h1>
     );
   }
 }
-
-
-
-
 
 export default TicketCatStageTwo;
