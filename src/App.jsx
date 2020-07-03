@@ -1,16 +1,12 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './App.css';
 import Routes from './containers/Routes/Routes';
 import library from './data/fa-library';
-import TicketColumns from './components/ticketingDashboard/TicketColumns'
 
-class App extends Component {
-  render() {
+function App() {
   return (
-    // <Routes />
-    <TicketColumns />
-  )
-}
+    <Routes />
+  );
 }
 
 export default App;
