@@ -1,7 +1,7 @@
 @import "../../../../variables.scss";
 
 .TicketColumn {
-    // height: 90vh;
+    height: 500px;
     width: 100%;
     padding: 5px;
     margin: 10px;
@@ -12,5 +12,12 @@
 }
 
 .topOfColumn {
-  height: 10vh;
+  // height: 10%;
+  h3 {
+    padding: 0.5*$base-value;
+  }
+  select {
+    padding: 0.1*$base-value;
+    margin-bottom: $base-value;
+  }
 }

@@ -1,0 +1,9 @@
+@import '../../variables.scss';
+
+.DropDown {
+    box-shadow: $secondary-shadow;
+    border-radius: $medium;
+    font-family: $main-fonts;
+    font-size: $standard;
+    border: 2px solid $primary-yellow;
+}
