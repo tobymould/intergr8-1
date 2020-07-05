@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import styles from "./TicketTile.module.scss";
 // import CreateTicket from "./CreateTicket";
 
+
 class TicketTile extends Component {
   render() { 
     return (  
@@ -13,7 +14,7 @@ class TicketTile extends Component {
             <p>Empolyee Number</p>
           </div>
           <div>
-            <input type="checkbox"/>
+            {/* <input type="checkbox"/> */}
           </div>
           <div>
             <select name="" id="">
@@ -22,7 +23,6 @@ class TicketTile extends Component {
             </select>
           </div>
         </section>
-
       </>
     );
   }

@@ -43,12 +43,12 @@ class CreateTicket extends Component {
                   <option value="b">b</option>
                 </select>
               </label>
-              <label For="subSubCategory">Sub-Sub-category
+              {/* <label For="subSubCategory">Sub-Sub-category
               <select name="" id="subSubCategory">
                   <option value="Training Support Request">Training Support Request</option>
                   <option value="$$">$$</option>
                 </select>
-              </label>
+              </label> */}
               <label For="">Description
           <textarea placeholder="Type here..." onChange={this.props.updateInput}></textarea>
               </label>
