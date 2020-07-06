@@ -71,6 +71,9 @@ class TicketView extends Component {
                 <div className={styles.ticketId}>
                     <p>Ticket ID</p>
                     <div className={`${styles.circle} ${this.setColour()}`}></div>
+                    <div className={styles.resolveBtn}>
+                        <Button text={"Resolve Ticket"}/>
+                    </div>
                 </div>
             </section>
 
