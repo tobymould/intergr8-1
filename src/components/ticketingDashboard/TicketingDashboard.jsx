@@ -16,10 +16,10 @@ class TicketingDashboard extends Component {
     }
   
     countTickets = () => mockData.length;
-    countUserTickets = () => mockData.filter((ticket) => ticket.user === this.user).length;
+    countUserTickets = () => mockData.filter((ticket) => ticket.owner === this.state.user).length;
     countUnassignedTickets = () => mockData.filter((ticket) => !ticket.assigned).length;
     countInProgressTickets = () => mockData.filter((ticket) => ticket.inProgress).length;
-    countUserInProgressTickets = () => mockData.filter((ticket) => (ticket.user === this.user) && (!ticket.assigned)).length;
+    countUserInProgressTickets = () => mockData.filter((ticket) => (ticket.owner === this.state.user) && (ticket.inProgress)).length;
     calculatePercent = (total, number) => ((number / total) * 100);
   
     componentDidMount() {
@@ -35,6 +35,7 @@ class TicketingDashboard extends Component {
     }
   
     render() { 
+      {console.log(this.state, this.state.user)}
         return ( 
         <ChartPanel 
         percentUnassignedTickets={this.state.percentUnassignedTickets} 
