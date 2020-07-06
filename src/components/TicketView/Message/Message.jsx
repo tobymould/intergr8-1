@@ -15,7 +15,7 @@ class Message extends Component {
   //     <img src={olly} alt="HR person pic"/>
   // </section> */}
 
-  typeOfMessage = () => {
+  typeOfMessage() {
     let name;
     const pic = (<img src={olly} alt="Employee pic"/>);
     const message = 

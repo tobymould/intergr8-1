@@ -3,9 +3,7 @@ import styles from "./Chart.module.scss";
 
 class Chart extends Component {
   render() {
-    return (
-      <div className={styles.chart}></div>
-    );
+    return <div className={styles.chart}></div>;
   }
 }
 

@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
-import styles from './TicketView.module.scss';
-import olly from './olly.jpg';
-import Message from './Message';
-import Button from '../Button'
+import React, { Component } from "react";
+import styles from "./TicketView.module.scss";
+import olly from "./olly.jpg";
+import Message from "./Message";
+import Button from "../Button"
 
 class TicketView extends Component {
     constructor() {
@@ -14,7 +14,7 @@ class TicketView extends Component {
     state = {
         priority: 3,
         manualOverRide: false,
-    }        
+    }
     
     hoursFromCreation = () => {
         const today = new Date();

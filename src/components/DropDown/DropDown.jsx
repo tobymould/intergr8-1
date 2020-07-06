@@ -1,19 +1,23 @@
 import React, { Component } from "react";
-import styles from "./DropDown.module.scss"
+import styles from "./DropDown.module.scss";
 
 class DropDown extends Component {
-
-  getOptions = () => {
+  getOptions() {
     return this.props.filterOptions.map((item, index) => {
-      return <option value={item} key={index}>{item}</option>
-    })
+      return (
+        <option value={item} key={index}>
+          {item}
+        </option>
+      );
+    });
   }
 
-    render() { 
-      return (
-        <select className={styles.DropDown} name="" id="">
-          {this.getOptions()}
-        </select>
-     );
+  render() {
+    return (
+      <select className={styles.DropDown} name="" id="">
+        {this.getOptions()}
+      </select>
+    );
   }
 }
+export default DropDown;
