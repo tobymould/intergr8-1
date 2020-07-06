@@ -4,7 +4,13 @@ import DropDown from "../../../DropDown";
 
 class Column extends Component {
   renderFilter() {
-    this.props.filter ? <DropDown filterOptions={["Date: earliest", "Date: latest", "Category"]} /> : <p>{}</p>
+    this.props.filter ? (
+      <DropDown
+        filterOptions={["Date: earliest", "Date: latest", "Category"]}
+      />
+    ) : (
+      <p>{}</p>
+    );
   }
 
   render() {
@@ -19,7 +25,7 @@ class Column extends Component {
           {/* Ticketview goes in here */}
         </section>
       </article>
-    )
+    );
   }
 }
 
