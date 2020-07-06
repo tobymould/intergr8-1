@@ -5,8 +5,6 @@ import CategoryChooser from './containers/CategoryChooser';
 import library from "./data/fa-library";
 
 
-
-
 class App extends Component {
   render () {
   return (
