@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Chart from './Chart'
-import styles from './Statistics.module.scss';
+import styles from "./Statistics.module.scss";
 
 class Statistics extends Component {
   state = {}

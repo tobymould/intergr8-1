@@ -6,12 +6,12 @@ class TicketColumns extends Component {
   render() {
     return (
       <section className={styles.TicketColumns}>
-        <Column filter={true} title={'Tickets to assign'}/>
-        <Column filter={true} title={'My tickets'} />
-        <Column filter={false} title={'Other agents:'} />
+        <Column filter={true} title={"Tickets to assign"} />
+        <Column filter={true} title={"My tickets"} />
+        <Column filter={false} title={"Other agents:"} />
       </section>
     );
   }
 }
 
-export default TicketColumns ;
+export default TicketColumns;

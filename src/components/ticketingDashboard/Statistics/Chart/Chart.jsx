@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import styles from './Chart.module.scss';
+import React, { Component } from "react";
+import styles from "./Chart.module.scss";
 
 class Chart extends Component {
   render() {

@@ -1,7 +1,5 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 import styles from "./DropDown.module.scss"
-
-
 
 class DropDown extends Component {
 
@@ -11,18 +9,11 @@ class DropDown extends Component {
     })
   }
 
-  state = {  }
-  render() { 
-    return ( 
-
-      <select className={styles.DropDown} name="" id="">
-       {this.getOptions()}
-      </select>
-
-
-
+    render() { 
+      return (
+        <select className={styles.DropDown} name="" id="">
+          {this.getOptions()}
+        </select>
      );
   }
 }
- 
-export default DropDown;
