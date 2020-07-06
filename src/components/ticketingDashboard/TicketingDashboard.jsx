@@ -35,7 +35,6 @@ class TicketingDashboard extends Component {
     }
   
     render() { 
-      {console.log(this.state, this.state.user)}
         return ( 
         <ChartPanel 
         percentUnassignedTickets={this.state.percentUnassignedTickets} 
