@@ -35,11 +35,18 @@ class TicketingDashboard extends Component {
     }
   
     render() { 
+
+      const {
+        percentUnassignedTickets,
+        percentInProgressTickets,
+        percentUserInProgressTickets,
+      } =this.state
+      
         return ( 
         <ChartPanel 
-        percentUnassignedTickets={this.state.percentUnassignedTickets} 
-        percentInProgressTickets={this.state.percentInProgressTickets} 
-        percentUserInProgressTickets={this.state.percentUserInProgressTickets}
+        percentUnassignedTickets={percentUnassignedTickets} 
+        percentInProgressTickets={percentInProgressTickets} 
+        percentUserInProgressTickets={percentUserInProgressTickets}
         />
          );
     }
