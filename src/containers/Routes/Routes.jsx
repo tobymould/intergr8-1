@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
-import { Router } from '@reach/router';
+import React, { Component } from "react";
+import { Router } from "@reach/router";
 
-import Login from '../../components/LogInBox';
-import Dashboard from '../../components/TicketingDashboard/';
+import Login from "../../components/LogInBox";
+import Dashboard from "../../components/TicketingDashboard/";
 // import TicketCatStage1 from '../../components/TicketCatstage1';
 
 class Routes extends Component {

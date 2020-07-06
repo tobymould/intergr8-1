@@ -1,2 +1,2 @@
-import mockData from './mockData.js';
+import mockData from "./mockData.js";
 export default mockData;

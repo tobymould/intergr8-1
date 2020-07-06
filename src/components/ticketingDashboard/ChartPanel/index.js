@@ -1,2 +1,2 @@
-import ChartPanel from './ChartPanel.jsx';
+import ChartPanel from "./ChartPanel.jsx";
 export default ChartPanel;
