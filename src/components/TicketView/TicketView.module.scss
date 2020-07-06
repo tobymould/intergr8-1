@@ -33,15 +33,23 @@ article {
         display: flex;
         justify-content: space-between;
 
+        .resolveBtn {
+          background-color: darkgray;
+          color: white;
+          height: 40px;
+
+          &:hover {
+            cursor: pointer;
+            background-color: $light-grey;
+          }
+
+        }
+
         .ticketId {
           display: flex; 
           flex-direction: column;
           justify-content: space-evenly;
           padding-right: 5px;
-
-          .resolveBtn {
-            background-color: black;
-          }
 
           .circle {
             border-radius: 50%;
