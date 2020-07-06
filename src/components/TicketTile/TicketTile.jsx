@@ -11,7 +11,8 @@ class TicketTile extends Component {
           <div>
             <h3>Title</h3>
             <p>Category</p>
-            <p>Empolyee Number</p>
+            <p>Employee Number</p>
+            <p>Ticket Reference no:</p>
           </div>
           <div>
             {/* <input type="checkbox"/> */}
