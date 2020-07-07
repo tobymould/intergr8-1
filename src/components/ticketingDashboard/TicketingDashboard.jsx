@@ -59,12 +59,12 @@ class TicketingDashboard extends Component {
 
     return (
       <section className={styles.ticketingDashboard}>
-      <TicketColumns/>
       <ChartPanel
         percentUnassignedTickets={percentUnassignedTickets}
         percentInProgressTickets={percentInProgressTickets}
         percentUserInProgressTickets={percentUserInProgressTickets}
       />
+      <TicketColumns/>
       </section>
     );
   }
