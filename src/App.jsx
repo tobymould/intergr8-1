@@ -2,10 +2,10 @@ import React from "react";
 import "./App.css";
 import Routes from "./containers/Routes/Routes";
 import "./data/fa-library";
-import CategoryChooser from "./containers/CategoryChooser";
+import TicketColumns from './components/TicketingDashboard/TicketColumns'
 
 function App() {
-  return <Routes />;
+  return <TicketColumns />;
 }
 
 export default App;

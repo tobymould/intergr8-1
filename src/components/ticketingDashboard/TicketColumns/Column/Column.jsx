@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import styles from "./Column.module.scss";
 import DropDown from "../../../../utilities/DropDown";
 import TicketView from "./TicketView";
+import TicketTile from './TicketTile';
 
 class Column extends Component {
   renderFilter() {
@@ -23,11 +24,12 @@ class Column extends Component {
             {this.renderFilter()}
           </div>
           <section title={this.props.title}>
-            <p>Placeholder text</p>
-            {/* Ticketview goes in here */}
+            <TicketTile />
+            <TicketTile />
+            <TicketTile />
           </section>
         </article>
-        <TicketView />
+        {/* <TicketView /> */}
       </>
     );
   }

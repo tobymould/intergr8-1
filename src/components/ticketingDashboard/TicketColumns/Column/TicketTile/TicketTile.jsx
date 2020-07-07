@@ -6,7 +6,7 @@ class TicketTile extends Component {
   render() { 
     return (  
       <>
-      <section className={styles.container}>
+      <section className={styles.TicketTile}>
           <div>
             <h3>Title</h3>
             <p>Category</p>

@@ -1,11 +1,12 @@
-@import "../../variables.scss";
+@import "../../../variables.scss";
 
 
-h1 {
-  padding: 20px;
-}
 
 .ticketCat2{
+  h1 {
+    padding: 20px;
+  }
+  
   display: flex;
   flex-direction: column;
   justify-content: center;

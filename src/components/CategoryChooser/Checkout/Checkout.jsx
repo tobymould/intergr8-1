@@ -6,7 +6,7 @@ class Checkout extends Component {
   render() { 
     return ( 
         <>
-        <button className={styles.button}>FAQs</button>
+        <button className={styles.checkout}>FAQs</button>
         <button>Create Ticket</button>
         </>
      );
