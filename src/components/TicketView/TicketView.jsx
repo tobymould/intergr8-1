@@ -11,11 +11,13 @@ class TicketView extends Component {
     }
     // Three priority levels: 1,2,3.
 
-    state = {
-        priority: 3,
-        manualOverRide: false,
+    componentDidMount() {
+      return this.setState({
+          priority: 3,
+          manualOverRide: false,
+      });
     }
-    
+
     hoursFromCreation = () => {
         const today = new Date();
         const milliseconds = Math.abs(today - this.creationDate);
