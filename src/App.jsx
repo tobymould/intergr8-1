@@ -1,11 +1,11 @@
-import React from "react";
+import React from 'react';
 import "./App.css";
 import Routes from "./containers/Routes/Routes";
-import library from "./data/fa-library";
+import "./data/fa-library";
 
 function App() {
   return <Routes />;
 }
 
 export default App;
-console.log(library);
+
