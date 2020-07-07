@@ -10,7 +10,7 @@ $white: #FCFCFB;
 *{
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
-  color: $primary-black-opacity-nine;
+  color: $primary-black-opaque;
 
 }
 section {
@@ -28,7 +28,7 @@ section {
     }
     
     &.messageContent {
-        box-shadow: 0 3px 3px $primary-black-opacity-two, 0 1px 1px $primary-black-opacity-two;
+        box-shadow: 0 3px 3px $primary-black-transparent, 0 1px 1px $primary-black-transparent;
         border-radius: 6px;
         width: 80%;
         padding: $base-padding;
@@ -54,7 +54,7 @@ section {
 
     img {
         border-radius: 50%;
-        box-shadow: 0 3px 3px $primary-black-opacity-two, 0 1px 1px $primary-black-opacity-two;
+        box-shadow: 0 3px 3px $primary-black-transparent, 0 1px 1px $primary-black-transparent;
         margin: 0% 2.5% 2.5% 2.5%;
         width: 15%;
         height: 15%;
