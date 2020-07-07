@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import styles from "./Tickettile.module.scss";
-// import CreateTicket from "./CreateTicket";
-
 
 class TicketTile extends Component {
 
