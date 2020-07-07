@@ -10,7 +10,7 @@ class Routes extends Component {
   render() {
     return (
       <Router>
-        <Login path="/" />
+        <Login path="/login" />
         {/* <Dashboard path="dashboard" />
         <TicketCatStage1 path="ticket" /> */}
         <Login default />

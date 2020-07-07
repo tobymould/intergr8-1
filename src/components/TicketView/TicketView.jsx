@@ -18,8 +18,8 @@ class TicketView extends Component {
         isDisplayResolve: false,
     }
 
-    toggleClick = () => {
-        this.setState({ isDisplayResolve: !this.state.isDisplayResolve})
+    toggleResolveModal = () => {
+        this.setState({ isDisplayResolve: !this.state.isDisplayResolve })
     }
 
     hoursFromCreation = () => {
@@ -81,7 +81,7 @@ class TicketView extends Component {
                         {/* <div className={styles.resolveBtn}>
                         <Button text={"Resolve Ticket"}/>
                 </div> */}
-                        <button className={styles.resolveBtn} onClick={this.toggleClick}>Resolve Ticket</button>
+                        <button className={styles.resolveBtn} onClick={this.toggleResolveModal}>Resolve Ticket</button>
                     </section>
 
                     <div className={styles.messageContainer}>
