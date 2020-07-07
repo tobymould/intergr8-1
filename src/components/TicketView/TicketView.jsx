@@ -15,6 +15,11 @@ class TicketView extends Component {
     state = {
         priority: 1,
         manualOverRide: false,
+        isDisplayResolve: false,
+    }
+
+    toggleClick = () => {
+        this.setState({ isDisplayResolve: !this.state.isDisplayResolve})
     }
 
     hoursFromCreation = () => {
@@ -57,7 +62,7 @@ class TicketView extends Component {
     }
 
     render() {
-
+        const displayResolve = this.state.isDisplayResolve ? (<ResolveTicketModal />) : null;
         this.automaticUpdateState()
 
         return (
@@ -76,7 +81,7 @@ class TicketView extends Component {
                         {/* <div className={styles.resolveBtn}>
                         <Button text={"Resolve Ticket"}/>
                 </div> */}
-                        <button className={styles.resolveBtn}>Resolve Ticket</button>
+                        <button className={styles.resolveBtn} onClick={this.toggleClick}>Resolve Ticket</button>
                     </section>
 
                     <div className={styles.messageContainer}>
@@ -94,7 +99,7 @@ class TicketView extends Component {
                         </section>
                     </div>
                 </article>
-                <ResolveTicketModal />
+                {displayResolve}
             </>
         )
     }
