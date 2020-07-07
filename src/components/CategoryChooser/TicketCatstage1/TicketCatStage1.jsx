@@ -1,12 +1,14 @@
 import React, { Component } from "react";
-import styles from "TicketCatStage1.module.scss";
+import styles from "./TicketCatStage1.module.scss";
 
 class TicketCatStage1 extends Component {
   constructor(props) {
     super(props);
   }
   render() {
-    return <></>;
+    return <>
+      <p>ticketcatstage1</p>
+    </>;
   }
 }
 
