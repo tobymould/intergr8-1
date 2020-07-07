@@ -20,11 +20,11 @@ class LogInBox extends Component {
                   </span>
                 </h2>
                 <p>
-                  Our <span className="bold">Assist</span> portal platform has a
-                  wide range of features that seek to enhance HR practices
-                  within your organisation and create a centralised repository
-                  for employee requests and manage HR staff activity in a simple
-                  and easy way.
+                  Our <span className="bold">Assist</span>
+                  portal platform has a wide range of features that seek to
+                  enhance HR practices within your organisation and create a
+                  centralised repository for employee requests and manage HR
+                  staff activity in a simple and easy way.
                 </p>
               </div>
             </div>
