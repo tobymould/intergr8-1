@@ -3,7 +3,7 @@ import Chart from "./Chart";
 import styles from "./ChartPanel.module.scss";
 
 class ChartPanel extends Component {
-  calculateStrokeDash = (percentage) => (377 / 100) * percentage; // 377 is the perimeter of the charts, see Niall or Phil.
+  calculateStrokeDash = (percentage) => (301 / 100) * percentage; // 377 is the perimeter of the charts, see Niall or Phil.
 
   render() {
     const {
@@ -14,7 +14,6 @@ class ChartPanel extends Component {
 
     return (
       <div className={styles.chartPanel}>
-        <section>
           <article className="all-in-progess">
             <h3>All in Progress</h3>
             <Chart
@@ -35,7 +34,6 @@ class ChartPanel extends Component {
               strokeDash={this.calculateStrokeDash(percentUnassignedTickets)}
             />
           </article>
-        </section>
       </div>
     );
   }

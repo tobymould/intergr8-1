@@ -6,13 +6,13 @@ class Chart extends Component {
     const { strokeDash } = this.props;
     return (
       <>
-        <svg className={styles.chart} width="200" height="200">
+        <svg className={styles.chart} width="160" height="160">
           <circle
             className={styles.outerCircle}
-            style={{ strokeDasharray: `${strokeDash} 377` }}
-            r="60"
-            cx="100"
-            cy="100"
+            style={{ strokeDasharray: `${strokeDash} 301` }}
+            r="48"
+            cx="80"
+            cy="80"
           />
 
           <radialGradient id="myGradient">
@@ -22,12 +22,12 @@ class Chart extends Component {
 
           <circle
             className={styles.innerShadow}
-            r="55"
-            cx="100"
-            cy="107.5"
+            r="44"
+            cx="80"
+            cy="86"
             fill="url(#myGradient)"
           />
-          <circle className={styles.innerCircle} r="55" cx="100" cy="100" />
+          <circle className={styles.innerCircle} r="44" cx="80" cy="80" />
         </svg>
       </>
     );

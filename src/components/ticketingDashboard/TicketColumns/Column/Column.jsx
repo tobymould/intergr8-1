@@ -21,7 +21,6 @@ class Column extends Component {
           {this.renderFilter()}
         </div>
         <section title={this.props.title}>
-          <p>Placeholder text</p>
           {/* Ticketview goes in here */}
         </section>
       </article>

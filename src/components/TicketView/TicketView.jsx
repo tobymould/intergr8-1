@@ -46,7 +46,7 @@ class TicketView extends Component {
             )
         // }
     }
-  };
+  // };
 
   manualUpdateState = (newPriority) => {
     // if (this.state.manualOverRide){
