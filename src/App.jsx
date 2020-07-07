@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import "./App.css";
 import Routes from "./containers/Routes/Routes";
 import "./data/fa-library";
@@ -8,4 +8,3 @@ function App() {
 }
 
 export default App;
-
