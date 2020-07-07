@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import styles from "./TicketTile.module.scss";
+import styles from "./Tickettile.module.scss";
 // import CreateTicket from "./CreateTicket";
 
 
 class TicketTile extends Component {
+
   render() { 
     return (  
       <>
@@ -12,7 +13,7 @@ class TicketTile extends Component {
             <h3>Title</h3>
             <p>Category</p>
             <p>Employee Number</p>
-            <p>Ticket Reference no:</p>
+            <p>Reference no: {Math.random().toString(36).slice(2).substring(0, 6).toUpperCase()}</p>
           </div>
           <div>
             {/* <input type="checkbox"/> */}
@@ -23,7 +24,7 @@ class TicketTile extends Component {
               <option value="Agent2">Agent2</option>
             </select>
           </div>
-        </section>
+        </section> 
       </>
     );
   }
