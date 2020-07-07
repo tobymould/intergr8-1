@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import styles from './ResolveTicketModal.module.scss'
 
 class ResolveTicketModal extends Component {
-  state = { open: false }
+  // state = { open: false }
   render() {
     return (
       <>
