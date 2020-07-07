@@ -14,24 +14,24 @@ class ChartPanel extends Component {
 
     return (
       <div className={styles.chartPanel}>
-          <article className="all-in-progess">
-            <h3>All in Progress</h3>
+               <article className="unassigned">
+            <h3>Unassigned</h3>
             <Chart
-              strokeDash={this.calculateStrokeDash(percentInProgressTickets)}
+              strokeDash={this.calculateStrokeDash(percentUnassignedTickets)}
             />
           </article>
           <article className="own-in-progress">
-            <h3>Own in Progress</h3>
+            <h3>My Progress</h3>
             <Chart
               strokeDash={this.calculateStrokeDash(
                 percentUserInProgressTickets
               )}
             />
-          </article>
-          <article className="unassigned">
-            <h3>Unassigned</h3>
+          </article>  
+          <article className="all-in-progess">
+            <h3>Outstanding</h3>
             <Chart
-              strokeDash={this.calculateStrokeDash(percentUnassignedTickets)}
+              strokeDash={this.calculateStrokeDash(percentInProgressTickets)}
             />
           </article>
       </div>
