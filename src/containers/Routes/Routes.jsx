@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import { Router } from '@reach/router';
+import React, { Component } from "react";
+import { Router } from "@reach/router";
 
 import Login from '../../components/LogInBox';
 import TicketView from '../../components/TicketView';

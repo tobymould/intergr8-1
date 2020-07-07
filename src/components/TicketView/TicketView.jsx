@@ -1,9 +1,17 @@
+<<<<<<< HEAD
 import React, { Component } from 'react';
 import styles from './TicketView.module.scss';
 import olly from './olly.jpg';
 import Message from './Message';
 import Button from '../Button'
 import ResolveTicketModal from './ResolveTicketModal';
+=======
+import React, { Component } from "react";
+import styles from "./TicketView.module.scss";
+import olly from "./olly.jpg";
+import Message from "./Message";
+import Button from "../Button"
+>>>>>>> dff8160d9175863ed1d5a7383fdb9c91b4d10a93
 
 class TicketView extends Component {
     constructor() {
@@ -12,6 +20,7 @@ class TicketView extends Component {
     }
     // Three priority levels: 1,2,3.
 
+<<<<<<< HEAD
     state = {
         priority: 1,
         manualOverRide: false,
@@ -20,6 +29,13 @@ class TicketView extends Component {
 
     toggleResolveModal = () => {
         this.setState({ isDisplayResolve: !this.state.isDisplayResolve })
+=======
+    componentDidMount() {
+      return this.setState({
+          priority: 3,
+          manualOverRide: false,
+      });
+>>>>>>> dff8160d9175863ed1d5a7383fdb9c91b4d10a93
     }
 
     hoursFromCreation = () => {
