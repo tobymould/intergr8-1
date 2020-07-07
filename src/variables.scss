@@ -40,6 +40,8 @@ $extra-small: 2px;
 /* Box shadows */
 
 $primary-shadow: 0 10px 20px $primary-black-transparent, 0 6px 6px $primary-black-opaque;
+$secondary-shadow: 0 3px 3px $primary-black-transparent, 0 1px 1px $primary-black-transparent;
+
 
 ////// Fonts //////
 $main-fonts: "Poppins", "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", "Oxygen", "Ubuntu", "Cantarell",

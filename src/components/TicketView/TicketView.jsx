@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
-import styles from './TicketView.module.scss';
-import olly from './olly.jpg';
-import Message from './Message';
-import Button from '../Button'
+import React, { Component } from "react";
+import styles from "./TicketView.module.scss";
+import olly from "./olly.jpg";
+import Message from "./Message";
+import Button from "../Button"
 
 class TicketView extends Component {
     constructor() {
@@ -11,11 +11,13 @@ class TicketView extends Component {
     }
     // Three priority levels: 1,2,3.
 
-    state = {
-        priority: 1,
-        manualOverRide: false,
-    }        
-    
+    componentDidMount() {
+      return this.setState({
+          priority: 3,
+          manualOverRide: false,
+      });
+    }
+
     hoursFromCreation = () => {
         const today = new Date();
         const milliseconds = Math.abs(today - this.creationDate);
