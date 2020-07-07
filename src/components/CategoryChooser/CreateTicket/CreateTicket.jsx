@@ -34,10 +34,5 @@ class CreateTicket extends Component {
     );
   }
 }
-<<<<<<< HEAD
-
-export default CreateTicket;
-=======
 export default CreateTicket;
 console.log(styles);
->>>>>>> dff8160d9175863ed1d5a7383fdb9c91b4d10a93

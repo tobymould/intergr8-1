@@ -5,8 +5,7 @@ import library from "./data/fa-library";
 import TicketingDashboard from "./components/TicketingDashboard/";
 
 function App() {
-  // return <Routes />;
-  return <TicketingDashboard />
+  return <Routes />;
 }
 
 export default App;
