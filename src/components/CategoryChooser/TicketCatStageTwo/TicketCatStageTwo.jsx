@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import styles from "./TicketCatStageTwo.module.scss";
-import Option from "../Option/Option";
+import Option from "../../../utilities/Option";
 
 class TicketCatStageTwo extends Component {
   state = {};
