@@ -34,13 +34,16 @@ article {
         justify-content: space-between;
 
         .resolveBtn {
-          background-color: darkgray;
+          background-color: maroon;
           color: white;
           height: 40px;
+          position: relative;
+          top: 60px;
+          border-radius: 5px;
 
           &:hover {
             cursor: pointer;
-            background-color: $light-grey;
+            background-color: rgb(199, 54, 54);
           }
 
         }
