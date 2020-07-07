@@ -29,7 +29,7 @@ class CreateTicket extends Component {
           <section>
             <form action="" className={styles.formCreateTicket}>
               <label For="mainCategory">Select category
-              <select name="" id="mainCategory">
+              <select name="" id="mainCategory" o>
                   <option value="L&D">L&D</option>
                   <option value="Payroll">Payroll</option>
                   <option value="General HR">General HR</option>
@@ -50,7 +50,7 @@ class CreateTicket extends Component {
                 </select>
               </label> */}
               <label For="">Description
-          <textarea placeholder="Type here..." onChange={this.props.updateInput}></textarea>
+          <textarea placeholder="Type here..." ></textarea>
               </label>
               <button className={styles.btnCreateTicket} onClick={this.toggleClicked}>Create Ticket</button>
             </form>

@@ -13,7 +13,7 @@ class TicketTile extends Component {
             <h3>Title</h3>
             <p>Category</p>
             <p>Employee Number</p>
-            <p>Reference no: {Math.random().toString(36).slice(2).substring(0, 6).toUpperCase()}</p>
+            <p>Ticket ID: {Math.random().toString(36).slice(2).substring(0, 6).toUpperCase()}</p>
           </div>
           <div>
             {/* <input type="checkbox"/> */}
