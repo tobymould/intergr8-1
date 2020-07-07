@@ -72,7 +72,7 @@ class TicketView extends Component {
 
     return (
       <>
-        <article>
+        <article className={styles.TicketView}>
           <section className={styles.ticketTop}>
             <div className={styles.ticketHeader}>
               <h2>Title</h2>

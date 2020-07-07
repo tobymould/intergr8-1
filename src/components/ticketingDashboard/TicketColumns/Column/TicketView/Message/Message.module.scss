@@ -10,10 +10,10 @@ $white: #FCFCFB;
 *{
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
-  color: $primary-black-opaque;
+//   color: $primary-black-opaque;
 
 }
-section {
+.message {
     display: flex;
     flex-direction: row;
     margin: $base-padding;

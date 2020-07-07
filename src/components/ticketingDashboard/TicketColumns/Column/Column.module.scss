@@ -9,6 +9,11 @@
     border-radius: 5px;
     overflow-y: auto;
     padding: $base-value;
+
+    section {
+      display: flex;
+      flex-direction: column;
+    }
 }
 
 .topOfColumn {

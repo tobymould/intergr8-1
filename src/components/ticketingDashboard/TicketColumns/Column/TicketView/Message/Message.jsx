@@ -50,7 +50,7 @@ class Message extends Component {
   }
 
   render() {
-    return <section>{this.typeOfMessage()}</section>;
+    return <section className={styles.message}>{this.typeOfMessage()}</section>;
   }
 }
 
