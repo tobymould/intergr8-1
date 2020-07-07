@@ -3,14 +3,14 @@ import { Router } from "@reach/router";
 
 import Login from "../../components/LogInBox";
 import Dashboard from "../../components/TicketingDashboard";
-// import TicketCatStage1 from '../../components/TicketCatstage1';
+import CategoryChooser from "../../components/CategoryChooser";
 
 class Routes extends Component {
   render() {
     return (
       <Router>
         <Dashboard path="dashboard" />
-        {/*<TicketCatStage1 path="ticket" /> */}
+        <CategoryChooser path="ticket" />
         <Login default />
       </Router>
     );

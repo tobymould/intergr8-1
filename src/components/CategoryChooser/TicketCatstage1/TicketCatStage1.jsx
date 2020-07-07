@@ -6,9 +6,11 @@ class TicketCatStage1 extends Component {
     super(props);
   }
   render() {
-    return <>
-      <p>ticketcatstage1</p>
-    </>;
+    return (
+      <>
+        <p>ticketcatstage1</p>
+      </>
+    );
   }
 }
 

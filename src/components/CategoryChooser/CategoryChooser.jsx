@@ -7,12 +7,14 @@ import CreateTicket from "./CreateTicket";
 
 class CategoryChooser extends Component {
   render() {
-    return <>
-      <TicketCatstage1/>
-      <TicketCatstage2/>
-      <TicketCatstage3/>
-      <CreateTicket/>
-    </>;
+    return (
+      <>
+        <TicketCatstage1 />
+        <TicketCatstage2 />
+        <TicketCatstage3 />
+        <CreateTicket />
+      </>
+    );
   }
 }
 
