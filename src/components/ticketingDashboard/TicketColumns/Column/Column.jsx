@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import styles from "./Column.module.scss";
 import DropDown from "../../../../utilities/DropDown";
-import TicketView from "./TicketView";
-import TicketTile from './TicketTile';
+// import TicketView from "./TicketView";
+import TicketTile from "./TicketTile";
 
 class Column extends Component {
   renderFilter() {

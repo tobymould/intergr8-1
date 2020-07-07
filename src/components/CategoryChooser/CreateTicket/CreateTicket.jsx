@@ -1,14 +1,13 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 import styles from "./CreateTicket.module.scss";
 // import TicketTile from '../../TicketingDashboard/TicketColumns/Column/TicketTile/TicketTile';
 
 class CreateTicket extends Component {
-
   // state = {
   //   beenClicked: false,
   // };
 
-  // toggleClicked = (e) => { 
+  // toggleClicked = (e) => {
   //   e.preventDefault();
   //   this.setState({ beenClicked: !this.state.beenClicked }
   //   )
@@ -28,8 +27,9 @@ class CreateTicket extends Component {
           </section>
           <section>
             <form action="" className={styles.formCreateTicket}>
-              <label For="mainCategory">Select category
-              <select name="" id="mainCategory" o>
+              <label For="mainCategory">
+                Select category
+                <select name="" id="mainCategory" o>
                   <option value="L&D">L&D</option>
                   <option value="Payroll">Payroll</option>
                   <option value="General HR">General HR</option>
@@ -37,8 +37,9 @@ class CreateTicket extends Component {
                   <option value="Health & Safety">Health & Safety</option>
                 </select>
               </label>
-              <label For="subCategory">Sub-category
-              <select name="" id="subCategory">
+              <label For="subCategory">
+                Sub-category
+                <select name="" id="subCategory">
                   <option value="CPD">CPD</option>
                   <option value="b">b</option>
                 </select>
@@ -49,10 +50,16 @@ class CreateTicket extends Component {
                   <option value="$$">$$</option>
                 </select>
               </label> */}
-              <label For="">Description
-          <textarea placeholder="Type here..." ></textarea>
+              <label For="">
+                Description
+                <textarea placeholder="Type here..."></textarea>
               </label>
-              <button className={styles.btnCreateTicket} onClick={this.toggleClicked}>Create Ticket</button>
+              <button
+                className={styles.btnCreateTicket}
+                onClick={this.toggleClicked}
+              >
+                Create Ticket
+              </button>
             </form>
           </section>
         </div>

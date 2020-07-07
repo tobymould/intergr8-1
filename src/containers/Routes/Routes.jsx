@@ -6,14 +6,12 @@ import Dashboard from "../../components/TicketingDashboard";
 import CategoryChooser from "../../components/CategoryChooser";
 
 class Routes extends Component {
-
   render() {
     return (
       <Router>
         <Dashboard path="dashboard" />
         <CategoryChooser path="ticket" />
         <Login default />
-
       </Router>
     );
   }

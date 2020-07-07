@@ -5,10 +5,15 @@ class Option extends Component {
   render() {
     return (
       <>
-        {this.props.queries.map((query) => (
-          <p className={styles.option}onClick={this.props.optionClick} >{query} </p>
+        {this.props.queries.map((query, index) => (
+          <p
+            key={index}
+            className={styles.option}
+            onClick={this.props.optionClick}
+          >
+            {query}
+          </p>
         ))}
-
       </>
     );
   }
