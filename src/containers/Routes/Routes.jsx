@@ -7,12 +7,12 @@ import CreateTicket from '../../components/CreateTicket';
 // import TicketCatStage1 from '../../components/TicketCatstage1';
 
 class Routes extends Component {
-  
+
   render() {
     return (
       <Router>
         <Login path="/" />
-        <CreateTicket path="CreateTicket" />
+        <CreateTicket path="create-ticket" />
         {/* <Dashboard path="dashboard" />
         <TicketCatStage1 path="ticket" /> */}
         <Login default />
