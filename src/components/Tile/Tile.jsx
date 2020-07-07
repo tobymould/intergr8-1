@@ -3,9 +3,8 @@ import styles from "./Tile.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 class Tile extends Component {
-  // tileData[type].queries    
   render() {
-    const { data, selector, handleClick } = this.props;
+    const { data, handleClick } = this.props;
     return (
       <article className={styles.tileStyles} onClick={handleClick}>
         <p className={styles.icon}>
