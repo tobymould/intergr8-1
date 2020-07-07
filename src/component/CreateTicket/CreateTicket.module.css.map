@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "CreateTicket.module.scss"
+    ],
+    "names": [],
+    "file": "CreateTicket.module.css"
+}
