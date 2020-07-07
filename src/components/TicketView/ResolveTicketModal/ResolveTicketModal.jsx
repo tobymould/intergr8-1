@@ -9,14 +9,14 @@ class ResolveTicketModal extends Component {
       <>
         <div className={styles.ResolveModal}>
           <div className={styles.ResolveContainer}>
-            <form class="modal-content" action="/action_page.php">
+            <form className={styles.ModalContent} action="/action_page.php">
               <h2>Provide a specific reason for marking this ticket 'Resolved':
               </h2>
               <textarea name="resolveReason" id="resolveReason" placeholder={"Type Here..."} className={styles.resolveReason}>
               </textarea>
-              <div class="clearfix">
-                <Button type="button" class="cancelbtn" text={"Resolve ticket"} />
-                <Button type="button" class="deletebtn" text={"Cancel"} />
+              <div className={styles.ButtonsWrapper}>
+                <span className={styles.ButtonWrapper}> <Button type="button" text={"Resolve ticket"} /></span>
+                <span className={styles.ButtonWrapper}><Button type="button" text={"Cancel"} /></span>
               </div>
             </form>
           </div>
