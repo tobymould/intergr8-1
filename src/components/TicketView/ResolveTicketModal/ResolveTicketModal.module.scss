@@ -22,13 +22,7 @@
     width: 60%;
     border: $medium solid $primary-yellow;
     background-color: transparent;
-    background-image: linear-gradient(
-      to bottom,
-      $white 0%,
-      $white 30%,
-      $white-transparent 35%,
-      $white-transparent 100%
-    );
+    background-image: linear-gradient($white-opaque 0%, $white-opaque 100%);
     background-size: cover;
   }
 
