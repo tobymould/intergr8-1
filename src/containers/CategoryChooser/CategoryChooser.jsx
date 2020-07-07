@@ -66,17 +66,23 @@ class CategoryChooser extends Component {
       selector,
     });
   };
+  optionClick = () => {
+    this.setState({
+      stage: this.state.stage + 1,
+    });
+
+  };
 
   getCategory() {
     if (this.state.stage === 0) {
       return <TicketCatStageOne data={this.tileData} tileClick={this.tileClick} />;
     } else if (this.state.stage === 1) {
-      return <TicketCatStageTwo queries={this.tileData[this.state.selector].queries} />;
+      return <TicketCatStageTwo queries={this.tileData[this.state.selector].queries} optionClick={this.optionClick}/>;
     } else if (this.state.stage === 2) {
       return <TicketCatStageThree />;
     }
   }
-
+  
   render() {
     console.log(this.state);
     return <>{this.getCategory()}</>;

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import styles from "./TicketCatStageTwo.module.scss";
-import Options from "../Options/Options/Options";
+import Option from "../Option/Option";
 
 class TicketCatStageTwo extends Component {
   state = {};
@@ -9,7 +9,7 @@ class TicketCatStageTwo extends Component {
     return (
       <div className={styles.ticketCat2}>
         <h1>Please select one of the following options...</h1>
-        <Options queries={this.props.queries} />
+        <Option queries={this.props.queries} optionClick={this.props.optionClick} />
       </div>
     );
   }
