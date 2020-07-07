@@ -1,2 +1,2 @@
-import TicketingDashboard from './TicketingDashboard.jsx';
+import TicketingDashboard from "./TicketingDashboard.jsx";
 export default TicketingDashboard;

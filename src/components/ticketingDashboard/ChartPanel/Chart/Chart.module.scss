@@ -8,7 +8,6 @@
   background: $primary-yellow;
 
   .innerCircle{
-    // filter: drop-shadow(inset 0 10px 20px $primary-black-opacity-two, 0 6px 6px $primary-black-opacity-two);
     fill: #F1F1F1;
   }
 
@@ -16,6 +15,5 @@
     fill: $primary-yellow;
     stroke: #c6bfaf;
     stroke-width: 120;
-    // stroke-dasharray: 0 377;
   }
 }
