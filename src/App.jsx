@@ -1,12 +1,10 @@
 import React from 'react';
-import './App.css';
-import TicketCatStage1 from './TicketCatStage1';
-import CreateTicket from './components/CreateTicket';
+import "./App.css";
+import Routes from "./containers/Routes/Routes";
+import "./data/fa-library";
 
 function App() {
-  return (
-    
-  );
+  return <Routes />;
 }
 
 export default App;

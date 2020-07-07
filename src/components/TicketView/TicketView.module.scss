@@ -1,0 +1,111 @@
+@import "../../variables.scss";
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+
+
+$base-padding: 10px;
+$dark-grey: #222222;
+$white: #FCFCFB;
+
+*{
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+
+}
+
+article {
+    display: flex;
+    flex-direction: column;
+    box-shadow: $primary-shadow;
+    justify-content: center;
+    width: 100%;
+    max-width: 700px;
+    max-height: 100vh;
+    margin: 0 auto;
+
+    // @media screen and (min-width: 900px) {
+    //   width: 900px;
+    // }
+
+    .ticketTop {
+        background-color: $primary-yellow;
+        padding: 0.5*$base-padding;
+        margin: 0;
+        display: flex;
+        justify-content: space-between;
+
+        .ticketId {
+          display: flex; 
+          flex-direction: column;
+          justify-content: space-evenly;
+          padding-right: 5px;
+
+          .circle {
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            box-shadow: $secondary-shadow;
+            border: 2px solid white;
+          }
+          
+          .green {
+              background-color: green;
+          }
+          
+          .amber {
+              background-color: orange;
+          }
+          
+          .red {
+              background-color: red;
+          }
+
+        }
+
+
+        
+    }
+
+    section {
+      display: flex;
+      flex-direction: row;
+      
+      div {
+      &.ticketHeader {
+        justify-content: space-around;
+        padding: 5px;
+        }
+       }
+    }
+
+
+    div.messageContainer {
+        overflow-y: scroll;
+        padding-left: 0.5*$base-padding;
+        padding-right: 0.5*$base-padding;
+
+
+        section {
+          &.writingMessage {
+            display: flex;
+            justify-content: space-between;
+
+            .messageContent {
+            width: 100%;
+              
+            textarea {
+                width: 100%;
+                height: 80px;
+                padding: $base-padding;
+                margin-bottom: $base-padding;
+                resize: none;
+                border: 1px solid $light-grey;
+                border-radius:4px;
+            }
+          }
+          }
+        }
+
+    }
+  }
+
+

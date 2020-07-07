@@ -1,0 +1,180 @@
+// @import "../../variables.scss";
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+@import "../../variables.scss";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: $main-fonts;
+}
+
+.primaryYellow {
+    color: $primary-yellow;
+}
+
+.logInPage {
+    @include wavy_background;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+}
+
+.logInWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60%;
+    width: 100vw;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.box {
+    @include standard_horizontal_layout;
+    width: 800px;
+    height: 430px;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px $primary-black-transparent, 0 6px 6px $primary-black-transparent;
+    background-color: transparent;
+}
+
+.welcomePanel {
+    @include standard_vertical_layout;
+    width: 50%;
+    height: 100%;
+    background-image: linear-gradient(to bottom, $primary-black-opaque 0%, $primary-black-opaque 100%),
+        url("../../assets/people.png");
+    background-size: cover;
+
+    .welcomeContent {
+        @include standard_vertical_layout;
+        height: 75%;
+        width: 100%;
+        padding: 10%;
+        color: $white;
+
+        h2 {
+            width: 100%;
+            text-align: left;
+            line-height: 1.5em;
+            padding-bottom: 25px;
+
+            span {
+                display: block;
+            }
+        }
+
+        p {
+            width: 100%;
+            text-align: justify;
+            line-height: 1.8em;
+
+            .bold {
+                font-weight: bold;
+            }
+        }
+    }
+}
+
+.loginPanel {
+    @include standard_vertical_layout;
+    background-image: linear-gradient(to bottom, $white 0%, $white 30%, $white-transparent 35%, $white-transparent 100%);
+    width: 50%;
+    height: 100%;
+    background-size: cover;
+
+    .logInContent {
+        @include standard_vertical_layout;
+        width: 75%;
+        height: 85%;
+
+        .logInTitle {
+            @include standard_vertical_layout;
+            justify-content: flex-start;
+            height: 25%;
+            width: 100%;
+
+            img {
+                max-height: 66px;
+            }
+        }
+    }
+}
+
+.formSection {
+    @include standard_vertical_layout;
+    padding: 5% 10%;
+    background-color: $secondary-black-opaque;
+    height: 65%;
+    width: 100%;
+    margin: 0 10%;
+    border-radius: 4px;
+
+    form {
+        @include standard_vertical_layout;
+        flex-wrap: wrap;
+        height: 100%;
+        width: 100%;
+    }
+}
+
+.inputWrapper {
+    border-radius: 2px;
+    width: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    background-color: $white;
+
+    label {
+        background-color: transparent;
+        height: 100%;
+        padding: 0 7px 0 7px;
+        border-radius: 2px 0px 0px 2px;
+        border: 1px solid $light-grey;
+        border-right: none;
+        display: flex;
+        align-items: center;
+        color: $dark-grey;
+        transition: color ease-in-out 1s, background-color ease-in-out 1s, border-color ease-in-out 1s;
+
+        svg {
+            height: 14px;
+        }
+    }
+}
+
+@media only screen and(max-width: 897px) {
+    .box {
+        width: 80vw;
+        height: 60vh;
+        min-height: 380px;
+    }
+
+    .logInWrapper {
+        width: 440px;
+    }
+
+    .loginPanel {
+        width: 100%;
+    }
+
+    .welcomePanel {
+        display: none;
+    }
+}
+
+@media all and(max-width: 568px) {
+    .box {
+        min-height: 300px;
+    }
+    .logInContent {
+        width: auto;
+        padding: 0;
+    }
+}
