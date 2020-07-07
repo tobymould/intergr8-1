@@ -6,8 +6,7 @@ class TicketCatStageOne extends Component {
   state = {};
   render() {
     return (
-      <div>
-        <h1>What is your query regarding?</h1>
+      <div className={styles.stageOne}>
         <section className={styles.tileParent}>
           {Object.entries(this.props.data).map((data) => {
             const selector = data[0];

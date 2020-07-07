@@ -6,7 +6,7 @@ class Option extends Component {
     return (
       <>
         {this.props.queries.map((query) => (
-          <p onClick={this.props.optionClick} >{query} </p>
+          <p className={styles.option}onClick={this.props.optionClick} >{query} </p>
         ))}
 
       </>

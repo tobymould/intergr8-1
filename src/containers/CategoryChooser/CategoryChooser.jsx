@@ -1,9 +1,8 @@
 import React, { Component } from "react";
-// import './CategoryChooser.css';
+import styles from'./CategoryChooser.module.scss';
 import TicketCatStageOne from "../../components/TicketCatStageOne";
 import TicketCatStageTwo from "../../components/TicketCatStageTwo";
 import TicketCatStageThree from "../../components/TicketCatStageThree";
-
 
 class CategoryChooser extends Component {
   tileData = {
@@ -63,29 +62,45 @@ class CategoryChooser extends Component {
   tileClick = (selector) => {
     this.setState({
       stage: this.state.stage + 1,
-      selector,
+      selector
     });
   };
   optionClick = () => {
     this.setState({
       stage: this.state.stage + 1,
     });
-
   };
 
   getCategory() {
     if (this.state.stage === 0) {
-      return <TicketCatStageOne data={this.tileData} tileClick={this.tileClick} />;
+      return (
+        <>
+          <h1>What is your query regarding?</h1>
+          <TicketCatStageOne data={this.tileData} tileClick={this.tileClick} />
+        </>
+      );
     } else if (this.state.stage === 1) {
-      return <TicketCatStageTwo queries={this.tileData[this.state.selector].queries} optionClick={this.optionClick}/>;
+      return (
+        <>
+        <h1>Please select one of the following options...</h1>
+        <TicketCatStageTwo
+          queries={this.tileData[this.state.selector].queries}
+          optionClick={this.optionClick}
+        />
+        </>
+      );
     } else if (this.state.stage === 2) {
       return <TicketCatStageThree />;
     }
   }
-  
+
   render() {
     console.log(this.state);
-    return <>{this.getCategory()}</>;
+    return (
+      <section className={styles.categoryChooser}>
+        {this.getCategory()}
+      </section>
+    );
   }
 }
 export default CategoryChooser;

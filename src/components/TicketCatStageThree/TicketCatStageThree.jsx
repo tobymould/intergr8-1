@@ -6,9 +6,9 @@ class TicketCatStageThree extends Component {
   state = {};
   render() {
     return (
-      <>
+      <div className={styles.stageThree}>
         <Checkout />
-      </>
+      </div>
     );
   }
 }
