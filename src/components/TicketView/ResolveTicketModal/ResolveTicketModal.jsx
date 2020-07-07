@@ -7,18 +7,16 @@ class ResolveTicketModal extends Component {
     return (
       <>
         <div className={styles.ResolveModal}>
-          <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-          <form class="modal-content" action="/action_page.php">
-            <div class="container">
-              <h1>Delete Account</h1>
-              <p>Are you sure you want to delete your account?</p>
-
-              <div class="clearfix">
-                <button type="button" class="cancelbtn">Cancel</button>
-                <button type="button" class="deletebtn">Delete</button>
-              </div>
+          <div className={styles.ResolveContainer}>
+            <form class="modal-content" action="/action_page.php">
+                <h2>Provide a specific reason for marking this ticket 'Resolved':</h2>
+                <textarea name="" id="" placeholder={"Type Here..."}></textarea>
+                <div class="clearfix">
+                  <button type="button" class="cancelbtn">Resolve</button>
+                  <button type="button" class="deletebtn">Cancel</button>
+                </div>
+            </form>
             </div>
-          </form>
         </div>
       </>
     );
