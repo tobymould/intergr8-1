@@ -1,8 +1,7 @@
 @import "../../../variables.scss";
 
 .ResolveModal {
-  @include standard_vertical_layout; 
-  justify-content: center;
+  @include standard_vertical_layout;
   // display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
@@ -11,19 +10,41 @@
   width: 100%; /* Full width */
   height: 100%; /* Full height */
   overflow: auto; /* Enable scroll if needed */
-  background-color: $primary-black-opaque;
+  backdrop-filter: blur(10px);
+  background-color: $primary-black-transparent;
   padding-top: 50px;
 
   .ResolveContainer {
-    border: 2px solid white;
+    @include standard_vertical_layout;
+    height: 40%;
+    width: 60%;
+    border: 3px solid $primary-yellow;
     background-color: white;
   }
-  .modal-content {
-    @include standard_vertical_layout; 
-    background-color: #fefefe;
-    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
-    border: 1px solid #888;
-    width: 80%; /* Could be more or less, depending on screen size */
-  }
 
+  .ModalContent {
+    @include standard_vertical_layout;
+    justify-content: center;
+    background-color: #fefefe;
+    border: 1px solid $secondary-yellow;
+    width: 80%;
+    height: 90%;
+
+    .resolveReason {
+      width: 80%;
+      height: 200px;
+      background-color: $secondary-black;
+    }
+
+    .ButtonsWrapper {
+      display: flex;
+      flex-direction: horizontal;
+      align-items: space-between;
+    }
+
+    .ButtonWrapper {
+      width: 200px;
+      padding: 5%;
+    }
+  }
 }
