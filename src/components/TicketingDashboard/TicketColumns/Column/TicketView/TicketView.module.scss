@@ -13,6 +13,7 @@ $white: #FCFCFB;
 }
 
 .TicketView {
+    position: relative;
     display: flex;
     flex-direction: column;
     box-shadow: $primary-shadow;

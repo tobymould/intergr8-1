@@ -8,20 +8,33 @@
     .modalStyle{
 
         .modalPopupStyle{
-            position: relative;
-            background: rgba(255, 255, 255,0.5);
+            position: absolute;
+            left: 148px;
+            top: 77px;
+            z-index: 2;
+            background: #f7f7f7;
             padding: 10px;
-            border-radius: 10px;
+            border-radius: 4px;
+            width: 271px;
+            border: 1px solid grey;
+            box-shadow: 0 8px 16px -4px rgba(9,30,66,.25), 0 0 0 1px rgba(9,30,66,.08);
+            height: 175px;
 
             input{
-                margin-bottom: 10px;
-                width: 125px;
+                margin: 2px 0 12px 0;
+                width: 92%;
+                padding: 4px 8px;
             }
 
             span {
                 position: absolute;
                 top: 5px;
                 right: 7.5px;
+            }
+
+            img {
+                margin-right: 8px;
+                border: 1px solid #f1f1f1;
             }
         }
     }
@@ -49,8 +62,8 @@
     }
 
     img {
-        height: 35px;
-        width: 35px;
+        height: 38px;
+        width: 38px;
         object-fit: cover;
         border-radius: 50%;
     }
