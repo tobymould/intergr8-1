@@ -1,0 +1,14 @@
+@import "../../variables.scss";
+
+
+.categoryChooser {
+  h1 {
+    text-align: center;
+    padding-top: 150px;
+    font-size: $xlarge;
+  }
+  
+  background-color: $primary-yellow;
+  height: 100vh;
+  
+}

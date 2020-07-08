@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import styles from "./LogInBox.module.scss";
-import Button from "../Button";
+import Button from "../../utilities/Button";
 import logo from "../../assets/intergr8-logo.jpg";
-import InputBox from "../InputBox";
+import InputBox from "../../utilities/InputBox";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 class LogInBox extends Component {
