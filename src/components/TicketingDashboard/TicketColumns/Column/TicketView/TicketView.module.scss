@@ -22,6 +22,7 @@ $white: #fcfcfb;
   // @media screen and (min-width: 900px) {
   //   width: 900px;
   // }
+
   .ticketTop {
     background-color: $primary-yellow;
     padding: 0.5 * $base-padding;
@@ -29,27 +30,15 @@ $white: #fcfcfb;
     display: flex;
     justify-content: space-between;
 
-    .resolveBtn {
-      padding: $base-padding;
-      border: none;
-      background-color: $primary-black;
-      color: white;
-      height: 40px;
-      position: relative;
-      top: 60px;
-      border-radius: 5px;
-
-      &:hover {
-        cursor: pointer;
-        background-color: $secondary-black-opaque;
-      }
+    .ticketHeader {
+      justify-content: space-around;
+      padding: 5px;
     }
-
     .ticketId {
       display: flex;
       flex-direction: column;
       justify-content: space-evenly;
-      padding-right: 5px;
+      align-items: center;
 
       .circle {
         border-radius: 50%;
@@ -71,23 +60,28 @@ $white: #fcfcfb;
         background-color: red;
       }
     }
-  }
 
-  section {
-    display: flex;
-    flex-direction: row;
+    .resolveBtn {
+      padding: $base-padding;
+      border: none;
+      background-color: $primary-black;
+      color: white;
+      height: 40px;
+      position: relative;
+      top: 60px;
+      border-radius: 5px;
 
-    div {
-      &.ticketHeader {
-        justify-content: space-around;
-        padding: 5px;
+      &:hover {
+        cursor: pointer;
+        background-color: $secondary-black-opaque;
       }
     }
   }
 
-  div.messageContainer {
+  .messageContainer {
     overflow-y: scroll;
-    padding: 0.5 * $base-padding;
+    padding-left: 0.5 * $base-padding;
+    padding-right: 0.5 * $base-padding;
 
     .resolvedTicketText {
       box-shadow: 0 3px 3px $primary-black-transparent, 0 1px 1px $primary-black-transparent;
@@ -100,22 +94,29 @@ $white: #fcfcfb;
         color: green;
       }
     }
-    section {
-      &.writingMessage {
-        display: flex;
-        justify-content: space-between;
 
-        .messageContent {
+    .writingMessage {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      background-color: black;
+      padding: $base-padding;
+
+      .messageContent {
+        textarea {
           width: 100%;
-          textarea {
-            width: 100%;
-            height: 80px;
-            padding: $base-padding;
-            margin-bottom: $base-padding;
-            resize: none;
-            border: 1px solid $light-grey;
-            border-radius: 4px;
-          }
+          height: 80px;
+          padding: $base-padding;
+          margin-bottom: $base-padding;
+          resize: none;
+          border: 1px solid $light-grey;
+          border-radius: 4px;
         }
       }
     }

@@ -98,13 +98,13 @@ class TicketView extends Component {
                         <Message userType={"Employee"} />
                         <Message userType={"HR"} />
                         {displayResolveTicket}
-                        <section className={styles.writingMessage}>
-                            <div className={styles.messageContent}>
-                                <textarea />
-                                <Button text={"Send"} />
-                            </div>
-                        </section>
                     </div>
+                    <section className={styles.writingMessage}>
+                        <div className={styles.messageContent}>
+                            <textarea />
+                            <Button text={"Send"} />
+                        </div>
+                    </section>
                 </article>
                 {displayResolve}
             </>
