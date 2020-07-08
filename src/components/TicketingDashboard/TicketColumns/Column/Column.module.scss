@@ -1,0 +1,28 @@
+@import "../../../../variables.scss";
+
+.TicketColumn {
+    height: 500px;
+    width: 100%;
+    padding: 5px;
+    margin: 10px;
+    box-shadow: $primary-shadow;
+    border-radius: 5px;
+    overflow-y: auto;
+    padding: $base-value;
+
+    section {
+      display: flex;
+      flex-direction: column;
+    }
+}
+
+.topOfColumn {
+  // height: 10%;
+  h3 {
+    padding: 0.5*$base-value;
+  }
+  select {
+    padding: 0.1*$base-value;
+    margin-bottom: $base-value;
+  }
+}
