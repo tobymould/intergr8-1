@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Router } from "@reach/router";
 
-import Login from "../../components/LogInBox";
+import LogInBox from "../../components/LogInBox";
 import TicketingDashboard from "../../components/TicketingDashboard";
 import CategoryChooser from "../../components/CategoryChooser";
 
@@ -11,7 +11,7 @@ class Routes extends Component {
       <Router>
         <TicketingDashboard path="dashboard" />
         <CategoryChooser path="ticket" />
-        <Login default />
+        <LogInBox default />
       </Router>
     );
   }
