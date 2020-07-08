@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import styles from "./Column.module.scss";
 import DropDown from "../../../DropDown";
+import CreateTicket from "../../../../component/CreateTicket";
 
 class Column extends Component {
   renderFilter() {
@@ -21,6 +22,8 @@ class Column extends Component {
           {this.renderFilter()}
         </div>
         <section title={this.props.title}>
+          <p>Placeholder text</p>
+          <CreateTicket/>
           {/* Ticketview goes in here */}
         </section>
       </article>
