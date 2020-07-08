@@ -11,6 +11,8 @@ $white: #fcfcfb;
 }
 
 .TicketView {
+  border-radius: $medium;
+  overflow: hidden;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -70,7 +72,7 @@ $white: #fcfcfb;
       background-color: $primary-black;
       color: white;
       height: 40px;
-
+      outline: none;
       border-radius: 5px;
 
       &:hover {
@@ -104,12 +106,14 @@ $white: #fcfcfb;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    background-color: $secondary-black-opaque;
+    background-color: $light-grey;
     padding: $base-padding;
 
     .messageContent {
       width: 100%;
+
       textarea {
+        outline: none;
         width: 100%;
         height: 80px;
         padding: $base-padding;
