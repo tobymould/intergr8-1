@@ -5,8 +5,8 @@ import "./data/fa-library";
 import CategoryChooser from "./components/CategoryChooser";
 
 function App() {
-  // return <Routes />;
-  return <CategoryChooser />;
+  return <Routes />;
+  // return <CategoryChooser />;
 }
 
 export default App;
