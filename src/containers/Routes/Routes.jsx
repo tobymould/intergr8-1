@@ -1,18 +1,17 @@
-import React, { Component } from 'react';
-import { Router } from '@reach/router';
+import React, { Component } from "react";
+import { Router } from "@reach/router";
 
-import Login from '../../components/LogInBox';
-// import Dashboard from '../../components/ticketingDashboard';
-// import TicketCatStage1 from '../../components/TicketCatstage1';
-// import NotFound from '../../components/NotFound';
+import LogInBox from "../../components/LogInBox";
+import TicketingDashboard from "../../components/TicketingDashboard";
+import CategoryChooser from "../../components/CategoryChooser";
 
 class Routes extends Component {
   render() {
     return (
       <Router>
-        <Login path="/" />
-        {/* <Dashboard path="dashboard" />
-        <TicketCatStage1 path="ticketcategory1" /> */}
+        <TicketingDashboard path="dashboard" />
+        <CategoryChooser path="ticket" />
+        <LogInBox default />
       </Router>
     );
   }
