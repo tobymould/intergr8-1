@@ -6,7 +6,6 @@ import "./data/fa-library";
 function App() {
   return (
   <>
-  <NavBar/>
   <Routes />
   </>
   )
