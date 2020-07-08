@@ -26,6 +26,9 @@ class Column extends Component {
           <section title={this.props.title}>
             <TicketTile />
             <TicketTile />
+            <TicketTile />
+            <TicketTile />
+            <TicketTile />
           </section>
         </article>
         {/* <TicketView /> */}
