@@ -30,6 +30,8 @@ $white: #fcfcfb;
     justify-content: space-between;
 
     .resolveBtn {
+      padding: $base-padding;
+      border: none;
       background-color: maroon;
       color: white;
       height: 40px;
@@ -102,6 +104,7 @@ $white: #fcfcfb;
       &.writingMessage {
         display: flex;
         justify-content: space-between;
+
         .messageContent {
           width: 100%;
           textarea {
