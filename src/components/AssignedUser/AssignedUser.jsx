@@ -1,16 +1,37 @@
 import React, { Component } from "react";
 import styles from "./AssignedUser.module.scss";
-import * as dataFile from "../../data/app-data"
+import * as dataFile from "../../data/app-data";
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 class AssignedUser extends Component {
   state = {
     assignedPerson: "",
-    appData: dataFile
+    appData: dataFile,
+    modalPopup: false
   }
 
-  handleChange = (event) => {
-    console.log(event.target.value);
-    this.setState({assignedPerson: event.target.value});
+  displayModalPopup = (event) => {
+    this.setState({modalPopup: !this.state.modalPopup})
+  }
+
+  renderModalPopup = () => {
+    if (this.state.modalPopup === true){
+      return (
+        <div className={styles.modalPopupStyle}> 
+          <input type="text" placeholder="Search..."/>
+          <div>
+            {dataFile.people.map(person => <img onClick={this.setAssignedPerson} id={person.name} key={person.id} src={person.image} alt={person.name}/> )}
+          </div>
+          <span onClick={this.displayModalPopup} ><FontAwesomeIcon icon="times"/></span>
+        </div>
+      )
+    } 
+  } 
+
+
+  setAssignedPerson = (event) => {
+    this.setState({assignedPerson: event.target.id});
   }
 
   getAssignedAvatar = () => {
@@ -20,26 +41,37 @@ class AssignedUser extends Component {
       }
     })
   } 
-  displayOptions = () => {
-    return <select value={this.state.value} onChange={this.handleChange}>
-      {dataFile.people.map(person => {
-        return <option value={person.name}>{person.name}</option>
-      })}
-    </select>
-  }
+
+  // displayOptions = () => {
+  //   return <select value={this.state.value} onChange={this.handleChange}>
+  //     {dataFile.people.map(person => {
+  //       return <option value={person.name}>{person.name}</option>
+  //     })}
+  //   </select>
+  // }
+
+
+
 
   render() {
       return (
         <div className={styles.assignedUserWrapper}>
-          <label>
-            <span>Assign person: </span>
-            {this.displayOptions()}
-          </label>
-        <div className={styles.assignedPerson}>
-          <span>Person Assigned: </span>
-          {this.getAssignedAvatar()}
-          {this.state.assignedPerson}
-        </div>
+          {/* Assign Person Button (that creates the Modal)*/}
+          <div className={styles.modalStyle}>
+            <span>Assigned person: </span>
+            <span onClick={this.displayModalPopup}>
+              <FontAwesomeIcon icon="plus-circle"/>
+            </span>
+            {this.renderModalPopup()}
+          </div>
+
+          {/* Presents the SELECTED Person on the page */}
+          <div className={styles.assignedPerson}>
+            <div>
+              {this.getAssignedAvatar()}
+              <div>{this.state.assignedPerson} </div>
+            </div>
+          </div>
       </div>
       );
     }
