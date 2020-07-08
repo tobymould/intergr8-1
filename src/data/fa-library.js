@@ -12,6 +12,5 @@ export default library.add(
   faPoundSign,
   faNetworkWired,
   faUsers,
-  faMedkit,
-  
+  faMedkit
 );

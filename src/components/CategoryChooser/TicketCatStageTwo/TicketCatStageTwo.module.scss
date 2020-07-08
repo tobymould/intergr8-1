@@ -1,0 +1,15 @@
+@import "../../../variables.scss";
+
+
+
+.ticketCat2{
+  h1 {
+    padding: 20px;
+  }
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
