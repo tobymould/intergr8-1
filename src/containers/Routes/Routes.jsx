@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Router } from "@reach/router";
 
 import LogInBox from "../../components/LogInBox";
-import TicketingDashboard from "../../components/TicketingDashboard";
+import TicketingDashboard from "../../components/ticketingDashboard/TicketingDashboard";
 import CategoryChooser from "../../components/CategoryChooser";
 
 class Routes extends Component {
