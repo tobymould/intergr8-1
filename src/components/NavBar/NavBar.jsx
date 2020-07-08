@@ -1,9 +1,8 @@
-import React, { Component } from 'react';
-import styles from './NavBar.module.scss';
-import { Router, Link } from '@reach/router';
+import React, { Component } from "react";
+import styles from "./NavBar.module.scss";
+import { Router, Link } from "@reach/router";
 
 class NavBar extends Component {
-  state = {};
   render() {
     return (
       <>
@@ -27,3 +26,4 @@ class NavBar extends Component {
 }
 
 export default NavBar;
+console.log(styles, Router);

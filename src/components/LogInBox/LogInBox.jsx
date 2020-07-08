@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import styles from "./LogInBox.module.scss";
-import Button from "../Button"
+import Button from "../../utilities/Button";
 import logo from "../../assets/intergr8-logo.jpg";
-import InputBox from "../InputBox";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import InputBox from "../../utilities/InputBox";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 class LogInBox extends Component {
   render() {
@@ -19,13 +19,23 @@ class LogInBox extends Component {
                 <div className={styles.formSection}>
                   <form>
                     <div className={styles.inputWrapper}>
-                      <InputBox id="email" type="email" name="email" placeholder="Email" />
+                      <InputBox
+                        id="email"
+                        type="email"
+                        name="email"
+                        placeholder="Email"
+                      />
                       <label htmlFor="email">
                         <FontAwesomeIcon icon="user" />
                       </label>
                     </div>
                     <div className={styles.inputWrapper}>
-                      <InputBox id="password" type="password" name="password" placeholder="Password" />
+                      <InputBox
+                        id="password"
+                        type="password"
+                        name="password"
+                        placeholder="Password"
+                      />
                       <label htmlFor="password">
                         <FontAwesomeIcon icon="lock" />
                       </label>
