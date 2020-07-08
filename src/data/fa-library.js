@@ -10,6 +10,8 @@ import {
   faHeart,
   faGlobe,
   faBookOpen,
+  faPlusCircle,
+  faTimes
 } from "@fortawesome/free-solid-svg-icons";
 
 export default library.add(
@@ -21,5 +23,7 @@ export default library.add(
   faHeart,
   faGlobe,
   faBookOpen,
-  faYoutube
+  faYoutube,
+  faPlusCircle,
+  faTimes
 );
