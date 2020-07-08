@@ -8,7 +8,7 @@ class TicketColumns extends Component {
       <section className={styles.TicketColumns}>
         <Column filter={true} title={"Tickets to assign"} />
         <Column filter={true} title={"My tickets"} />
-        <Column filter={false} title={"Outstanding"} />
+        <Column filter={true} title={"Outstanding"} />
       </section>
     );
   }
