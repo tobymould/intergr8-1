@@ -7,12 +7,15 @@ import CategoryChooser from "../../components/CategoryChooser";
 
 class Routes extends Component {
   render() {
+
     return (
-      <Router>
-        <TicketingDashboard path="dashboard" />
-        <CategoryChooser path="ticket" />
-        <LogInBox default />
-      </Router>
+      <>
+        <Router>
+          <TicketingDashboard path="dashboard" />
+          <CategoryChooser path="ticket" />
+          <LogInBox default />
+        </Router>
+      </>
     );
   }
 }

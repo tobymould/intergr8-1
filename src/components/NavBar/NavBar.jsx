@@ -6,7 +6,7 @@ class NavBar extends Component {
   render() {
     return (
       <>
-        <nav>
+        <nav className={styles.navbar}>
           <h1>Nav Bar</h1>
           <div className="menu">
             <Link to="/">

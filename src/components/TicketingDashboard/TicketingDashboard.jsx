@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import mockData from "../../data/mockData";
 import ChartPanel from "./ChartPanel";
+import NavBar from "../../components/NavBar";
 
 class TicketingDashboard extends Component {
   state = {
@@ -56,11 +57,14 @@ class TicketingDashboard extends Component {
     } = this.state;
 
     return (
-      <ChartPanel
-        percentUnassignedTickets={percentUnassignedTickets}
-        percentInProgressTickets={percentInProgressTickets}
-        percentUserInProgressTickets={percentUserInProgressTickets}
-      />
+      <>
+        <NavBar />
+        <ChartPanel
+          percentUnassignedTickets={percentUnassignedTickets}
+          percentInProgressTickets={percentInProgressTickets}
+          percentUserInProgressTickets={percentUserInProgressTickets}
+        />
+      </>
     );
   }
 }
