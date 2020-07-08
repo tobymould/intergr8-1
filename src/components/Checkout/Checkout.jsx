@@ -7,7 +7,7 @@ class Checkout extends Component {
     return ( 
         <>
         <button className={styles.button}>FAQs</button>
-        <button>Create Ticket</button>
+        <button className={styles.button}>Create Ticket</button>
         </>
      );
   }
