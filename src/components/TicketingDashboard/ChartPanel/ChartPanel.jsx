@@ -18,6 +18,7 @@ class ChartPanel extends Component {
             <h3>Unassigned</h3>
             <Chart
               strokeDash={this.calculateStrokeDash(percentUnassignedTickets)}
+              percent={percentUnassignedTickets}
             />
           </article>
           <article className="own-in-progress">
@@ -26,12 +27,14 @@ class ChartPanel extends Component {
               strokeDash={this.calculateStrokeDash(
                 percentUserInProgressTickets
               )}
+              percent={percentUserInProgressTickets}
             />
           </article>  
           <article className="all-in-progess">
             <h3>Outstanding</h3>
             <Chart
               strokeDash={this.calculateStrokeDash(percentInProgressTickets)}
+              percent={percentInProgressTickets}
             />
           </article>
       </div>
