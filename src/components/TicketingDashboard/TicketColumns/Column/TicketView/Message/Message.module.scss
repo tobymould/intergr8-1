@@ -3,18 +3,12 @@
 
 $base-padding: 10px;
 $dark-grey: #222222;
-$yellow: #F2B432;
-$white: #FCFCFB;
-
-*{
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
-//   color: $primary-black-opaque;
+$yellow: #f2b432;
+$white: #fcfcfb;
 
 * {
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
-    color: $primary-black-opaque;
 }
 .message {
     display: flex;
