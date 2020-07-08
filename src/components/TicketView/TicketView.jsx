@@ -16,6 +16,17 @@ class TicketView extends Component {
         priority: 1,
         manualOverRide: false,
         isDisplayResolve: false,
+        inputResolve: '',
+    }
+
+    updateInputResolve = (event) => {
+        this.setState({inputResolve: event.target.value})
+        console.log(this.state.inputResolve);
+    }
+
+    handleResolve = (event) => {
+        console.log(this.state.inputResolve);
+        event.preventDefault();
     }
 
     toggleResolveModal = () => {
@@ -69,8 +80,10 @@ class TicketView extends Component {
     }
 
     render() {
-        const displayResolve = this.state.isDisplayResolve ? (<ResolveTicketModal />) : null;
+        const displayResolve = this.state.isDisplayResolve ? (<ResolveTicketModal updateInputResolve={this.updateInputResolve} handleResolve={this.handleResolve}/>) : null;
         this.automaticUpdateState()
+        const displayResolveText = this.state.inputResolve;
+        console.log(displayResolveText);
 
         return (
             <>
@@ -97,7 +110,6 @@ class TicketView extends Component {
                         <Message userType={"HR"} />
                         <Message userType={"Employee"} />
                         <Message userType={"HR"} />
-
                         <section className={styles.writingMessage}>
                             <div className={styles.messageContent}>
                                 <textarea />
@@ -107,6 +119,7 @@ class TicketView extends Component {
                     </div>
                 </article>
                 {displayResolve}
+                {displayResolveText}
             </>
         )
     }
