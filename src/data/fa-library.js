@@ -6,7 +6,7 @@ import {
   faUsers,
   faMedkit,
   faPlusCircle,
-  faTimes
+  faTimes,
 } from "@fortawesome/free-solid-svg-icons";
 
 export default library.add(

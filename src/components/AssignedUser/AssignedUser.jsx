@@ -8,9 +8,9 @@ class AssignedUser extends Component {
   state = {
     assignedPerson: "",
     appData: dataFile,
-    modalPopup: false
-  }
-
+    modalPopup: false,
+  };
+  
   displayModalPopup = (event) => {
     this.setState({modalPopup: !this.state.modalPopup})
   }
