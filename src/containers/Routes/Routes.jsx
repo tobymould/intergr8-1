@@ -12,7 +12,7 @@ class Routes extends Component {
       <Router>
         <Login path="/" />
         {/* <Dashboard path="dashboard" />
-        <TicketCatStage1 path="ticketcategory1" /> */}
+        <CategoryChooser path="CategoryChooser" /> */}
       </Router>
     );
   }
