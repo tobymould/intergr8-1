@@ -12,7 +12,7 @@ class Routes extends Component {
       <Router>
         <TicketingDashboard path="dashboard" />
         <CategoryChooser path="ticket" />
-        <TicketView path="view-ticket" />
+        <TicketView path="viewticket" />
         <LogInBox default />
       </Router>
     );

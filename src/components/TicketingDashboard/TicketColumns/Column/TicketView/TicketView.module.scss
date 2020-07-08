@@ -12,8 +12,6 @@ $white: #fcfcfb;
 
 .TicketView {
   display: flex;
-  justify-content: space-between;
-  display: flex;
   flex-direction: column;
   box-shadow: $primary-shadow;
   justify-content: center;
@@ -21,15 +19,15 @@ $white: #fcfcfb;
   max-width: 700px;
   max-height: 100vh;
   margin: 0 auto;
-
   // @media screen and (min-width: 900px) {
   //   width: 900px;
   // }
-
   .ticketTop {
     background-color: $primary-yellow;
     padding: 0.5 * $base-padding;
     margin: 0;
+    display: flex;
+    justify-content: space-between;
 
     .resolveBtn {
       background-color: maroon;
@@ -90,14 +88,23 @@ $white: #fcfcfb;
     padding-left: 0.5 * $base-padding;
     padding-right: 0.5 * $base-padding;
 
+    .resolvedTicketText {
+      box-shadow: 0 3px 3px $primary-black-transparent, 0 1px 1px $primary-black-transparent;
+      border-radius: 6px;
+      width: 80%;
+      padding: $base-padding;
+      font-size: $base-value * 1.2;
+      margin: 8px;
+      span {
+        color: green;
+      }
+    }
     section {
       &.writingMessage {
         display: flex;
         justify-content: space-between;
-
         .messageContent {
           width: 100%;
-
           textarea {
             width: 100%;
             height: 80px;
