@@ -16,5 +16,5 @@ export default library.add(
   faUserFriends,
   faLock,
   faMedkit,
-  faBars,
+  faBars
 );

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import styles from "./NavBar.module.scss";
-import { Router, Link } from "@reach/router";
+import { Link } from "@reach/router";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 

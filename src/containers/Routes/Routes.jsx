@@ -7,10 +7,9 @@ import CategoryChooser from "../../components/CategoryChooser";
 import CreateTicket from "../../components/CategoryChooser/CreateTicket";
 import TicketView from "../../components/TicketingDashboard/TicketColumns/Column/TicketView";
 
- class Routes extends Component {
-   render() {
+class Routes extends Component {
+  render() {
     return (
-   
       <Router>
         <TicketingDashboard path="dashboard" />
         <CategoryChooser path="ticket" />
@@ -19,7 +18,7 @@ import TicketView from "../../components/TicketingDashboard/TicketColumns/Column
         <LogInBox default />
       </Router>
     );
-  }  
+  }
 }
 
 export default Routes;
