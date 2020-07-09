@@ -19,7 +19,7 @@
   transition: all 0.3s ease 0s;
   cursor: pointer;
   outline: none;
-  border-radius: $large;
+  border-radius: $medium;
   // border: 2px solid $primary-black;
   &:hover {
     cursor: pointer;
@@ -36,7 +36,7 @@
   }
   .catTitle {
     text-align: center;
-    font-size: $large;
+    font-size: $standard;
     color: $dark-grey;
   }
 
