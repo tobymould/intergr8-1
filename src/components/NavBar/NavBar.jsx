@@ -11,7 +11,10 @@ class NavBar extends Component {
 
   get navItems() {
     return [
-      { title: '[Create Ticket]',
+      { title: '[View Ticket]',
+        link: "/viewticket"
+      },{
+        title: '[Create Ticket]',
         link: "/createticket"
       },{
         title: 'Dashboard',
@@ -58,4 +61,3 @@ renderNav = () => this.navItems.map(item =>  <Link to={item.link}><h3>{item.titl
 }
 
 export default NavBar;
-console.log(styles, Router);
