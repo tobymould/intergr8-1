@@ -1,20 +1,15 @@
 @import "../../variables.scss";
 
-body {
+.categoryChooser {
   background-image: url(../../assets/Frame3.png);
   background-repeat: no-repeat;
   background-size: cover;
+  height: 100vh;
 
   @media screen and (max-width: 800px) {
     background-image: none;
     background-color: $primary-yellow;
   }
-}
-.categoryChooser {
-  h1 {
-
-  }
-  
   h2 {
     text-align: center;
     padding-top: 150px;
