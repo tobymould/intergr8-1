@@ -1,14 +1,48 @@
 @import "../../variables.scss";
 
 .navbar {
-    background-color: $primary-yellow;
-    width: 100%;
-    height: 8 * $base-value;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  h1, div {
+  background-color: $primary-yellow;
+  width: 100%;
+  height: 8 * $base-value;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  h1 {
     padding: 3 * $base-value;
   }
+
+  div {
+      display: flex;
+      a {
+        color: $primary-black;
+        padding: $base-value;
+        margin-left: $base-value;
+        margin-right: $base-value;
+        text-decoration: none;
+        &:hover {
+          background-color: $white-transparent;
+          transition: 0.5s;
+          border-radius: $base-value;
+        }
+        &:visited {
+          color: $primary-black;
+        }
+      }
+      h3 {
+        &.burger {
+          // background-color:red;
+          font-size: 1.2em;
+          padding: $base-value;
+          margin-right: 2*$base-value;
+          &:hover {
+            background-color: $white-transparent; // change to different animation 
+            transition: 0.5s;
+            border-radius: $base-value;
+          }
+        }
+      }
+  
+  }
+
 }
 
