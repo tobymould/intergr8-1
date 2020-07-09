@@ -48,7 +48,7 @@ class CategoryChooser extends Component {
         "Application process",
         "I would like a reference",
       ],
-      icon: "users",
+      icon: "user-friends",
       id: 5,
       title: "Recruitment",
     },

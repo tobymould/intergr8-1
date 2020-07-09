@@ -6,7 +6,7 @@
   box-sizing: border-box;
 }
 .option {
-  color: black;
+  color: $dark-grey;
   padding: 15px;
   background-color: white;
   justify-content: center;
@@ -22,5 +22,11 @@
     font-weight: 500;
     box-shadow: 0px 15px 20px rgba(12, 175, 6, 0.781);
     transform: translateY(-7px);
+    background-color: rgba(12, 175, 6, 0.781);
+    color: black;
+  }
+  
+  @media screen and (max-width: 800px) {
+   width: 500px;
   }
 }
