@@ -4,18 +4,18 @@ import { Router } from "@reach/router";
 import LogInBox from "../../components/LogInBox";
 import TicketingDashboard from "../../components/TicketingDashboard";
 import CategoryChooser from "../../components/CategoryChooser";
+import TicketView from "../../components/TicketingDashboard/TicketColumns/Column/TicketView";
 
 class Routes extends Component {
   render() {
 
     return (
-      <>
-        <Router>
-          <TicketingDashboard path="dashboard" />
-          <CategoryChooser path="ticket" />
-          <LogInBox default />
-        </Router>
-      </>
+      <Router>
+        <TicketingDashboard path="dashboard" />
+        <CategoryChooser path="ticket" />
+        <TicketView path="viewticket" />
+        <LogInBox default />
+      </Router>
     );
   }
 }
