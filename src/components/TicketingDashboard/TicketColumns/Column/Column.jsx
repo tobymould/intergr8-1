@@ -29,6 +29,9 @@ class Column extends Component {
             <TicketTile />
             <TicketTile />
             <TicketTile />
+            <TicketTile />
+            <TicketTile />
+            <TicketTile />
           </section>
         </article>
         {/* <TicketView /> */}
