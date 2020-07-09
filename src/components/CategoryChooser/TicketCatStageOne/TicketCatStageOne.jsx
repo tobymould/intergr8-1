@@ -3,21 +3,6 @@ import styles from "./TicketCatStageOne.module.scss";
 import Tile from "../../../utilities/Tile";
 
 class TicketCatStageOne extends Component {
-<<<<<<< HEAD
-  state = {  }
-  render() { 
-    return ( 
-      <div>
-        <h1>What is your query regarding?</h1>
-        <section className={styles.tileParent}>
-          {Object.entries(this.props.data).map((data) => {
-            return <Tile 
-              key={data[1].id} 
-              selector={data[0]} 
-              data={data[1]}
-              handleClick={() => this.props.tileClick(data[0])}
-            />
-=======
   state = {};
   render() {
     return (
@@ -33,7 +18,6 @@ class TicketCatStageOne extends Component {
                 handleClick={() => this.props.tileClick(selector)}
               />
             );
->>>>>>> 4bd516a0bc46ad7249cc44302555895490b0dcc7
           })}
         </section>
       </div>

@@ -25,4 +25,8 @@
     background-color: rgba(12, 175, 6, 0.781);
     color: black;
   }
+  
+  @media screen and (max-width: 800px) {
+   width: 500px;
+  }
 }

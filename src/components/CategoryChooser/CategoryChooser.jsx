@@ -56,25 +56,6 @@ class CategoryChooser extends Component {
 
   state = {
     stage: 0,
-<<<<<<< HEAD
-    firstTile: ""
-  }
-
-  tileClick = (selector) => {
-    this.setState ({
-      stage: this.state.stage + 1,
-      firstTile: selector
-    })
-  }
-
-  getCategory() {
-    if (this.state.stage === 0) {
-      return <TicketCatStageOne data={this.tileData} tileClick={this.tileClick}/>
-    } else if (this.state.stage === 1) { 
-      return < TicketCatStageTwo data={this.tileData[this.state.firstTile]}/>
-    } else if (this.state.stage === 2) { 
-      return < TicketCatStageThree />
-=======
     firstTile: "",
   };
 
@@ -110,30 +91,11 @@ class CategoryChooser extends Component {
       );
     } else if (this.state.stage === 2) {
       return <TicketCatStageThree />;
->>>>>>> 4bd516a0bc46ad7249cc44302555895490b0dcc7
     }
   }
 
   render() {
     console.log(this.state);
-<<<<<<< HEAD
-    
-    // const display = (this.state.selector.id == this.state.stage) ? (<TicketCatStageTwo data={this.state.selector} />) : null;
-    
-
-    return (
-      <>
-        <TicketCatStageOne />
-        {this.getCategory()}
-      </>
-    )
-  }
-}
-export default CategoryChooser;
-
-
-// if (event.target.state === landd) {landd.map(option)=>{<Option />}}
-=======
     return (
       <section className={styles.categoryChooser}>
         {this.getCategory()}
@@ -142,4 +104,3 @@ export default CategoryChooser;
   }
 }
 export default CategoryChooser;
->>>>>>> 4bd516a0bc46ad7249cc44302555895490b0dcc7
