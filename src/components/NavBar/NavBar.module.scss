@@ -7,42 +7,54 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  overflow: hidden;
   h1 {
     padding: 3 * $base-value;
   }
 
+  
+  
+  
   div {
-      display: flex;
-      a {
+    display: flex;
+    
+    .displayNav {
+      animation: slide-in-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    }
+    .hideNav {
+      // animation: slide-out-right 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+      opacity: 0;
+      transition: 0.1s;
+    }
+
+    a {
+      color: $primary-black;
+      padding: $base-value;
+      margin-left: $base-value;
+      margin-right: $base-value;
+      text-decoration: none;
+      &:hover {
+        background-color: $white-transparent;
+        transition: 0.5s;
+        border-radius: $base-value;
+      }
+      &:visited {
         color: $primary-black;
+      }
+    }
+    h3 {
+      &.burger {
+        // background-color:red;
+        font-size: 1.4em;
         padding: $base-value;
-        margin-left: $base-value;
-        margin-right: $base-value;
-        text-decoration: none;
+        margin-right: 2*$base-value;
         &:hover {
-          background-color: $white-transparent;
+          background-color: $white-transparent; // change to different animation 
           transition: 0.5s;
           border-radius: $base-value;
         }
-        &:visited {
-          color: $primary-black;
-        }
       }
-      h3 {
-        &.burger {
-          // background-color:red;
-          font-size: 1.2em;
-          padding: $base-value;
-          margin-right: 2*$base-value;
-          &:hover {
-            background-color: $white-transparent; // change to different animation 
-            transition: 0.5s;
-            border-radius: $base-value;
-          }
-        }
-      }
-  
+    }
   }
-
 }
 

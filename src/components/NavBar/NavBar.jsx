@@ -5,10 +5,15 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 
 class NavBar extends Component {
+  state = {
+    navOpen: false
+  }
 
   get navItems() {
     return [
-      {
+      { title: '[Create Ticket]',
+        link: "/createticket"
+      },{
         title: 'Dashboard',
         link: '/dashboard'
       },{
@@ -21,6 +26,16 @@ class NavBar extends Component {
     ]
   }
 
+  toggleNav = () => {
+    this.setState({
+      navOpen: !this.state.navOpen,
+    })
+  }
+
+  displayNav = () => {
+    return this.state.navOpen ? styles.displayNav : styles.hideNav;
+  }
+
 renderNav = () => this.navItems.map(item =>  <Link to={item.link}><h3>{item.title}</h3></Link>) // own components?
 
   render() {
@@ -29,11 +44,11 @@ renderNav = () => this.navItems.map(item =>  <Link to={item.link}><h3>{item.titl
         <nav className={styles.navbar}>
           <h1>Nav Bar</h1>
           <div>
-            <div className={styles.links}>
+            <div className={this.displayNav()}>
               {this.renderNav()}
             </div>
             <h3 className={styles.burger}>
-              <FontAwesomeIcon icon="bars" />
+              <FontAwesomeIcon onClick={this.toggleNav} icon="bars" />
             </h3>
           </div>
         </nav>
