@@ -1,14 +1,19 @@
 @import "../../variables.scss";
 
+body {
+  background-image: url(../../assets/Frame3.png);
+  background-repeat: no-repeat;
+  background-size: cover;
 
+  @media screen and (max-width: 800px) {
+    background-image: none;
+    background-color: $primary-yellow;
+  }
+}
 .categoryChooser {
   h1 {
     text-align: center;
     padding-top: 150px;
     font-size: $xlarge;
   }
-  
-  background-color: $primary-yellow;
-  height: 100vh;
-  
 }

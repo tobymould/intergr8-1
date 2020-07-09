@@ -18,7 +18,7 @@
             width: 271px;
             border: 1px solid grey;
             box-shadow: 0 8px 16px -4px rgba(9,30,66,.25), 0 0 0 1px rgba(9,30,66,.08);
-            height: 175px;
+            // height: 175px;
 
             input{
                 margin: 2px 0 12px 0;
@@ -26,10 +26,16 @@
                 padding: 4px 8px;
             }
 
-            span {
+            .closeIcon {
                 position: absolute;
                 top: 5px;
                 right: 7.5px;
+            }
+
+            .displayPeople{
+                display: flex;
+                align-items: center;
+                margin: 8px 0;
             }
 
             img {

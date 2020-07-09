@@ -9,8 +9,29 @@ class AssignedUser extends Component {
     assignedPerson: "",
     appData: dataFile,
     modalPopup: false,
+    searchTerm: "",
   };
-  
+
+  handleChange = (event) => {
+    this.setState({searchTerm: event.target.value})
+  }
+
+  getNames = () => {
+    return dataFile.people
+    .filter((person) => {
+      return person.name.toLowerCase().includes(this.state.searchTerm.toLowerCase())
+    }) 
+    .map(person => {
+      return (
+      <div className={styles.displayPeople}>
+        <img onClick={this.setAssignedPerson} id={person.name} key={person.id} src={person.image} alt={person.name}/>
+        <span>{person.name}</span>
+      </div>
+      )
+    })
+    }
+
+
   displayModalPopup = (event) => {
     this.setState({modalPopup: !this.state.modalPopup})
   }
@@ -19,11 +40,12 @@ class AssignedUser extends Component {
     if (this.state.modalPopup === true){
       return (
         <div className={styles.modalPopupStyle}> 
-          <input type="text" placeholder="Search..."/>
+          <input type="text" placeholder="Search..." onChange={this.handleChange}/>
           <div>
-            {dataFile.people.map(person => <img onClick={this.setAssignedPerson} id={person.name} key={person.id} src={person.image} alt={person.name}/> )}
+            Results:
+            {this.getNames()}
           </div>
-          <span onClick={this.displayModalPopup} ><FontAwesomeIcon icon="times"/></span>
+          <span className={styles.closeIcon} onClick={this.displayModalPopup} ><FontAwesomeIcon icon="times"/></span>
         </div>
       )
     } 

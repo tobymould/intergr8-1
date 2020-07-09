@@ -3,11 +3,12 @@ import {
   faBookOpen,
   faPoundSign,
   faNetworkWired,
-  faUser,
+  faUserFriends,
   faLock,
   faMedkit,
   faPlusCircle,
   faTimes,
+  faUser,
 } from "@fortawesome/free-solid-svg-icons";
 
 export default library.add(
@@ -17,6 +18,7 @@ export default library.add(
   faPlusCircle,
   faTimes,
   faUser,
+  faUserFriends,
   faLock,
   faMedkit
 );

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import styles from "./TicketCatStageThree.module.scss";
-import Checkout from "../Checkout/Checkout";
+import Checkout from "../../../utilities/Checkout";
 
 class TicketCatStageThree extends Component {
   state = {};
