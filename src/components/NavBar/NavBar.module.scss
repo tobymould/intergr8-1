@@ -3,12 +3,12 @@
 nav {
     background-color: $primary-yellow;
     width: 100%;
-    height: 8px * $base-value;
+    height: 8 * $base-value;
     display: flex;
     justify-content: space-between;
     align-items: center;
   h1, div {
-    padding: 3px * $base-value;
+    padding: 3 * $base-value;
   }
 }
 
