@@ -15,7 +15,7 @@ class Message extends Component {
   // </section> */}
 
   typeOfMessage() {
-    let name;
+    // let name;
     // console.log(name);
     const pic = <img src={olly} alt="Employee pic" />;
     const message = (
