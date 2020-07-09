@@ -3,7 +3,7 @@ import {
   faBookOpen,
   faPoundSign,
   faNetworkWired,
-  faUser,
+  faUserFriends,
   faLock,
   faMedkit,
   faBars,
@@ -14,6 +14,7 @@ export default library.add(
   faPoundSign,
   faNetworkWired,
   faUser,
+  faUserFriends,
   faLock,
   faMedkit,
   faBars

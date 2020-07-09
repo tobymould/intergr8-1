@@ -3,6 +3,7 @@ import styles from './TicketView.module.scss';
 import Message from './Message';
 import Button from "../../../../../utilities/Button";
 import ResolveTicketModal from './ResolveTicketModal';
+import NavBar from '../../../../NavBar'
 
 class TicketView extends Component {
     constructor() {
@@ -79,6 +80,7 @@ class TicketView extends Component {
         this.automaticUpdateState()
         return (
             <>
+                <NavBar />
                 <article className={styles.TicketView}>
                     <section className={styles.ticketTop}>
                         <div className={styles.ticketHeader}>

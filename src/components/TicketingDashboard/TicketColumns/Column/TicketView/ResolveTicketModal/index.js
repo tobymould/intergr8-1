@@ -1,3 +1,2 @@
-import ResolveTicketModal from './ResolveTicketModal';
-
+import ResolveTicketModal from "./ResolveTicketModal";
 export default ResolveTicketModal;

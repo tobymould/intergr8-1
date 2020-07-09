@@ -1,7 +1,10 @@
 import React, { Component } from "react";
 import mockData from "../../data/mockData";
 import ChartPanel from "./ChartPanel";
+import TicketColumns from "./TicketColumns/TicketColumns";
+import styles from "./TicketingDashboard.module.scss";
 import NavBar from "../../components/NavBar";
+
 
 class TicketingDashboard extends Component {
   state = {
@@ -57,14 +60,15 @@ class TicketingDashboard extends Component {
     } = this.state;
 
     return (
-      <>
-        <NavBar />
-        <ChartPanel
-          percentUnassignedTickets={percentUnassignedTickets}
-          percentInProgressTickets={percentInProgressTickets}
-          percentUserInProgressTickets={percentUserInProgressTickets}
-        />
-      </>
+      <section className={styles.ticketingDashboard}>
+      <NavBar />
+      <ChartPanel
+        percentUnassignedTickets={percentUnassignedTickets}
+        percentInProgressTickets={percentInProgressTickets}
+        percentUserInProgressTickets={percentUserInProgressTickets}
+      />
+      <TicketColumns/>
+      </section>
     );
   }
 }

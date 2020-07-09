@@ -8,25 +8,25 @@ const data = [
   {
     id: 2,
     owner: "Ollie_Holden",
-    inProgress: false,
+    inProgress: true,
     assigned: false,
   },
   {
     id: 3,
     owner: "Ollie_Holden",
-    inProgress: false,
+    inProgress: true,
     assigned: false,
   },
   {
     id: 4,
     owner: "Ollie_Holden",
-    inProgress: false,
+    inProgress: true,
     assigned: false,
   },
   {
     id: 5,
     owner: "Ollie_Holden",
-    inProgress: false,
+    inProgress: true,
     assigned: false,
   },
   {
