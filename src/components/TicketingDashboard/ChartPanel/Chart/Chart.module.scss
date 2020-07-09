@@ -1,0 +1,19 @@
+@import "../../../../variables.scss";
+
+
+.chart {
+  box-shadow: 0 10px 20px $primary-black-transparent, 0 6px 6px $primary-black-transparent;
+  transform: rotate(-90deg);
+  border-radius: 50%;
+  background: $primary-yellow;
+
+  .innerCircle{
+    fill: #F1F1F1;
+  }
+
+  .outerCircle{
+    fill: $primary-yellow;
+    stroke: #c6bfaf;
+    stroke-width: 120;
+  }
+}

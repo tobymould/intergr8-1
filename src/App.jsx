@@ -1,17 +1,12 @@
-import React, { Component } from 'react';
-import './App.css';
-// import LogInBox from './components/LogInBox';
-import CategoryChooser from './containers/CategoryChooser';
-import library from "./data/fa-library";
+import React from "react";
+import "./App.css";
+import Routes from "./containers/Routes/Routes.jsx";
+import "./data/fa-library";
+// import CategoryChooser from "./components/CategoryChooser";
 
-
-class App extends Component {
-  render () {
-  return (
-    <CategoryChooser />
-  );
+function App() {
+  return <Routes />;
+  // return <CategoryChooser />;
 }
-}
-
 
 export default App;

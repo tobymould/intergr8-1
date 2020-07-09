@@ -1,0 +1,14 @@
+@import "../../variables.scss";
+
+body {
+  background-image: url(../../assets/Frame3.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.categoryChooser {
+  h1 {
+    text-align: center;
+    padding-top: 150px;
+    font-size: $xlarge;
+  }
+}

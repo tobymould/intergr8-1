@@ -3,7 +3,8 @@ import {
   faBookOpen,
   faPoundSign,
   faNetworkWired,
-  faUsers,
+  faUserFriends,
+  faLock,
   faMedkit,
 } from "@fortawesome/free-solid-svg-icons";
 
@@ -11,7 +12,7 @@ export default library.add(
   faBookOpen,
   faPoundSign,
   faNetworkWired,
-  faUsers,
-  faMedkit,
-  
+  faUserFriends,
+  faLock,
+  faMedkit
 );
