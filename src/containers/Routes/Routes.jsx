@@ -2,8 +2,9 @@ import React, { Component } from "react";
 import { Router } from "@reach/router";
 
 import LogInBox from "../../components/LogInBox";
-import TicketingDashboard from "../../components/TicketingDashboard";
+import TicketingDashboard from "../../components/ticketingDashboard";
 import CategoryChooser from "../../components/CategoryChooser";
+import TicketView from "../../components/ticketingDashboard/TicketColumns/Column/TicketView";
 
 class Routes extends Component {
   render() {
@@ -11,6 +12,7 @@ class Routes extends Component {
       <Router>
         <TicketingDashboard path="dashboard" />
         <CategoryChooser path="ticket" />
+        <TicketView path="viewticket" />
         <LogInBox default />
       </Router>
     );

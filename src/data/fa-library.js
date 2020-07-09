@@ -3,7 +3,8 @@ import {
   faBookOpen,
   faPoundSign,
   faNetworkWired,
-  faUsers,
+  faUser,
+  faLock,
   faMedkit,
   faPlusCircle,
   faTimes,
@@ -13,8 +14,9 @@ export default library.add(
   faBookOpen,
   faPoundSign,
   faNetworkWired,
-  faUsers,
-  faMedkit,
   faPlusCircle,
-  faTimes
+  faTimes,
+  faUser,
+  faLock,
+  faMedkit
 );
