@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import mockData from "../../data/mockData";
 import ChartPanel from "./ChartPanel";
+import TicketColumns from "./TicketColumns/TicketColumns";
+import styles from "./TicketingDashboard.module.scss";
 
 class TicketingDashboard extends Component {
   state = {
@@ -56,11 +58,14 @@ class TicketingDashboard extends Component {
     } = this.state;
 
     return (
+      <section className={styles.ticketingDashboard}>
       <ChartPanel
         percentUnassignedTickets={percentUnassignedTickets}
         percentInProgressTickets={percentInProgressTickets}
         percentUserInProgressTickets={percentUserInProgressTickets}
       />
+      <TicketColumns/>
+      </section>
     );
   }
 }
