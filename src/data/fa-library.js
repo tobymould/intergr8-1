@@ -10,7 +10,6 @@ import {
   faTimes,
   faUser,
   faBars,
-  faUser,
   faArrowRight,
 } from "@fortawesome/free-solid-svg-icons";
 
