@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import styles from "./CreateTicket.module.scss";
 // import TicketTile from '../../TicketingDashboard/TicketColumns/Column/TicketTile/TicketTile';
+import NavBar from '../../NavBar';
 
 class CreateTicket extends Component {
   // state = {
@@ -20,6 +21,7 @@ class CreateTicket extends Component {
 
     return (
       <>
+        <NavBar />
         <div className={styles.backGround}>
           <section className={styles.topField}>
             <p className={styles.topBanner}>New Ticket +</p>

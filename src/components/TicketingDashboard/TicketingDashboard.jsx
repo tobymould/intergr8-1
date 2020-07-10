@@ -3,6 +3,8 @@ import mockData from "../../data/mockData";
 import ChartPanel from "./ChartPanel";
 import TicketColumns from "./TicketColumns/TicketColumns";
 import styles from "./TicketingDashboard.module.scss";
+import NavBar from "../../components/NavBar";
+
 
 class TicketingDashboard extends Component {
   state = {
@@ -59,6 +61,7 @@ class TicketingDashboard extends Component {
 
     return (
       <section className={styles.ticketingDashboard}>
+      <NavBar />
       <ChartPanel
         percentUnassignedTickets={percentUnassignedTickets}
         percentInProgressTickets={percentInProgressTickets}

@@ -9,6 +9,7 @@ import {
   faPlusCircle,
   faTimes,
   faUser,
+  faBars,
 } from "@fortawesome/free-solid-svg-icons";
 
 export default library.add(
@@ -20,5 +21,6 @@ export default library.add(
   faUser,
   faUserFriends,
   faLock,
-  faMedkit
+  faMedkit,
+  faBars
 );
