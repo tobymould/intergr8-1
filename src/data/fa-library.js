@@ -20,7 +20,6 @@ export default library.add(
   faNetworkWired,
   faPlusCircle,
   faTimes,
-  faUser,
   faUserFriends,
   faUser,
   faLock,
