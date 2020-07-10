@@ -1,0 +1,34 @@
+@import "../../../variables.scss";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: $main-fonts;
+}
+
+.stageOne {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+
+  h1 {
+    padding: 20px;
+    font-size: $xlarge;
+    margin-bottom: 40px;
+  }
+
+  .tileParent {
+    width: 80vw;
+    display: flex;
+    justify-content: space-around;
+    align-items: stretch;
+
+    @media screen and (max-width: 800px) {
+      flex-direction: column;
+      // edit sizes
+    }
+  }
+}
