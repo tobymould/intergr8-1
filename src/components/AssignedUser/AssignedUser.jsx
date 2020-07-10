@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import styles from "./AssignedUser.module.scss";
 import * as dataFile from "../../data/app-data";
+import InputBox from "../../utilities/InputBox";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
@@ -18,20 +19,22 @@ class AssignedUser extends Component {
 
   getNames = () => {
     return dataFile.people
-    .filter((person) => {
-      return person.name.toLowerCase().includes(this.state.searchTerm.toLowerCase())
-    }) 
-    .map(person => {
-      return (
-      <div className={styles.displayPeople}>
-        <img onClick={this.setAssignedPerson} id={person.name} key={person.id} src={person.image} alt={person.name}/>
-        <span>{person.name}</span>
-      </div>
-      )
+    .filter(person => { 
+      let fullName = `${person.firstName} ${person.lastName}`;
+      return fullName.toLowerCase().includes(this.state.searchTerm.toLowerCase());
+    })
+    .map((person, index) => {
+      console.log(person)
+      if (index < 6){
+        return (
+        <div className={styles.displayPeople}>
+          <img onClick={this.setAssignedPerson} id={person.name} key={person.id} src={person.image} alt={person.name}/>
+          <span>{person.firstName} {person.lastName}</span>
+        </div>
+      )}
     })
     }
-
-
+      
   displayModalPopup = (event) => {
     this.setState({modalPopup: !this.state.modalPopup, searchTerm: ""})
   }
@@ -41,8 +44,8 @@ class AssignedUser extends Component {
       return (
         <div className={styles.modalPopupStyle}> 
           <input type="text" placeholder="Search..." onChange={this.handleChange}/>
+          {/* <InputBox id="assignuser" type="text" placeholder="Search..." onChange={this.handleChange}/> */}
           <div>
-            Results:
             {this.getNames()}
           </div>
           <span className={styles.closeIcon} onClick={this.displayModalPopup} ><FontAwesomeIcon icon="times"/></span>

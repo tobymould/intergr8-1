@@ -1,23 +1,63 @@
 export const people = [
   {
     id: "1",
-    name: "Ollie",
-    image: "https://nology.io/wp-content/uploads/2019/12/people-ollie-ink.jpg",
+    firstName: "Toby",
+    lastName: "Mould",
+    image: "https://galapagos.nology.io/images/trainees/Toby.jpeg",
   },
   {
     id: "2",
-    name: "Shea",
-    image: "https://nology.io/wp-content/uploads/2019/12/people-shea-ink.jpg",
+    firstName: "Stephanie",
+    lastName: "Hansen",
+    image: "https://galapagos.nology.io/images/trainees/Steph.jpg",
   },
   {
     id: "3",
-    name: "Jenna",
-    image: "https://nology.io/wp-content/uploads/2019/12/people-jenna-ink.jpg",
+    firstName: "Martin",
+    lastName: "Harrison",
+    image: "https://galapagos.nology.io/images/trainees/martin.jpg",
   },
   {
     id: "4",
-    name: "Ben",
-    image: "https://nology.io/wp-content/uploads/2019/12/people-ben-ink.jpg",
+    firstName: "Rebecca",
+    lastName: "Fennelly",
+    image: "https://galapagos.nology.io/images/trainees/rebecca.jpg",
+  },
+  {
+    id: "4",
+    firstName: "Edward",
+    lastName: "Horsey",
+    image: "https://galapagos.nology.io/images/trainees/edward.png",
+  },
+  {
+    id: "5",
+    firstName: "EJ",
+    lastName: "Ichiebuka",
+    image: "https://galapagos.nology.io/images/trainees/Emmanuel.jpg",
+  },
+  {
+    id: "6",
+    firstName: "Philip",
+    lastName: "Dunn",
+    image: "https://galapagos.nology.io/images/trainees/phil.jpg",
+  },
+    {
+    id: "7",
+    firstName: "Niall",
+    lastName: "Paterson",
+    image: "https://galapagos.nology.io/images/trainees/niall.jpg",
+  },
+  {
+    id: "8",
+    firstName: "David",
+    lastName: "Wildman",
+    image: "https://galapagos.nology.io/images/trainees/david.jpg",
+  },
+  {
+    id: "9",
+    firstName: "Sumit",
+    lastName: "Gurung",
+    image: "https://galapagos.nology.io/images/trainees/sumit.png",
   },
 ];
 
