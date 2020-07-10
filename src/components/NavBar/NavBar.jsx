@@ -45,7 +45,7 @@ renderNav = () => this.navItems.map(item =>  <Link to={item.link}><h3>{item.titl
     return (
       <>
         <nav className={styles.navbar}>
-          <h1>Nav Bar</h1>
+          <h1 className={styles.navLogo}>Nav Bar</h1>
           <div>
             <div className={this.displayNav()}>
               {this.renderNav()}

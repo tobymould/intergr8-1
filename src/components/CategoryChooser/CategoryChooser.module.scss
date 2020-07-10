@@ -5,14 +5,19 @@
   background-repeat: no-repeat;
   background-size: cover;
   height: 100vh;
-
-  @media screen and (max-width: 800px) {
-    background-image: none;
-    background-color: $primary-yellow;
-  }
-  h2 {
+  width: 100vw;
+  
+  h1 {
     text-align: center;
     padding-top: 150px;
     font-size: $xlarge;
+  }
+  @media screen and (max-width: 800px) {
+    background-image: none;
+    background-color: $primary-yellow;
+    h1 {
+      padding-top: 60px;
+    }
+    height: 100%;
   }
 }
