@@ -24,11 +24,10 @@ class AssignedUser extends Component {
       return fullName.toLowerCase().includes(this.state.searchTerm.toLowerCase());
     })
     .map((person, index) => {
-      console.log(person)
       if (index < 6){
         return (
         <div className={styles.displayPeople}>
-          <img onClick={this.setAssignedPerson} id={person.name} key={person.id} src={person.image} alt={person.name}/>
+          <img onClick={this.setAssignedPerson} id={person.id} key={person.id} src={person.image} alt={person.firstName}/>
           <span>{person.firstName} {person.lastName}</span>
         </div>
       )}
@@ -59,10 +58,15 @@ class AssignedUser extends Component {
     this.setState({assignedPerson: event.target.id, modalPopup: !this.state.modalPopup});
   }
 
-  getAssignedAvatar = () => {
+  getAssignedPerson = () => {
     return dataFile.people.map(person => {
-      if(this.state.assignedPerson === person.name){
-        return <img src={person.image} alt={person.name} />
+      if(this.state.assignedPerson === person.id){
+        return (
+          <>
+          <img src={person.image} alt={person.firstName} />
+          <span>{person.firstName}</span>
+          </>
+        )
       }
     })
   }
@@ -81,10 +85,7 @@ class AssignedUser extends Component {
 
           {/* Presents the SELECTED Person on the page */}
           <div className={styles.assignedPerson}>
-            <div>
-              {this.getAssignedAvatar()}
-              <div>{this.state.assignedPerson} </div>
-            </div>
+            {this.getAssignedPerson()}
           </div>
       </div>
       );
