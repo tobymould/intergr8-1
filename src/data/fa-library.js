@@ -20,6 +20,6 @@ export default library.add(
   faUser,
   faLock,
   faMedkit,
-  faBars, 
-  faArrowRight,
+  faBars,
+  faArrowRight
 );

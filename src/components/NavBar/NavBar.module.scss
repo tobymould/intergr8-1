@@ -14,14 +14,16 @@
 
   img {
     padding: $base-value;
+    margin-left: $base-value;
     height: 70px;
+    width: 180px;
   }
 
   div {
     display: flex;
-    align-items: center;  
+    align-items: center;
     
-    .displayNav {
+    .displayMobileNav {
       display: flex;
       animation: slide-in-right 0.3s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
       flex-direction: column;
@@ -46,10 +48,11 @@
       }
       
     }
-    .hideNav {
-      // animation: slide-out-right 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+    .hideMobileNav {
       display: none;
-      transition: 0.1s;
+      @media screen and (min-width: 850px) {
+      display: flex;
+      }
     }
 
     a {
@@ -70,7 +73,7 @@
     h3 {
       &.burger {
         z-index: 10;
-        font-size: 1.4em;
+        font-size: 1.3em;
         padding: $base-value;
         margin-right: 2*$base-value;
        
@@ -79,8 +82,11 @@
           transition: 0.5s;
           border-radius: $base-value;
         }
+
+        @media screen and (min-width: 850px) {
+          display: none;
       }
     }
   }
 }
-
+}

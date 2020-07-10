@@ -37,7 +37,7 @@ class NavBar extends Component {
   }
 
   displayNav = () => {
-    return this.state.navOpen ? styles.displayNav : styles.hideNav;
+    return this.state.navOpen ? styles.displayMobileNav : styles.hideMobileNav;
   }
 
   toggleNavIcon = () => {
