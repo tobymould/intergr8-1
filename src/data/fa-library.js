@@ -10,6 +10,8 @@ import {
   faTimes,
   faUser,
   faBars,
+  faUser,
+  faArrowRight,
 } from "@fortawesome/free-solid-svg-icons";
 
 export default library.add(
@@ -20,7 +22,9 @@ export default library.add(
   faTimes,
   faUser,
   faUserFriends,
+  faUser,
   faLock,
   faMedkit,
-  faBars
+  faBars,
+  faArrowRight
 );
