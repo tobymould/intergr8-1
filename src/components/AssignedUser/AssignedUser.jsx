@@ -33,7 +33,7 @@ class AssignedUser extends Component {
 
 
   displayModalPopup = (event) => {
-    this.setState({modalPopup: !this.state.modalPopup})
+    this.setState({modalPopup: !this.state.modalPopup, searchTerm: ""})
   }
 
   renderModalPopup = () => {
@@ -53,7 +53,7 @@ class AssignedUser extends Component {
 
 
   setAssignedPerson = (event) => {
-    this.setState({assignedPerson: event.target.id});
+    this.setState({assignedPerson: event.target.id, modalPopup: !this.state.modalPopup});
   }
 
   getAssignedAvatar = () => {
@@ -62,18 +62,7 @@ class AssignedUser extends Component {
         return <img src={person.image} alt={person.name} />
       }
     })
-  } 
-
-  // displayOptions = () => {
-  //   return <select value={this.state.value} onChange={this.handleChange}>
-  //     {dataFile.people.map(person => {
-  //       return <option value={person.name}>{person.name}</option>
-  //     })}
-  //   </select>
-  // }
-
-
-
+  }
 
   render() {
       return (
