@@ -1,0 +1,41 @@
+@import "../../variables.scss";
+
+
+
+.SuperUserContainer {
+
+  background-color: #ffffff;
+  background-image: url("../../assets/intergr8-login-background.svg");
+  background-size: cover;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  min-height: 100vh;
+  height: max-content;
+  width: 100%;
+ 
+    // background
+
+    header {
+        display: flex;
+        justify-content: space-between;
+        padding: $base-value;
+        align-items: center;
+        
+        .superUserDetails {
+            display: flex;
+            align-items: center;
+            width: 600px;
+
+            img {
+                border-radius: 50%;
+                box-shadow: 0 3px 3px $primary-black-transparent, 0 1px 1px $primary-black-transparent;
+                margin: 0% 2.5% 2.5% 2.5%;
+                width: 100px;
+                height: 100px;
+            }
+        }
+
+
+    }
+}
