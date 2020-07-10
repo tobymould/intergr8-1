@@ -28,7 +28,7 @@ class NavBar extends Component {
         link: '/'
       }
     ]
-yarn start  }
+ }
 
   toggleNav = () => {
     this.setState({
