@@ -2,10 +2,10 @@ import React, { Component } from "react";
 import { Router } from "@reach/router";
 
 import LogInBox from "../../components/LogInBox";
-import TicketingDashboard from "../../components/ticketingDashboard";
+import TicketingDashboard from "../../components/TicketingDashboard";
 import CategoryChooser from "../../components/CategoryChooser";
 import CreateTicket from "../../components/CategoryChooser/CreateTicket";
-import TicketView from "../../components/ticketingDashboard/TicketColumns/Column/TicketView";
+import TicketView from "../../components/TicketingDashboard/TicketColumns/Column/TicketView";
 
 class Routes extends Component {
   render() {
