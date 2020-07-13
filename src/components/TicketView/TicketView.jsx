@@ -4,7 +4,7 @@ import olly from './olly.jpg';
 import Message from './Message';
 import Button from '../Button'
 
-import AssignedUser2 from "../AssignedUser";
+import AssignedUser from "../AssignedUser";
 
 class TicketView extends Component {
     constructor() {
@@ -68,7 +68,7 @@ class TicketView extends Component {
                 <div className={styles.ticketHeader}>
                     <h2>Title</h2>
                     <h3>Category</h3>
-                    <AssignedUser2 />
+                    <AssignedUser />
                 </div>
                 <div className={styles.ticketId}>
                     <p>Ticket ID</p>
