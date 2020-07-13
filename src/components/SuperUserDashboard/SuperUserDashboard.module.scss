@@ -13,29 +13,48 @@
   min-height: 100vh;
   height: max-content;
   width: 100%;
- 
+
     // background
 
-    header {
-        display: flex;
-        justify-content: space-between;
-        padding: $base-value;
-        align-items: center;
-        
-        .superUserDetails {
-            display: flex;
-            align-items: center;
-            width: 600px;
+  .SuperUserHeader {
+    display: flex;
+    justify-content: space-between;
+    padding: $base-value;
+    align-items: center;
+       
+    .superUserDetails {
+      display: flex;
+      align-items: center;
+      width: 600px;
 
-            img {
-                border-radius: 50%;
-                box-shadow: 0 3px 3px $primary-black-transparent, 0 1px 1px $primary-black-transparent;
-                margin: 0% 2.5% 2.5% 2.5%;
-                width: 100px;
-                height: 100px;
-            }
+      img {
+        border-radius: 50%;
+        box-shadow: 0 3px 3px $primary-black-transparent, 0 1px 1px $primary-black-transparent;
+        margin: 0% 2.5% 2.5% 2.5%;
+        width: 100px;
+        height: 100px;
         }
+    }
+  }
 
+  .SuperUserEmployee {
+    border: 2px solid black;
+    margin: 0 10px;
+    height: 70vh;
+
+    .tableHeader {
+      display: flex;
+      justify-content: space-between;
+      margin: 0 10px;
+    }
+
+    .tableRowScroll {
+      overflow-y: auto;
+      height: 70vh;
 
     }
+
+    
+  }
+
 }

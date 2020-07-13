@@ -7,18 +7,29 @@ import Button from "../../utilities/Button";
 import DropDown from "../../utilities/DropDown";
 import background from '../../assets/intergr8-login-background.svg';
 import TableRow from './TableRow'
+import CreateUser from './CreateUser/CreateUser';
 
 
 class SuperUserDashboard extends Component {
     state = {
-        dropDownOptions: ['one', 2, 3]
+        dropDownOptions: ['one', 2, 3],
+        isDisplayAddUser: false,
     }
-  state = {  }
+ 
+  
+    toggleAddUser = () => {
+      this.setState({ isDisplayAddUser: !this.state.isDisplayAddUser})
+    }
+
+    displayAddUser = () => {
+      return this.state.isDisplayAddUser ? (<CreateUser toggleAddUser={this.toggleAddUser} />) : null
+    }
+
   render() { 
     return ( 
       <div className={styles.SuperUserContainer}>
-       <NavBar />
-       <header>
+        <NavBar />  
+        <section className={styles.SuperUserHeader}>
           <div className={styles.superUserDetails}>
             <img src={olly} alt="" />
             <div>
@@ -27,31 +38,58 @@ class SuperUserDashboard extends Component {
             </div>
           </div>
           <div className={styles.SuperUserSearch}>
-            <InputBox />
+            <InputBox placeholder="Search"/>
           </div>
-      <section className={styles.SuperUserEmployee}>
-
-      </section>
-       </header>
-
-       <section className={styles.tableHeader}>
-       <article className={styles.TableRow}>
-        <p>Full name</p>
-        <p>Email</p>
-        {/* <DropDown /> */}
-        <p>Contact Number</p>
-       
-      </article>
-
-       </section>
-       
-       <TableRow />
-       <TableRow />
-       <TableRow />
-
+        </section>
+        <section className={styles.SuperUserEmployee}>
+          <div className={styles.tableHeader}>
+            <p>Full name</p>
+            <p>Email</p>
+            <p>Contact Number</p>
+            <p>User Type</p>
+            <p>Image</p>
+            <div className={styles.SuperUserAddBtn}>
+              <button text="Add User" onClick={this.toggleAddUser} >Add User</button>
+            </div>
+          </div>
+          <div className={styles.tableRowScroll}>
+            <TableRow />
+            <TableRow />
+            <TableRow />
+            <TableRow />
+            <TableRow />
+            <TableRow />
+            <TableRow />
+            <TableRow />
+            <TableRow />
+            <TableRow />
+            <TableRow />
+            <TableRow />
+            <TableRow />
+            <TableRow />
+            <TableRow />
+            <TableRow />
+            <TableRow />
+            <TableRow />
+            <TableRow />
+            <TableRow />
+            <TableRow />
+            <TableRow />
+            <TableRow />
+            <TableRow />
+            <TableRow />
+            <TableRow />
+            <TableRow />
+            <TableRow />
+            <TableRow />
+            <TableRow />
+            
+          </div>
+          {this.displayAddUser()}
+        </section>
       </div>
-     );
+    );
   }
 }
- 
+
 export default SuperUserDashboard;

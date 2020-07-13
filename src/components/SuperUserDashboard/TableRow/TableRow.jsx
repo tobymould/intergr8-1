@@ -11,14 +11,14 @@ class TableRow extends Component {
   render() { 
     return ( 
       <article className={styles.TableRow}>
-        <p>Full name</p>
-        <p>Email</p>
-        {/* <DropDown /> */}
-        <p>Contact Number</p>
-        <Button />
-
-      
-       
+        <p>John Smith</p>
+        <p>J.Smith@gmail.com</p>
+        <p>07867345432</p>
+        <p>User Type</p>
+        <p>Image</p>
+        <div className={styles.tableRowBtn}>
+          <Button text="Edit/Delete"/>
+        </div>
       </article>
      );
   }
