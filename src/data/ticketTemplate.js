@@ -25,7 +25,7 @@ message
 assignedTo 
 changeOfCategory 
 message
-isRevoled
+isResolved
 reOpened 
 */
 

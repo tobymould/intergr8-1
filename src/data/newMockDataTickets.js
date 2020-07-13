@@ -94,4 +94,52 @@ const ticketData = [
       },
     ],
   },
+
+  {
+    ID: "",
+    createdBy: "E00000002", 
+    assignedTo: ["A00000001"], 
+    createdAtDate: "13/07/2020",
+    modifiedAtDate: ["13/07/2020"],
+    isOpen: true,
+    priority: 3, 
+    eventLog: [
+      {
+        type: "opened",
+        details: "Ticket was created",
+        content: {
+          name: "E00000002",
+          message: "I want to findout my pay",
+        },
+        date: "3/07/2020 11:02:43",
+      },
+      {
+        type: "assignedTo",
+        details: "Ticket assigned to ",
+        content: {
+          name: "A00000001",
+          message: null,
+        },
+        date: "3/07/2020 16:09:43",
+      },
+      {
+        type: "message",
+        details: "New message received",
+        content: {
+          name: "A00000001",
+          message: "Hi, Your salary is £11,800. I will close your ticket now. Many thanks",
+        },
+        date: "13/07/2020 17:05:43",
+      },
+      {
+        type: "isResolved",
+        details: "Ticket resolved",
+        content: {
+          name: "A00000001",
+          comment: "Closing ticket for E00000002"
+        },
+        date: "13/07/2020 17:10:20",
+      },
+    ],
+  },
 ];

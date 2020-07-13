@@ -37,7 +37,21 @@ const data = [
     img:
       "https://www.thesun.co.uk/wp-content/uploads/2019/12/NINTCHDBPICT000549010194.jpg?strip=all&w=960",
     role: 3, // employee (1), agent (2), superagent (3)
-    department: null, // null for employees
+    department: 'HR Administration', // null for employees
     roleTextSnippet: "HR Manager",
+  },
+
+  {
+    ID: "",
+    UID: "A00000001",
+    forename: "James",
+    surname: "Bond",
+    email: "james.bond@email.com",
+    password: "ohnoq",
+    img:
+      "https://www.sadanduseless.com/wp-content/uploads/2019/05/funny-corgi-butts1.jpg",
+    role: 2, // employee (1), agent (2), superagent (3)
+    department: "Payroll", // null for employees
+    roleTextSnippet: "Payroll HR Agent",
   },
 ];
