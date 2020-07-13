@@ -5,6 +5,8 @@ import DropDown from "../../../../utilities/DropDown";
 import TicketTile from "./TicketTile";
 
 class Column extends Component {
+  
+  
   renderFilter() {
     return this.props.filter ? (
       <DropDown
@@ -15,13 +17,24 @@ class Column extends Component {
     );
   }
 
+  filterClicked = (e) => {
+    if (e.target.value ==="Date: earliest") {
+      //this.data.sort()
+      console.log('clicked1');
+    } else if (e.target.value ==="Date: latest"){
+      console.log('clicked2');
+    } else {
+      console.log('clicked3')
+    }
+}
+
   render() {
     return (
       <>
         <article className={styles.TicketColumn}>
           <div className={styles.topOfColumn}>
             <h3>{this.props.title}</h3>
-            {this.renderFilter()}
+            <div onChange={this.filterClicked}>{this.renderFilter()}</div>
           </div>
           <section title={this.props.title}>
             <TicketTile />
