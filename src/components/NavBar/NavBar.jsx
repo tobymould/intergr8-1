@@ -24,6 +24,10 @@ class NavBar extends Component {
         title: 'Ticket',
         link: '/ticket'
       },{
+        title: 'Users',
+        link: '/superuser'
+      }
+      ,{
         title: 'Logout',
         link: '/'
       }
@@ -44,7 +48,7 @@ class NavBar extends Component {
     return this.state.navOpen ? "arrow-right" : "bars";
   }
 
-renderNav = () => this.navItems.map(item =>  <Link to={item.link}><h3>{item.title}</h3></Link>) // own components?
+renderNav = () => this.navItems.map((item, index) =>  <Link to={item.link} key={index}><h3>{item.title}</h3></Link>) // own components?
 
   render() {
     return (
