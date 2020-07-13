@@ -4,7 +4,7 @@ const ticketData = [
     createdBy: "E00000002", // Employee UID
     assignedTo: ["S00000001"], // can be multiple
     createdAtDate: "13/07/2020",
-    modifiedAtDate: [""],
+    modifiedAtDate: ["13/07/2020 17:05:43"],
     isOpen: true,
     priority: 3, // Time-based on date
     eventLog: [
@@ -14,7 +14,7 @@ const ticketData = [
         details: "Ticket was created",
         content: {
           name: "E00000002",
-          message: "I haven't been paid this month."
+          message: "I haven't been paid this month.",
         },
         date: "13/07/2020 13:05:43",
       },
@@ -23,7 +23,7 @@ const ticketData = [
         details: "Ticket assigned to ",
         content: {
           name: "E00000009",
-          message: null
+          message: null,
         },
         date: "13/07/2020 16:05:43",
       },
@@ -32,7 +32,7 @@ const ticketData = [
         details: "New message received",
         content: {
           name: "E00000002",
-          message: "I still haven't heard back from HR"
+          message: "I still haven't heard back from HR",
         },
         date: "13/07/2020 15:05:43",
       },
@@ -97,12 +97,12 @@ const ticketData = [
 
   {
     ID: "",
-    createdBy: "E00000002", 
-    assignedTo: ["A00000001"], 
+    createdBy: "E00000002",
+    assignedTo: ["A00000001"],
     createdAtDate: "13/07/2020",
     modifiedAtDate: ["13/07/2020"],
     isOpen: true,
-    priority: 3, 
+    priority: 3,
     eventLog: [
       {
         type: "opened",
@@ -127,7 +127,8 @@ const ticketData = [
         details: "New message received",
         content: {
           name: "A00000001",
-          message: "Hi, Your salary is £11,800. I will close your ticket now. Many thanks",
+          message:
+            "Hi, Your salary is £11,800. I will close your ticket now. Many thanks",
         },
         date: "13/07/2020 17:05:43",
       },
@@ -136,7 +137,7 @@ const ticketData = [
         details: "Ticket resolved",
         content: {
           name: "A00000001",
-          comment: "Closing ticket for E00000002"
+          comment: "Closing ticket for E00000002",
         },
         date: "13/07/2020 17:10:20",
       },
@@ -175,7 +176,8 @@ const ticketData = [
         details: "New message received",
         content: {
           name: "A00000001",
-          message: "Hi Niall, we've sent a request to David. If he does it again let us know and we'll make him redundant.",
+          message:
+            "Hi Niall, we've sent a request to David. If he does it again let us know and we'll make him redundant.",
         },
         date: "12/07/2020 17:05:43",
       },
