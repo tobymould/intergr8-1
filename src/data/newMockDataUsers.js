@@ -1,7 +1,7 @@
 const data = [
   {
     ID: "",
-    UID: "100000001",
+    UID: "E00000001",
     forename: "Niall",
     surname: "Paterson",
     email: "niall.paterson@email.com",
@@ -15,7 +15,7 @@ const data = [
 
   {
     ID: "",
-    UID: "100000002",
+    UID: "E00000002",
     forename: "David",
     surname: "Wildman",
     email: "david.wildman@nology.io",
@@ -25,5 +25,19 @@ const data = [
     role: 1, // employee (1), agent (2), superagent (3)
     department: null, // null for employees
     roleTextSnippet: "Marketing",
+  },
+
+  {
+    ID: "",
+    UID: "S00000001",
+    forename: "Nick",
+    surname: "Smith",
+    email: "nick.smith@email.com",
+    password: "deepestdarkestsecret",
+    img:
+      "https://www.thesun.co.uk/wp-content/uploads/2019/12/NINTCHDBPICT000549010194.jpg?strip=all&w=960",
+    role: 3, // employee (1), agent (2), superagent (3)
+    department: null, // null for employees
+    roleTextSnippet: "HR Manager",
   },
 ];
