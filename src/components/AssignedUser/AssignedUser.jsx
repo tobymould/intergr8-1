@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import styles from "./AssignedUser.module.scss";
 import * as dataFile from "../../data/app-data";
-import InputBox from "../../utilities/InputBox";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
