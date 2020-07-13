@@ -40,7 +40,7 @@ const ticketData = [
         type: "changeOfAgent",
         details: "Ticket escalated to ",
         content: {
-          name: "E00000009"
+          name: "E00000009",
         },
         date: "13/07/2020 17:05:43",
       },
@@ -139,6 +139,54 @@ const ticketData = [
           comment: "Closing ticket for E00000002"
         },
         date: "13/07/2020 17:10:20",
+      },
+    ],
+  },
+
+  {
+    ID: "",
+    createdBy: "E00000001",
+    assignedTo: ["A00000001"],
+    createdAtDate: "11/07/2020",
+    modifiedAtDate: ["12/07/2020"],
+    isOpen: true,
+    priority: 3,
+    eventLog: [
+      {
+        type: "opened",
+        details: "Ticket was created",
+        content: {
+          name: "E00000002",
+          message: "David Wildman stole my stapler and I want it back.",
+        },
+        date: "11/07/2020 11:02:43",
+      },
+      {
+        type: "assignedTo",
+        details: "Ticket assigned to ",
+        content: {
+          name: "A00000001",
+          message: null,
+        },
+        date: "11/07/2020 16:09:43",
+      },
+      {
+        type: "message",
+        details: "New message received",
+        content: {
+          name: "A00000001",
+          message: "Hi Niall, we've sent a request to David. If he does it again let us know and we'll make him redundant.",
+        },
+        date: "12/07/2020 17:05:43",
+      },
+      {
+        type: "isResolved",
+        details: "Ticket resolved",
+        content: {
+          name: "A00000001",
+          comment: "Closing ticket for E00000002",
+        },
+        date: "12/07/2020 17:06:10",
       },
     ],
   },
