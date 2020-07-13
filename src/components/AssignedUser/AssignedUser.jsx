@@ -31,6 +31,7 @@ class AssignedUser extends Component {
           <span>{person.firstName} {person.lastName}</span>
         </div>
       )}
+      return null;
     })
     }
       
@@ -68,6 +69,7 @@ class AssignedUser extends Component {
           </>
         )
       }
+      return null;
     })
   }
 
