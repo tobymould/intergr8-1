@@ -3,16 +3,20 @@ import styles from "./ResolveTicketModal.module.scss";
 
 class ResolveTicketModal extends Component {
   render() {
-    const { 
-      toggleResolveTicketDisplay, 
-      toggleResolveModal, 
-      updateInputResolve
+    const {
+      toggleResolveTicketDisplay,
+      toggleResolveModal,
+      updateInputResolve,
     } = this.props;
     return (
       <>
         <div className={styles.ResolveModal}>
           <div className={styles.ResolveContainer}>
-            <form className={styles.ModalContent} name="formname" onSubmit="returnfalse">
+            <form
+              className={styles.ModalContent}
+              name="formname"
+              onSubmit="returnfalse"
+            >
               <h2>Provide a specific reason for marking this ticket ‘Resolved’:
               </h2>
               <textarea required name="resolveReason" id="resolveReason" placeholder={"Type Here..."} className={styles.resolveReason} onChange={updateInputResolve}>
