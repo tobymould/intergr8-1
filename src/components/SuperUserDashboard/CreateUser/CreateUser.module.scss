@@ -19,11 +19,18 @@
     box-shadow: $primary-shadow, $secondary-shadow;
     @include standard_vertical_layout;
     height: 70%;
-    width: 40%;
+    width: 90%;
     border: $medium solid $primary-yellow;
     background-color: transparent;
     background-image: linear-gradient($white-opaque 0%, $white-opaque 100%);
     background-size: cover;
+    z-index: 2;
+    
+
+    @media screen and (min-width: 600px) {
+      height: 70%;
+      width: 40%;
+    }
   }
 
   .CreateUserModalContent {
@@ -84,6 +91,8 @@
       border-radius: 3px;
       outline: none;
       margin-bottom: 10px;
+      cursor: pointer;
+      font-size: 1em;
   
       &:hover {
           background-color: rgb(91, 89, 89);
@@ -99,6 +108,9 @@
         border-radius: 3px;
         outline: none;
         margin-bottom: 10px;
+        cursor: pointer;
+        font-size: 1em;
+        font-weight: bold;
     
         &:hover {
             background-color: $secondary-yellow;

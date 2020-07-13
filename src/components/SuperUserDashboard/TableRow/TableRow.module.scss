@@ -1,17 +1,28 @@
 @import "../../../variables.scss";
 
-
-
 .TableRow {
     display: flex;
-    border: 2px solid black;
     justify-content: space-between;
-    margin: 10px;
-    border-bottom: none;
-    border-left: none;
-    border-right: none;
+    align-items: center;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 4px;
+    color: #141414;
+    // border-bottom: 2px solid black;
+
+    .buttonContainer {
+        width: 128.83px;
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    span {
+        margin-left: 20px;
+        cursor: pointer;
+    }
 
     p {
         max-width: 100px;
+        text-align: left;
     }
 }

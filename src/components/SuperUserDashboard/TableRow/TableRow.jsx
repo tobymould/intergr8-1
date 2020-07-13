@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import styles from "./TableRow.module.scss";
-import olly from '../../TicketingDashboard/TicketColumns/Column/TicketView/olly.jpg';
-import InputBox from "../../../utilities/InputBox";
-import Button from "../../../utilities/Button";
-// import DropDown from "../../../utilities/DropDown";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 
 
 class TableRow extends Component {
@@ -16,9 +14,17 @@ class TableRow extends Component {
         <p>07867345432</p>
         <p>User Type</p>
         <p>Image</p>
-        <div className={styles.tableRowBtn}>
-          <Button text="Edit/Delete"/>
-        </div>
+        {/* <div> */}
+          {/* <Button text="Edit/Delete"/> */}
+          <div className={styles.buttonContainer}>
+            <span>
+              <FontAwesomeIcon icon="user-edit" />
+            </span>
+            <span>
+              <FontAwesomeIcon icon="trash-alt" />
+            </span>
+          </div>
+        {/* </div> */}
       </article>
      );
   }
