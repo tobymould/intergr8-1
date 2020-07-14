@@ -1,23 +1,64 @@
 import React, { Component } from "react";
 import styles from "./NavBar.module.scss";
-import { Router, Link } from "@reach/router";
+import { Link } from "@reach/router";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import logo from '../../assets/intergr8-logo-transparent-black-no-tagline.png';
+
 
 class NavBar extends Component {
+  state = {
+    navOpen: false
+  }
+
+  get navItems() {
+    return [
+      { title: '[View Ticket]',
+        link: "/viewticket"
+      },{
+        title: '[Create Ticket]',
+        link: "/createticket"
+      },{
+        title: 'Dashboard',
+        link: '/dashboard'
+      },{
+        title: 'Ticket',
+        link: '/ticket'
+      },{
+        title: 'Logout',
+        link: '/'
+      }
+    ]
+ }
+
+  toggleNav = () => {
+    this.setState({
+      navOpen: !this.state.navOpen,
+    })
+  }
+
+  displayNav = () => {
+    return this.state.navOpen ? styles.displayMobileNav : styles.hideMobileNav;
+  }
+
+  toggleNavIcon = () => {
+    return this.state.navOpen ? "arrow-right" : "bars";
+  }
+
+renderNav = () => this.navItems.map(item =>  <Link to={item.link}><h3>{item.title}</h3></Link>) // own components?
+
   render() {
     return (
       <>
-        <nav>
-          <h1>Nav Bar</h1>
-          <div className="menu">
-            <Link to="/">
-              <button className="menu-btn">Login</button>
-            </Link>
-            {/* <Link to="dashboard">
-              <button className="menu-btn">Dashboard</button>
-            </Link>
-            <Link to="ticket">
-              <button className="menu-btn">Ticket</button>
-            </Link> */}
+        <nav className={styles.navbar}>
+          {/* <h1>Nav Bar</h1> */}
+          <img src={logo} alt="intergr8 logo" />
+          <div>
+            <div className={this.displayNav()}>
+              {this.renderNav()}
+            </div>
+            <h3 className={styles.burger}>
+              <FontAwesomeIcon onClick={this.toggleNav} icon={this.toggleNavIcon()} />
+            </h3>
           </div>
         </nav>
       </>
@@ -26,4 +67,3 @@ class NavBar extends Component {
 }
 
 export default NavBar;
-console.log(styles, Router);

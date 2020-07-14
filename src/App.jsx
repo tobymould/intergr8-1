@@ -1,14 +1,13 @@
-import React from "react";
+import React, { Component } from "react";
 import "./App.css";
 import Routes from "./containers/Routes/Routes.jsx";
 import "./data/fa-library";
 
-function App() {
-  return (
-    <>
-      <Routes />
-    </>
-  );
+class App extends Component {
+
+  render() {
+    return <Routes />
+  }
 }
 
 export default App;

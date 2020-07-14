@@ -1,16 +1,17 @@
 @import "../../../variables.scss";
 
-
-
-.ticketCat2{
+.ticketCat2 {
   h1 {
     padding: 20px;
   }
-  
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin: auto;
   margin-top: 80px;
-  
+  padding-bottom: 231px;
+  @media screen and (max-width: 800px) {
+    width: 200px;
+  }
 }
