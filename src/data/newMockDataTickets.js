@@ -1,6 +1,8 @@
 const ticketData = [
   {
     ID: "",
+    category: 1,
+    subCategory: 3,
     createdBy: "E00000002", // Employee UID
     assignedTo: ["S00000001"], // can be multiple
     createdAtDate: "13/07/2020",
@@ -49,6 +51,8 @@ const ticketData = [
 
   {
     ID: '',
+    category: 1,
+    subCategory: 1,
     createdBy: 'E00000001', // Employee UID
     assignedTo: ['S00000001'], // can be multiple
     createdAtDate: '13/07/2020',
@@ -97,6 +101,8 @@ const ticketData = [
 
   {
     ID: '',
+    category: 1,
+    subCategory: 2,
     createdBy: 'E00000002',
     assignedTo: ['A00000001'],
     createdAtDate: '13/07/2020',
@@ -145,6 +151,8 @@ const ticketData = [
 
   {
     ID: "",
+    category: 4,
+    subCategory: 2,
     createdBy: "E00000002",
     assignedTo: ["A00000001"],
     createdAtDate: "13/07/2020",
@@ -157,7 +165,7 @@ const ticketData = [
         details: 'Ticket was created',
         content: {
           name: 'E00000002',
-          message: 'I want to findout my pay'
+          message: 'I haven\'t had my annual appraisal'
         },
         date: '3/07/2020 11:02:43'
       },
@@ -176,7 +184,7 @@ const ticketData = [
         content: {
           name: "A00000001",
           message:
-            "Hi, Your salary is £11,800. I will close your ticket now. Many thanks",
+            "Hi, your appraisal will be with your line manager next month",
         },
         date: '13/07/2020 17:05:43'
       },
@@ -203,7 +211,9 @@ const ticketData = [
         details: 'Complaint',
         content: {
           name: 'A00000001',
-          comment: 'Recruitment to action'
+          category: 1,
+          subCategory: 3,
+          comment: 'Recruitment to action as the employee was set up on the wrong wage code'
         },
         date: '13/07/2020 17:10:20'
       }
@@ -212,6 +222,8 @@ const ticketData = [
 
   {
     ID: "",
+    category: 2,
+    subCategory: 1,
     createdBy: "E00000001",
     assignedTo: ["A00000001"],
     createdAtDate: "11/07/2020",
@@ -252,7 +264,7 @@ const ticketData = [
         details: "Ticket resolved",
         content: {
           name: "A00000001",
-          comment: "Closing ticket for E00000002",
+          comment: "Closing ticket for E00000002. David Wildman has been fired, and is due to be stripped of his OBE. His assets are to be confiscated and he will be given notice by his landlord. His family have disowned him and there is a bounty of £500,000 for his head.",
         },
         date: "12/07/2020 17:06:10",
       },
