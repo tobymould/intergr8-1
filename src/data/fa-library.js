@@ -6,8 +6,10 @@ import {
   faUserFriends,
   faLock,
   faMedkit,
-  faBars,
+  faPlusCircle,
+  faTimes,
   faUser,
+  faBars,
   faArrowRight,
 } from "@fortawesome/free-solid-svg-icons";
 
@@ -15,7 +17,8 @@ export default library.add(
   faBookOpen,
   faPoundSign,
   faNetworkWired,
-  faUser,
+  faPlusCircle,
+  faTimes,
   faUserFriends,
   faUser,
   faLock,
