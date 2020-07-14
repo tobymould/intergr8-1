@@ -1,11 +1,10 @@
-import React, { Component } from "react";
-import "./App.css";
-import Routes from "./containers/Routes/Routes.jsx";
-import "./data/fa-library";
-import firebase from "./firebase";
+import React, { Component } from 'react';
+import './App.css';
+import Routes from './containers/Routes/Routes.jsx';
+import './data/fa-library';
+import firebase from './firebase';
 
 class App extends Component {
-
   state = {
     user: null,
     emailAddress: null,
@@ -13,17 +12,19 @@ class App extends Component {
   };
 
   userSignInAttempt = () => {
-    firebase.auth().signInWithEmailAndPassword(email, password)
+    const { emailAddress, password } = this.state;
+    firebase
+      .auth()
+      .signInWithEmailAndPassword(emailAddress, password)
       .catch(error => {
         const errorCode = error.code;
         const errorMessage = error.message;
-        console.log(errorCode, errorMessage)
-      })
-  }
-
+        console.log(errorCode, errorMessage);
+      });
+  };
 
   render() {
-    return <Routes userSignInAttempt={this.userSignInAttempt} user={this.user} emailAddress={this.emailAddress} password={this.password} />
+    return <Routes userSignInAttempt={this.userSignInAttempt} user={this.state.user} emailAddress={this.state.emailAddress} password={this.state.password} />;
   }
 }
 
