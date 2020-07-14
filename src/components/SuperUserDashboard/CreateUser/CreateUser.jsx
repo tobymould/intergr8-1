@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import styles from "../CreateUser/CreateUser.module.scss";
 import DropDown from "../../../utilities/DropDown";
-import Button from "../../../utilities/Button";
 
 
 class CreateUser extends Component {
@@ -12,17 +11,17 @@ class CreateUser extends Component {
         <div className={styles.CreateUserContainer}>
           <form action="submit" className={styles.CreateUserModalContent}>
             <div>
-              <label for="name">Full Name:</label>
+              <label for="name">Name:</label>
               <input type="text" id="name"/>
             </div>
             <div>
               <label for="email">Email address:</label>
               <input type="email" id="email"/>
             </div>
-            <div>
+            {/* <div>
               <label for="contact-no">Contact Number:</label>
               <input type="tel" id="contact-no" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" />
-            </div>
+            </div> */}
             <div>
               <label for="user-type">User Type:</label>
               <DropDown id="user-type" filterOptions={["Employee", "HR User", "SuperUser"]}/>

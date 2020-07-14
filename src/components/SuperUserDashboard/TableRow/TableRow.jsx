@@ -5,24 +5,51 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 
 class TableRow extends Component {
-  state = {  }
+
+  // displayRole = () => {
+  //   return switch(this.props.role) {
+  //     case 1: 
+  //       return "Employee";
+  //       break;
+  //     case 2:
+  //       return "Agent";
+  //       break;
+  //     case 3: 
+  //       return "Superagent"
+  //       break;
+  //   }
+  // }
+
   render() { 
+    const { name, UID, email, img, role } = this.props.data;
+
     return ( 
+
       <article className={styles.TableRow}>
-        <p>John Smith</p>
-        <p>J.Smith@gmail.com</p>
-        <p>07867345432</p>
-        <p>User Type</p>
-        <p>Image</p>
+        {/* <div className={styles.name}> */}
+        <div>
+          <img src={img}/>
+            <p>{name}</p>
+        </div>
+        {/* </div> */}
+        {/* <div> */}
+          <p>{email}</p>
+        {/* </div> */}
+        {/* <p>07867345432</p> */}
+        {/* <div> */}
+         <p>User Type</p>
+        {/* </div> */}
+        {/* <div> */}
+        {/* </div> */}
         {/* <div> */}
           {/* <Button text="Edit/Delete"/> */}
-          <div className={styles.buttonContainer}>
-            <span>
-              <FontAwesomeIcon icon="user-edit" />
-            </span>
-            <span>
-              <FontAwesomeIcon icon="trash-alt" />
-            </span>
+        <div className={styles.buttonContainer}>
+          <span>
+            <FontAwesomeIcon icon="user-edit" onClick={this.props.toggleEditUser} />
+          </span>
+          <span>
+            <FontAwesomeIcon icon="trash-alt" />
+          </span>
           </div>
         {/* </div> */}
       </article>

@@ -86,6 +86,14 @@
       box-shadow: 0 5px 10px $primary-black-transparent, 0 3px 3px $primary-black-transparent;
       padding: 5px 10px;
 
+      &:first-child {
+        padding-left: 55px;
+      }
+
+      p {
+        width: 200px;
+      }
+
       .SuperUserAddBtn {
         background-color: $primary-yellow;
         padding: 5px 10px;

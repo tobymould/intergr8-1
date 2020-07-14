@@ -8,8 +8,24 @@
     background-color: rgba(255, 255, 255, 0.8);
     border-radius: 4px;
     color: #141414;
+    width: 100%;
     // border-bottom: 2px solid black;
 
+  div {
+    display: flex;
+  }
+
+  img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 15px;
+  }
+
+  p {
+    // text-align: left;
+    width: 200px;
+}
     .buttonContainer {
         width: 128.83px;
         display: flex;
@@ -21,8 +37,5 @@
         cursor: pointer;
     }
 
-    p {
-        max-width: 100px;
-        text-align: left;
-    }
+   
 }

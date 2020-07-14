@@ -6,22 +6,39 @@ import DropDown from "../../utilities/DropDown";
 import TableRow from './TableRow'
 import CreateUser from './CreateUser/CreateUser';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import EditUser from './EditUser';
+import data from '../../data/newMockDataUsers';
 
 
 class SuperUserDashboard extends Component {
     state = {
         isDisplayAddUser: false,
+        isDisplayEditUser: false
     }
-   
+
     toggleAddUser = (event) => {
       this.setState({ isDisplayAddUser: !this.state.isDisplayAddUser})
     }
-
+    
     displayAddUser = () => {
       return this.state.isDisplayAddUser ? (<CreateUser toggleAddUser={this.toggleAddUser} />) : null
     }
 
-  render() { 
+    toggleEditUser = (event) => {
+      this.setState({ isDisplayEditUser: !this.state.isDisplayEditUser})
+    }
+
+    displayEditUser = () => {
+      return this.state.isDisplayEditUser ? (<EditUser toggleEditUser={this.toggleEditUser} data={data}/>) : null
+    }
+
+    
+    
+    render() { 
+    const mapUserData = data.map((person) => {
+      return <TableRow toggleEditUser={this.toggleEditUser} key={person.UID} data={person}/>
+    })
+
     return ( 
       <div className={styles.SuperUserContainer}>
         <NavBar />  
@@ -45,11 +62,11 @@ class SuperUserDashboard extends Component {
         </section>
         <section className={styles.SuperUserEmployee}>
           <div className={styles.tableHeader}>
+            {/* <p>Image</p> */}
             <p>Name</p>
             <p>Email</p>
-            <p>Contact Number</p>
+            {/* <p>Contact Number</p> */}
             <p>User Type</p>
-            <p>Image</p>
             {/* <div className={styles.SuperUserAddBtn}> */}
               <span className={styles.SuperUserAddBtn} onClick={this.toggleAddUser}>
                 <p>Add User</p>
@@ -60,34 +77,10 @@ class SuperUserDashboard extends Component {
              
           </div>
           <div className={styles.tableRowScroll}>
-            <TableRow />
-            <TableRow />
-            <TableRow />
-            <TableRow />
-            <TableRow />
-            <TableRow />
-            <TableRow />
-            <TableRow />
-            <TableRow />
-            <TableRow />
-            <TableRow />
-            <TableRow />
-            <TableRow />
-            <TableRow />
-            <TableRow />
-            <TableRow />
-            <TableRow />
-            <TableRow />
-            <TableRow />
-            <TableRow />
-            <TableRow />
-            <TableRow />
-            <TableRow />
-            <TableRow />
-            <TableRow />
-            <TableRow />
+            {mapUserData}
           </div>
           {this.displayAddUser()}
+          {this.displayEditUser()}
         </section>
       </div>
     );
