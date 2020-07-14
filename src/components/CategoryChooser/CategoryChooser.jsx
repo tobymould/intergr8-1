@@ -3,7 +3,8 @@ import styles from'./CategoryChooser.module.scss';
 import TicketCatStageOne from "./TicketCatStageOne";
 import TicketCatStageTwo from "./TicketCatStageTwo";
 import TicketCatStageThree from "./TicketCatStageThree";
-import NavBar from '../../components/NavBar'
+import CreateTicket from "./CreateTicket";
+import NavBar from '../../components/NavBar';
 
 class CategoryChooser extends Component {
   tileData = {
@@ -58,17 +59,13 @@ class CategoryChooser extends Component {
   state = {
     stage: 0,
     firstTile: "",
+    selector: []
   };
 
-  tileClick = (selector) => {
+  optionClick = (selector) => {
     this.setState({
       stage: this.state.stage + 1,
-      selector
-    });
-  };
-  optionClick = () => {
-    this.setState({
-      stage: this.state.stage + 1,
+      selector: [...this.state.selector, selector]
     });
   };
 
@@ -77,7 +74,7 @@ class CategoryChooser extends Component {
       return (
         <>
           <h2>What is your query regarding?</h2>
-          <TicketCatStageOne data={this.tileData} tileClick={this.tileClick} />
+          <TicketCatStageOne data={this.tileData} optionClick={this.optionClick} />
         </>
       );
     } else if (this.state.stage === 1) {
@@ -85,13 +82,17 @@ class CategoryChooser extends Component {
         <>
         <h2>Please select one of the following options...</h2>
         <TicketCatStageTwo
-          queries={this.tileData[this.state.selector].queries}
+          queries={this.tileData[this.state.selector[0]].queries}
           optionClick={this.optionClick}
         />
         </>
       );
     } else if (this.state.stage === 2) {
-      return <TicketCatStageThree />;
+      return <TicketCatStageThree optionClick={(event) => {
+        console.log(event.target.value);
+        this.setState({ stage: this.state.stage + 1, finalChoice: event.target.value })}} />;
+    } else if (this.state.stage === 3) {
+      return this.state.finalChoice === 'FAQs' ? <p>FAQs</p> : <CreateTicket choices={this.state.selector} />;
     }
   }
 

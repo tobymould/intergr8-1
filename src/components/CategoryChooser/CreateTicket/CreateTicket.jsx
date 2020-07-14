@@ -21,7 +21,6 @@ class CreateTicket extends Component {
 
     return (
       <>
-        <NavBar />
         <div className={styles.backGround}>
           <section className={styles.topField}>
             <p className={styles.topBanner}>New Ticket +</p>

@@ -6,8 +6,8 @@ class Checkout extends Component {
   render() { 
     return ( 
         <>
-        <button className={styles.button}>FAQs</button>
-        <button className={styles.button}>Create Ticket</button>
+        <button className={styles.button} onClick={this.props.optionClick}>FAQs</button>
+        <button className={styles.button} onClick={this.props.optionClick}>Create Ticket</button>
         </>
      );
   }

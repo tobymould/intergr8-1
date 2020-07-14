@@ -9,7 +9,12 @@ class Option extends Component {
           <p
             key={index}
             className={styles.option}
-            onClick={this.props.optionClick}
+            id={query}
+            onClick={(event) => {
+              let string = event.target.id
+              this.props.optionClick(string)
+            }
+          }
           >
             {query}
           </p>

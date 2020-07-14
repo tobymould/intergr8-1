@@ -15,7 +15,7 @@ class TicketCatStageOne extends Component {
                 key={data[1].id}
                 selector={selector}
                 data={data[1]}
-                handleClick={() => this.props.tileClick(selector)}
+                handleClick={() => this.props.optionClick(selector)}
               />
             );
           })}
