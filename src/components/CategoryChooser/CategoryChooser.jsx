@@ -4,7 +4,9 @@ import TicketCatStageOne from "./TicketCatStageOne";
 import TicketCatStageTwo from "./TicketCatStageTwo";
 import TicketCatStageThree from "./TicketCatStageThree";
 import CreateTicket from "./CreateTicket";
+import FAQs from "./FAQs";
 import NavBar from '../../components/NavBar';
+import Button from "../../utilities/Button";
 
 class CategoryChooser extends Component {
   tileData = {
@@ -62,12 +64,22 @@ class CategoryChooser extends Component {
     selector: []
   };
 
-  optionClick = (selector) => {
+  optionClick = (selector, count) => {
+    count = count ? count : 1;
+    let newSelector =   count < 0 ? this.state.selector : [...this.state.selector, selector];
     this.setState({
-      stage: this.state.stage + 1,
-      selector: [...this.state.selector, selector]
+      //change stage to receive either +1 or -1
+      stage: this.state.stage + count,
+      selector: newSelector
     });
   };
+
+  goBack = () => {
+    //onclick of goback decrement the stage
+    if (this.state.stage > 0) return <Button className={styles.goBack} text={'Go back'} logic={()=> {
+      this.optionClick(this.state.selector, -1)
+    }} />
+  }
 
   getCategory() {
     if (this.state.stage === 0) {
@@ -81,6 +93,7 @@ class CategoryChooser extends Component {
       return (
         <>
         <h2>Please select one of the following options...</h2>
+        {console.log(this.tileData[this.state.selector[0]], this.state.selector)}
         <TicketCatStageTwo
           queries={this.tileData[this.state.selector[0]].queries}
           optionClick={this.optionClick}
@@ -89,10 +102,11 @@ class CategoryChooser extends Component {
       );
     } else if (this.state.stage === 2) {
       return <TicketCatStageThree optionClick={(event) => {
-        console.log(event.target.value);
-        this.setState({ stage: this.state.stage + 1, finalChoice: event.target.value })}} />;
+        this.setState({ finalChoice: event.target.value })
+        this.optionClick(event.target.value)
+      }} />;
     } else if (this.state.stage === 3) {
-      return this.state.finalChoice === 'FAQs' ? <p>FAQs</p> : <CreateTicket choices={this.state.selector} />;
+      return this.state.finalChoice === 'FAQs' ? <FAQs choices={this.state.selector} /> : <CreateTicket choices={this.state.selector} />;
     }
   }
 
@@ -102,6 +116,7 @@ class CategoryChooser extends Component {
       <section className={styles.categoryChooser}>
         <NavBar />
         {this.getCategory()}
+        {this.goBack()}
       </section>
     );
   }
