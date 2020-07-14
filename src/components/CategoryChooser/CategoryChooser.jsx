@@ -1,8 +1,9 @@
 import React, { Component } from "react";
-import styles from'./CategoryChooser.module.scss';
+import styles from "./CategoryChooser.module.scss";
 import TicketCatStageOne from "./TicketCatStageOne";
 import TicketCatStageTwo from "./TicketCatStageTwo";
 import TicketCatStageThree from "./TicketCatStageThree";
+import NavBar from "../../components/NavBar";
 
 class CategoryChooser extends Component {
   tileData = {
@@ -72,7 +73,7 @@ class CategoryChooser extends Component {
   tileClick = (selector) => {
     this.setState({
       stage: this.state.stage + 1,
-      selector
+      selector,
     });
   };
   optionClick = () => {
@@ -85,18 +86,18 @@ class CategoryChooser extends Component {
     if (this.state.stage === 0) {
       return (
         <>
-          <h1>What is your query regarding?</h1>
+          <h1> What is your query regarding?</h1>
           <TicketCatStageOne data={this.tileData} tileClick={this.tileClick} />
         </>
       );
     } else if (this.state.stage === 1) {
       return (
         <>
-        <h1>Please select one of the following options...</h1>
-        <TicketCatStageTwo
-          queries={this.tileData[this.state.selector].queries}
-          optionClick={this.optionClick}
-        />
+          <h1>Please select one of the following options...</h1>
+          <TicketCatStageTwo
+            queries={this.tileData[this.state.selector].queries}
+            optionClick={this.optionClick}
+          />
         </>
       );
     } else if (this.state.stage === 2) {
@@ -108,6 +109,7 @@ class CategoryChooser extends Component {
     console.log(this.state);
     return (
       <section className={styles.categoryChooser}>
+        <NavBar />
         {this.getCategory()}
       </section>
     );
