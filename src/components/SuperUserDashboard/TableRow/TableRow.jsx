@@ -6,53 +6,75 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 class TableRow extends Component {
 
-  // displayRole = () => {
-  //   return switch(this.props.role) {
-  //     case 1: 
-  //       return "Employee";
-  //       break;
-  //     case 2:
-  //       return "Agent";
-  //       break;
-  //     case 3: 
-  //       return "Superagent"
-  //       break;
-  //   }
-  // }
+  state = {
+    editUser: false,
+  }
 
-  render() { 
+  displayRole = () => {
+    switch(this.props.data.role) {
+      case 1: 
+        return "Employee";
+      case 2:
+        return "Agent";
+      case 3: 
+        return "Super Agent"
+    }
+  }
+
+  toggleEditUser = () => {
+    this.setState({
+      editUser: !this.state.editUser
+    })
+  }
+
+  displayEdit = () => {
     const { name, UID, email, img, role } = this.props.data;
 
-    return ( 
-
+    if (this.state.editUser) {
+      return (
       <article className={styles.TableRow}>
-        {/* <div className={styles.name}> */}
-        <div>
-          <img src={img}/>
-            <p>{name}</p>
+      <div>
+        <img src={img}/>
+          <input type="text" defaultValue={name} />
+      </div>
+        <input type="email" defaultValue={email} />
+      <p>{this.displayRole()}</p>
+      <div className={styles.buttonContainer}>
+        <span>
+          <FontAwesomeIcon icon="user-edit" onClick={this.toggleEditUser} />
+        </span>
+        <span>
+          <FontAwesomeIcon icon="trash-alt" />
+        </span>
         </div>
-        {/* </div> */}
-        {/* <div> */}
-          <p>{email}</p>
-        {/* </div> */}
-        {/* <p>07867345432</p> */}
-        {/* <div> */}
-         <p>User Type</p>
-        {/* </div> */}
-        {/* <div> */}
-        {/* </div> */}
-        {/* <div> */}
-          {/* <Button text="Edit/Delete"/> */}
-        <div className={styles.buttonContainer}>
-          <span>
-            <FontAwesomeIcon icon="user-edit" onClick={this.props.toggleEditUser} />
-          </span>
-          <span>
-            <FontAwesomeIcon icon="trash-alt" />
-          </span>
+    </article>
+    )} else {
+      return (
+        <article className={styles.TableRow}>
+          <div>
+            <img src={img}/>
+              <p>{name}</p>
           </div>
-        {/* </div> */}
-      </article>
+            <p>{email}</p>
+          <p>{this.displayRole()}</p>
+          <div className={styles.buttonContainer}>
+            <span>
+              <FontAwesomeIcon icon="user-edit" onClick={this.toggleEditUser} />
+            </span>
+            <span>
+              <FontAwesomeIcon icon="trash-alt" />
+            </span>
+            </div>
+        </article>
+      ) 
+    } 
+  }
+
+  render() { 
+    return ( 
+      <>
+        {this.displayEdit()}
+      </>
      );
   }
 }

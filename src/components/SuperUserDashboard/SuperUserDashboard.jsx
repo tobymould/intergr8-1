@@ -13,7 +13,7 @@ import data from '../../data/newMockDataUsers';
 class SuperUserDashboard extends Component {
     state = {
         isDisplayAddUser: false,
-        isDisplayEditUser: false
+        isDisplayEditUser: false,
     }
 
     toggleAddUser = (event) => {
@@ -36,7 +36,7 @@ class SuperUserDashboard extends Component {
     
     render() { 
     const mapUserData = data.map((person) => {
-      return <TableRow toggleEditUser={this.toggleEditUser} key={person.UID} data={person}/>
+      return <TableRow toggleEdit={this.toggleEdit} key={person.UID} data={person}/>
     })
 
     return ( 

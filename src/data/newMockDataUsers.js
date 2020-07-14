@@ -15,7 +15,7 @@ const data = [
     {
       ID: "",
       UID: "E00000002",
-      name: "David",
+      name: "David Wildman",
       email: "david.wildman@nology.io",
       password: "youwillneverfindout",
       img:
@@ -28,7 +28,7 @@ const data = [
     {
       ID: "",
       UID: "S00000001",
-      name: "Nick",
+      name: "Nick Smith",
       email: "nick.smith@email.com",
       password: "deepestdarkestsecret",
       img:
@@ -41,7 +41,7 @@ const data = [
     {
       ID: "",
       UID: "A00000001",
-      name: "James",
+      name: "James Bond",
       email: "james.bond@email.com",
       password: "ohnoq",
       img:

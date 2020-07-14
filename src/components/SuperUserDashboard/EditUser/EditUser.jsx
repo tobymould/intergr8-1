@@ -6,6 +6,7 @@ import DropDown from "../../../utilities/DropDown";
 class EditUser extends Component {
   state = {  }
   render() { 
+    console.log(this.props.data.name)
     return ( 
       <div className={styles.EditUserModal}>
       <div className={styles.EditUserContainer}>
