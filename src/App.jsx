@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import './App.css';
+import { globalHistory } from '@reach/router';
 import Routes from './containers/Routes/Routes.jsx';
 import './data/fa-library';
-import firebase from './firebase';
+import firebase, { providers } from './firebase';
 
 class App extends Component {
   state = {
@@ -11,7 +12,8 @@ class App extends Component {
     password: null
   };
 
-  userSignInAttempt = () => {
+  userSignInAttempt = event => {
+    event.preventDefault();
     const { emailAddress, password } = this.state;
     firebase
       .auth()
@@ -20,7 +22,8 @@ class App extends Component {
         const errorCode = error.code;
         const errorMessage = error.message;
         console.log(errorCode, errorMessage);
-      });
+      })
+      .then(globalHistory.navigate('/app/dashboard'));
   };
 
   render() {

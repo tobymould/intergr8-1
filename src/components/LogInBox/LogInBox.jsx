@@ -21,6 +21,7 @@ class LogInBox extends Component {
                 </div>
                 <div className={styles.formSection}>
                   {/*  */}
+                  {/*  */}
                   <form onSubmit={userSignInAttempt}>
                     <div className={styles.inputWrapper}>
                       <InputBox id="email" type="email" name="email" placeholder="Email" onInput={event => this.setState({ emailAddress: event.target.value })} />
@@ -36,6 +37,7 @@ class LogInBox extends Component {
                     </div>
                     <SubmitButton text="Sign In" />
                   </form>
+                  {/*  */}
                   {/*  */}
                 </div>
               </div>
