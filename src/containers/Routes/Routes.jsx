@@ -15,7 +15,7 @@ class Routes extends Component {
         <CategoryChooser path="ticket" />
         <TicketView path="viewticket" />
         <CreateTicket path="createticket" />
-        <LogInBox default />
+        <LogInBox default userSignInAttempt={this.props.userSignInAttempt} user={this.props.user} emailAddress={this.props.emailAddress} password={this.props.password} />
       </Router>
     );
   }
