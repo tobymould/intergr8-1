@@ -28,7 +28,7 @@ class NavBar extends Component {
         link: '/'
       }
     ]
-  }
+ }
 
   toggleNav = () => {
     this.setState({
