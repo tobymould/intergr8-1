@@ -29,26 +29,26 @@ class App extends Component {
     firebase
       .auth()
       .signInWithEmailAndPassword(emailAddress, password)
+      .then(() => globalHistory.navigate('dashboard'))
       .catch(error => {
         const errorCode = error.code;
         const errorMessage = error.message;
-        console.log(errorCode, errorMessage);
-      })
-      .then(globalHistory.navigate('/'));
+        // console.log(errorCode, errorMessage);
+      });
   };
 
   setEmail = event => {
     this.setState({ emailAddress: event.target.value });
-    console.log(this.props.emailAddress);
+    console.log(event.target.value);
   };
 
   setPassword = event => {
     this.setState({ password: event.target.value });
-    console.log(this.props.password);
+    console.log(event.target.value);
   };
 
   render() {
-    return this.state.user ? <Routes /> : <LogInBox userSignInAttempt={this.userSignInAttempt} setEmail={this.setEmail} setPassword={this.setPassword} user={this.state.user} emailAddress={this.state.emailAddress} password={this.state.password} />;
+    return <Routes userSignInAttempt={this.userSignInAttempt} setEmail={this.setEmail} setPassword={this.setPassword} user={this.state.user} emailAddress={this.state.emailAddress} password={this.state.password} />;
   }
 }
 
