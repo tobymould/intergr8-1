@@ -6,6 +6,7 @@ import { firestore } from "../../../firebase";
 
 class CreateUser extends Component {
   state = {  
+      ID: '',
       UID: '',
       name: '',
       email: '',
@@ -41,7 +42,11 @@ class CreateUser extends Component {
     firestore
     .collection("info")
     .add(info)
-    .then((info) => console.log(info))
+    .then((docRef) => {
+      console.log(docRef.id)
+      firestore.collection("info").doc(docRef.id).update({ ID: docRef.id })
+      this.props.getUsers();
+    })
     .catch((err) => console.error(err));
   }
   

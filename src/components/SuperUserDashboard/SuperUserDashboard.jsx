@@ -8,13 +8,24 @@ import CreateUser from './CreateUser/CreateUser';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import EditUser from './EditUser';
 import data from '../../data/newMockDataUsers';
-import { firestore } from "../../firebase";
+import firebase, { firestore } from "../../firebase";
+import DeleteUser from './DeleteUser/DeleteUser';
 
 
 class SuperUserDashboard extends Component {
     state = {
         isDisplayAddUser: false,
         isDisplayEditUser: false,
+        users: [],
+        idDisplayDeleteUser: false,
+    }
+
+    toggleDeleteUser = (event) => {
+      this.setState({ idDisplayDeleteUser: !this.state.idDisplayDeleteUser})
+    }
+
+    displayDeleteUser = () => {
+      return this.state.isDisplayDeleteUser ? (<DeleteUser toggleDeleteUser={this.toggleDeleteUser} />) : null
     }
 
     toggleAddUser = (event) => {
@@ -22,7 +33,7 @@ class SuperUserDashboard extends Component {
     }
     
     displayAddUser = () => {
-      return this.state.isDisplayAddUser ? (<CreateUser toggleAddUser={this.toggleAddUser} />) : null
+      return this.state.isDisplayAddUser ? (<CreateUser toggleAddUser={this.toggleAddUser} getUsers={this.getUsers}/>) : null
     }
 
     toggleEditUser = (event) => {
@@ -33,11 +44,24 @@ class SuperUserDashboard extends Component {
       return this.state.isDisplayEditUser ? (<EditUser toggleEditUser={this.toggleEditUser} data={data}/>) : null
     }
 
-    
+
+    componentDidMount(){
+      this.getUsers();
+    }
+
+    getUsers = () => {
+      firebase.firestore()
+        .collection('info')
+        .get()
+        .then((snapshot) => {
+          const users = snapshot.docs.map((doc => doc.data()))
+          this.setState({ users })
+        })
+    }
     
     render() { 
-    const mapUserData = data.map((person) => {
-      return <TableRow toggleEdit={this.toggleEdit} key={person.UID} data={person}/>
+    const mapUserData = this.state.users.map((person) => {
+      return <TableRow toggleEdit={this.toggleEdit} key={person.ID} data={person} getUsers={this.getUsers}/>
     })
 
     return ( 
@@ -78,9 +102,11 @@ class SuperUserDashboard extends Component {
           </div>
           <div className={styles.tableRowScroll}>
             {mapUserData}
+            
           </div>
           {this.displayAddUser()}
           {this.displayEditUser()}
+          {this.displayDeleteUser()}
         </section>
       </div>
     );

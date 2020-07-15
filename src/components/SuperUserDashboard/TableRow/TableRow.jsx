@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import styles from "./TableRow.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import DropDown from "../../../utilities/DropDown";
+import firebase, { firestore } from "../../../firebase";
+import DeleteUser from '../DeleteUser';
 
 
 
@@ -9,6 +11,7 @@ class TableRow extends Component {
 
   state = {
     editUser: false,
+    deleteUser: false,
   }
 
   displayRole = () => {
@@ -21,16 +24,6 @@ class TableRow extends Component {
         return "Super Agent"
     }
   }
-
-  // buildDropDown = () => {
-  //   if (this.displayRole() === "Employee") {
-  //     return `Agent`,`SuperAgent`;
-  //   } else if (this.displayRole() === "Agent") {
-  //     return `Employee`, `SuperAgent`;
-  //   } else if (this.displayRole() === "Super Agent") {
-  //       return `Employee`, `Agent`;
-  //     }
-  //   }
 
     buildDropDown = () => {
       if (this.displayRole() === "Employee") {
@@ -64,6 +57,16 @@ class TableRow extends Component {
     this.setState({
       editUser: !this.state.editUser
     })
+  }
+
+  toggleDeleteUser = () => {
+    this.setState({
+      deleteUser: !this.state.deleteUser
+    })
+  }
+
+  displayDelete = () => {
+      return this.state.deleteUser ? (<DeleteUser toggleDeleteUser={this.toggleDeleteUser} data={this.props.data} getUsers={this.props.getUsers}/>) : null
   }
 
   displayEdit = () => {
@@ -103,7 +106,7 @@ class TableRow extends Component {
               <FontAwesomeIcon icon="user-edit" onClick={this.toggleEditUser} />
             </span>
             <span>
-              <FontAwesomeIcon icon="trash-alt" />
+              <FontAwesomeIcon icon="trash-alt" onClick={this.toggleDeleteUser} />
             </span>
             </div>
         </article>
@@ -111,10 +114,11 @@ class TableRow extends Component {
     } 
   }
 
-  render() { console.log(this.buildDropDown())
+  render() { 
     return ( 
       <>
         {this.displayEdit()}
+        {this.displayDelete()}
       </>
     );
   }
