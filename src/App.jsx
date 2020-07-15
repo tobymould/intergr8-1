@@ -6,9 +6,7 @@ import './data/fa-library';
 import firebase, { providers } from './firebase';
 import LogInBox from './components/LogInBox';
 
-
 class App extends Component {
-
   state = {
     user: null,
     emailAddress: null,
@@ -25,8 +23,6 @@ class App extends Component {
     });
   }
 
-
-
   userSignInAttempt = event => {
     event.preventDefault();
     const { emailAddress, password } = this.state;
@@ -41,16 +37,18 @@ class App extends Component {
       .then(globalHistory.navigate('/'));
   };
 
+  setEmail = event => {
+    this.setState({ emailAddress: event.target.value });
+    console.log(this.props.emailAddress);
+  };
+
+  setPassword = event => {
+    this.setState({ password: event.target.value });
+    console.log(this.props.password);
+  };
+
   render() {
-    return (
-      this.state.user ?
-        <Routes />
-        : <LogInBox
-          userSignInAttempt={this.userSignInAttempt}
-          user={this.state.user}
-          emailAddress={this.state.emailAddress}
-          password={this.state.password} />
-    );
+    return this.state.user ? <Routes /> : <LogInBox userSignInAttempt={this.userSignInAttempt} setEmail={this.setEmail} setPassword={this.setPassword} user={this.state.user} emailAddress={this.state.emailAddress} password={this.state.password} />;
   }
 }
 

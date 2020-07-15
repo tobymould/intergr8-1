@@ -7,8 +7,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 class LogInBox extends Component {
   render() {
-    const { userSignInAttempt, user, emailAddress, password } = this.props;
-    console.log(user, emailAddress, password);
+    const { userSignInAttempt, setEmail, setPassword, user, emailAddress, password } = this.props;
+    console.log(user, emailAddress, password, userSignInAttempt);
 
     return (
       <section className={styles.logInPage}>
@@ -24,13 +24,13 @@ class LogInBox extends Component {
                   {/*  */}
                   <form onSubmit={userSignInAttempt}>
                     <div className={styles.inputWrapper}>
-                      <InputBox id="email" type="email" name="email" placeholder="Email" onInput={event => this.setState({ emailAddress: event.target.value })} />
+                      <InputBox id="email" type="email" name="email" setEmail={setEmail} placeholder="Email" inputHandler={this.setEmail} />
                       <label htmlFor="email">
                         <FontAwesomeIcon icon="user" />
                       </label>
                     </div>
                     <div className={styles.inputWrapper}>
-                      <InputBox id="password" type="password" name="password" placeholder="Password" onInput={event => this.setState({ password: event.target.value })} />
+                      <InputBox id="password" type="password" name="password" setPassword={setPassword} placeholder="Password" inputHandler={this.setPassword} />
                       <label htmlFor="password">
                         <FontAwesomeIcon icon="lock" />
                       </label>
