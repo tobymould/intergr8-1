@@ -18,4 +18,8 @@ class Routes extends Component {
     );
   }
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 1cbe44bb5dc142c38553bbec6b9c9c639abff47b
 export default Routes;
