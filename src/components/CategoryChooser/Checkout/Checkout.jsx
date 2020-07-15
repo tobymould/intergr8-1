@@ -5,10 +5,10 @@ class Checkout extends Component {
   state = {  }
   render() { 
     return ( 
-        <>
-        <button className={styles.button} value={'FAQs'} onClick={this.props.optionClick}>FAQs</button>
-        <button className={styles.button} value={'Create Ticket'} onClick={this.props.optionClick}>Create Ticket</button>
-        </>
+      <>
+        <p className={styles.buttonCheckout} value={'FAQs'} onClick={this.props.optionClick}>FAQs</p>
+        <p className={styles.buttonCheckout} value={'Create Ticket'} onClick={this.props.optionClick}>Create Ticket</p>
+      </>
      );
   }
 }

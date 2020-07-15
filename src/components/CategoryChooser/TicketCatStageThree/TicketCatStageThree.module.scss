@@ -1,9 +1,14 @@
 @import "../../../variables.scss";
 
 .stageThree {
-    text-align: center;
+    margin: 0 auto;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    padding-top: 80px;
+    width: 90%;
+
+    buttonCheckout: {
+      width: 300px;
+    }
 }

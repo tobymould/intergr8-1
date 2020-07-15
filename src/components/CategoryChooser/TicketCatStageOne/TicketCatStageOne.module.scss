@@ -13,16 +13,17 @@
   justify-content: center;
   flex-direction: column;
   align-items: center;
-
+  
   h1 {
     padding: 20px;
     font-size: $xlarge;
     margin-bottom: 40px;
   }
-
+  
   .tileParent {
     width: 80vw;
     display: flex;
+    // flex-wrap: wrap; /////// the wrap
     justify-content: space-around;
     align-items: stretch;
 

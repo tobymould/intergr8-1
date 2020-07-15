@@ -14,7 +14,6 @@ class Routes extends Component {
         <TicketingDashboard path="dashboard" />
         <CategoryChooser path="ticket" />
         <TicketView path="viewticket" />
-        <CreateTicket path="createticket" />
         <LogInBox default />
       </Router>
     );

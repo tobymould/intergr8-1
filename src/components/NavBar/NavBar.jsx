@@ -15,9 +15,6 @@ class NavBar extends Component {
       { title: '[View Ticket]',
         link: "/viewticket"
       },{
-        title: '[Create Ticket]',
-        link: "/createticket"
-      },{
         title: 'Dashboard',
         link: '/dashboard'
       },{
