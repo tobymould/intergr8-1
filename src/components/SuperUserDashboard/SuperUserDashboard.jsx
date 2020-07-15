@@ -8,6 +8,7 @@ import CreateUser from './CreateUser/CreateUser';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import EditUser from './EditUser';
 import data from '../../data/newMockDataUsers';
+import { firestore } from "../../firebase";
 
 
 class SuperUserDashboard extends Component {

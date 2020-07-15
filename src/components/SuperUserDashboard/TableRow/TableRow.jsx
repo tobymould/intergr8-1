@@ -22,6 +22,44 @@ class TableRow extends Component {
     }
   }
 
+  // buildDropDown = () => {
+  //   if (this.displayRole() === "Employee") {
+  //     return `Agent`,`SuperAgent`;
+  //   } else if (this.displayRole() === "Agent") {
+  //     return `Employee`, `SuperAgent`;
+  //   } else if (this.displayRole() === "Super Agent") {
+  //       return `Employee`, `Agent`;
+  //     }
+  //   }
+
+    buildDropDown = () => {
+      if (this.displayRole() === "Employee") {
+        return (
+          <>
+          <option value='Employee' selected>Employee</option>
+          <option value='Agent'>Agent</option>
+          <option value='SuperAgent'>SuperAgent</option>
+          </>
+        )
+      } else if (this.displayRole() === "Agent") {
+        return (
+          <>
+          <option value='Employee'>Employee</option>
+          <option value='Agent' selected>Agent</option>
+          <option value='SuperAgent'>SuperAgent</option>
+          </>
+        )
+      } else if (this.displayRole() === "Super Agent") {
+          return (
+            <>
+            <option value='Employee'>Employee</option>
+            <option value='Agent'>Agent</option>
+            <option value='SuperAgent' selected>SuperAgent</option>
+            </>
+          )
+        }
+      }
+
   toggleEditUser = () => {
     this.setState({
       editUser: !this.state.editUser
@@ -39,8 +77,9 @@ class TableRow extends Component {
           <input type="text" defaultValue={name} />
       </div>
         <input type="email" defaultValue={email} />
-      <DropDown id="user-type" filterOptions={["Employee", "HR Agent", "SuperAgent"]}/>
-      {/* <p>{this.displayRole()}</p> */}
+      <select>
+        {this.buildDropDown()}
+      </select>
       <div className={styles.buttonContainer}>
         <span>
           <FontAwesomeIcon icon="check-circle" />
@@ -72,12 +111,12 @@ class TableRow extends Component {
     } 
   }
 
-  render() { 
+  render() { console.log(this.buildDropDown())
     return ( 
       <>
         {this.displayEdit()}
       </>
-     );
+    );
   }
 }
  
