@@ -52,7 +52,7 @@ class SuperUserDashboard extends Component {
           </div>
           <div className={styles.searchBox}>
             {/* <InputBox placeholder="Search"/> */}
-            <input type="text" id="search" placeholder="Search users" autoComplete="false"/>
+            <input type="text" id="search" placeholder="Search users" autoComplete="false" />
               <span>
                 <label htmlFor="search">
                   <FontAwesomeIcon icon="search"/>
@@ -74,7 +74,6 @@ class SuperUserDashboard extends Component {
                 <FontAwesomeIcon icon="user-plus" />
               </span>
             {/* </div> */}
-             
           </div>
           <div className={styles.tableRowScroll}>
             {mapUserData}

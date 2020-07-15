@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import styles from "./TableRow.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import DropDown from "../../../utilities/DropDown";
 
 
 
@@ -38,13 +39,14 @@ class TableRow extends Component {
           <input type="text" defaultValue={name} />
       </div>
         <input type="email" defaultValue={email} />
-      <p>{this.displayRole()}</p>
+      <DropDown id="user-type" filterOptions={["Employee", "HR Agent", "SuperAgent"]}/>
+      {/* <p>{this.displayRole()}</p> */}
       <div className={styles.buttonContainer}>
         <span>
-          <FontAwesomeIcon icon="user-edit" onClick={this.toggleEditUser} />
+          <FontAwesomeIcon icon="check-circle" />
         </span>
         <span>
-          <FontAwesomeIcon icon="trash-alt" />
+          <FontAwesomeIcon icon="times-circle" onClick={this.toggleEditUser}/>
         </span>
         </div>
     </article>

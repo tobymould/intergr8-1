@@ -24,7 +24,7 @@ class CreateUser extends Component {
             </div> */}
             <div>
               <label for="user-type">User Type:</label>
-              <DropDown id="user-type" filterOptions={["Employee", "HR User", "SuperUser"]}/>
+              <DropDown id="user-type" filterOptions={["Employee", "HR Agent", "SuperAgent"]}/>
             </div>
             <div>
               <label for="upload-photo">Upload Photo:</label>

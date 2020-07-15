@@ -13,7 +13,9 @@ import {
   faUserPlus,
   faUserSlash,
   faTrashAlt, 
-  faSearch
+  faSearch,
+  faCheckCircle,
+  faTimesCircle,
 } from "@fortawesome/free-solid-svg-icons";
 
 export default library.add(
@@ -31,5 +33,7 @@ export default library.add(
   faUserPlus,
   faUserSlash,
   faTrashAlt,
-  faSearch
+  faSearch,
+  faCheckCircle,
+  faTimesCircle,
 );
