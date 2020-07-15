@@ -18,7 +18,7 @@ class Column extends Component {
 
   renderFilter() {
     return this.props.filter ? (
-      <DropDown filterOptions={["Newest", "Oldest", "Priority", "Category"]} />
+      <DropDown filterOptions={["Newest", "Oldest", "Priority"]} />
     ) : (
       <p>{}</p>
     );
@@ -32,8 +32,6 @@ class Column extends Component {
       orderData.sort((a, b) => new Date(a.createdAtDate) - new Date(b.createdAtDate));
     } else if (e.target.value === "Priority") {
       orderData.sort((a, b) => a.priority - b.priority);
-    } else if (e.target.value === "Category") {
-      orderData.sort((a, b) => a.category - b.category);
     }
     this.setState({
       tickets: orderData,
