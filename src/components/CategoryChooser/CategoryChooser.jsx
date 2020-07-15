@@ -71,16 +71,24 @@ class CategoryChooser extends Component {
   };
 
   tileClick = (selector) => {
+    if (selector === "healthandsafety") {
+      this.setState({
+        stage: this.state.stage + 2,
+        selector,
+      })
+    }else {
     this.setState({
       stage: this.state.stage + 1,
       selector,
     });
+  }
   };
   optionClick = () => {
     this.setState({
       stage: this.state.stage + 1,
     });
-  };
+    }
+  ;
 
   getCategory() {
     if (this.state.stage === 0) {
