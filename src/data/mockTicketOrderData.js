@@ -1,6 +1,7 @@
 const ticketData = [
     {
         ID: "BOND007",
+        title: 'HR',
         category: 1,
         subCategory: 3,
         createdBy: "E00000001", // Employee UID

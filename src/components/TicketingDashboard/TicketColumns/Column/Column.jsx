@@ -17,14 +17,20 @@ class Column extends Component {
   // }
 
   renderFilter() {
-    return this.props.filter ? (
-      <DropDown filterOptions={["Newest", "Oldest", "Priority"]} />
-    ) : (
-      <p>{}</p>
-    );
+    return <DropDown filterOptions={["Newest", "Oldest", "Priority"]} />;
+  }
+  renderUser() {
+    return <DropDown filterOptions={["HR", "Payroll", "L&D", "Health & Safety", "Recruitment"]} />;
   }
 
-  filterClicked = (e) => {
+  filterByUser = (e) => {
+      console.log(data.filter((obj) => {
+        return obj.title === e.target.value ;
+      })
+      )
+  };
+
+  sortOptions = (e) => {
     const orderData = [...this.state.tickets];
     if (e.target.value === "Newest") {
       orderData.sort((a, b) => new Date(b.createdAtDate) - new Date(a.createdAtDate));
@@ -44,7 +50,8 @@ class Column extends Component {
         <article className={styles.TicketColumn}>
           <div className={styles.topOfColumn}>
             <h3>{this.props.title}</h3>
-            <div onChange={this.filterClicked}>{this.renderFilter()}</div>
+            <div onChange={this.filterByUser}>{this.renderUser()}</div>
+            <div onChange={this.sortOptions}>{this.renderFilter()}</div>
           </div>
           <section title={this.props.title}>
             <TicketTile data={this.state.tickets} />
