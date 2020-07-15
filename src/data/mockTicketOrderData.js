@@ -1,11 +1,11 @@
 const ticketData = [
     {
-        ID: "",
+        ID: "BOND007",
         category: 1,
         subCategory: 3,
         createdBy: "E00000001", // Employee UID
         assignedTo: ["S00000001"], // can be multiple
-        createdAtDate: "2020-05-02",
+        createdAtDate: "2008-05-02",
         modifiedAtDate: ["13/07/2020 17:05:43"],
         isOpen: true,
         priority: 5, // Time-based on date
@@ -51,11 +51,11 @@ const ticketData = [
 
     {
         ID: '',
-        category: 1,
+        category: 5,
         subCategory: 1,
         createdBy: 'E00000002', // Employee UID
         assignedTo: ['S00000001'], // can be multiple
-        createdAtDate: '2020-02-14',
+        createdAtDate: '2000-02-14',
         modifiedAtDate: ['14/07/2020'],
         isOpen: true,
         priority: 3, // Time-based on date
@@ -101,7 +101,7 @@ const ticketData = [
 
     {
         ID: '',
-        category: 1,
+        category: 3,
         subCategory: 2,
         createdBy: 'E00000003',
         assignedTo: ['A00000001'],

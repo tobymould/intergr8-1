@@ -7,14 +7,14 @@ import data from "../../../../data/mockTicketOrderData";
 
 class Column extends Component {
   state = {
-    tickets: [],
-    prioritySorted: [],
+    tickets: data,
+    // prioritySorted: [],
   };
 
-  componentDidMount() {
-    //get from firebase
-    // this.setState({ tickets: data, prioritySorted: filterClicked(data)})
-  }
+  // componentDidMount() {
+  //   //get from firebase
+  //   // this.setState({ tickets: data, prioritySorted: filterClicked(data) });
+  // }
 
   renderFilter() {
     return this.props.filter ? (
@@ -25,19 +25,19 @@ class Column extends Component {
   }
 
   filterClicked = (e) => {
+    const orderData = [...this.state.tickets];
     if (e.target.value === "Newest") {
-      let newestDates = data.sort((a, b) => new Date(b.createdAtDate) - new Date(a.createdAtDate));
-      console.log(newestDates);
+      orderData.sort((a, b) => new Date(b.createdAtDate) - new Date(a.createdAtDate));
     } else if (e.target.value === "Oldest") {
-      let oldestDates = data.sort((a, b) => new Date(a.createdAtDate) - new Date(b.createdAtDate));
-      console.log(oldestDates);
+      orderData.sort((a, b) => new Date(a.createdAtDate) - new Date(b.createdAtDate));
     } else if (e.target.value === "Priority") {
-      const prioritySort = data.sort((a, b) => b.priority - a.priority);
-      console.log(prioritySort);
-    } else if (e.target.value === "Category ") {
-      const categorySort = data.sort((a, b) => b.category - a.category);
-      console.log(categorySort);
+      orderData.sort((a, b) => a.priority - b.priority);
+    } else if (e.target.value === "Category") {
+      orderData.sort((a, b) => a.category - b.category);
     }
+    this.setState({
+      tickets: orderData,
+    });
   };
 
   render() {
@@ -49,7 +49,7 @@ class Column extends Component {
             <div onChange={this.filterClicked}>{this.renderFilter()}</div>
           </div>
           <section title={this.props.title}>
-            <TicketTile/>
+            <TicketTile data={this.state.tickets} />
           </section>
         </article>
         {/* <TicketView /> */}
