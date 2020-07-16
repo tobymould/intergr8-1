@@ -5,6 +5,7 @@ import TicketingDashboard from "../../components/TicketingDashboard";
 import CategoryChooser from "../../components/CategoryChooser";
 import CreateTicket from "../../components/CategoryChooser/CreateTicket";
 import TicketView from "../../components/TicketingDashboard/TicketColumns/Column/TicketView";
+import SuperUserDashboard from "../../components/SuperUserDashboard";
 class Routes extends Component {
   render() {
     return (

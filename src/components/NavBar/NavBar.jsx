@@ -48,11 +48,7 @@ class NavBar extends Component {
     return this.state.navOpen ? "arrow-right" : "bars";
   }
 
-<<<<<<< HEAD
-renderNav = () => this.navItems.map((item, index) =>  <Link to={item.link} key={index}><h3>{item.title}</h3></Link>) // own components?
-=======
 renderNav = () => this.navItems.map((item, index) => <Link key={index} to={item.link}><h3>{item.title}</h3></Link>) // own components?
->>>>>>> 6a297b302b4198b349bcf8ccd31e9128886e58a0
 
   render() {
     return (
