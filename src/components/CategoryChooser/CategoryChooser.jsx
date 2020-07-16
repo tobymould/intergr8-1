@@ -16,10 +16,25 @@ class CategoryChooser extends Component {
     selector: []
   };
 
+  noSubCategories = (selector, count) => {
+    // if (selector === "Health & Safety") count = 2;
+
+    this.setState({
+      stage: this.state.stage + count*2,
+      selector: selector
+    }) 
+  }
+
   optionClick = (selector, count) => {
     count = count ? count : 1;
-    if (selector === "Health & Safety") count = 2;
-    let newSelector =   count < 0 ? this.state.selector.slice(0,this.state.selector.length-1) : [...this.state.selector, selector];
+
+    let newSelector =   count < 0 && this.state.stage < 3 ? this.state.selector.slice(0,this.state.selector.length-1) : [...this.state.selector, selector];
+    newSelector = this.state.stage === 3 ? this.state.selector : newSelector;
+
+    if (tileData[selector] && tileData[selector].queries.length === 0) return this.noSubCategories(newSelector, count)
+    
+
+
     this.setState({
       //change stage to receive either +1 or -1
       stage: this.state.stage + count,
@@ -30,6 +45,8 @@ class CategoryChooser extends Component {
 
   goBack = () => {
     //onclick of goback decrement the stage
+
+    console.log("The current stage is: " + this.state.stage)
     if (this.state.stage > 0) return <Button className={styles.goBack} text={'Go back'} logic={() => {this.optionClick(this.state.selector, -1)}} />
   }
 
@@ -53,10 +70,7 @@ class CategoryChooser extends Component {
       );
     } else if (this.state.stage === 2) {
       return <TicketCatStageThree optionClick={(event) => {
-        console.log(event.target.value)
-        this.setState({ finalChoice: event.target.value })
-        this.optionClick(event.target.value)
-        console.log("Event target value: " + event.target.value);
+        this.setState({ finalChoice: event.target.value, stage: this.state.stage + 1 })
       }} />;
     } else if (this.state.stage === 3) {
       return this.state.finalChoice === 'FAQs' ? <FAQs choices={this.state.selector} /> : <CreateTicket choices={this.state.selector} />;
