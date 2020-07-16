@@ -1,23 +1,23 @@
 @import "../../variables.scss";
 
-body {
-  // background-image: url(../../assets/Frame3.png);
+.categoryChooser {
+  background-image: url(../../assets/Frame3.png);
   background-repeat: no-repeat;
   background-size: cover;
-
-  @media screen and (max-width: 800px) {
-    background-image: none;
-    background-color: $primary-yellow;
-  }
-}
-.categoryChooser {
-  h1 {
-
-  }
+  height: 100vh;
+  width: 100vw;
   
-  h2 {
+  h1 {
     text-align: center;
     padding-top: 150px;
     font-size: $xlarge;
+  }
+  @media screen and (max-width: 800px) {
+    background-image: none;
+    background-color: $primary-yellow;
+    h1 {
+      padding-top: 60px;
+    }
+    height: 100%;
   }
 }
