@@ -3,8 +3,7 @@ import './App.css';
 import { globalHistory } from '@reach/router';
 import Routes from './containers/Routes/Routes.jsx';
 import './data/fa-library';
-import firebase, { providers } from './firebase';
-import LogInBox from './components/LogInBox';
+import firebase from './firebase';
 
 class App extends Component {
   state = {
@@ -30,12 +29,21 @@ class App extends Component {
       .auth()
       .signInWithEmailAndPassword(emailAddress, password)
       .then(() => globalHistory.navigate('dashboard'))
-      .catch(error => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        // console.log(errorCode, errorMessage);
+      .catch(error => alert("Oops. We couldn't sign you in. " + error.message));
+  };
+
+  signOut = () => {
+    firebase
+      .auth()
+      .signOut()
+      .then(() => {
+        this.setState({ user: null });
+      })
+      .catch((error) => {
+        alert("Sorry!" + error.message);
       });
   };
+
 
   setEmail = event => {
     this.setState({ emailAddress: event.target.value });
@@ -48,7 +56,7 @@ class App extends Component {
   };
 
   render() {
-    return <Routes userSignInAttempt={this.userSignInAttempt} setEmail={this.setEmail} setPassword={this.setPassword} user={this.state.user} emailAddress={this.state.emailAddress} password={this.state.password} />;
+    return <Routes userSignInAttempt={this.userSignInAttempt} signOut={this.signOut} setEmail={this.setEmail} setPassword={this.setPassword} user={this.state.user} emailAddress={this.state.emailAddress} password={this.state.password} />;
   }
 }
 
