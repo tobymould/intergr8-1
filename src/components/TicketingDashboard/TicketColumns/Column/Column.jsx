@@ -8,7 +8,7 @@ import data from "../../../../data/mockTicketOrderData";
 class Column extends Component {
   state = {
     tickets: data,
-    // prioritySorted: [],
+    filteredTickets: data,
   };
 
   // componentDidMount() {
@@ -23,15 +23,25 @@ class Column extends Component {
     return <DropDown filterOptions={["HR", "Payroll", "L&D", "Health & Safety", "Recruitment"]} />;
   }
 
+  unfilterUser = () => {
+    const unfilterData = [...this.state.tickets];
+    this.setState({
+      filteredTickets: unfilterData,
+    });
+  };
+
   filterByUser = (e) => {
-      console.log(data.filter((obj) => {
-        return obj.title === e.target.value ;
-      })
-      )
+    const ticketsCopy = [...this.state.tickets];
+    const filteredTickets = ticketsCopy.filter((obj) => {
+      return obj.title === e.target.value;
+    });
+    this.setState({
+      filteredTickets,
+    });
   };
 
   sortOptions = (e) => {
-    const orderData = [...this.state.tickets];
+    const orderData = [...this.state.filteredTickets];
     if (e.target.value === "Newest") {
       orderData.sort((a, b) => new Date(b.createdAtDate) - new Date(a.createdAtDate));
     } else if (e.target.value === "Oldest") {
@@ -40,7 +50,7 @@ class Column extends Component {
       orderData.sort((a, b) => a.priority - b.priority);
     }
     this.setState({
-      tickets: orderData,
+      filteredTickets: orderData,
     });
   };
 
@@ -52,9 +62,10 @@ class Column extends Component {
             <h3>{this.props.title}</h3>
             <div onChange={this.filterByUser}>{this.renderUser()}</div>
             <div onChange={this.sortOptions}>{this.renderFilter()}</div>
+            <button onClick={this.unfilterUser}>Clear filter</button>
           </div>
           <section title={this.props.title}>
-            <TicketTile data={this.state.tickets} />
+            <TicketTile data={this.state.filteredTickets} />
           </section>
         </article>
         {/* <TicketView /> */}
