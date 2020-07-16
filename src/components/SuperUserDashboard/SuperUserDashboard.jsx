@@ -18,6 +18,7 @@ class SuperUserDashboard extends Component {
         isDisplayEditUser: false,
         users: [],
         idDisplayDeleteUser: false,
+        filterText: ''
     }
 
     toggleDeleteUser = (event) => {
@@ -54,15 +55,18 @@ class SuperUserDashboard extends Component {
         .collection('info')
         .get()
         .then((snapshot) => {
-          const users = snapshot.docs.map((doc => doc.data()))
+          const users = snapshot.docs
+          .map((doc => doc.data()))
           this.setState({ users })
         })
     }
-    
+
     render() { 
-    const mapUserData = this.state.users.map((person) => {
-      return <TableRow toggleEdit={this.toggleEdit} key={person.ID} data={person} getUsers={this.getUsers}/>
-    })
+    const mapUserData = this.state.users
+    .filter((user) => user.name.toLowerCase().includes(this.state.filterText))
+    .map((person) => {
+        return <TableRow toggleEdit={this.toggleEdit} key={person.ID} data={person} getUsers={this.getUsers}/>
+      })
 
     return ( 
       <div className={styles.SuperUserContainer}>
@@ -76,8 +80,7 @@ class SuperUserDashboard extends Component {
             </div>
           </div>
           <div className={styles.searchBox}>
-            {/* <InputBox placeholder="Search"/> */}
-            <input type="text" id="search" placeholder="Search users" autoComplete="false" />
+            <input type="text" id="search" placeholder="Search users" autoComplete="false" onChange={e => this.setState({filterText: e.target.value.toLowerCase()})}/>
               <span>
                 <label htmlFor="search">
                   <FontAwesomeIcon icon="search"/>
@@ -87,22 +90,17 @@ class SuperUserDashboard extends Component {
         </section>
         <section className={styles.SuperUserEmployee}>
           <div className={styles.tableHeader}>
-            {/* <p>Image</p> */}
-            <p>Name</p>
-            <p>Email</p>
-            {/* <p>Contact Number</p> */}
-            <p>User Type</p>
-            {/* <div className={styles.SuperUserAddBtn}> */}
+            <p className={styles.name}>Name</p>
+            <p className={styles.email}>Email</p>
+            <p className={styles.password}>Password</p>
+            <p className={styles.userType}>User Type</p>
               <span className={styles.SuperUserAddBtn} onClick={this.toggleAddUser}>
                 <p>Add User</p>
-              {/* <button text="Add User" onClick={this.toggleAddUser} >Add User</button> */}
                 <FontAwesomeIcon icon="user-plus" />
               </span>
-            {/* </div> */}
           </div>
           <div className={styles.tableRowScroll}>
             {mapUserData}
-            
           </div>
           {this.displayAddUser()}
           {this.displayEditUser()}

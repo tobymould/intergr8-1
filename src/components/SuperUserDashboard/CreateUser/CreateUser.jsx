@@ -66,7 +66,11 @@ class CreateUser extends Component {
               <input type="email" id="email" onInput={(e) => this.setState({ email: e.target.value })}/>
             </div>
             <div>
+<<<<<<< HEAD
               <label for="password">Password</label>
+=======
+              <label for="password">Password:</label>
+>>>>>>> 6796e340dfcc315b0dbf343fa211412a4c3e9c3e
               <input type="password" id="password" onInput={(e) => this.setState({ password: e.target.value })}/>
             </div>
             <div>
@@ -77,15 +81,12 @@ class CreateUser extends Component {
               </select> 
             </div>
             <div>
-              <label for="upload-photo">Upload Photo:</label>
-              {/* <input type="file" id="upload-photo" /> */}
+              <label for="upload-photo">Photo:</label>
               <input type="text" placeholder="URL" onInput={(e) => this.setState({ img: e.target.value })} />
             </div>
             <div className={styles.btnWrapper}>
               <input type="submit" value="Create User" className={styles.submitBtn} />
               <button type="button" text={"Cancel"} onClick={this.props.toggleAddUser} className={styles.cancelBtn}>Cancel</button>
-                
-        
             </div>
           </form>
         </div>
