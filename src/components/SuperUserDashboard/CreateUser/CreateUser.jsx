@@ -59,18 +59,14 @@ class CreateUser extends Component {
           <form className={styles.CreateUserModalContent} onSubmit={this.handleSubmit}>
             <div>
               <label for="name">Name:</label>
-              <input type="text" id="name" onInput={(e) => this.setState({ name: e.target.value })}/>
+              <input type="text" id="name" className={styles.name} onInput={(e) => this.setState({ name: e.target.value })}/>
             </div>
             <div>
               <label for="email">Email address:</label>
               <input type="email" id="email" onInput={(e) => this.setState({ email: e.target.value })}/>
             </div>
             <div>
-<<<<<<< HEAD
-              <label for="password">Password</label>
-=======
               <label for="password">Password:</label>
->>>>>>> 6796e340dfcc315b0dbf343fa211412a4c3e9c3e
               <input type="password" id="password" onInput={(e) => this.setState({ password: e.target.value })}/>
             </div>
             <div>

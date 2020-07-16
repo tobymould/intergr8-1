@@ -104,7 +104,7 @@ class TableRow extends Component {
     if (this.state.editUser) {
       return (
       <article className={styles.TableRow}>
-        <div className='imageEdit'>
+        <div className={styles.imageEdit}>
           <img src={img} id="img" onClick={this.displayModalPopup}/>
           {this.renderModalPopup()}
           <input className={styles.name} type="text" id="name" defaultValue={name} onInput={(e) => this.setState({ update: {...this.state.update, name: e.target.value } })}/>
@@ -126,9 +126,9 @@ class TableRow extends Component {
     )} else {
       return (
         <article className={styles.TableRow}>
-          <div>
+          <div className={styles.imgName}>
             <img src={img}/>
-              <p className={styles.name}>{name}</p>
+            <p className={styles.name}>{name}</p>
           </div>
             <p className={styles.email}>{email}</p>
             <p className={styles.password}>&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;</p>
