@@ -25,11 +25,11 @@ class App extends Component {
 
   userSignInAttempt = event => {
     event.preventDefault();
-    const { emailAddress, password } = this.state;
+    const { emailAddress, password, user } = this.state;
     firebase
       .auth()
       .signInWithEmailAndPassword(emailAddress, password)
-      .then(() => globalHistory.navigate('dashboard'))
+      .then(() => globalHistory.navigate('app'))
       .catch(error => {
         const errorCode = error.code;
         const errorMessage = error.message;
@@ -47,8 +47,20 @@ class App extends Component {
     console.log(event.target.value);
   };
 
+  signOut = () => {
+    firebase
+      .auth()
+      .signOut()
+      .then(() => {
+        this.setState({ user: null });
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  };
+
   render() {
-    return <Routes userSignInAttempt={this.userSignInAttempt} setEmail={this.setEmail} setPassword={this.setPassword} user={this.state.user} emailAddress={this.state.emailAddress} password={this.state.password} />;
+    return <Routes userSignInAttempt={this.userSignInAttempt} setEmail={this.setEmail} setPassword={this.setPassword} user={this.state.user} emailAddress={this.state.emailAddress} password={this.state.password} signOut={this.signOut} />;
   }
 }
 
