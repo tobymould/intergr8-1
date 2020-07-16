@@ -1,0 +1,196 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+/* Yellows */
+/* Blacks */
+/* Greys */
+/* Whites */
+/* Greens */
+/* Red */
+/* Border radiuses */
+/* Usage:
+  $large for outer containers
+  $medium for inner containers
+  $small for buttons
+  $extra-small for input fields
+*/
+/* Box shadows */
+/* Font sizes */
+/* Forms, boxes, lists */
+/* Waves background */
+/* Keyframes */
+@-webkit-keyframes slide-in-right {
+  0% {
+    -webkit-transform: translateX(1000px);
+    transform: translateX(1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes slide-in-right {
+  0% {
+    -webkit-transform: translateX(1000px);
+    transform: translateX(1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes slide-out-right {
+  0% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateX(1000px);
+    transform: translateX(1000px);
+    opacity: 0;
+  }
+}
+
+@keyframes slide-out-right {
+  0% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateX(1000px);
+    transform: translateX(1000px);
+    opacity: 0;
+  }
+}
+
+.navbar {
+  background-color: #f2b423;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-shadow: 0 3px 3px #14141433, 0 1px 1px #14141433;
+          box-shadow: 0 3px 3px #14141433, 0 1px 1px #14141433;
+  z-index: 8;
+  height: 96px;
+  overflow: hidden;
+}
+
+.navbar img {
+  padding: 12px;
+  margin-left: 12px;
+  height: 70px;
+  width: 180px;
+}
+
+.navbar div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.navbar div .displayMobileNav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-animation: slide-in-right 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+          animation: slide-in-right 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: fixed;
+  right: 0;
+  top: 0;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #f2b423;
+  height: 100vh;
+  width: 300px;
+  -webkit-box-shadow: 0 10px 20px #14141433, 0 6px 6px #141414e6;
+          box-shadow: 0 10px 20px #14141433, 0 6px 6px #141414e6;
+  padding-top: 80px;
+  z-index: 9;
+}
+
+@media screen and (min-width: 850px) {
+  .navbar div .displayMobileNav {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    position: static;
+    padding: 0;
+    height: auto;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+    width: auto;
+  }
+}
+
+.navbar div .hideMobileNav {
+  display: none;
+}
+
+@media screen and (min-width: 850px) {
+  .navbar div .hideMobileNav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+.navbar div a {
+  color: #141414;
+  padding: 12px;
+  margin-left: 12px;
+  margin-right: 12px;
+  text-decoration: none;
+}
+
+.navbar div a:hover {
+  background-color: #ffffff40;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  border-radius: 12px;
+}
+
+.navbar div a:visited {
+  color: #141414;
+}
+
+.navbar div h3.burger {
+  z-index: 10;
+  font-size: 1.3em;
+  padding: 12px;
+  margin-right: 24px;
+}
+
+.navbar div h3.burger:hover {
+  background-color: #ffffff40;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  border-radius: 12px;
+}
+
+@media screen and (min-width: 850px) {
+  .navbar div h3.burger {
+    display: none;
+  }
+}
+/*# sourceMappingURL=NavBar.module.css.map */

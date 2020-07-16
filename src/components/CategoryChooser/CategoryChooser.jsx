@@ -1,43 +1,49 @@
 import React, { Component } from "react";
-import styles from'./CategoryChooser.module.scss';
+import styles from "./CategoryChooser.module.scss";
 import TicketCatStageOne from "./TicketCatStageOne";
 import TicketCatStageTwo from "./TicketCatStageTwo";
 import TicketCatStageThree from "./TicketCatStageThree";
-import NavBar from '../../components/NavBar'
+import NavBar from "../../components/NavBar";
 
 class CategoryChooser extends Component {
   tileData = {
     payroll: {
-      queries: ["I need to update my tax code", "What is my payroll number?", "Incorrect Payment"],
+      queries: ["General Pay Query", "Benefit Query ", "P60/P45 Request"],
       icon: "pound-sign",
       id: 1,
-      title: "Payroll",
+      title: "Pay & Benefits",
     },
     generalHR: {
       queries: [
-        "I have an issue with a colleague",
-        "Clarification of my job description",
-        "I have a query on holiday entitlement",
+        " Probation/Induction",
+        " Leave/Holidays",
+        " Sickness & Absence",
+        "Disciplinary & Grievance",
+        "Performance Management",
+        "Data Protection/GDPR",
+        "Return to Work",
+        "Wellbeing",
+        "Flexible Working",
+        "My Appraisal",
+        "Maternity/Paternity",
+        "Terminations",
+        "Line Manager HR Support ",
+        "Other HR Query" 
       ],
       icon: "network-wired",
       id: 2,
-      title: "General HR",
+      title: "HR",
     },
     healthandsafety: {
-      queries: [
-        "I want to report a healthy and safety hazard",
-        "What health and safety policies are in place",
-        "First aid training enquiry",
-      ],
+      queries: [],
       icon: "medkit",
       id: 3,
       title: "Health & Safety",
     },
     landd: {
       queries: [
-        "Enquire about upcoming course",
-        "When is my annual appraisal",
-        "What are my set targets for this month",
+        "My CPD",
+        "Line Manager Support"
       ],
       icon: "book-open",
       id: 4,
@@ -45,10 +51,14 @@ class CategoryChooser extends Component {
     },
     recruitment: {
       queries: [
-        "I’d like to apply for an internal post",
-        "Application process",
-        "I would like a reference",
+        "Apply for an External Post",
+        "General Recruitment Query",
+        "Create a new Role",
+        "Line Manager Recruitment Support"
+      
       ],
+
+      
       icon: "user-friends",
       id: 5,
       title: "Recruitment",
@@ -61,33 +71,41 @@ class CategoryChooser extends Component {
   };
 
   tileClick = (selector) => {
+    if (selector === "healthandsafety") {
+      this.setState({
+        stage: this.state.stage + 2,
+        selector,
+      })
+    }else {
     this.setState({
       stage: this.state.stage + 1,
-      selector
+      selector,
     });
+  }
   };
   optionClick = () => {
     this.setState({
       stage: this.state.stage + 1,
     });
-  };
+    }
+  ;
 
   getCategory() {
     if (this.state.stage === 0) {
       return (
         <>
-          <h2>What is your query regarding?</h2>
+          <h1> What is your query regarding?</h1>
           <TicketCatStageOne data={this.tileData} tileClick={this.tileClick} />
         </>
       );
     } else if (this.state.stage === 1) {
       return (
         <>
-        <h2>Please select one of the following options...</h2>
-        <TicketCatStageTwo
-          queries={this.tileData[this.state.selector].queries}
-          optionClick={this.optionClick}
-        />
+          <h1>Please select one of the following options...</h1>
+          <TicketCatStageTwo
+            queries={this.tileData[this.state.selector].queries}
+            optionClick={this.optionClick}
+          />
         </>
       );
     } else if (this.state.stage === 2) {

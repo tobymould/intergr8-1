@@ -5,6 +5,8 @@ import Button from "../../../../../utilities/Button";
 import ResolveTicketModal from './ResolveTicketModal';
 import NavBar from '../../../../NavBar'
 
+import AssignedUser from "../../../../AssignedUser";
+
 class TicketView extends Component {
     constructor() {
         super();
@@ -86,7 +88,7 @@ class TicketView extends Component {
                         <div className={styles.ticketHeader}>
                             <h2>Title</h2>
                             <h3>Category</h3>
-                            <h3>Assigned User</h3>
+                            <AssignedUser />
                         </div>
                         <div className={styles.ticketId}>
                             <p>Ticket ID</p>
