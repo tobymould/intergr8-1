@@ -114,7 +114,7 @@ class CategoryChooser extends Component {
   }
 
   render() {
-    console.log(this.state);
+    // console.log(this.state);
     return (
       <section className={styles.categoryChooser}>
         <NavBar />
