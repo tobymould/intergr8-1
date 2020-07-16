@@ -1,0 +1,98 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+/* Yellows */
+/* Blacks */
+/* Greys */
+/* Whites */
+/* Greens */
+/* Red */
+/* Border radiuses */
+/* Usage:
+  $large for outer containers
+  $medium for inner containers
+  $small for buttons
+  $extra-small for input fields
+*/
+/* Box shadows */
+/* Font sizes */
+/* Forms, boxes, lists */
+/* Waves background */
+/* Keyframes */
+@-webkit-keyframes slide-in-right {
+  0% {
+    -webkit-transform: translateX(1000px);
+    transform: translateX(1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes slide-in-right {
+  0% {
+    -webkit-transform: translateX(1000px);
+    transform: translateX(1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes slide-out-right {
+  0% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateX(1000px);
+    transform: translateX(1000px);
+    opacity: 0;
+  }
+}
+
+@keyframes slide-out-right {
+  0% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateX(1000px);
+    transform: translateX(1000px);
+    opacity: 0;
+  }
+}
+
+.button {
+  height: 210px;
+  width: 300px;
+  font-size: 1.5rem;
+  border-radius: 4px;
+  margin-right: 40px;
+  background-color: rgba(255, 255, 255, 0.8);
+  -webkit-box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.5);
+          box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.5);
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  margin-bottom: 110px;
+  margin-right: 100px;
+}
+
+.button:hover {
+  cursor: pointer;
+  font-weight: 500;
+  -webkit-box-shadow: 0px 15px 20px rgba(12, 175, 6, 0.781);
+          box-shadow: 0px 15px 20px rgba(12, 175, 6, 0.781);
+  -webkit-transform: translateY(-7px);
+          transform: translateY(-7px);
+  background-color: rgba(12, 175, 6, 0.781);
+}
+/*# sourceMappingURL=Checkout.module.css.map */
