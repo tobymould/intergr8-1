@@ -46,8 +46,8 @@ class NavBar extends Component {
   };
 
   renderNav = () =>
-    this.navItems.map(item => (
-      <Link to={item.link}>
+    this.navItems.map((item, index) => (
+      <Link key={index} to={item.link}>
         <h3>{item.title}</h3>
       </Link>
     )); // own components?

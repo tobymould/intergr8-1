@@ -1,0 +1,120 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+/* Yellows */
+/* Blacks */
+/* Greys */
+/* Whites */
+/* Greens */
+/* Red */
+/* Border radiuses */
+/* Usage:
+  $large for outer containers
+  $medium for inner containers
+  $small for buttons
+  $extra-small for input fields
+*/
+/* Box shadows */
+/* Font sizes */
+/* Forms, boxes, lists */
+/* Waves background */
+/* Keyframes */
+@-webkit-keyframes slide-in-right {
+  0% {
+    -webkit-transform: translateX(1000px);
+    transform: translateX(1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes slide-in-right {
+  0% {
+    -webkit-transform: translateX(1000px);
+    transform: translateX(1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes slide-out-right {
+  0% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateX(1000px);
+    transform: translateX(1000px);
+    opacity: 0;
+  }
+}
+
+@keyframes slide-out-right {
+  0% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateX(1000px);
+    transform: translateX(1000px);
+    opacity: 0;
+  }
+}
+
+.inputBox {
+  padding: 10px 5px;
+  border: 1px solid #9a9a9a;
+  border-left: none;
+  border-radius: 0px 2px 2px 0px;
+  background-color: transparent;
+  color: #656565;
+  width: 100%;
+  outline: none;
+  -webkit-transition: color ease-in-out 1s, background-color ease-in-out 1s, border-color ease-in-out 1s;
+  transition: color ease-in-out 1s, background-color ease-in-out 1s, border-color ease-in-out 1s;
+}
+
+.inputBox:focus,
+.inputBox:focus ~ label {
+  color: white;
+  background-color: #222222e6;
+  outline: none;
+  border-color: #f2b423;
+}
+
+.inputBox:focus::-webkit-input-placeholder,
+.inputBox:focus ~ label::-webkit-input-placeholder {
+  color: #9a9a9a;
+}
+
+.inputBox:focus:-ms-input-placeholder,
+.inputBox:focus ~ label:-ms-input-placeholder {
+  color: #9a9a9a;
+}
+
+.inputBox:focus::-ms-input-placeholder,
+.inputBox:focus ~ label::-ms-input-placeholder {
+  color: #9a9a9a;
+}
+
+.inputBox:focus::placeholder,
+.inputBox:focus ~ label::placeholder {
+  color: #9a9a9a;
+}
+
+.inputBox:-webkit-autofill,
+.inputBox:-webkit-autofill ~ label, .inputBox:-webkit-autofill:focus,
+.inputBox:-webkit-autofill:focus ~ label {
+  color: #e39816;
+  background-color: #222222e6;
+  -webkit-transition-duration: 0ms;
+          transition-duration: 0ms;
+}
+/*# sourceMappingURL=InputBox.module.css.map */
