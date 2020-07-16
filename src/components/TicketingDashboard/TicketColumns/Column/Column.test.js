@@ -1,16 +1,11 @@
-import React from 'react';
-import Column from './Column';
-import { shallow } from 'enzyme';
+import React from "react";
+import { shallow } from "enzyme";
+import Column from "./Column";
 
-describe("column component tests", () => {
-    let testComponent;
+describe("Stage1 component tests", () => {
+  const component = shallow(<Column />);
 
-    beforeEach(() => {
-        testComponent = shallow(<Column/>);
-    }) 
-
-    it ('should render', () => {
-        expect(testComponent).toBeTruthy();
-    })
-
+  it("should render", () => {
+    expect(component).toBeTruthy();
+  });
 });
