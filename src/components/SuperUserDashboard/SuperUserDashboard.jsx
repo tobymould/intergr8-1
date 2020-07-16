@@ -2,19 +2,16 @@ import React, { Component } from 'react';
 import NavBar from "../NavBar";
 import styles from "./SuperUserDashboard.module.scss";
 import olly from '../TicketingDashboard/TicketColumns/Column/TicketView/olly.jpg';
-import DropDown from "../../utilities/DropDown";
 import TableRow from './TableRow'
 import CreateUser from './CreateUser/CreateUser';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import data from '../../data/newMockDataUsers';
-import firebase, { firestore } from "../../firebase";
+import { firestore } from "../../firebase";
 import DeleteUser from './DeleteUser/DeleteUser';
 
 
 class SuperUserDashboard extends Component {
     state = {
         isDisplayAddUser: false,
-        // isDisplayEditUser: false,
         users: [],
         idDisplayDeleteUser: false,
         filterText: ''
@@ -47,7 +44,7 @@ class SuperUserDashboard extends Component {
     }
 
     getUsers = () => {
-      firebase.firestore()
+      firestore
         .collection('info')
         .get()
         .then((snapshot) => {

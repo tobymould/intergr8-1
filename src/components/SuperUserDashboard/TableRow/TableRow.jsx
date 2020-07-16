@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import styles from "./TableRow.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import DropDown from "../../../utilities/DropDown";
-import firebase, { firestore } from "../../../firebase";
+import { firestore } from "../../../firebase";
 import DeleteUser from '../DeleteUser';
 
 
@@ -24,6 +23,8 @@ class TableRow extends Component {
         return "Agent";
       case 3: 
         return "Super Agent"
+      default:
+        return "Employee";
     }
   }
 
@@ -35,6 +36,8 @@ class TableRow extends Component {
         return 2;
       case "SuperAgent": 
         return 3;
+      default:
+        return "Employee";
     }
   }
 
@@ -99,13 +102,13 @@ class TableRow extends Component {
   }
 
   displayEdit = () => {
-    const { name, UID, email, img, role, password } = this.props.data;
+    const { name, email, img, password } = this.props.data;
 
     if (this.state.editUser) {
       return (
       <article className={styles.TableRow}>
         <div className={styles.imageEdit}>
-          <img src={img} id="img" onClick={this.displayModalPopup}/>
+          <img src={img} alt="employee" id="img" onClick={this.displayModalPopup}/>
           {this.renderModalPopup()}
           <input className={styles.name} type="text" id="name" defaultValue={name} onInput={(e) => this.setState({ update: {...this.state.update, name: e.target.value } })}/>
         </div>
@@ -127,7 +130,7 @@ class TableRow extends Component {
       return (
         <article className={styles.TableRow}>
           <div className={styles.imgName}>
-            <img src={img}/>
+            <img src={img} alt="employee"/>
             <p className={styles.name}>{name}</p>
           </div>
             <p className={styles.email}>{email}</p>

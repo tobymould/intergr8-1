@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import styles from "../DeleteUser/DeleteUser.module.scss";
-import DropDown from "../../../utilities/DropDown";
-import firebase, { firestore } from "../../../firebase";
+import { firestore } from "../../../firebase";
 
 
 class DeleteUser extends Component {
@@ -18,8 +17,8 @@ class DeleteUser extends Component {
       .doc(this.props.data.ID)
       .delete()
       .then((user) => {
-        this.setState({ user });
         this.props.getUsers();
+        this.setState({ user });
       })
   }
     

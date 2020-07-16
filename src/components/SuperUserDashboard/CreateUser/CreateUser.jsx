@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import styles from "../CreateUser/CreateUser.module.scss";
-import DropDown from "../../../utilities/DropDown";
 import firebase, { firestore } from "../../../firebase";
 
 
@@ -29,6 +28,8 @@ class CreateUser extends Component {
         return 2;
       case "SuperAgent": 
         return 3;
+      default: 
+        return 1;
     }
   }
 
