@@ -16,6 +16,7 @@ import {
   faSearch,
   faCheckCircle,
   faTimesCircle,
+  faTimes
 } from "@fortawesome/free-solid-svg-icons";
 
 export default library.add(
@@ -36,4 +37,6 @@ export default library.add(
   faSearch,
   faCheckCircle,
   faTimesCircle,
+  faTimes
+
 );

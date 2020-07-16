@@ -12,6 +12,8 @@ class TableRow extends Component {
   state = {
     editUser: false,
     deleteUser: false,
+    update: {},
+    modalPopup: false
   }
 
   displayRole = () => {
@@ -22,6 +24,17 @@ class TableRow extends Component {
         return "Agent";
       case 3: 
         return "Super Agent"
+    }
+  }
+
+  changeRole = (e) => {
+    switch(e.target.value) {
+      case "Employee": 
+        return 1;
+      case "Agent":
+        return 2;
+      case "SuperAgent": 
+        return 3;
     }
   }
 
@@ -55,7 +68,8 @@ class TableRow extends Component {
 
   toggleEditUser = () => {
     this.setState({
-      editUser: !this.state.editUser
+      editUser: !this.state.editUser,
+      update : {}
     })
   }
 
@@ -69,27 +83,44 @@ class TableRow extends Component {
       return this.state.deleteUser ? (<DeleteUser toggleDeleteUser={this.toggleDeleteUser} data={this.props.data} getUsers={this.props.getUsers}/>) : null
   }
 
+  renderModalPopup = () => {
+    if (this.state.modalPopup === true){
+      return (
+        <div className={styles.modalPopupStyle}> 
+          <input type="text" defaultValue={this.props.data.img} placeholder="Input image url" onInput={(e) => this.setState({ update: {...this.state.update, img: e.target.value } })}/>
+          <span className={styles.closeIcon} onClick={this.displayModalPopup} ><FontAwesomeIcon icon="times"/></span>
+        </div>
+      )
+    } 
+  } 
+
+  displayModalPopup = (event) => {
+    this.setState({modalPopup: !this.state.modalPopup})
+  }
+
   displayEdit = () => {
-    const { name, UID, email, img, role } = this.props.data;
+    const { name, UID, email, img, role, password } = this.props.data;
 
     if (this.state.editUser) {
       return (
       <article className={styles.TableRow}>
-      <div>
-        <img src={img}/>
-          <input type="text" defaultValue={name} />
-      </div>
-        <input type="email" defaultValue={email} />
-      <select>
-        {this.buildDropDown()}
-      </select>
-      <div className={styles.buttonContainer}>
-        <span>
-          <FontAwesomeIcon icon="check-circle" />
-        </span>
-        <span>
-          <FontAwesomeIcon icon="times-circle" onClick={this.toggleEditUser}/>
-        </span>
+        <div className='imageEdit'>
+          <img src={img} id="img" onClick={this.displayModalPopup}/>
+          {this.renderModalPopup()}
+          <input className={styles.name} type="text" id="name" defaultValue={name} onInput={(e) => this.setState({ update: {...this.state.update, name: e.target.value } })}/>
+        </div>
+          <input className={styles.email} type="email" defaultValue={email} onInput={(e) => this.setState({ update: {...this.state.update, email: e.target.value } })}/>
+          <input className={styles.password} type="password" defaultValue={password} onInput={(e) => this.setState({ update: {...this.state.update, password: e.target.value } })}/>
+        <select className={styles.userType} onChange={(e) => this.setState({ update: {...this.state.update, role: this.changeRole(e) }})}>
+          {this.buildDropDown()}
+        </select>
+        <div className={styles.buttonContainer}>
+          <span>
+            <FontAwesomeIcon icon="check-circle" onClick={this.updateUserDetails} />
+          </span>
+          <span>
+            <FontAwesomeIcon icon="times-circle" onClick={this.toggleEditUser}/>
+          </span>
         </div>
     </article>
     )} else {
@@ -97,10 +128,11 @@ class TableRow extends Component {
         <article className={styles.TableRow}>
           <div>
             <img src={img}/>
-              <p>{name}</p>
+              <p className={styles.name}>{name}</p>
           </div>
-            <p>{email}</p>
-          <p>{this.displayRole()}</p>
+            <p className={styles.email}>{email}</p>
+            <p className={styles.password}>&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;</p>
+          <p className={styles.userType}>{this.displayRole()}</p>
           <div className={styles.buttonContainer}>
             <span>
               <FontAwesomeIcon icon="user-edit" onClick={this.toggleEditUser} />
@@ -112,6 +144,18 @@ class TableRow extends Component {
         </article>
       ) 
     } 
+  }
+
+  updateUserDetails = () => {
+    firestore
+    .collection("info")
+    .doc(this.props.data.ID)
+    .update({...this.state.update})
+    .then((docRef) => {
+      this.props.getUsers();
+    })
+    .catch((err) => console.error(err));
+    this.toggleEditUser();
   }
 
   render() { 

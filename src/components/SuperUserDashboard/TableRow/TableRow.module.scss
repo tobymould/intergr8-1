@@ -9,7 +9,27 @@
     border-radius: 4px;
     color: #141414;
     width: 100%;
-    // border-bottom: 2px solid black;
+    position: relative;
+
+    .modalPopupStyle{
+      position: absolute;
+      left: 10px;
+      bottom: -50px;
+      z-index: 20;
+      background: #f7f7f7;
+      padding: 10px;
+      border-radius: 4px;
+      width: 271px;
+      border: 1px solid grey;
+      box-shadow: 0 8px 16px -4px rgba(9,30,66,.25), 0 0 0 1px rgba(9,30,66,.08);
+
+      .closeIcon {
+          position: absolute;
+          top: 5px;
+          right: 7.5px;
+      }
+  }
+
 
   div {
     display: flex;
@@ -25,8 +45,22 @@
   p, 
   input,
   select {
-    // text-align: left;
-    width: 200px;
+
+    &.name {
+        width: 150px;
+    }
+
+    &.email {
+        width: 200px;
+    }
+
+    &.password {
+        width: 100px;
+    }
+
+    &.userType {
+        width: 100px;
+    }
 }
     .buttonContainer {
         width: 128.83px;
@@ -40,4 +74,81 @@
     }
 
    
+}
+
+
+.assignedUserWrapper {
+  display: flex;
+  flex-direction: column;
+  // border: 2px solid black;
+
+  .modalStyle{
+
+      .modalPopupStyle{
+          position: absolute;
+          left: 148px;
+          top: 77px;
+          z-index: 2;
+          background: #f7f7f7;
+          padding: 10px;
+          border-radius: 4px;
+          width: 271px;
+          border: 1px solid grey;
+          box-shadow: 0 8px 16px -4px rgba(9,30,66,.25), 0 0 0 1px rgba(9,30,66,.08);
+          // height: 175px;
+
+          input{
+              margin: 2px 0 12px 0;
+              width: 92%;
+              padding: 4px 8px;
+          }
+
+          .closeIcon {
+              position: absolute;
+              top: 5px;
+              right: 7.5px;
+          }
+
+          .displayPeople{
+              display: flex;
+              align-items: center;
+              margin: 8px 0;
+          }
+
+          img {
+              margin-right: 8px;
+              border: 1px solid #f1f1f1;
+          }
+      }
+  }
+
+  .assignedPerson{
+      display: flex;
+      flex-direction: column;
+      // width: 100px;
+   
+      div{
+          width: 50px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+          padding: 5px;
+          // background: blue;
+
+          div {
+              // background: red;
+              padding: 0;
+              margin: 0;
+          }
+      }
+  }
+
+  img {
+      height: 38px;
+      width: 38px;
+      object-fit: cover;
+      border-radius: 50%;
+  }
 }
