@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import styles from'./CategoryChooser.module.scss';
+import styles from "./CategoryChooser.module.scss";
 import TicketCatStageOne from "./TicketCatStageOne";
 import TicketCatStageTwo from "./TicketCatStageTwo";
 import TicketCatStageThree from "./TicketCatStageThree";

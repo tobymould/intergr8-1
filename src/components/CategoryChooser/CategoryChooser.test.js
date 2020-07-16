@@ -12,29 +12,22 @@ describe("CategoryChooser tests", () => {
     component = shallow(<CategoryChooser />);
   })
 
-  // it('should render', () => {
-  //   expect(component).toBeTruthy();
-  // })
-  // it('the state should change when clicking a tile', () => {
-  //   expect(component.state('stage')).toBe(0);
-  //   component.instance().optionClick('payroll')
-  //   expect(component.state('stage')).toBe(1);
+  it('should render', () => {
+    expect(component).toBeTruthy();
+  })
+
+  it('the state should change when clicking a tile', () => {
+    expect(component.state('stage')).toBe(0);
+    component.instance().optionClick('payroll')
+    expect(component.state('stage')).toBe(1);
     
-  // })
+  })
 
   
   it('the state should change when clicking the back button', () => {
     component.setState({ stage: 2, selector: ["healthandsafety", "What health and safety policies are in place"] });
-
-    component.find(Button).simulate("click");
-    // component.instance().goBack();
-
-    // component.instance().optionClick('payroll', -1)
+    component.instance().optionClick('payroll', -1)
     expect(component.state('stage')).toBe(1);
-
-    
-    // expect(component.state("isOpen")).toBe(true);
-
   })
 });
 
