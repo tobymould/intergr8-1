@@ -1,35 +1,41 @@
-const tileData = {
-  "Payroll": {
-    queries: ["I need to update my tax code", "What is my payroll number?", "Incorrect Payment"],
+tileData = {
+  "Pay & Benefits": {
+    queries: ["General Pay Query", "Benefit Query ", "P60/P45 Request"],
     icon: "pound-sign",
     id: 1,
-    title: "Payroll",
+    title: "Pay & Benefits",
   },
-  "General HR": {
+  "HR": {
     queries: [
-      "I have an issue with a colleague",
-      "Clarification of my job description",
-      "I have a query on holiday entitlement",
+      " Probation/Induction",
+      " Leave/Holidays",
+      " Sickness & Absence",
+      "Disciplinary & Grievance",
+      "Performance Management",
+      "Data Protection/GDPR",
+      "Return to Work",
+      "Wellbeing",
+      "Flexible Working",
+      "My Appraisal",
+      "Maternity/Paternity",
+      "Terminations",
+      "Line Manager HR Support ",
+      "Other HR Query" 
     ],
     icon: "network-wired",
     id: 2,
-    title: "General HR",
+    title: "HR",
   },
   "Health & Safety": {
-    queries: [
-      "I want to report a healthy and safety hazard",
-      "What health and safety policies are in place",
-      "First aid training enquiry",
-    ],
+    queries: [],
     icon: "medkit",
     id: 3,
     title: "Health & Safety",
   },
   "L&D": {
     queries: [
-      "Enquire about upcoming course",
-      "When is my annual appraisal",
-      "What are my set targets for this month",
+      "My CPD",
+      "Line Manager Support"
     ],
     icon: "book-open",
     id: 4,
@@ -37,9 +43,10 @@ const tileData = {
   },
   "Recruitment": {
     queries: [
-      "I’d like to apply for an internal post",
-      "Application process",
-      "I would like a reference",
+      "Apply for an External Post",
+      "General Recruitment Query",
+      "Create a new Role",
+      "Line Manager Recruitment Support"
     ],
     icon: "user-friends",
     id: 5,
