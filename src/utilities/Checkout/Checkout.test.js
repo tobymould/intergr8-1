@@ -1,19 +1,11 @@
-import React, { Component } from 'react';
-import Checkout from './Checkout';
+import React from "react";
 import { shallow } from "enzyme";
+import Checkout from "./Checkout";
 
-
-describe("Checkout component tests", () => {
-
-  let testComponent;
-
-  beforeEach(() => {
-    testComponent = shallow(<Checkout />);
-  })
+describe("Stage1 component tests", () => {
+  const component = shallow(<Checkout />);
 
   it("should render", () => {
-    expect(testComponent).toBeTruthy();
-  })
-
-  
-})
+    expect(component).toBeTruthy();
+  });
+});

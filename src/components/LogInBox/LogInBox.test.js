@@ -1,19 +1,11 @@
-import React, { Component } from 'react';
-import LoginBox from './LoginBox';
+import React from "react";
 import { shallow } from "enzyme";
+import LogInBox from "./LogInBox";
 
-
-describe("LoginBox component tests", () => {
-
-  let testComponent;
-
-  beforeEach(() => {
-    testComponent = shallow(<LoginBox />);
-  })
+describe("Stage1 component tests", () => {
+  const component = shallow(<LogInBox />);
 
   it("should render", () => {
-    expect(testComponent).toBeTruthy();
-  })
-
-  
-})
+    expect(component).toBeTruthy();
+  });
+});

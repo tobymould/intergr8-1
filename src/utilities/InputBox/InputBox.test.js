@@ -1,19 +1,11 @@
-import React, { Component } from 'react';
-import InputBox from './InputBox';
+import React from "react";
 import { shallow } from "enzyme";
+import InputBox from "./InputBox";
 
-
-describe("InputBox component tests", () => {
-
-  let testComponent;
-
-  beforeEach(() => {
-    testComponent = shallow(<InputBox />);
-  })
+describe("Stage1 component tests", () => {
+  const component = shallow(<InputBox />);
 
   it("should render", () => {
-    expect(testComponent).toBeTruthy();
-  })
-
-  
-})
+    expect(component).toBeTruthy();
+  });
+});

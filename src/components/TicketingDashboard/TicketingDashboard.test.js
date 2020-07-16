@@ -1,19 +1,11 @@
-import React, { Component } from 'react';
-import TicketingDashboard from './TicketingDashboard';
+import React from "react";
 import { shallow } from "enzyme";
+import TicketingDashboard from "./TicketingDashboard";
 
-
-describe("TicketingDashboard component tests", () => {
-
-  let testComponent;
-
-  beforeEach(() => {
-    testComponent = shallow(<TicketingDashboard />);
-  })
+describe("Stage1 component tests", () => {
+  const component = shallow(<TicketingDashboard />);
 
   it("should render", () => {
-    expect(testComponent).toBeTruthy();
-  })
-
-  
-})
+    expect(component).toBeTruthy();
+  });
+});

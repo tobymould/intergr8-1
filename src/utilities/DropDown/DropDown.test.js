@@ -1,19 +1,13 @@
-import React, { Component } from 'react';
-import DropDown from './DropDown';
+import React from "react";
 import { shallow } from "enzyme";
+import DropDown from "./DropDown";
 
-
-describe("DropDown component tests", () => {
-
-  let testComponent;
-
-  beforeEach(() => {
-    testComponent = shallow(<DropDown filterOptions={[1,2,3]}/>);
-  })
+describe("Stage1 component tests", () => {
+  const component = shallow(
+    <DropDown filterOptions={["I am a filteroption!"]} />
+  );
 
   it("should render", () => {
-    expect(testComponent).toBeTruthy();
-  })
-
-  
-})
+    expect(component).toBeTruthy();
+  });
+});

@@ -1,19 +1,11 @@
-import React, { Component } from 'react';
-import ChartPanel from './ChartPanel';
+import React from "react";
 import { shallow } from "enzyme";
+import ChartPanel from "./ChartPanel";
 
-
-describe("ChartPanel component tests", () => {
-
-  let testComponent;
-
-  beforeEach(() => {
-    testComponent = shallow(<ChartPanel />);
-  })
+describe("Stage1 component tests", () => {
+  const component = shallow(<ChartPanel />);
 
   it("should render", () => {
-    expect(testComponent).toBeTruthy();
-  })
-
-  
-})
+    expect(component).toBeTruthy();
+  });
+});

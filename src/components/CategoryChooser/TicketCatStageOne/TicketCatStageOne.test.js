@@ -1,18 +1,31 @@
-import React, { Component } from 'react';
-import TicketCatStageOne from './TicketCatStageOne';
+import React from "react";
 import { shallow } from "enzyme";
+import TicketCatStageOne from "./TicketCatStageOne";
 
-
-describe("TicketCatStageOne component tests", () => {
-
-  let testComponent;
-
-  beforeEach(() => {
-    testComponent = shallow(<TicketCatStageOne data={[1,2,3]}/>);
-  })
+describe("Stage1 component tests", () => {
+  const data = [
+    {
+      id: 1,
+    },
+    {
+      id: 2,
+    },
+    {
+      id: 3,
+    },
+    {
+      id: 4,
+    },
+    {
+      id: 5,
+    },
+    {
+      id: 6,
+    },
+  ];
+  const testComponent = shallow(<TicketCatStageOne data={data} />);
 
   it("should render", () => {
     expect(testComponent).toBeTruthy();
-  })
-
-})
+  });
+});

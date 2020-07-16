@@ -1,18 +1,11 @@
-import React, { Component } from 'react';
-import CreateTicket from './CreateTicket';
+import React from "react";
 import { shallow } from "enzyme";
+import CreateTicket from "./CreateTicket";
 
-
-describe("CreateTicket component tests", () => {
-
-  let testComponent;
-
-  beforeEach(() => {
-    testComponent = shallow(<CreateTicket />);
-  })
+describe("Stage1 component tests", () => {
+  const component = shallow(<CreateTicket />);
 
   it("should render", () => {
-    expect(testComponent).toBeTruthy();
-  })
-
-})
+    expect(component).toBeTruthy();
+  });
+});

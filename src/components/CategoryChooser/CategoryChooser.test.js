@@ -1,19 +1,11 @@
-import React, { Component } from 'react';
-import CategoryChooser from './CategoryChooser';
+import React from "react";
 import { shallow } from "enzyme";
+import CategoryChooser from "./CategoryChooser";
 
-
-describe("CategoryChooser component tests", () => {
-
-  let testComponent;
-
-  beforeEach(() => {
-    testComponent = shallow(<CategoryChooser />);
-  })
+describe("Stage1 component tests", () => {
+  const component = shallow(<CategoryChooser />);
 
   it("should render", () => {
-    expect(testComponent).toBeTruthy();
-  })
-
-  
-})
+    expect(component).toBeTruthy();
+  });
+});

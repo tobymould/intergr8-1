@@ -1,19 +1,11 @@
-import React, { Component } from 'react';
-import TicketColumns from './TicketColumns';
+import React from "react";
 import { shallow } from "enzyme";
+import TicketColumns from "./TicketColumns";
 
-
-describe("TicketColumns component tests", () => {
-
-  let testComponent;
-
-  beforeEach(() => {
-    testComponent = shallow(<TicketColumns />);
-  })
+describe("Stage1 component tests", () => {
+  const component = shallow(<TicketColumns />);
 
   it("should render", () => {
-    expect(testComponent).toBeTruthy();
-  })
-
-  
-})
+    expect(component).toBeTruthy();
+  });
+});

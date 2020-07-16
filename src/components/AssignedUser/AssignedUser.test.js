@@ -1,18 +1,11 @@
-import React, { Component } from 'react';
-import AssignedUser from './AssignedUser';
+import React from "react";
 import { shallow } from "enzyme";
+import AssignedUser from "./AssignedUser";
 
-
-describe("AssignedUser component tests", () => {
-
-  let testComponent;
-
-  beforeEach(() => {
-    testComponent = shallow(<AssignedUser />);
-  })
+describe("Stage1 component tests", () => {
+  const component = shallow(<AssignedUser />);
 
   it("should render", () => {
-    expect(testComponent).toBeTruthy();
-  })
-
-})
+    expect(component).toBeTruthy();
+  });
+});

@@ -1,19 +1,15 @@
-import React, { Component } from 'react';
-import Tile from './Tile';
+import React from "react";
 import { shallow } from "enzyme";
+import Tile from "./Tile";
 
+describe("Stage1 component tests", () => {
+  const data = {
+    icon: "icon!",
+  }
 
-describe("Tile component tests", () => {
-
-  let testComponent;
-
-  beforeEach(() => {
-    testComponent = shallow(<Tile data={1}/>);
-  })
+  const component = shallow(<Tile data={data} />);
 
   it("should render", () => {
-    expect(testComponent).toBeTruthy();
-  })
-
-  
-})
+    expect(component).toBeTruthy();
+  });
+});

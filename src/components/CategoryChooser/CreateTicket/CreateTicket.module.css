@@ -1,0 +1,137 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+/* Yellows */
+/* Blacks */
+/* Greys */
+/* Whites */
+/* Greens */
+/* Red */
+/* Border radiuses */
+/* Usage:
+  $large for outer containers
+  $medium for inner containers
+  $small for buttons
+  $extra-small for input fields
+*/
+/* Box shadows */
+/* Font sizes */
+/* Forms, boxes, lists */
+/* Waves background */
+/* Keyframes */
+@-webkit-keyframes slide-in-right {
+  0% {
+    -webkit-transform: translateX(1000px);
+    transform: translateX(1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes slide-in-right {
+  0% {
+    -webkit-transform: translateX(1000px);
+    transform: translateX(1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes slide-out-right {
+  0% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateX(1000px);
+    transform: translateX(1000px);
+    opacity: 0;
+  }
+}
+
+@keyframes slide-out-right {
+  0% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateX(1000px);
+    transform: translateX(1000px);
+    opacity: 0;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.backGround {
+  position: relative;
+  padding: 10px;
+  background-color: #f2b423;
+  margin: 100px auto;
+  border-radius: 10px;
+  width: 270px;
+}
+
+.backGround .topField {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.backGround .topBanner {
+  display: inline-block;
+  color: white;
+  border: 1px solid black;
+  background-color: black;
+  border-radius: 5px;
+  position: relative;
+  left: -40px;
+  top: -15px;
+  padding: 10px;
+}
+
+.backGround p {
+  display: inline-block;
+}
+
+.backGround form label {
+  display: block;
+}
+
+.backGround form label select {
+  display: block;
+  width: 250px;
+  border-radius: 5px;
+}
+
+.backGround form label textarea {
+  display: block;
+  width: 250px;
+  height: 100px;
+  border-radius: 5px;
+}
+
+.backGround form .btnCreateTicket {
+  background-color: maroon;
+  border-radius: 5px;
+  color: white;
+  width: 230px;
+  padding: 5px;
+  margin: 10px;
+}
+/*# sourceMappingURL=CreateTicket.module.css.map */

@@ -1,19 +1,11 @@
-import React, { Component } from 'react';
-import Option from './Option';
+import React from "react";
 import { shallow } from "enzyme";
+import Option from "./Option";
 
-
-describe("Option component tests", () => {
-
-  let testComponent;
-
-  beforeEach(() => {
-    testComponent = shallow(<Option queries={[1,2,3]}/>);
-  })
+describe("Stage1 component tests", () => {
+  const component = shallow(<Option queries={["I have a query!"]} />);
 
   it("should render", () => {
-    expect(testComponent).toBeTruthy();
-  })
-
-  
-})
+    expect(component).toBeTruthy();
+  });
+});
