@@ -69,6 +69,23 @@ class TableRow extends Component {
       return this.state.deleteUser ? (<DeleteUser toggleDeleteUser={this.toggleDeleteUser} data={this.props.data} getUsers={this.props.getUsers}/>) : null
   }
 
+  // updateUser(info) {
+  //   firestore
+  //   .collection("info")
+  //   .doc(this.props.data.ID)
+  //   .update(this.props.data.name)
+  //   .then((user) => {
+  //     this.setState({ user });
+  //     this.props.getUsers();
+  //   })
+  // }
+
+  // handleUpdate = (event) => {
+  //   event.preventDefault();
+  //   this.updateUser(this.state);
+  //   this.props.toggleEditUser();
+  // }
+
   displayEdit = () => {
     const { name, UID, email, img, role } = this.props.data;
 
@@ -85,12 +102,12 @@ class TableRow extends Component {
       </select>
       <div className={styles.buttonContainer}>
         <span>
-          <FontAwesomeIcon icon="check-circle" />
+          <FontAwesomeIcon icon="check-circle" onClick={this.updateUser}/> 
         </span>
         <span>
           <FontAwesomeIcon icon="times-circle" onClick={this.toggleEditUser}/>
         </span>
-        </div>
+      </div>
     </article>
     )} else {
       return (

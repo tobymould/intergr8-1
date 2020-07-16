@@ -35,7 +35,6 @@ class EditUser extends Component {
             <input type="submit" value="Update User" className={styles.submitBtn}/>
             <button type="button" text={"Cancel"} onClick={this.props.toggleEditUser} className={styles.cancelBtn}>Cancel</button>
               
-           
           </div>
         </form>
       </div>

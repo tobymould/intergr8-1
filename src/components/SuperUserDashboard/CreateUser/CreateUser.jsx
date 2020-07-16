@@ -66,7 +66,7 @@ class CreateUser extends Component {
               <input type="email" id="email" onInput={(e) => this.setState({ email: e.target.value })}/>
             </div>
             <div>
-              <label for="password">password address:</label>
+              <label for="password">Password</label>
               <input type="password" id="password" onInput={(e) => this.setState({ password: e.target.value })}/>
             </div>
             <div>
