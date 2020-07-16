@@ -6,12 +6,16 @@
   }
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   margin: auto;
   margin-top: 80px;
-  padding-bottom: 231px;
+  overflow-y: auto;
+  height: 400px;
+  padding: 10px;
+  width: 820px;
+
+
   @media screen and (max-width: 800px) {
-    width: 200px;
+    width: 375px;
   }
 }
