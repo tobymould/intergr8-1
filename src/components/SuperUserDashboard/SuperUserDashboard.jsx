@@ -6,7 +6,6 @@ import DropDown from "../../utilities/DropDown";
 import TableRow from './TableRow'
 import CreateUser from './CreateUser/CreateUser';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import EditUser from './EditUser';
 import data from '../../data/newMockDataUsers';
 import firebase, { firestore } from "../../firebase";
 import DeleteUser from './DeleteUser/DeleteUser';

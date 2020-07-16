@@ -8,7 +8,7 @@ describe("TableRow component tests", () => {
   let testComponent;
 
   beforeEach(() => {
-    testComponent = shallow(<TableRow />);
+    testComponent = shallow(<TableRow data={[name:1]}/>);
   })
 
   it("should render", () => {

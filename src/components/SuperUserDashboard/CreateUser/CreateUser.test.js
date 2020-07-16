@@ -18,7 +18,7 @@ describe("CreateUser component tests", () => {
   it("should update name state from corresponding input field", () => {
     testComponent.setState({ name: "" });
 
-    testComponent.find('.name').simulate('keypress', {target: {value: 'new value'}});
+    testComponent.find('.name').simulate('change', {target: {value: 'new value'}});
     expect(testComponent.state('name')).toBe('new value');
   })
 })
