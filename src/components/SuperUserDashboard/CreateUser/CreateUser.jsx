@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import styles from "../CreateUser/CreateUser.module.scss";
 import DropDown from "../../../utilities/DropDown";
-import { firestore } from "../../../firebase";
+import firebase, { firestore } from "../../../firebase";
 
 
 class CreateUser extends Component {
@@ -35,6 +35,7 @@ class CreateUser extends Component {
   handleSubmit = (event) => {
     event.preventDefault();
     this.addNewUser(this.state);
+    this.createUserAccount(this.state)
     this.props.toggleAddUser();
   }
   
@@ -48,6 +49,15 @@ class CreateUser extends Component {
       this.props.getUsers();
     })
     .catch((err) => console.error(err));
+  }
+
+  createUserAccount = (info) => {
+    firebase
+      .auth()
+      .createUserWithEmailAndPassword(info.email, info.password)
+      .catch((error) => {
+        console.log(error)
+      })
   }
   
 
