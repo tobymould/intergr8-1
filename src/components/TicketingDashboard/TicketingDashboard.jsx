@@ -34,29 +34,29 @@ class TicketingDashboard extends Component {
 
   componentDidMount() {
     firestore.collection("test")
-    .doc("1")
-    .set({Hello:"Bex"})
-    .then ( () => {
-      this.setState({
-        totalTickets: this.countTickets(),
-        assignedTickets: this.countUnassignedTickets(),
-        inProgressTickets: this.countInProgressTickets(),
-        userInProgressTickets: this.countUserInProgressTickets(),
-        percentUnassignedTickets: this.calculatePercent(
-          this.countTickets(),
-          this.countUnassignedTickets()
-        ),
-        percentInProgressTickets: this.calculatePercent(
-          this.countTickets(),
-          this.countInProgressTickets()
-        ),
-        percentUserInProgressTickets: this.calculatePercent(
-          this.countUserTickets(),
-          this.countUserInProgressTickets()
-        ),
+      .doc("1")
+      .set({ Hello: "Bex" })
+      .then(() => {
+        this.setState({
+          totalTickets: this.countTickets(),
+          assignedTickets: this.countUnassignedTickets(),
+          inProgressTickets: this.countInProgressTickets(),
+          userInProgressTickets: this.countUserInProgressTickets(),
+          percentUnassignedTickets: this.calculatePercent(
+            this.countTickets(),
+            this.countUnassignedTickets()
+          ),
+          percentInProgressTickets: this.calculatePercent(
+            this.countTickets(),
+            this.countInProgressTickets()
+          ),
+          percentUserInProgressTickets: this.calculatePercent(
+            this.countUserTickets(),
+            this.countUserInProgressTickets()
+          ),
+        });
       });
-    });
-    
+
   }
 
   render() {
@@ -68,13 +68,13 @@ class TicketingDashboard extends Component {
 
     return (
       <section className={styles.ticketingDashboard}>
-      <NavBar />
-      <ChartPanel
-        percentUnassignedTickets={percentUnassignedTickets}
-        percentInProgressTickets={percentInProgressTickets}
-        percentUserInProgressTickets={percentUserInProgressTickets}
-      />
-      <TicketColumns/>
+        <NavBar signOut={this.props.signOut} />
+        <ChartPanel
+          percentUnassignedTickets={percentUnassignedTickets}
+          percentInProgressTickets={percentInProgressTickets}
+          percentUserInProgressTickets={percentUserInProgressTickets}
+        />
+        <TicketColumns />
       </section>
     );
   }

@@ -37,7 +37,9 @@ class App extends Component {
       .auth()
       .signOut()
       .then(() => {
+        console.log(this.state.user);
         this.setState({ user: null });
+        console.log(this.state.user);
       })
       .catch((error) => {
         alert("Sorry!" + error.message);

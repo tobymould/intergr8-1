@@ -8,14 +8,14 @@ import TicketView from '../../components/TicketingDashboard/TicketColumns/Column
 
 class Routes extends Component {
   render() {
-    const { userSignInAttempt, setEmail, setPassword, user, emailAddress, password } = this.props;
+    const { userSignInAttempt, signOut, setEmail, setPassword, user, emailAddress, password } = this.props;
     return (
       <Router>
         <LogInBox default path="login" userSignInAttempt={userSignInAttempt} setEmail={setEmail} setPassword={setPassword} user={user} emailAddress={emailAddress} password={password} />
-        <TicketingDashboard path="dashboard" />
-        <CategoryChooser path="ticket" />
-        <TicketView path="viewticket" />
-        <CreateTicket path="createticket" />
+        <TicketingDashboard path="dashboard" signOut={signOut} />
+        <CategoryChooser path="ticket" signOut={signOut} />
+        <TicketView path="viewticket" signOut={signOut} />
+        <CreateTicket path="createticket" signOut={signOut} />
       </Router>
     );
   }

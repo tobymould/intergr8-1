@@ -29,9 +29,9 @@ class CreateTicket extends Component {
           </section>
           <section>
             <form action="" className={styles.formCreateTicket}>
-              <label For="mainCategory">
+              <label htmlFor="mainCategory">
                 Select category
-                <select name="" id="mainCategory" o>
+                <select name="" id="mainCategory">
                   <option value="L&D">L&D</option>
                   <option value="Payroll">Payroll</option>
                   <option value="General HR">General HR</option>
@@ -39,7 +39,7 @@ class CreateTicket extends Component {
                   <option value="Health & Safety">Health & Safety</option>
                 </select>
               </label>
-              <label For="subCategory">
+              <label htmlFor="subCategory">
                 Sub-category
                 <select name="" id="subCategory">
                   <option value="CPD">CPD</option>
@@ -52,7 +52,7 @@ class CreateTicket extends Component {
                   <option value="$$">$$</option>
                 </select>
               </label> */}
-              <label For="">
+              <label htmlFor="">
                 Description
                 <textarea placeholder="Type here..."></textarea>
               </label>

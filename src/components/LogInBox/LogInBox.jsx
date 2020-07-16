@@ -7,8 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 class LogInBox extends Component {
   render() {
-    const { userSignInAttempt, setEmail, setPassword, user, emailAddress, password } = this.props;
-    console.log(user, emailAddress);
+    const { userSignInAttempt, setEmail, setPassword } = this.props;
 
     return (
       <section className={styles.logInPage}>
