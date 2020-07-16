@@ -18,7 +18,7 @@ class CategoryChooser extends Component {
 
   optionClick = (selector, count) => {
     count = count ? count : 1;
-    if (selector === "healthandsafety") count = 2;
+    if (selector === "Health & Safety") count = 2;
     let newSelector =   count < 0 ? this.state.selector.slice(0,this.state.selector.length-1) : [...this.state.selector, selector];
     this.setState({
       //change stage to receive either +1 or -1

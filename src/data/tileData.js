@@ -1,4 +1,4 @@
-tileData = {
+const tileData = {
   "Pay & Benefits": {
     queries: ["General Pay Query", "Benefit Query ", "P60/P45 Request"],
     icon: "pound-sign",
