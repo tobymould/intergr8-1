@@ -14,7 +14,7 @@ import DeleteUser from './DeleteUser/DeleteUser';
 class SuperUserDashboard extends Component {
     state = {
         isDisplayAddUser: false,
-        isDisplayEditUser: false,
+        // isDisplayEditUser: false,
         users: [],
         idDisplayDeleteUser: false,
         filterText: ''
@@ -40,9 +40,6 @@ class SuperUserDashboard extends Component {
       this.setState({ isDisplayEditUser: !this.state.isDisplayEditUser})
     }
 
-    displayEditUser = () => {
-      return this.state.isDisplayEditUser ? (<EditUser toggleEditUser={this.toggleEditUser} data={data}/>) : null
-    }
 
 
     componentDidMount(){
@@ -102,7 +99,7 @@ class SuperUserDashboard extends Component {
             {mapUserData}
           </div>
           {this.displayAddUser()}
-          {this.displayEditUser()}
+          {/* {this.displayEditUser()} */}
           {this.displayDeleteUser()}
         </section>
       </div>

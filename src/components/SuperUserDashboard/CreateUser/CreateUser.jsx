@@ -62,7 +62,6 @@ class CreateUser extends Component {
   
 
   render() { 
-    console.log(this.grabUserDetail)
     return (  
       <div className={styles.CreateUserModal}>
         <div className={styles.CreateUserContainer}>
