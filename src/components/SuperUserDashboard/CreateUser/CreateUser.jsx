@@ -70,15 +70,15 @@ class CreateUser extends Component {
         <div className={styles.CreateUserContainer}>
           <form className={styles.CreateUserModalContent} onSubmit={this.handleSubmit}>
             <div>
-              <label for="name">Name:</label>
+              <label htmlFor="name">Name:</label>
               <input type="text" id="name" className={styles.name} onChange={(e) => this.setState({ name: e.target.value })}/>
             </div>
             <div>
-              <label for="email">Email address:</label>
+              <label htmlFor="email">Email address:</label>
               <input type="email" id="email" onInput={(e) => this.setState({ email: e.target.value })}/>
             </div>
             <div>
-              <label for="password">Password:</label>
+              <label htmlFor="password">Password:</label>
               <input type="password" id="password" onInput={(e) => this.setState({ password: e.target.value })}/>
             </div>
             <div>
@@ -89,7 +89,7 @@ class CreateUser extends Component {
               </select> 
             </div>
             <div>
-              <label for="upload-photo">Photo:</label>
+              <label htmlFor="upload-photo">Photo:</label>
               <input type="text" placeholder="URL" onInput={(e) => this.setState({ img: e.target.value })} />
             </div>
             <div className={styles.btnWrapper}>
