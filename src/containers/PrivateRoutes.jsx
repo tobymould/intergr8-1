@@ -25,7 +25,7 @@ class PrivateRoutes extends Component {
   }
 
   render() {
-    const { userSignInAttempt, signOut, setEmail, setPassword, user, emailAddress, password } = this.props;
+    const { signOut, user } = this.props;
     return (
       <Router>
         <TicketingDashboard default path="dashboard" user={user} signOut={signOut} />
