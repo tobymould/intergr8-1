@@ -44,8 +44,7 @@ class CategoryChooser extends Component {
       stage: this.state.stage + count,
       selector: newSelector
     });
-    }
-  ;
+  };
 
   goBack = () => {
     //onclick of goback decrement the stage
