@@ -56,7 +56,7 @@ class Column extends Component {
 
   render() {
     return (
-      <>
+      <div>
         <article className={styles.TicketColumn}>
           <div className={styles.topOfColumn}>
             <h3>{this.props.title}</h3>
@@ -69,7 +69,7 @@ class Column extends Component {
           </section>
         </article>
         {/* <TicketView /> */}
-      </>
+      </div>
     );
   }
 }
