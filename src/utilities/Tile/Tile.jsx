@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import styles from "./Tile.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
 class Tile extends Component {
   render() {
     const { data, handleClick } = this.props;
@@ -15,5 +14,4 @@ class Tile extends Component {
     );
   }
 }
-
 export default Tile;

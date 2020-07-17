@@ -1,0 +1,138 @@
+@import "../../variables.scss";
+
+* {
+  box-sizing: border-box;
+}
+
+.SuperUserContainer {
+
+  background-color: #ffffff;
+  background-image: url("../../assets/intergr8-login-background.svg");
+  background-size: cover;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  min-height: 100vh;
+  height: max-content;
+  width: 100%;
+
+
+    // background
+
+  .SuperUserHeader {
+    display: flex;
+    justify-content: space-between;
+    padding: $base-value;
+    align-items: center;
+    
+    .superUserDetails {
+      display: flex;
+      align-items: center;
+      min-width: 300px;
+
+      img {
+        border-radius: 50%;
+        box-shadow: 0 3px 3px $primary-black-transparent, 0 1px 1px $primary-black-transparent;
+        margin: 0% 2.5%;
+        width: 100px;
+        height: 100px;
+        }
+    }
+
+    .searchBox {
+      display: flex;
+      font-size: 1.2em;
+      align-items: center;
+      transition: 1s;
+      position: relative;
+      
+      input {
+        border: 0;
+        border-bottom: 1px solid black;
+        padding: 10px 5px;
+        color: $dark-grey;
+        width: 250px;
+        outline: none;
+        font-size: 1rem;
+        padding-right: 30px;
+
+        &:focus {
+          border-bottom: 2px solid black;
+        }
+        
+      }
+
+      span {
+        position: absolute;
+        right: 5px;
+      }
+    } 
+  }
+
+  .SuperUserEmployee {
+    margin: 0 10px;
+    box-shadow: 0 10px 20px $primary-black-transparent, 0 6px 6px $primary-black-transparent;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.6);
+
+    .tableHeader {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid black;
+      font-size: 1.1em;
+      font-weight: bold;
+      background-color: rgba(255, 255, 255, 0.9);
+      box-shadow: 0 5px 10px $primary-black-transparent, 0 3px 3px $primary-black-transparent;
+      padding: 5px 10px;
+
+      &:first-child {
+        padding-left: 55px;
+      }
+
+      p {
+        &.name {
+          width: 150px;
+        }
+
+        &.email {
+          width: 200px;
+        }
+
+        &.password {
+          width: 100px;
+        }
+
+        &.userType {
+          width: 100px;
+        }
+
+      }
+
+      .SuperUserAddBtn {
+        background-color: $primary-yellow;
+        padding: 5px 10px;
+        border-radius: 3px;
+        cursor: pointer;
+
+        p {
+          display: inline;
+          padding-right: 6px;
+        }
+    
+        &:hover {
+          background-color: $secondary-yellow;
+        }
+    }
+
+    }
+
+    .tableRowScroll {
+      overflow-y: auto;
+      height: calc(100vh - 280px);
+    }
+
+    
+  }
+
+}
