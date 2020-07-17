@@ -17,26 +17,30 @@ class CategoryChooser extends Component {
   };
 
   noSubCategories = (selector, count) => {
-    // if (selector === "Health & Safety") count = 2;
-
+    let num = this.state.stage > 2 ? this.state.stage + count : this.state.stage + count*2;
+    let newSelector;
+    if(count < 0){
+        newSelector = this.state.stage === 2 ? "" : this.state.selector;
+    } else {
+        newSelector = this.state.stage > 2 ? this.state.selector : [selector, ''];
+    }
     this.setState({
-      stage: this.state.stage + count*2,
-      selector: selector
+      stage: num,
+      selector: newSelector
     }) 
   }
 
   optionClick = (selector, count) => {
+    let newSelector;
+    let category = typeof selector === 'string' ? selector : selector[0];
     count = count ? count : 1;
-
-    let newSelector =   count < 0 && this.state.stage < 3 ? this.state.selector.slice(0,this.state.selector.length-1) : [...this.state.selector, selector];
-    newSelector = this.state.stage === 3 ? this.state.selector : newSelector;
-
-    if (tileData[selector] && tileData[selector].queries.length === 0) return this.noSubCategories(newSelector, count)
-    
-
-
+    if (tileData[category] && tileData[category].queries.length === 0) return this.noSubCategories(selector, count);
+    if (count < 0) {
+      newSelector = this.state.stage > 2 ? this.state.selector : this.state.selector.slice(0,this.state.selector.length-1);
+    } else {
+      newSelector = [...this.state.selector, selector];
+    }
     this.setState({
-      //change stage to receive either +1 or -1
       stage: this.state.stage + count,
       selector: newSelector
     });
@@ -45,12 +49,11 @@ class CategoryChooser extends Component {
 
   goBack = () => {
     //onclick of goback decrement the stage
-
-    console.log("The current stage is: " + this.state.stage)
     if (this.state.stage > 0) return <Button className={styles.goBack} text={'Go back'} logic={() => {this.optionClick(this.state.selector, -1)}} />
   }
 
   getCategory() {
+    // const {stage, selector, finalChoice } = this.state;
     if (this.state.stage === 0) {
       return (
         <>
@@ -78,7 +81,7 @@ class CategoryChooser extends Component {
   }
 
   render() {
-    console.log(this.state);
+    console.log(this.state)
     return (
       <>
         <NavBar />
