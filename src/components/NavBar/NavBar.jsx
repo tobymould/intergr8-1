@@ -25,6 +25,10 @@ class NavBar extends Component {
         title: 'Ticket',
         link: '/ticket'
       }, {
+        title: 'Users',
+        link: '/superuser'
+      }
+      , {
         title: 'Logout',
         link: '/'
       }
