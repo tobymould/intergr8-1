@@ -80,7 +80,6 @@ class CategoryChooser extends Component {
   }
 
   render() {
-    console.log(this.state)
     return (
       <>
         <NavBar />
