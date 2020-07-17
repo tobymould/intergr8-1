@@ -33,14 +33,18 @@
 
   div {
     display: flex;
+
+    img, 
+    .icon {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        margin-right: 15px;
+        margin-left: 0;
+    }
   }
 
-  img {
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    margin-right: 15px;
-  }
+  
 
   p, 
   input,

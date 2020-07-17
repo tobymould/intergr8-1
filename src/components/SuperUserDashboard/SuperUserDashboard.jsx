@@ -54,6 +54,7 @@ class SuperUserDashboard extends Component {
         })
     }
 
+
     render() { 
     const mapUserData = this.state.users
     .filter((user) => user.name.toLowerCase().includes(this.state.filterText))

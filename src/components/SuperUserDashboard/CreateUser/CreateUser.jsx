@@ -35,18 +35,16 @@ class CreateUser extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    this.addNewUser(this.state);
     this.createUserAccount(this.state)
-    this.props.toggleAddUser();
   }
   
   addNewUser = (info) => {
     firestore
     .collection("info")
-    .add(info)
-    .then((docRef) => {
-      console.log(docRef.id)
-      firestore.collection("info").doc(docRef.id).update({ ID: docRef.id })
+    .doc(info.ID)
+    .set(info)
+    .then(() => {
+      this.props.toggleAddUser();
       this.props.getUsers();
     })
     .catch((err) => console.error(err));
@@ -56,6 +54,10 @@ class CreateUser extends Component {
     firebase
       .auth()
       .createUserWithEmailAndPassword(info.email, info.password)
+      .then(data => {
+        this.setState({ID: data.user.uid})
+        this.addNewUser(this.state)
+      })
       .catch((error) => {
         console.log(error)
       })
