@@ -23,13 +23,15 @@ class LogInBox extends Component {
                   {/*  */}
                   <form onSubmit={userSignInAttempt}>
                     <div className={styles.inputWrapper}>
-                      <InputBox id="email" type="email" name="email" placeholder="Email" inputHandler={setEmail} />
+                      <InputBox id="email" type="email" name="email" placeholder="Email"
+                        inputHandler={setEmail} autoComplete={"current-email"} />
                       <label htmlFor="email">
                         <FontAwesomeIcon icon="user" />
                       </label>
                     </div>
                     <div className={styles.inputWrapper}>
-                      <InputBox id="password" type="password" name="password" placeholder="Password" inputHandler={setPassword} />
+                      <InputBox id="password" type="password" name="password" placeholder="Password"
+                        inputHandler={setPassword} autoComplete={"current-password"} />
                       <label htmlFor="password">
                         <FontAwesomeIcon icon="lock" />
                       </label>

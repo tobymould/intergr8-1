@@ -29,14 +29,17 @@ class App extends Component {
       .auth()
       .signInWithEmailAndPassword(emailAddress, password)
       .then(() => globalHistory.navigate('dashboard'))
-      .catch(error => alert("Oops. We couldn't sign you in. " + error.message));
-  };
+      .catch(error => {
+        alert("Oops. We couldn't sign you in. " + error.message);
+      });
+  }
 
   signOut = () => {
     firebase
       .auth()
       .signOut()
       .then(() => {
+        globalHistory.navigate('dashboard');
         console.log(this.state.user);
         this.setState({ user: null });
         console.log(this.state.user);
