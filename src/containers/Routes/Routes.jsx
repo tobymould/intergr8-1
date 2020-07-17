@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { Router, globalHistory } from '@reach/router';
-import LogInBox from '../../components/LogInBox';
 import PrivateRoutes from '../PrivateRoutes';
-
+import LogInBox from "../../components/LogInBox";
 class Routes extends Component {
 
   render() {
