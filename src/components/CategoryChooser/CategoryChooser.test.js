@@ -15,12 +15,5 @@ describe("CategoryChooser tests", () => {
     expect(component).toBeTruthy();
   })
 
-  it('the state should change when clicking a tile', () => {
-    expect(component.state('stage')).toBe(0);
-    component.instance().optionClick('Payroll')
-    expect(component.state('stage')).toBe(1);
-    
-  })
-
 });
 

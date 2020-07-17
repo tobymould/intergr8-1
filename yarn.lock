@@ -1398,15 +1398,9 @@
     semver "^6.2.0"
 
 "@grpc/proto-loader@^0.5.0":
-<<<<<<< HEAD
-  version "0.5.4"
-  resolved "https://registry.yarnpkg.com/@grpc/proto-loader/-/proto-loader-0.5.4.tgz#038a3820540f621eeb1b05d81fbedfb045e14de0"
-  integrity sha512-HTM4QpI9B2XFkPz7pjwMyMgZchJ93TVkL3kWPW8GDMDKYxsMnmf4w2TNMJK7+KNiYHS5cJrCEAFlF+AwtXWVPA==
-=======
   version "0.5.5"
   resolved "https://registry.yarnpkg.com/@grpc/proto-loader/-/proto-loader-0.5.5.tgz#6725e7a1827bdf8e92e29fbf4e9ef0203c0906a9"
   integrity sha512-WwN9jVNdHRQoOBo9FDH7qU+mgfjPc8GygPYms3M+y3fbQLfnCe/Kv/E01t7JRgnrsOHH8euvSbed3mIalXhwqQ==
->>>>>>> 471ad73bf2cd91a31ae2dfc22a374bd190c80bf6
   dependencies:
     lodash.camelcase "^4.3.0"
     protobufjs "^6.8.6"
@@ -9902,15 +9896,9 @@ prop-types@^15.6.1, prop-types@^15.6.2, prop-types@^15.7.2:
     react-is "^16.8.1"
 
 protobufjs@^6.8.6:
-<<<<<<< HEAD
-  version "6.9.0"
-  resolved "https://registry.yarnpkg.com/protobufjs/-/protobufjs-6.9.0.tgz#c08b2bf636682598e6fabbf0edb0b1256ff090bd"
-  integrity sha512-LlGVfEWDXoI/STstRDdZZKb/qusoAWUnmLg9R8OLSO473mBLWHowx8clbX5/+mKDEI+v7GzjoK9tRPZMMcoTrg==
-=======
   version "6.10.0"
   resolved "https://registry.yarnpkg.com/protobufjs/-/protobufjs-6.10.0.tgz#b0698a2a91fc597e2dc625dcf3539ece9675c8fd"
   integrity sha512-Hdz1+CXkrlmGDKkP6DczxysdnUyUuhM1mjeaydnBxOcjxQPbJldLZ8eGE1gX0UTsgv+0QkFfn6dioo5yt9XORw==
->>>>>>> 471ad73bf2cd91a31ae2dfc22a374bd190c80bf6
   dependencies:
     "@protobufjs/aspromise" "^1.1.2"
     "@protobufjs/base64" "^1.1.2"
