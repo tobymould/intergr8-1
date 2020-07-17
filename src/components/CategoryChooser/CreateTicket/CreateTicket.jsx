@@ -21,7 +21,7 @@ class CreateTicket extends Component {
 
     return (
       <>
-        <NavBar />
+        <NavBar user={this.props.user} signOut={this.props.signOut} />
         <div className={styles.backGround}>
           <section className={styles.topField}>
             <p className={styles.topBanner}>New Ticket +</p>

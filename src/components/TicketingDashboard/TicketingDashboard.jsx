@@ -68,7 +68,7 @@ class TicketingDashboard extends Component {
 
     return (
       <section className={styles.ticketingDashboard}>
-        <NavBar signOut={this.props.signOut} />
+        <NavBar user={this.props.user} signOut={this.props.signOut} />
         <ChartPanel
           percentUnassignedTickets={percentUnassignedTickets}
           percentInProgressTickets={percentInProgressTickets}

@@ -28,7 +28,7 @@ class CategoryChooser extends Component {
         "Maternity/Paternity",
         "Terminations",
         "Line Manager HR Support ",
-        "Other HR Query" 
+        "Other HR Query"
       ],
       icon: "network-wired",
       id: 2,
@@ -55,10 +55,10 @@ class CategoryChooser extends Component {
         "General Recruitment Query",
         "Create a new Role",
         "Line Manager Recruitment Support"
-      
+
       ],
 
-      
+
       icon: "user-friends",
       id: 5,
       title: "Recruitment",
@@ -76,19 +76,19 @@ class CategoryChooser extends Component {
         stage: this.state.stage + 2,
         selector,
       })
-    }else {
-    this.setState({
-      stage: this.state.stage + 1,
-      selector,
-    });
-  }
+    } else {
+      this.setState({
+        stage: this.state.stage + 1,
+        selector,
+      });
+    }
   };
   optionClick = () => {
     this.setState({
       stage: this.state.stage + 1,
     });
-    }
-  ;
+  }
+    ;
 
   getCategory() {
     if (this.state.stage === 0) {
@@ -117,7 +117,7 @@ class CategoryChooser extends Component {
     // console.log(this.state);
     return (
       <section className={styles.categoryChooser}>
-        <NavBar />
+        <NavBar user={this.props.user} signOut={this.props.signOut} />
         {this.getCategory()}
       </section>
     );
