@@ -4,71 +4,26 @@ import TicketCatStageOne from "./TicketCatStageOne";
 import TicketCatStageTwo from "./TicketCatStageTwo";
 import TicketCatStageThree from "./TicketCatStageThree";
 import NavBar from "../../components/NavBar";
+import { firestore } from "../../firebase";
+
 
 class CategoryChooser extends Component {
-  tileData = {
-    payroll: {
-      queries: ["General Pay Query", "Benefit Query ", "P60/P45 Request"],
-      icon: "pound-sign",
-      id: 1,
-      title: "Pay & Benefits",
-    },
-    generalHR: {
-      queries: [
-        " Probation/Induction",
-        " Leave/Holidays",
-        " Sickness & Absence",
-        "Disciplinary & Grievance",
-        "Performance Management",
-        "Data Protection/GDPR",
-        "Return to Work",
-        "Wellbeing",
-        "Flexible Working",
-        "My Appraisal",
-        "Maternity/Paternity",
-        "Terminations",
-        "Line Manager HR Support ",
-        "Other HR Query" 
-      ],
-      icon: "network-wired",
-      id: 2,
-      title: "HR",
-    },
-    healthandsafety: {
-      queries: [],
-      icon: "medkit",
-      id: 3,
-      title: "Health & Safety",
-    },
-    landd: {
-      queries: [
-        "My CPD",
-        "Line Manager Support"
-      ],
-      icon: "book-open",
-      id: 4,
-      title: "L&D",
-    },
-    recruitment: {
-      queries: [
-        "Apply for an External Post",
-        "General Recruitment Query",
-        "Create a new Role",
-        "Line Manager Recruitment Support"
-      
-      ],
-
-      
-      icon: "user-friends",
-      id: 5,
-      title: "Recruitment",
-    },
-  };
-
   state = {
     stage: 0,
     firstTile: "",
+    categories: []
   };
+
+  componentDidMount() {
+    firestore
+        .collection('categories')
+        .get()
+        .then((snapshot) => {
+          const categories = snapshot.docs
+          .map((doc => doc.data()))
+          this.setState({ categories })
+        })
+  }
 
   tileClick = (selector) => {
     if (selector === "healthandsafety") {
@@ -95,7 +50,7 @@ class CategoryChooser extends Component {
       return (
         <>
           <h1> What is your query regarding?</h1>
-          <TicketCatStageOne data={this.tileData} tileClick={this.tileClick} />
+          <TicketCatStageOne data={this.state.categories} tileClick={this.tileClick} />
         </>
       );
     } else if (this.state.stage === 1) {
@@ -103,7 +58,7 @@ class CategoryChooser extends Component {
         <>
           <h1>Please select one of the following options...</h1>
           <TicketCatStageTwo
-            queries={this.tileData[this.state.selector].queries}
+            queries={this.state.categories[this.state.selector].queries}
             optionClick={this.optionClick}
           />
         </>
@@ -114,7 +69,6 @@ class CategoryChooser extends Component {
   }
 
   render() {
-    // console.log(this.state);
     return (
       <section className={styles.categoryChooser}>
         <NavBar />
