@@ -4,10 +4,10 @@ import { shallow } from 'enzyme';
 import tileData  from "../../data/tileData";
 
 describe("Stage1 component tests", () => {
-  const component = shallow(<CategoryChooser />, { disableLifecycleMethods: true });
+  let component
 
   beforeEach(() => {
-    component = shallow(<CategoryChooser />);
+    component = shallow(<CategoryChooser />, { disableLifecycleMethods: true });
   })
 
   it('should render', () => {
