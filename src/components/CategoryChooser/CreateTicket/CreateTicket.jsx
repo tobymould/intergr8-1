@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import styles from "./CreateTicket.module.scss";
 // import TicketTile from '../../TicketingDashboard/TicketColumns/Column/TicketTile/TicketTile';
-import NavBar from '../../NavBar';
+// import NavBar from '../../NavBar';
 
 class CreateTicket extends Component {
   // state = {
