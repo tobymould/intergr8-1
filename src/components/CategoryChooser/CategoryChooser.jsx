@@ -8,13 +8,27 @@ import FAQs from "./FAQs";
 import NavBar from '../../components/NavBar';
 import Button from "../../utilities/Button";
 import tileData from "../../data/tileData";
+import { firestore } from "../../firebase";
+
 
 class CategoryChooser extends Component {
   state = {
     stage: 0,
     firstTile: "",
-    selector: []
+    selector: [],
   };
+
+  componentDidMount() {
+      firestore
+        .collection('categories')
+        .get()
+        .then((snapshot) => {
+          const categories = snapshot.docs
+          .map((doc => doc.data()))
+          this.setState({ categories })
+        })
+    }
+  
 
   noSubCategories = (selector, count) => {
     let num = this.state.stage > 2 ? this.state.stage + count : this.state.stage + count*2;
