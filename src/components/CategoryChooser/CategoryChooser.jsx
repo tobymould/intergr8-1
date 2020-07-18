@@ -7,7 +7,6 @@ import CreateTicket from "./CreateTicket";
 import FAQs from "./FAQs";
 import NavBar from '../../components/NavBar';
 import Button from "../../utilities/Button";
-import tileData from "../../data/tileData";
 import { firestore } from "../../firebase";
 
 
@@ -16,6 +15,7 @@ class CategoryChooser extends Component {
     stage: 0,
     firstTile: "",
     selector: [],
+    categories: {},
   };
 
   componentDidMount() {
@@ -23,9 +23,12 @@ class CategoryChooser extends Component {
         .collection('categories')
         .get()
         .then((snapshot) => {
-          const categories = snapshot.docs
-          .map((doc => doc.data()))
-          this.setState({ categories })
+          snapshot.docs
+          .forEach((doc) => {
+            this.setState({
+              categories: { ...this.state.categories, [doc.id]: doc.data()}
+            }) 
+          })
         })
     }
   
@@ -48,7 +51,7 @@ class CategoryChooser extends Component {
     let newSelector;
     let category = typeof selector === 'string' ? selector : selector[0];
     count = count ? count : 1;
-    if (tileData[category] && tileData[category].queries.length === 0) return this.noSubCategories(selector, count);
+    if (this.state.categories[category] && this.state.categories[category].queries.length === 0) return this.noSubCategories(selector, count);
     if (count < 0) {
       newSelector = this.state.stage > 2 ? this.state.selector : this.state.selector.slice(0,this.state.selector.length-1);
     } else {
@@ -71,7 +74,7 @@ class CategoryChooser extends Component {
       return (
         <>
           <h2>What is your query regarding?</h2>
-          <TicketCatStageOne data={tileData} optionClick={this.optionClick} />
+          <TicketCatStageOne data={this.state.categories} optionClick={this.optionClick} />
         </>
       );
     } else if (this.state.stage === 1) {
@@ -79,7 +82,7 @@ class CategoryChooser extends Component {
         <>
         <h2>Please select one of the following options...</h2>
         <TicketCatStageTwo
-          queries={tileData[this.state.selector[0]].queries}
+          queries={this.state.categories[this.state.selector[0]].queries}
           optionClick={this.optionClick}
         />
         </>
