@@ -6,20 +6,39 @@ import {
   faUserFriends,
   faLock,
   faMedkit,
-  faBars,
+  faPlusCircle,
+  faTimes,
   faUser,
+  faBars,
   faArrowRight,
+  faUserEdit,
+  faUserPlus,
+  faUserSlash,
+  faTrashAlt, 
+  faSearch,
+  faCheckCircle,
+  faTimesCircle,
 } from "@fortawesome/free-solid-svg-icons";
 
 export default library.add(
   faBookOpen,
   faPoundSign,
   faNetworkWired,
-  faUser,
+  faPlusCircle,
+  faTimes,
   faUserFriends,
   faUser,
   faLock,
   faMedkit,
   faBars,
-  faArrowRight
+  faArrowRight,
+  faUserEdit,
+  faUserPlus,
+  faUserSlash,
+  faTrashAlt,
+  faSearch,
+  faCheckCircle,
+  faTimesCircle,
+  faTimes
+
 );

@@ -8,7 +8,7 @@ describe("TicketCatStageTwo tests", () => {
   let component;
 
   beforeEach(() => {
-    component = shallow(<TicketCatStageTwo queries={tileData['healthandsafety'].queries} />);
+    component = shallow(<TicketCatStageTwo queries={tileData['Health & Safety'].queries} />);
   })
 
   it('should render', () => {
@@ -17,7 +17,7 @@ describe("TicketCatStageTwo tests", () => {
 
   it('should display the same number of tiles as queries', () => {
     const numberOfRenderedTiles = component.find(Option).length;
-    const amountOfQueries = tileData['healthandsafety'].queries.length;
+    const amountOfQueries = tileData['Health & Safety'].queries.length;
     expect(numberOfRenderedTiles === amountOfQueries)
     
   })

@@ -1,21 +1,27 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+$primary-black-transparent: #14141433;
+$primary-black-opaque: #141414e6;
+$secondary-black-opaque: #222222e6;
+
 $base-value: 12px;
 
-////// Colors //////
 /* Yellows */
+
 $primary-yellow: #f2b423;
 $secondary-yellow: #e39816;
-/* Blacks */
+
+/* Blacks and greys */
+
 $primary-black: #141414;
+$primary-black-opacity-nine: #141414e6;
+$primary-black-opacity-two: #14141433;
+
 $secondary-black: #222222;
-// Transparent blacks:
-$primary-black-opaque: #141414e6;
-$primary-black-transparent: #14141433;
-$secondary-black-opaque: #222222e6;
-$secondary-black-transparent: #22222233;
-/* Greys */
+$secondary-black-opacity-nine: #222222e6;
+$secondary-black-opacity-two: #22222233;
+
 $dark-grey: #656565;
 $light-grey: #9a9a9a;
+
 /* Whites */
 $white: white;
 $white-opaque: #ffffffcc;
@@ -59,6 +65,7 @@ $large: 1.5rem;
 $small: 0.85rem;
 $tiny: 0.75rem;
 $xlarge: 2.5rem;
+
 
 ////// Designs and layouts //////
 

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import styles from'./CategoryChooser.module.scss';
+import styles from "./CategoryChooser.module.scss";
 import TicketCatStageOne from "./TicketCatStageOne";
 import TicketCatStageTwo from "./TicketCatStageTwo";
 import TicketCatStageThree from "./TicketCatStageThree";
@@ -10,35 +10,49 @@ import Button from "../../utilities/Button";
 import tileData from "../../data/tileData";
 
 class CategoryChooser extends Component {
-
   state = {
     stage: 0,
     firstTile: "",
     selector: []
   };
 
-  optionClick = (selector, count) => {
-    count = count ? count : 1;
-    let newSelector =   count < 0 ? this.state.selector.slice(0,this.state.selector.length-1) : [...this.state.selector, selector];
+  noSubCategories = (selector, count) => {
+    let num = this.state.stage > 2 ? this.state.stage + count : this.state.stage + count*2;
+    let newSelector;
+    if(count < 0){
+        newSelector = this.state.stage === 2 ? "" : this.state.selector;
+    } else {
+        newSelector = this.state.stage > 2 ? this.state.selector : [selector, ''];
+    }
     this.setState({
-      //change stage to receive either +1 or -1
+      stage: num,
+      selector: newSelector
+    }) 
+  }
+
+  optionClick = (selector, count) => {
+    let newSelector;
+    let category = typeof selector === 'string' ? selector : selector[0];
+    count = count ? count : 1;
+    if (tileData[category] && tileData[category].queries.length === 0) return this.noSubCategories(selector, count);
+    if (count < 0) {
+      newSelector = this.state.stage > 2 ? this.state.selector : this.state.selector.slice(0,this.state.selector.length-1);
+    } else {
+      newSelector = [...this.state.selector, selector];
+    }
+    this.setState({
       stage: this.state.stage + count,
       selector: newSelector
     });
   };
 
-  // goBack = () => {
-  //   //onclick of goback decrement the stage
-  //   if (this.state.stage > 0) return <Button className={styles.goBack} text={'Go back'} onClick={this.testClick} />
-  // }
-
   goBack = () => {
     //onclick of goback decrement the stage
-    console.log('hi from go back')
     if (this.state.stage > 0) return <Button className={styles.goBack} text={'Go back'} logic={() => {this.optionClick(this.state.selector, -1)}} />
   }
 
   getCategory() {
+    // const {stage, selector, finalChoice } = this.state;
     if (this.state.stage === 0) {
       return (
         <>
@@ -50,7 +64,6 @@ class CategoryChooser extends Component {
       return (
         <>
         <h2>Please select one of the following options...</h2>
-        {console.log(tileData[this.state.selector[0]], this.state.selector)}
         <TicketCatStageTwo
           queries={tileData[this.state.selector[0]].queries}
           optionClick={this.optionClick}
@@ -59,8 +72,7 @@ class CategoryChooser extends Component {
       );
     } else if (this.state.stage === 2) {
       return <TicketCatStageThree optionClick={(event) => {
-        this.setState({ finalChoice: event.target.value })
-        this.optionClick(event.target.value)
+        this.setState({ finalChoice: event.target.value, stage: this.state.stage + 1 })
       }} />;
     } else if (this.state.stage === 3) {
       return this.state.finalChoice === 'FAQs' ? <FAQs choices={this.state.selector} /> : <CreateTicket choices={this.state.selector} />;
@@ -68,7 +80,6 @@ class CategoryChooser extends Component {
   }
 
   render() {
-    console.log(this.state);
     return (
       <>
         <NavBar />

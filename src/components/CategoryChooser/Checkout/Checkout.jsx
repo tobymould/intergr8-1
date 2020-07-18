@@ -12,5 +12,4 @@ class Checkout extends Component {
      );
   }
 }
- 
 export default Checkout;

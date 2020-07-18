@@ -16,7 +16,7 @@ class DropDown extends Component {
     return (
       <select className={styles.DropDown} name="" id="">
         {this.getOptions()}
-      </select>
+      </select> 
     );
   }
 }
