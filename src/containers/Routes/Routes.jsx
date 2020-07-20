@@ -1,19 +1,22 @@
-import React, { Component } from "react";
-import { Router } from "@reach/router";
+import React, { Component } from 'react';
+import { Router } from '@reach/router';
+import PrivateRoutes from '../PrivateRoutes';
 import LogInBox from "../../components/LogInBox";
-import TicketingDashboard from "../../components/TicketingDashboard";
-import CategoryChooser from "../../components/CategoryChooser";
-import TicketView from "../../components/TicketingDashboard/TicketColumns/Column/TicketView";
-import SuperUserDashboard from "../../components/SuperUserDashboard";
 class Routes extends Component {
+
   render() {
+    const { userSignInAttempt, signOut, setEmail, setPassword, user, emailAddress, password } = this.props;
     return (
       <Router>
-        <TicketingDashboard path="dashboard" />
-        <CategoryChooser path="ticket" />
-        <TicketView path="viewticket" />
-        <SuperUserDashboard path="superuser" />
-        <LogInBox default />
+        {user ?
+          <PrivateRoutes user={user} signOut={signOut} default path="/" />
+          : < LogInBox default path="login"
+            user={user}
+            userSignInAttempt={userSignInAttempt}
+            emailAddress={emailAddress} setEmail={setEmail}
+            password={password} setPassword={setPassword}
+            signOut={signOut}
+          />}
       </Router>
     );
   }
