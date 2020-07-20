@@ -5,8 +5,8 @@ class ResolveTicketModal extends Component {
   render() {
     const {
       toggleResolveTicketDisplay,
-      toggleResolveModal,
-      updateInputResolve,
+      toggleResolveModal
+      // updateInputResolve,
     } = this.props;
     return (
       <>
@@ -17,13 +17,13 @@ class ResolveTicketModal extends Component {
               name="formname"
               onSubmit="returnfalse"
             >
-              <h2>Provide a specific reason for marking this ticket ‘Resolved’:
+              <h2>Are you happy to mark this ticket as 'Resolved'?
               </h2>
-              <textarea required name="resolveReason" id="resolveReason" placeholder={"Type Here..."} className={styles.resolveReason} onChange={updateInputResolve}>
-              </textarea>
+              {/* <textarea required name="resolveReason" id="resolveReason" placeholder={"Type Here..."} className={styles.resolveReason} onChange={updateInputResolve}>
+              </textarea> */}
               <div className={styles.ButtonsWrapper}>
-                <span className={styles.ButtonWrapper}> <button type="button" text={"Resolve ticket"} onClick={() => { toggleResolveTicketDisplay(); toggleResolveModal() }}>Resolve ticket</button></span>
-                <span className={styles.ButtonWrapper}><button type="button" text={"Cancel"} onClick={this.props.toggleResolveModal}>Cancel</button></span>
+              <button type="button" className={styles.btnConfirm} onClick={() => { toggleResolveTicketDisplay(); toggleResolveModal() }}>Confirm</button>
+              <button type="button" className={styles.btnCancel} onClick={this.props.toggleResolveModal}>Cancel</button>
               </div>
             </form >
           </div >
