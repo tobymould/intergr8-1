@@ -34,17 +34,17 @@ class CategoryChooser extends Component {
   
 
   noSubCategories = (selector, count) => {
-    let num = this.state.stage > 2 ? this.state.stage + count : this.state.stage + count*2;
+    let num = this.state.stage > 2 ? this.state.stage + count : this.state.stage + count * 2;
     let newSelector;
-    if(count < 0){
-        newSelector = this.state.stage === 2 ? "" : this.state.selector;
+    if (count < 0) {
+      newSelector = this.state.stage === 2 ? "" : this.state.selector;
     } else {
-        newSelector = this.state.stage > 2 ? this.state.selector : [selector, ''];
+      newSelector = this.state.stage > 2 ? this.state.selector : [selector, ''];
     }
     this.setState({
       stage: num,
       selector: newSelector
-    }) 
+    })
   }
 
   optionClick = (selector, count) => {
@@ -53,7 +53,7 @@ class CategoryChooser extends Component {
     count = count ? count : 1;
     if (this.state.categories[category] && this.state.categories[category].queries.length === 0) return this.noSubCategories(selector, count);
     if (count < 0) {
-      newSelector = this.state.stage > 2 ? this.state.selector : this.state.selector.slice(0,this.state.selector.length-1);
+      newSelector = this.state.stage > 2 ? this.state.selector : this.state.selector.slice(0, this.state.selector.length - 1);
     } else {
       newSelector = [...this.state.selector, selector];
     }
@@ -65,7 +65,7 @@ class CategoryChooser extends Component {
 
   goBack = () => {
     //onclick of goback decrement the stage
-    if (this.state.stage > 0) return <Button className={styles.goBack} text={'Go back'} logic={() => {this.optionClick(this.state.selector, -1)}} />
+    if (this.state.stage > 0) return <Button className={styles.goBack} text={'Go back'} logic={() => { this.optionClick(this.state.selector, -1) }} />
   }
 
   getCategory() {

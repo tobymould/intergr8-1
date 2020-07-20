@@ -14,7 +14,7 @@ import {
   faUserEdit,
   faUserPlus,
   faUserSlash,
-  faTrashAlt, 
+  faTrashAlt,
   faSearch,
   faCheckCircle,
   faTimesCircle,

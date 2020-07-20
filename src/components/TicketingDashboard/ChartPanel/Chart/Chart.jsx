@@ -31,7 +31,7 @@ class Chart extends Component {
           <text
             x="57.5"
             y="-10"
-            style={{ "font-size": 30, "font-family": "Poppins" }}
+            style={{ "fontSize": 30, "fontFamily": "Poppins" }}
             transform="rotate(90, 30, 30)"
           >{`${Math.round(percent)}%`}</text>
         </svg>
