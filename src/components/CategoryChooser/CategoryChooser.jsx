@@ -75,7 +75,7 @@ class CategoryChooser extends Component {
         this.setState({ finalChoice: event.target.value, stage: this.state.stage + 1 })
       }} />;
     } else if (this.state.stage === 3) {
-      return this.state.finalChoice === 'FAQs' ? <FAQs choices={this.state.selector} /> : <CreateTicket choices={this.state.selector} />;
+      return this.state.finalChoice === 'FAQs' ? <FAQs choices={this.state.selector} /> : <CreateTicket choices={this.state.selector} user={this.props.user} />;
     }
   }
 
