@@ -11,6 +11,13 @@ import {
   faUser,
   faBars,
   faArrowRight,
+  faUserEdit,
+  faUserPlus,
+  faUserSlash,
+  faTrashAlt, 
+  faSearch,
+  faCheckCircle,
+  faTimesCircle,
 } from "@fortawesome/free-solid-svg-icons";
 
 export default library.add(
@@ -24,5 +31,14 @@ export default library.add(
   faLock,
   faMedkit,
   faBars,
-  faArrowRight
+  faArrowRight,
+  faUserEdit,
+  faUserPlus,
+  faUserSlash,
+  faTrashAlt,
+  faSearch,
+  faCheckCircle,
+  faTimesCircle,
+  faTimes
+
 );

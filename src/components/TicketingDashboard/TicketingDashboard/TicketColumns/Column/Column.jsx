@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component } from "./node_modules/react";
 import styles from "./Column.module.scss";
 import DropDown from "../../../../utilities/DropDown";
 import TicketTile from "./TicketTile";

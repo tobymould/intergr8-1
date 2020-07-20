@@ -1,9 +1,9 @@
 import React from "react";
 import { shallow } from "enzyme";
-import TicketCatStageTwo from "./TicketCatStageTwo";
+import TicketView from "./TicketView";
 
 describe("Stage1 component tests", () => {
-  const component = shallow(<TicketCatStageTwo />);
+  const component = shallow(<TicketView />);
 
   it("should render", () => {
     expect(component).toBeTruthy();

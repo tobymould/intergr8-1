@@ -1,0 +1,227 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+/* Yellows */
+/* Blacks */
+/* Greys */
+/* Whites */
+/* Greens */
+/* Red */
+/* Border radiuses */
+/* Usage:
+  $large for outer containers
+  $medium for inner containers
+  $small for buttons
+  $extra-small for input fields
+*/
+/* Box shadows */
+/* Font sizes */
+/* Forms, boxes, lists */
+/* Waves background */
+/* Keyframes */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+@-webkit-keyframes slide-in-right {
+  0% {
+    -webkit-transform: translateX(1000px);
+    transform: translateX(1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes slide-in-right {
+  0% {
+    -webkit-transform: translateX(1000px);
+    transform: translateX(1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes slide-out-right {
+  0% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateX(1000px);
+    transform: translateX(1000px);
+    opacity: 0;
+  }
+}
+
+@keyframes slide-out-right {
+  0% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateX(1000px);
+    transform: translateX(1000px);
+    opacity: 0;
+  }
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+.TicketView {
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-shadow: 0 10px 20px #14141433, 0 6px 6px #141414e6;
+          box-shadow: 0 10px 20px #14141433, 0 6px 6px #141414e6;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  max-width: 700px;
+  max-height: 60vh;
+  margin: auto;
+}
+
+.TicketView .ticketTop {
+  background-color: #f2b423;
+  padding: 5px 10px 5px 10px;
+  margin: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 15%;
+}
+
+.TicketView .ticketTop .ticketHeader {
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  padding: 5px;
+}
+
+.TicketView .ticketTop .ticketId {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.TicketView .ticketTop .ticketId .circle {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  -webkit-box-shadow: 0 3px 3px #14141433, 0 1px 1px #14141433;
+          box-shadow: 0 3px 3px #14141433, 0 1px 1px #14141433;
+  border: 2px solid white;
+}
+
+.TicketView .ticketTop .ticketId .green {
+  background-color: green;
+}
+
+.TicketView .ticketTop .ticketId .amber {
+  background-color: orange;
+}
+
+.TicketView .ticketTop .ticketId .red {
+  background-color: red;
+}
+
+.TicketView .ticketTop .resolveBtn {
+  padding: 10px;
+  border: none;
+  background-color: #141414;
+  color: white;
+  height: 40px;
+  outline: none;
+  border-radius: 5px;
+}
+
+.TicketView .ticketTop .resolveBtn:hover {
+  cursor: pointer;
+  background-color: #222222e6;
+}
+
+.TicketView .messageContainer {
+  height: 75%;
+  overflow-y: scroll;
+  padding: 0 5px;
+}
+
+.TicketView .messageContainer .resolvedTicketText {
+  -webkit-box-shadow: 0 3px 3px #14141433, 0 1px 1px #14141433;
+          box-shadow: 0 3px 3px #14141433, 0 1px 1px #14141433;
+  border-radius: 6px;
+  width: 80%;
+  padding: 10px;
+  font-size: 14.4px;
+  margin: 8px;
+}
+
+.TicketView .messageContainer .resolvedTicketText span {
+  color: green;
+}
+
+.TicketView .writingMessage {
+  height: 10%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #9a9a9a;
+  padding: 10px;
+}
+
+.TicketView .writingMessage .messageContent {
+  width: 100%;
+}
+
+.TicketView .writingMessage .messageContent textarea {
+  outline: none;
+  width: 100%;
+  height: 80px;
+  padding: 10px;
+  margin-bottom: 10px;
+  resize: none;
+  border: 1px solid #9a9a9a;
+  border-radius: 4px;
+}
+/*# sourceMappingURL=TicketView.module.css.map */
