@@ -1,6 +1,6 @@
 import React from "react";
 import { shallow } from "enzyme";
-import Button from "./Button";
+import Button from "./SubmitButton";
 
 describe("Stage1 component tests", () => {
   const component = shallow(<SubmitButton />);
