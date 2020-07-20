@@ -1,12 +1,12 @@
 const ticketData = [
   {
-    ID: "",
+    ID: '',
     category: 1,
     subCategory: 3,
-    createdBy: "E00000002", // Employee UID
-    assignedTo: ["S00000001"], // can be multiple
-    createdAtDate: "13/07/2020",
-    modifiedAtDate: ["13/07/2020 17:05:43"],
+    createdBy: 'E00000002', // Employee UID
+    assignedTo: ['S00000001'], // can be multiple
+    createdAtDate: '13/07/2020',
+    modifiedAtDate: ['13/07/2020 17:05:43'],
     isOpen: true,
     priority: 3, // Time-based on date
     eventLog: [
@@ -15,8 +15,8 @@ const ticketData = [
         type: 'opened',
         details: 'Ticket was created',
         content: {
-          name: "E00000002",
-          message: "I haven't been paid this month.",
+          name: 'E00000002',
+          message: "I haven't been paid this month."
         },
         date: '13/07/2020 13:05:43'
       },
@@ -24,8 +24,8 @@ const ticketData = [
         type: 'assignedTo',
         details: 'Ticket assigned to ',
         content: {
-          name: "E00000009",
-          message: null,
+          name: 'E00000009',
+          message: null
         },
         date: '13/07/2020 16:05:43'
       },
@@ -33,8 +33,8 @@ const ticketData = [
         type: 'message',
         details: 'New message received',
         content: {
-          name: "E00000002",
-          message: "I still haven't heard back from HR",
+          name: 'E00000002',
+          message: "I still haven't heard back from HR"
         },
         date: '13/07/2020 15:05:43'
       },
@@ -150,13 +150,13 @@ const ticketData = [
   },
 
   {
-    ID: "",
+    ID: '',
     category: 4,
     subCategory: 2,
-    createdBy: "E00000002",
-    assignedTo: ["A00000001"],
-    createdAtDate: "13/07/2020",
-    modifiedAtDate: ["13/07/2020"],
+    createdBy: 'E00000002',
+    assignedTo: ['A00000001'],
+    createdAtDate: '13/07/2020',
+    modifiedAtDate: ['13/07/2020'],
     isOpen: true,
     priority: 3,
     eventLog: [
@@ -165,7 +165,7 @@ const ticketData = [
         details: 'Ticket was created',
         content: {
           name: 'E00000002',
-          message: 'I haven\'t had my annual appraisal'
+          message: "I haven't had my annual appraisal"
         },
         date: '3/07/2020 11:02:43'
       },
@@ -182,9 +182,8 @@ const ticketData = [
         type: 'message',
         details: 'New message received',
         content: {
-          name: "A00000001",
-          message:
-            "Hi, your appraisal will be with your line manager next month",
+          name: 'A00000001',
+          message: 'Hi, your appraisal will be with your line manager next month'
         },
         date: '13/07/2020 17:05:43'
       },
@@ -192,8 +191,8 @@ const ticketData = [
         type: 'isResolved',
         details: 'Ticket resolved',
         content: {
-          name: "A00000001",
-          comment: "Closing ticket for E00000002",
+          name: 'A00000001',
+          comment: 'Closing ticket for E00000002'
         },
         date: '13/07/2020 17:10:20'
       },
@@ -221,53 +220,52 @@ const ticketData = [
   },
 
   {
-    ID: "",
+    ID: '',
     category: 2,
     subCategory: 1,
-    createdBy: "E00000001",
-    assignedTo: ["A00000001"],
-    createdAtDate: "11/07/2020",
-    modifiedAtDate: ["12/07/2020"],
+    createdBy: 'E00000001',
+    assignedTo: ['A00000001'],
+    createdAtDate: '11/07/2020',
+    modifiedAtDate: ['12/07/2020'],
     isOpen: true,
     priority: 3,
     eventLog: [
       {
-        type: "opened",
-        details: "Ticket was created",
+        type: 'opened',
+        details: 'Ticket was created',
         content: {
-          name: "E00000002",
-          message: "David Wildman stole my stapler and I want it back.",
+          name: 'E00000002',
+          message: 'David Wildman stole my stapler and I want it back.'
         },
-        date: "11/07/2020 11:02:43",
+        date: '11/07/2020 11:02:43'
       },
       {
-        type: "assignedTo",
-        details: "Ticket assigned to ",
+        type: 'assignedTo',
+        details: 'Ticket assigned to ',
         content: {
-          name: "A00000001",
-          message: null,
+          name: 'A00000001',
+          message: null
         },
-        date: "11/07/2020 16:09:43",
+        date: '11/07/2020 16:09:43'
       },
       {
-        type: "message",
-        details: "New message received",
+        type: 'message',
+        details: 'New message received',
         content: {
-          name: "A00000001",
-          message:
-            "Hi Niall, we've sent a request to David. If he does it again let us know and we'll make him redundant.",
+          name: 'A00000001',
+          message: "Hi Niall, we've sent a request to David. If he does it again let us know and we'll make him redundant."
         },
-        date: "12/07/2020 17:05:43",
+        date: '12/07/2020 17:05:43'
       },
       {
-        type: "isResolved",
-        details: "Ticket resolved",
+        type: 'isResolved',
+        details: 'Ticket resolved',
         content: {
-          name: "A00000001",
-          comment: "Closing ticket for E00000002. David Wildman has been fired, and is due to be stripped of his OBE. His assets are to be confiscated and he will be given notice by his landlord. His family have disowned him and there is a bounty of £500,000 for his head.",
+          name: 'A00000001',
+          comment: 'Closing ticket for E00000002. David Wildman has been fired, and is due to be stripped of his OBE. His assets are to be confiscated and he will be given notice by his landlord. His family have disowned him and there is a bounty of £500,000 for his head.'
         },
-        date: "12/07/2020 17:06:10",
-      },
-    ],
-  },
+        date: '12/07/2020 17:06:10'
+      }
+    ]
+  }
 ];
