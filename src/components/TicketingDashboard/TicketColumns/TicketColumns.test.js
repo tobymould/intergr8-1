@@ -1,6 +1,6 @@
 import React from "react";
 import { shallow } from "enzyme";
-import TicketColumns from "./TicketColumns.jsx";
+import TicketColumns from "./TicketColumns";
 
 describe("Stage1 component tests", () => {
   const component = shallow(<TicketColumns />);
