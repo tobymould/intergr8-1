@@ -12,27 +12,25 @@ class NavBar extends Component {
 
   get navItems() {
     return [
-      { title: '[View Ticket]',
+      {
+        title: '[View Ticket]',
         link: "/viewticket"
-      },{
-        title: '[Create Ticket]',
-        link: "/createticket"
-      },{
+      }, {
         title: 'Dashboard',
         link: '/dashboard'
-      },{
+      }, {
         title: 'Ticket',
         link: '/ticket'
-      },{
+      }, {
         title: 'Users',
         link: '/superuser'
       }
-      ,{
+      , {
         title: 'Logout',
         link: '/'
       }
     ]
- }
+  }
 
   toggleNav = () => {
     this.setState({
@@ -48,7 +46,16 @@ class NavBar extends Component {
     return this.state.navOpen ? "arrow-right" : "bars";
   }
 
-renderNav = () => this.navItems.map((item, index) => <Link key={index} to={item.link}><h3>{item.title}</h3></Link>) // own components?
+  renderNav = () => this.navItems.map((item, index) => {
+    const { signOut } = this.props;
+    return <Link
+      key={index}
+      to={item.link}>
+      <h3 onClick={item.title === 'Logout' ? signOut : null}>
+        {item.title}
+      </h3>
+    </Link>
+  }) // own components?
 
   render() {
     return (
