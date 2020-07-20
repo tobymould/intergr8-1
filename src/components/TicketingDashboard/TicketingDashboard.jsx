@@ -21,10 +21,10 @@ class TicketingDashboard extends Component {
 
   countTickets = () => ticketData.length;
   countUserTickets = () => ticketData.filter(ticket => ticket.createdBy === this.state.user).length;
-  countUnassignedTickets = () => ticketData.filter(ticket => ticket.assignedto.length === 0).length;
+  countUnassignedTickets = () => ticketData.filter(ticket => ticket.assignedTo.length === 0).length;
   countInProgressTickets = () => ticketData.filter(ticket => ticket.isOpen).length;
   countUserInProgressTickets = () => ticketData.filter(ticket => ticket.createdBy === this.state.user && ticket.isOpen).length;
-  calculatePercent = (total, number) => (number / total) * 100;
+  calculatePercent = (total, number) => number === 0 ? 100 : (number / total) * 100;
 
   componentDidMount() {
     firestore

@@ -1,4 +1,4 @@
-const ticketData = [
+export const ticketData = [
   {
     ID: '',
     category: 1,
