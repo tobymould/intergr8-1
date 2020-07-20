@@ -60,14 +60,40 @@
     .ButtonsWrapper {
       width: 100%;
       display: flex;
-      flex-direction: horizontal;
-      align-items: space-between;
-      justify-content: center;
+      flex-direction: column;
+      
+
+    .btnConfirm, .btnCancel {
+
+      background-color: $primary-yellow;
+      display: block;
+      width: 100%;
+      padding: 10px 0;
+      border: none;
+      border-radius: 3px;
+      outline: none;
+      margin: 5px;
+  
+      &:hover {
+          background-color: $secondary-yellow;
+      }
     }
 
-    .ButtonWrapper {
-      width: 40%;
-      padding: 5%;
+    .btnCancel {
+      background-color: $primary-black;
+      color: white;
+      display: block;
+      width: 100%;
+      padding: 10px 0;
+      border: none;
+      border-radius: 3px;
+      outline: none;
+      margin: 5px;
+  
+      &:hover {
+          background-color: $secondary-black-opaque;
+      }
     }
+  }
   }
 }
