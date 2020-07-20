@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import mockData from '../../data/mockData';
-import { ticketData } from '../../data/newMockDataTickets';
 import ChartPanel from './ChartPanel';
 import TicketColumns from './TicketColumns/TicketColumns';
 import styles from './TicketingDashboard.module.scss';
@@ -9,9 +7,10 @@ import { firestore } from '../../firebase';
 
 class TicketingDashboard extends Component {
   state = {
+    allTickets: [],
     user: 'S00000001', //this.context.user
     totalTickets: null,
-    assignedTickets: null,
+    unassignedTickets: null,
     inProgressTickets: null,
     userInProgressTickets: null,
     percentUnassignedTickets: null,
@@ -19,31 +18,34 @@ class TicketingDashboard extends Component {
     percentUserInProgressTickets: null
   };
 
-  countTickets = () => ticketData.length;
-  countUserTickets = () => ticketData.filter(ticket => ticket.createdBy === this.state.user).length;
-  countUnassignedTickets = () => ticketData.filter(ticket => ticket.assignedTo.length === 0).length;
-  countInProgressTickets = () => ticketData.filter(ticket => ticket.isOpen).length;
-  countUserInProgressTickets = () => ticketData.filter(ticket => ticket.createdBy === this.state.user && ticket.isOpen).length;
+  countTickets = () => this.state.allTickets.length;
+  countUserTickets = () => this.state.allTickets.filter(ticket => ticket.createdBy === this.state.user).length;
+  countUnassignedTickets = () => this.state.allTickets.filter(ticket => ticket.assignedTo.length === 0).length;
+  countInProgressTickets = () => this.state.allTickets.filter(ticket => ticket.isOpen).length;
+  countUserInProgressTickets = () => this.state.allTickets.filter(ticket => ticket.createdBy === this.state.user && ticket.isOpen).length;
   calculatePercent = (total, number) => number === 0 ? 100 : (number / total) * 100;
 
   componentDidMount() {
     firestore
-      .collection('test')
-      .doc('1')
-      .set({ Hello: 'Bex' })
-      .then(() => {
+      .collection('tickets')
+      .get()
+      .then((querySnapshot) => querySnapshot.docs.map(doc => {
+        return { id: doc.id, ...doc.data() }
+      })
+      )
+      .then(data => this.setState({ allTickets: [...data] }) )
+      .then(()=>{
         this.setState({
           totalTickets: this.countTickets(),
-          assignedTickets: this.countUnassignedTickets(),
+          unassignedTickets: this.countUnassignedTickets(),
           inProgressTickets: this.countInProgressTickets(),
           userInProgressTickets: this.countUserInProgressTickets(),
           percentUnassignedTickets: this.calculatePercent(this.countTickets(), this.countUnassignedTickets()),
           percentInProgressTickets: this.calculatePercent(this.countTickets(), this.countInProgressTickets()),
           percentUserInProgressTickets: this.calculatePercent(this.countUserTickets(), this.countUserInProgressTickets())
         });
-      });
+      })
   }
-
   render() {
     const { percentUnassignedTickets, percentInProgressTickets, percentUserInProgressTickets } = this.state;
 
