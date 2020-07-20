@@ -7,7 +7,6 @@ class DeleteUser extends Component {
   handleSubmit = (event) => {
     event.preventDefault();
     this.deleteUser(this.state);
-    this.props.toggleDeleteUser();
   }
   
 
@@ -19,6 +18,7 @@ class DeleteUser extends Component {
       .then((user) => {
         this.props.getUsers();
         this.setState({ user });
+        this.props.toggleDeleteUser();
       })
   }
     
