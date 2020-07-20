@@ -1,11 +1,19 @@
 import React from "react";
-import { shallow } from "enzyme";
 import CategoryChooser from "./CategoryChooser";
+import { shallow } from 'enzyme';
+import tileData  from "../../data/tileData";
 
-describe("Stage1 component tests", () => {
-  const component = shallow(<CategoryChooser />);
+describe("CategoryChooser tests", () => {
+  
+  let component;
 
-  it("should render", () => {
+  beforeEach(() => {
+    component = shallow(<CategoryChooser />);
+  })
+
+  it('should render', () => {
     expect(component).toBeTruthy();
-  });
+  })
+
 });
+

@@ -1,13 +1,14 @@
 import React from "react";
-import TicketCatStageThree from "./TicketCatStageThree";
+import Checkout from "./Checkout";
 import { shallow } from 'enzyme';
 
-describe("TicketCatStageThree tests", () => {
+
+describe("Checkout tests", () => {
   
   let component;
 
   beforeEach(() => {
-    component = shallow(<TicketCatStageThree />);
+    component = shallow(<Checkout />);
   })
 
   it('should render', () => {

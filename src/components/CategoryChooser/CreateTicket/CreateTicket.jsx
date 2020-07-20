@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import styles from "./CreateTicket.module.scss";
 // import TicketTile from '../../TicketingDashboard/TicketColumns/Column/TicketTile/TicketTile';
-import NavBar from '../../NavBar';
+// import NavBar from '../../NavBar';
 
 class CreateTicket extends Component {
   // state = {
@@ -19,9 +19,12 @@ class CreateTicket extends Component {
     //   <TicketTile />
     // ) : null;
 
+    console.log("The props on Create Ticket are" + this.props.choices);
+    const category = this.props.choices[0];
+    const subCategory = this.props.choices[1];
+
     return (
       <>
-        <NavBar user={this.props.user} signOut={this.props.signOut} />
         <div className={styles.backGround}>
           <section className={styles.topField}>
             <p className={styles.topBanner}>New Ticket +</p>
@@ -29,7 +32,10 @@ class CreateTicket extends Component {
           </section>
           <section>
             <form action="" className={styles.formCreateTicket}>
-              <label htmlFor="mainCategory">
+              <span>Category: {category}</span>
+              <span>Sub-Category: {subCategory}</span>
+
+              {/* <label For="mainCategory">
                 Select category
                 <select name="" id="mainCategory">
                   <option value="L&D">L&D</option>
@@ -38,14 +44,14 @@ class CreateTicket extends Component {
                   <option value="Recruitment">Recruitment</option>
                   <option value="Health & Safety">Health & Safety</option>
                 </select>
-              </label>
-              <label htmlFor="subCategory">
+              </label> */}
+              {/* <label For="subCategory">
                 Sub-category
                 <select name="" id="subCategory">
                   <option value="CPD">CPD</option>
                   <option value="b">b</option>
                 </select>
-              </label>
+              </label> */}
               {/* <label For="subSubCategory">Sub-Sub-category
               <select name="" id="subSubCategory">
                   <option value="Training Support Request">Training Support Request</option>
