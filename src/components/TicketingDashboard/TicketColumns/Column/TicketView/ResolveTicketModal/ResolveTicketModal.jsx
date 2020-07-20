@@ -5,8 +5,8 @@ class ResolveTicketModal extends Component {
   render() {
     const {
       toggleResolveTicketDisplay,
-      toggleResolveModal,
-      updateInputResolve,
+      toggleResolveModal
+      // updateInputResolve,
     } = this.props;
     return (
       <>
