@@ -1,7 +1,7 @@
 import React from "react";
 import { shallow } from "enzyme";
 import TicketTile from "./TicketTile";
-import data from '../../../../../data/mockTicketOrderData'
+import data from '../../../../../data/mockTicketOrderData.js'
 
 describe("ticket tile component tests", () => {
   let testComponent;
