@@ -1,11 +1,17 @@
 import React from "react";
-import { shallow } from "enzyme";
 import CreateTicket from "./CreateTicket";
+import { shallow } from 'enzyme';
 
-describe("Stage1 component tests", () => {
-  const component = shallow(<CreateTicket />);
+describe("CreateTicket tests", () => {
+  
+  let component;
 
-  it("should render", () => {
+  beforeEach(() => {
+    component = shallow(<CreateTicket choices={["Health & Safety", "What health and safety policies are in place"]}/>);
+  })
+
+  it('should render', () => {
     expect(component).toBeTruthy();
-  });
+  })
+
 });
