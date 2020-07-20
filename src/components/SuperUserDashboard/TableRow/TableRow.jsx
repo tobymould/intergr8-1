@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import styles from "./TableRow.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import firebase, { firestore } from "../../../firebase";
+import { firestore } from "../../../firebase";
 import DeleteUser from '../DeleteUser';
 
 
