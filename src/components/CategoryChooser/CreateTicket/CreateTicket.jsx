@@ -45,10 +45,22 @@ class CreateTicket extends Component {
       .add(this.state)
       .then((docRef) => {
         console.log(docRef.id)
-        firestore.collection("tickets").doc(docRef.id).update({ ID: docRef.id })
+        firestore.collection("tickets").doc(docRef.id).update({ ID: docRef.id });
+        this.setState({querySent: true, message: this.state.eventLog[0].content.message});
       })
       .catch((err) => console.error(err));
   } 
+
+  toggleQuerySubmitted = () => {
+    // const finalMessage = {...this.state.eventLog}.eventLog.message;
+    // console.log(finalMessage);
+    return this.state.querySent ? <p className={styles.italic}>{this.state.message}</p> : <textarea placeholder="Type here..." onChange={(event) => this.captureMessage(event)}></textarea>
+  }
+
+  toggleButton = () => {
+    return this.state.querySent ? (<div className={styles.ticketSent}><h3>Ticket Sent</h3></div>) : <button
+    className={styles.btnCreateTicket} onClick={this.getDate}>Create Ticket</button>
+  }
 
 
   render() {
@@ -68,14 +80,10 @@ class CreateTicket extends Component {
               <span>Sub-Category: {subCategory}</span>
               <label htmlFor="">
                 Description
-                <textarea placeholder="Type here..." onChange={(event) => this.captureMessage(event)}></textarea>
+                {this.toggleQuerySubmitted()}
+                {/* <textarea placeholder="Type here..." onChange={(event) => this.captureMessage(event)}></textarea> */}
               </label>
-              <button
-                className={styles.btnCreateTicket}
-                onClick={this.getDate}
-              >
-                Create Ticket
-              </button>
+             {this.toggleButton()}
             </form>
           </section>
         </div>
