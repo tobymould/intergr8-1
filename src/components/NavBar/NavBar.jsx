@@ -19,8 +19,8 @@ class NavBar extends Component {
         title: 'Dashboard',
         link: '/dashboard'
       }, {
-        title: 'Ticket',
-        link: '/ticket'
+        title: 'Catalogue',
+        link: '/catalogue'
       }, {
         title: 'Users',
         link: '/superuser'
