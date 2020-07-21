@@ -92,7 +92,7 @@ class TicketView extends Component {
     ) : null;
     this.automaticUpdateState();
     return (
-      <>
+      <div className={styles.ticketViewModal}>
         <article className={styles.TicketView}>
           <section className={styles.ticketTop}>
             <div className={styles.ticketHeader}>
@@ -123,7 +123,7 @@ class TicketView extends Component {
           </section>
         </article>
         {displayResolve}
-      </>
+      </div>
     );
   }
 }

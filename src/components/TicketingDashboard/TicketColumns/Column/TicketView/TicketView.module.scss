@@ -10,59 +10,75 @@ $white: #fcfcfb;
   font-family: "Poppins", sans-serif;
 }
 
-.TicketView {
-  border-radius: $medium;
-  overflow: hidden;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  box-shadow: $primary-shadow;
-  justify-content: center;
-  width: 100%;
-  max-width: 700px;
-  max-height: 60vh;
-  margin: auto;
-  // @media screen and (min-width: 900px) {
-  //   width: 900px;
-  // }
+.ticketViewModal {
+  @include standard_vertical_layout;
+  // display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  backdrop-filter: blur(10px);
+  background-color: $primary-black-transparent;
+  padding-top: 50px;
+  text-align: center;
 
-  .ticketTop {
-    background-color: $primary-yellow;
-    padding: $base-padding/2 $base-padding $base-padding/2 $base-padding;
-    margin: 0;
+  .TicketView {
+    border-radius: $medium;
+    overflow: hidden;
+    position: relative;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 15%;
+    flex-direction: column;
+    box-shadow: $primary-shadow;
+    justify-content: center;
+    width: 100%;
+    max-width: 700px;
+    max-height: 60vh;
+    margin: auto;
+    // @media screen and (min-width: 900px) {
+    //   width: 900px;
+    // }
 
-    .ticketHeader {
-      justify-content: space-around;
-      padding: 5px;
-    }
-    .ticketId {
+    .ticketTop {
+      background-color: $primary-yellow;
+      padding: $base-padding/2 $base-padding $base-padding/2 $base-padding;
+      margin: 0;
       display: flex;
-      flex-direction: column;
-      justify-content: space-evenly;
+      justify-content: space-between;
       align-items: center;
+      height: 15%;
 
-      .circle {
-        border-radius: 50%;
-        width: 50px;
-        height: 50px;
-        box-shadow: $secondary-shadow;
-        border: 2px solid white;
+      .ticketHeader {
+        justify-content: space-around;
+        padding: 5px;
       }
+      .ticketId {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
 
-      .green {
-        background-color: green;
-      }
+        .circle {
+          border-radius: 50%;
+          width: 50px;
+          height: 50px;
+          box-shadow: $secondary-shadow;
+          border: 2px solid white;
+        }
 
-      .amber {
-        background-color: orange;
-      }
+        .green {
+          background-color: green;
+        }
 
-      .red {
-        background-color: red;
+        .amber {
+          background-color: orange;
+        }
+
+        .red {
+          background-color: red;
+        }
       }
     }
 
