@@ -1,12 +1,21 @@
 import React, { Component } from "react";
 import styles from "./Tickettile.module.scss";
+import TicketView from "../TicketView/TicketView";
 
 class TicketTile extends Component {
+  state = {
+    ticketViewOpen: false,
+  };
+  toggleTicketModal = () => {
+    this.setState({ ticketViewOpen: !this.state.ticketViewOpen });
+  };
+
   render() {
+    const ticketCondition = this.state.ticketViewOpen ? <TicketView /> : null;
     return (
       <div>
         {this.props.data.map((obj) => (
-          <section className={styles.TicketTile}>
+          <section onClick={this.toggleTicketModal} className={styles.TicketTile}>
             <div>
               <h3>{obj.title}</h3>
               <p>Employee ID: {obj.createdBy}</p>
@@ -22,6 +31,7 @@ class TicketTile extends Component {
             </div>
           </section>
         ))}
+        {ticketCondition}
       </div>
     );
   }

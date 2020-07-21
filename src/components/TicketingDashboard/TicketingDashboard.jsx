@@ -17,7 +17,10 @@ class TicketingDashboard extends Component {
     percentUnassignedTickets: null,
     percentInProgressTickets: null,
     percentUserInProgressTickets: null,
+    ticketViewOpen: false,
   };
+
+
 
   countTickets = () => mockData.length;
   countUserTickets = () =>
