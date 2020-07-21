@@ -1,33 +1,50 @@
 import React, { Component } from "react";
 import styles from "./AssignedUser.module.scss";
-import * as dataFile from "../../data/app-data";
+import firebase, { firestore } from '../../firebase';
+// import * as dataFile from "../../data/app-data";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 class AssignedUser extends Component {
   state = {
     assignedPerson: "",
-    appData: dataFile,
+    // appData: dataFile,
     modalPopup: false,
     searchTerm: "",
+    users: [],
   };
+
+  componentDidMount() {
+    this.getUserFromDB();
+  }
+
+  getUserFromDB = () => {
+    firestore
+    .collection('info')
+    .get()
+    .then((snapshot) => {
+      const users = snapshot.docs
+      .map((doc => doc.data()))
+      this.setState({ users })
+      })
+  }
 
   handleChange = (event) => {
     this.setState({searchTerm: event.target.value})
   }
 
   getNames = () => {
-    return dataFile.people
+    return this.state.users
     .filter(person => { 
-      let fullName = `${person.firstName} ${person.lastName}`;
+      let fullName = `${person.name}`;
       return fullName.toLowerCase().includes(this.state.searchTerm.toLowerCase());
     })
     .map((person, index) => {
       if (index < 6){
         return (
         <div className={styles.displayPeople}>
-          <img onClick={this.setAssignedPerson} id={person.id} key={person.id} src={person.image} alt={person.firstName}/>
-          <span>{person.firstName} {person.lastName}</span>
+          <img onClick={this.setAssignedPerson} id={person.ID} key={person.ID} src={person.img} alt={person.name}/>
+          <span>{person.name}</span>
         </div>
       )}
       return null;
@@ -59,12 +76,12 @@ class AssignedUser extends Component {
   }
 
   getAssignedPerson = () => {
-    return dataFile.people.map(person => {
-      if(this.state.assignedPerson === person.id){
+    return this.state.users.map(person => {
+      if(this.state.assignedPerson === person.ID){
         return (
           <>
-          <img src={person.image} alt={person.firstName} />
-          <span>{person.firstName}</span>
+          <img src={person.img} alt={person.name} />
+          <span>{person.name}</span>
           </>
         )
       }
@@ -73,6 +90,7 @@ class AssignedUser extends Component {
   }
 
   render() {
+  
       return (
         <div className={styles.assignedUserWrapper}>
           {/* Assign Person Button (that creates the Modal)*/}

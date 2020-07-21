@@ -4,6 +4,7 @@ import Message from './Message';
 import Button from "../../../../../utilities/Button";
 import ResolveTicketModal from './ResolveTicketModal';
 import NavBar from '../../../../NavBar'
+import firebase, { firestore } from "../../../../../firebase";
 
 import AssignedUser from "../../../../AssignedUser";
 

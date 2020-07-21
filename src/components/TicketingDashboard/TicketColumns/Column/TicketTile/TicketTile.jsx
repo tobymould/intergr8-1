@@ -2,29 +2,10 @@ import React, { Component } from "react";
 import styles from "./Tickettile.module.scss";
 import firebase, { firestore } from '../../../../../firebase';
 import AssignedUser from '../../../../AssignedUser';
-// import ticketData from '../../../../../data/newMockDataTickets';
 
 class TicketTile extends Component {
 state = {
-  // assignedTo: "",
-  // id: "",
 }
-
-// assignTicket = (tickets) => {
-//   firestore
-//   .collection("tickets")
-//   .doc(tickets.id)
-//   .set(tickets)
-//   .then(() => {
-//     this.setState({assignedTo: this.state.assignedTo})
-//   })
-
-// }
-
-// handleChange = () => {
-//   this.assignTicket(this.state)
-// }
-
 
   render() {
     return (
@@ -38,11 +19,14 @@ state = {
               <p>Date: {obj.createdAtDate}</p>
             </div>
             <div>{/* <input type="checkbox"/> */}</div>
-            <div>
-              <select name="" id="">
+            <div className={styles.assignUser}>
+
+              <AssignedUser className={styles.assignUser}/>
+              {/* <select name="" id="">
+                
                 <option value="Agent1">Agent1</option>
                 <option value="Agent2">Agent2</option>
-              </select>
+              </select> */}
             </div>
           </section>
         ))}
