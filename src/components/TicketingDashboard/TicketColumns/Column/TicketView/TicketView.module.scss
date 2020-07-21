@@ -35,7 +35,8 @@ $white: #fcfcfb;
     justify-content: center;
     width: 100%;
     max-width: 700px;
-    max-height: 60vh;
+    min-height: 60vh;
+    max-height: 70vh;
     margin: auto;
     // @media screen and (min-width: 900px) {
     //   width: 900px;
@@ -102,7 +103,7 @@ $white: #fcfcfb;
     height: 75%;
     overflow-y: scroll;
     padding: 0 0.5 * $base-padding;
-    background-color: #FFF;
+    background-color: #fff;
 
     .resolvedTicketText {
       box-shadow: 0 3px 3px $primary-black-transparent, 0 1px 1px $primary-black-transparent;

@@ -8,7 +8,7 @@ describe("SuperUserDashboard component tests", () => {
   let testComponent;
 
   beforeEach(() => {
-    testComponent = shallow(<SuperUserDashboard />);
+    testComponent = shallow(<SuperUserDashboard />, { disableLifecycleMethods: true });
   })
 
   it("should render", () => {

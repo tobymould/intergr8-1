@@ -1,25 +1,69 @@
 import React, { Component } from "react";
 import styles from "./CreateTicket.module.scss";
-// import TicketTile from '../../TicketingDashboard/TicketColumns/Column/TicketTile/TicketTile';
-// import NavBar from '../../NavBar';
+import { firestore } from '../../../firebase'
 
 class CreateTicket extends Component {
-  // state = {
-  //   beenClicked: false,
-  // };
+  state = {
+    ID: "",
+    category: this.props.choices[0],
+    subCategory: this.props.choices[1],
+    createdBy: this.props.user.uid,
+    assignedTo: [],
+    modifiedAtDate: [],
+    isOpen: true,
+    priority: 1,
+  };
 
-  // toggleClicked = (e) => {
-  //   e.preventDefault();
-  //   this.setState({ beenClicked: !this.state.beenClicked }
-  //   )
-  // }
+  getDate = (event) => {
+    event.preventDefault();
+    const currentTime = new Date();
+    const eventLog = { ...this.state.eventLog };
+    eventLog[0].date = currentTime;
+    this.setState({
+      eventLog,
+      createdAtDate: currentTime,
+    }, () => this.pushTicketData());
+    ;
+  }
+
+  captureMessage = (event) => {
+    this.setState({
+      eventLog: [{
+        type: 'opened',
+        details: 'Ticket was created',
+        content: {
+          name: this.props.user.uid,
+          message: event.target.value,
+        }
+      }],
+    })
+  }
+
+  pushTicketData = () => {
+    firestore
+      .collection("tickets")
+      .add(this.state)
+      .then((docRef) => {
+        console.log(docRef.id)
+        firestore.collection("tickets").doc(docRef.id).update({ ID: docRef.id });
+        this.setState({ querySent: true, message: this.state.eventLog[0].content.message });
+      })
+      .catch((err) => console.error(err));
+  }
+
+  toggleQuerySubmitted = () => {
+    // const finalMessage = {...this.state.eventLog}.eventLog.message;
+    // console.log(finalMessage);
+    return this.state.querySent ? <p className={styles.italic}>{this.state.message}</p> : <textarea placeholder="Type here..." onChange={(event) => this.captureMessage(event)}></textarea>
+  }
+
+  toggleButton = () => {
+    return this.state.querySent ? (<div className={styles.ticketSent}><h3>Ticket Sent</h3></div>) : <button
+      className={styles.btnCreateTicket} onClick={this.getDate}>Create Ticket</button>
+  }
+
 
   render() {
-    // const display = this.state.beenClicked ? (
-    //   <TicketTile />
-    // ) : null;
-
-    console.log("The props on Create Ticket are" + this.props.choices);
     const category = this.props.choices[0];
     const subCategory = this.props.choices[1];
 
@@ -34,44 +78,15 @@ class CreateTicket extends Component {
             <form action="" className={styles.formCreateTicket}>
               <span>Category: {category}</span>
               <span>Sub-Category: {subCategory}</span>
-
-              {/* <label For="mainCategory">
-                Select category
-                <select name="" id="mainCategory">
-                  <option value="L&D">L&D</option>
-                  <option value="Payroll">Payroll</option>
-                  <option value="General HR">General HR</option>
-                  <option value="Recruitment">Recruitment</option>
-                  <option value="Health & Safety">Health & Safety</option>
-                </select>
-              </label> */}
-              {/* <label For="subCategory">
-                Sub-category
-                <select name="" id="subCategory">
-                  <option value="CPD">CPD</option>
-                  <option value="b">b</option>
-                </select>
-              </label> */}
-              {/* <label For="subSubCategory">Sub-Sub-category
-              <select name="" id="subSubCategory">
-                  <option value="Training Support Request">Training Support Request</option>
-                  <option value="$$">$$</option>
-                </select>
-              </label> */}
               <label htmlFor="">
                 Description
-                <textarea placeholder="Type here..."></textarea>
+                {this.toggleQuerySubmitted()}
+                {/* <textarea placeholder="Type here..." onChange={(event) => this.captureMessage(event)}></textarea> */}
               </label>
-              <button
-                className={styles.btnCreateTicket}
-                onClick={this.toggleClicked}
-              >
-                Create Ticket
-              </button>
+              {this.toggleButton()}
             </form>
           </section>
         </div>
-        {/* {display} */}
       </>
     );
   }
