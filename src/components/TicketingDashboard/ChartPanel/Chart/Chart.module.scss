@@ -4,7 +4,10 @@
   box-shadow: 0 10px 20px $primary-black-transparent, 0 6px 6px $primary-black-transparent;
   transform: rotate(-90deg);
   border-radius: 50%;
-  background: #c6bfaf; ;
+  background: #c6bfaf;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   .innerCircle{
     fill: #F1F1F1;
@@ -15,4 +18,10 @@
     stroke: $primary-yellow;
     stroke-width: 120;
   }
+ 
+
+
+  
+
+  
 }

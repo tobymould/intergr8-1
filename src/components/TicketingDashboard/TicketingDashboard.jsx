@@ -47,13 +47,12 @@ class TicketingDashboard extends Component {
       })
   }
   render() {
-    const { percentUnassignedTickets, percentInProgressTickets, percentUserInProgressTickets } = this.state;
-
+    const { allTickets, percentUnassignedTickets, percentInProgressTickets, percentUserInProgressTickets } = this.state;
     return (
       <section className={styles.ticketingDashboard}>
         <NavBar user={this.props.user} signOut={this.props.signOut} />
         <ChartPanel percentUnassignedTickets={percentUnassignedTickets} percentInProgressTickets={percentInProgressTickets} percentUserInProgressTickets={percentUserInProgressTickets} />
-        <TicketColumns />
+        <TicketColumns allTickets={allTickets}/>
       </section>
     );
   }
