@@ -40,6 +40,10 @@
     label {
       display: block;
 
+      .italic {
+        font-style: italic;
+      }
+
       select {
         display: block;
         width: 250px;
