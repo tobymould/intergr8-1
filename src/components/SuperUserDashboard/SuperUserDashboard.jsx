@@ -37,7 +37,7 @@ class SuperUserDashboard extends Component {
     this.setState({ isDisplayEditUser: !this.state.isDisplayEditUser })
   }
 
-
+  
 
   componentDidMount() {
     this.getUsers();
