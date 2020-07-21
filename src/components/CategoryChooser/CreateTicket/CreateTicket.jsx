@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import styles from "./CreateTicket.module.scss";
-import {firestore} from '../../../firebase'
+import { firestore } from '../../../firebase'
 
 class CreateTicket extends Component {
   state = {
@@ -16,8 +16,8 @@ class CreateTicket extends Component {
 
   getDate = (event) => {
     event.preventDefault();
-    const currentTime = new Date().toLocaleString();
-    const eventLog = {...this.state.eventLog};
+    const currentTime = new Date();
+    const eventLog = { ...this.state.eventLog };
     eventLog[0].date = currentTime;
     this.setState({
       eventLog,
@@ -40,16 +40,16 @@ class CreateTicket extends Component {
   }
 
   pushTicketData = () => {
-      firestore
+    firestore
       .collection("tickets")
       .add(this.state)
       .then((docRef) => {
         console.log(docRef.id)
         firestore.collection("tickets").doc(docRef.id).update({ ID: docRef.id });
-        this.setState({querySent: true, message: this.state.eventLog[0].content.message});
+        this.setState({ querySent: true, message: this.state.eventLog[0].content.message });
       })
       .catch((err) => console.error(err));
-  } 
+  }
 
   toggleQuerySubmitted = () => {
     // const finalMessage = {...this.state.eventLog}.eventLog.message;
@@ -59,7 +59,7 @@ class CreateTicket extends Component {
 
   toggleButton = () => {
     return this.state.querySent ? (<div className={styles.ticketSent}><h3>Ticket Sent</h3></div>) : <button
-    className={styles.btnCreateTicket} onClick={this.getDate}>Create Ticket</button>
+      className={styles.btnCreateTicket} onClick={this.getDate}>Create Ticket</button>
   }
 
 
@@ -83,7 +83,7 @@ class CreateTicket extends Component {
                 {this.toggleQuerySubmitted()}
                 {/* <textarea placeholder="Type here..." onChange={(event) => this.captureMessage(event)}></textarea> */}
               </label>
-             {this.toggleButton()}
+              {this.toggleButton()}
             </form>
           </section>
         </div>

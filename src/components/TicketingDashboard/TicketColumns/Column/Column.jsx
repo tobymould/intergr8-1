@@ -39,7 +39,17 @@ class Column extends Component {
     if (e.target.value === "Newest") {
       orderData.sort((a, b) => new Date(b.createdAtDate) - new Date(a.createdAtDate));
     } else if (e.target.value === "Oldest") {
-      orderData.sort((a, b) => new Date(a.createdAtDate) - new Date(b.createdAtDate));
+      orderData.sort((a, b) => {
+        let dateOne = new Date(a.createdAtDate);
+        let dateTwo = new Date(b.createdAtDate);
+        console.log(dateOne);
+        console.log(dateTwo);
+        return dateOne - dateTwo;
+      }
+      );
+
+
+      // orderData.sort((a, b) => new Date(a.createdAtDate) - new Date(b.createdAtDate));
     } else if (e.target.value === "Priority") {
       orderData.sort((a, b) => a.priority - b.priority);
     }
