@@ -56,13 +56,13 @@ class Column extends Component {
     return (
       <>
         <article className={styles.TicketColumn}>
-          <div className={styles.topOfColumn}>
             <h3>{this.props.title}</h3>
+          <div className={styles.topOfColumn}>
             <div onChange={this.filterByUser}>{this.renderUser()}</div>
             <div onChange={this.sortOptions}>{this.renderFilter()}</div>
             <button onClick={this.unfilterUser}>Clear filter</button>
           </div>
-          <section title={this.props.title}>
+          <section className={styles.ticketTileSection} title={this.props.title}>
             <TicketTile data={tickets} />
           </section>
         </article>

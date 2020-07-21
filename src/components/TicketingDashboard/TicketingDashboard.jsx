@@ -45,6 +45,7 @@ class TicketingDashboard extends Component {
           percentUserInProgressTickets: this.calculatePercent(this.countUserTickets(), this.countUserInProgressTickets())
         });
       })
+      .catch(err => console.log(err))
   }
   render() {
     const { allTickets, percentUnassignedTickets, percentInProgressTickets, percentUserInProgressTickets } = this.state;
