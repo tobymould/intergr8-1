@@ -4,8 +4,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { firestore } from "../../../firebase";
 import DeleteUser from '../DeleteUser';
 
-
-
 class TableRow extends Component {
 
   state = {

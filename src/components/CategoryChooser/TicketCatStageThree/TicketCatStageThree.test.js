@@ -7,7 +7,7 @@ describe("TicketCatStageThree tests", () => {
   let component;
 
   beforeEach(() => {
-    component = shallow(<TicketCatStageThree />);
+    component = shallow(<TicketCatStageThree />, { disableLifecycleMethods: true });
   })
 
   it('should render', () => {
