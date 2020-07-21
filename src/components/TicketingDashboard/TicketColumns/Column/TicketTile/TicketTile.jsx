@@ -21,7 +21,7 @@ state = {
             <div>{/* <input type="checkbox"/> */}</div>
             <div className={styles.assignUser}>
 
-              <AssignedUser className={styles.assignUser}/>
+              <AssignedUser className={styles.assignUser} ticketID={obj.ID} />
               {/* <select name="" id="">
                 
                 <option value="Agent1">Agent1</option>

@@ -29,6 +29,7 @@ class AssignedUser extends Component {
       })
   }
 
+  // ...tickets.ID, assignedTo: person.name 
   handleChange = (event) => {
     this.setState({searchTerm: event.target.value})
   }
@@ -70,23 +71,31 @@ class AssignedUser extends Component {
     } 
   } 
 
-
   setAssignedPerson = (event) => {
-    this.setState({assignedPerson: event.target.id, modalPopup: !this.state.modalPopup});
+    firestore
+      .collection('tickets')
+      .doc(this.props.ticketID)
+      .set({ assignedTo: event.target.id })
+      .then((res) => {
+        this.setState({
+          assignedPerson: event.target.id,
+          modalPopup: !this.state.modalPopup
+        });
+      })
+      .catch((err) => console.log(err));
   }
 
   getAssignedPerson = () => {
     return this.state.users.map(person => {
-      if(this.state.assignedPerson === person.ID){
+      if(this.state.assignedPerson === person.ID) {
         return (
           <>
-          <img src={person.img} alt={person.name} />
+          <img src={person.img} alt={person.name}/>
           <span>{person.name}</span>
           </>
-        )
-      }
+        )}
       return null;
-    })
+  })
   }
 
   render() {
