@@ -66,32 +66,17 @@
   }
 }
 
-.ticketCat2 {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  margin: auto;
-  margin-top: 80px;
-  overflow-y: auto;
-  height: 400px;
-  padding: 10px;
-  width: 820px;
+.button {
+  background-color: #f2b423;
+  display: block;
+  width: 100%;
+  padding: 10px 0;
+  border: none;
+  border-radius: 3px;
+  outline: none;
 }
 
-.ticketCat2 h1 {
-  padding: 20px;
+.button:hover {
+  background-color: #e39816;
 }
-
-@media screen and (max-width: 800px) {
-  .ticketCat2 {
-    width: 375px;
-  }
-}
-/*# sourceMappingURL=TicketCatStageTwo.module.css.map */
+/*# sourceMappingURL=SubmitButton.module.css.map */

@@ -4,6 +4,8 @@ import Message from './Message';
 import Button from "../../../../../utilities/Button";
 import ResolveTicketModal from './ResolveTicketModal';
 import NavBar from '../../../../NavBar'
+import firebase from "../../../../../firebase"
+// import { firestore, storage } from "../../../../../firebase";
 
 import AssignedUser from "../../../../AssignedUser";
 
@@ -19,6 +21,7 @@ class TicketView extends Component {
         isDisplayResolve: false,
         inputResolve: '',
         resolveTicketDisplay: false,
+        image: ""
     }
     updateInputResolve = (event) => {
         this.setState({ inputResolve: event.target.value })
@@ -76,12 +79,26 @@ class TicketView extends Component {
             return styles.green
         }
     }
+
+    sendMessage = (event) => {
+      event.preventDefault();
+      const timestamp = Number(new Date());
+      const storageRef = firebase.storage().ref(timestamp.toString());
+      const file_data = this.state.image;
+      console.log(file_data);
+
+      console.log(storageRef.put(file_data));
+    }
     render() {
         const displayResolve = this.state.isDisplayResolve ? (<ResolveTicketModal toggleResolveModal={this.toggleResolveModal} updateInputResolve={this.updateInputResolve} toggleResolveTicketDisplay={this.toggleResolveTicketDisplay} />) : null;
         const displayResolveTicket = this.state.resolveTicketDisplay ? (<div className={styles.resolvedTicketText}><h3>Ticket status: <span>Resolved</span></h3><p>{this.state.inputResolve}</p></div>) : null;
+    
         this.automaticUpdateState()
+
         return (
             <>
+              <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-app.js"></script>
+              <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-storage.js"></script>
                 <NavBar signOut={this.props.signOut} />
                 <article className={styles.TicketView}>
                     <section className={styles.ticketTop}>
@@ -106,7 +123,10 @@ class TicketView extends Component {
                     <section className={styles.writingMessage}>
                         <div className={styles.messageContent}>
                             <textarea />
-                            <Button text={"Send"} />
+                            <input type="file" id="uploadFile" name="fileUpload" placeholder="Choose your file..." onChange={(event) => this.setState({image: event.target.files[0]})} />
+                            <Button text={"Send"} logic={this.sendMessage} />
+                            <p id="uploading"></p>
+                            <progress value="0" max="100" id="progress"/>
                         </div>
                     </section>
                 </article>
@@ -115,4 +135,6 @@ class TicketView extends Component {
         )
     }
 }
+
+
 export default TicketView;

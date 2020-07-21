@@ -1,7 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
 /* Yellows */
-/* Blacks */
-/* Greys */
+/* Blacks and greys */
 /* Whites */
 /* Greens */
 /* Red */
@@ -82,7 +80,7 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  width: 1000px;
+  width: 70%;
   border-radius: 4px;
   font-size: 1.5rem;
   margin-bottom: 20px;

@@ -1,6 +1,6 @@
 import React from "react";
 import CreateTicket from "./CreateTicket";
-import { shallow } from 'enzyme';
+import { shallow } from "enzyme";
 
 describe("CreateTicket tests", () => {
   
