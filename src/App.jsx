@@ -22,8 +22,7 @@ class App extends Component {
         this.setState({ user: null });
       }
     });
-    const categories = this.setCategoriesState();
-    this.setState({ categories });
+    this.setCategoriesState();
   }
 
   userSignInAttempt = event => {
@@ -91,29 +90,24 @@ class App extends Component {
   };
   
   addSubcategory = (category, newSubcategory) => {
-    const categories = firestore.collection("categories").doc(category);
-
-    categories
-      .get()
-      .then((category) => {
-        const queries = category.data().queries.concat(newSubcategory);
-        categories.set({ queries })
+    firestore
+      .collection("categories")
+      .doc(category)
+      .update({
+        queries: firebase.firestore.FieldValue.arrayUnion(newSubcategory)
       })
-  }
+      .catch((err) => console.log(err));
+  };
 
-  removeSubcategory = (category, subcategoryToRemove) => {
-    const categories = firestore.collection("categories").doc(category);
-
-    categories
-      .get()
-      .then((category) => {
-        const subcategories = category.data().queries;
-
-        categories.set({
-        queries: subcategories.filter((subcategory) => subcategory !== subcategoryToRemove)
+  removeSubcategory = (category, queryToRemove) => {
+    firestore
+      .collection("categories")
+      .doc(category)
+      .update({
+        queries: firebase.firestore.FieldValue.arrayRemove(queryToRemove)
       })
-  })
-};
+      .catch((err) => console.log(err));
+  };
 
   render() {
     return <Routes 

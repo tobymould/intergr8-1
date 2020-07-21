@@ -8,13 +8,12 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { firestore } from "../../firebase";
 import DeleteUser from './DeleteUser/DeleteUser';
 
-
 class SuperUserDashboard extends Component {
   state = {
     isDisplayAddUser: false,
     users: [],
     idDisplayDeleteUser: false,
-    filterText: ''
+    filterText: '',
   }
 
   toggleDeleteUser = (event) => {
@@ -37,10 +36,9 @@ class SuperUserDashboard extends Component {
     this.setState({ isDisplayEditUser: !this.state.isDisplayEditUser })
   }
 
-  
-
   componentDidMount() {
     this.getUsers();
+    this.props.setCategoriesState();
   }
 
   getUsers = () => {
@@ -55,12 +53,11 @@ class SuperUserDashboard extends Component {
   }
 
   render() {
-    const mapUserData = this.state.users
-      .filter((user) => user.name.toLowerCase().includes(this.state.filterText))
-      .map((person) => {
-        return <TableRow toggleEdit={this.toggleEdit} key={person.ID} data={person} getUsers={this.getUsers} />
-      })
-
+    // const mapUserData = this.state.users
+    //   .filter((user) => user.name.toLowerCase().includes(this.state.filterText))
+    //   .map((person) => {
+    //     return <TableRow toggleEdit={this.toggleEdit} key={person.ID} data={person} getUsers={this.getUsers} />
+    //   })
     return (
       <div className={styles.SuperUserContainer}>
         <NavBar user={this.props.user} signOut={this.props.signOut} />
@@ -82,7 +79,8 @@ class SuperUserDashboard extends Component {
           </div>
         </section>
         <section className={styles.SuperUserEmployee}>
-          <div className={styles.tableHeader}>
+        <div className={styles.tableHeader}>
+          {/* 
             <p className={styles.name}>Name</p>
             <p className={styles.email}>Email</p>
             <p className={styles.password}>Password</p>
@@ -91,13 +89,14 @@ class SuperUserDashboard extends Component {
               <p>Add User</p>
               <FontAwesomeIcon icon="user-plus" />
             </span>
-          </div>
-          <div className={styles.tableRowScroll}>
-            {mapUserData}
-          </div>
           {this.displayAddUser()}
-          {/* {this.displayEditUser()} */}
-          {this.displayDeleteUser()}
+          { {this.displayEditUser()} }
+          { {this.displayDeleteUser()} */}
+           </div>
+          <div className={styles.tableRowScroll}>
+            {this.props.categories.map((category) => <p>{category.title}</p>)}
+            {/* {mapUserData} */}
+          </div>
         </section>
       </div>
     );
