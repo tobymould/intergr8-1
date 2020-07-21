@@ -6,12 +6,16 @@ class TicketTile extends Component {
   state = {
     ticketViewOpen: false,
   };
-  toggleTicketModal = () => {
+
+  toggleTicketModal = (e, obj) => {
+
     this.setState({ ticketViewOpen: !this.state.ticketViewOpen });
   };
 
   render() {
-    const ticketCondition = this.state.ticketViewOpen ? <TicketView /> : null;
+    const ticketCondition = this.state.ticketViewOpen ? (
+      <TicketView data={this.props.data} />
+    ) : null;
     return (
       <div>
         {this.props.data.map((obj) => (
