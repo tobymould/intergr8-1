@@ -20,12 +20,10 @@ class CreateTicket extends Component {
     const currentTime = new Date().toLocaleString();
     const eventLog = [...this.state.eventLog];
     eventLog[0].date = currentTime;
-    console.log('getdate')
     this.setState({
       eventLog,
       createdAtDate: currentTime,
     }, () => this.captureAttachment(event));
-    ;
   }
 
   captureMessage = (event) => {
@@ -44,7 +42,18 @@ class CreateTicket extends Component {
   pushTicketData = () => {
       firestore
       .collection("tickets")
-      .add(this.state) // need to exclude image and message from here 
+      .add({
+        ID: "",
+        category: this.props.choices[0],
+        subCategory: this.props.choices[1],
+        createdBy: this.props.user.uid,
+        assignedTo: [],
+        createdAtDate: this.state.createdAtDate,
+        modifiedAtDate: [],
+        isOpen: true,
+        priority: 1,
+        eventLog: this.state.eventLog,
+        })
       .then((docRef) => {
         console.log(docRef.id)
         firestore.collection("tickets").doc(docRef.id).update({ ID: docRef.id });
@@ -54,13 +63,10 @@ class CreateTicket extends Component {
   } 
 
   captureAttachment = (event) => {
-    console.log(this.state.eventLog)
     const currentTime = new Date().toLocaleString()
     const fileName = Number(new Date());
-    const filePath = `${this.state.ID}/${fileName}`;
+    const filePath = `${this.state.ID}/${fileName}`;  // need to get image path first
     if (this.state.image) {
-    console.log(this.state.eventLog)
-
       this.setState({
           eventLog: [...this.state.eventLog, {
               type: 'fileUpload',
@@ -92,43 +98,7 @@ class CreateTicket extends Component {
       .catch(error => console.log(error))
   }
 
-  // captureMessage = (currentTime) => {
-  //     if (this.state.message) {
-  //     this.setState({
-  //         eventLog: [...this.state.eventLog, {
-  //             type: 'message',
-  //             details: 'New message received',
-  //             content: {
-  //                 name: this.props.user.uid,
-  //                 message: this.state.message,
-  //             },
-  //             date: currentTime,
-  //         }]
-  //       }, () => {
-  //           this.pushTicketData()
-  //           this.setState({message: ''})
-  //         }
-  //       )
-  //     }
-  // }
-  
-  // pushTicketData = () => {
-  //     firestore
-  //     .collection("tickets")
-  //     .doc(this.state.ID)
-  //     .update({
-  //         // arrayUnion pushes to the eventLog array
-  //         eventLog: firebase.firestore.FieldValue.arrayUnion(this.state.eventLog[this.state.eventLog.length - 1])
-  //     })
-  //     .then((docRef) => {
-  //         console.log('success')
-  //     })
-  //     .catch((err) => console.error(err));
-  // } 
-
   toggleQuerySubmitted = () => {
-    // const finalMessage = {...this.state.eventLog}.eventLog.message;
-    // console.log(finalMessage);
     return this.state.querySent ? <p className={styles.italic}>{this.state.message}</p> : <textarea required placeholder="Type here..." onChange={(event) => {
       this.setState({ value: event.target.value }) 
       this.captureMessage(event)
@@ -159,11 +129,10 @@ class CreateTicket extends Component {
               <label htmlFor="">
                 Description
                 {this.toggleQuerySubmitted()}
-                {/* <textarea placeholder="Type here..." onChange={(event) => this.captureMessage(event)}></textarea> */}
               </label>
-              <input type="file" id="uploadFile" name="fileUpload" placeholder="Choose your file..." onChange={(event) => this.setState({image: event.target.files[0]})} />
-                            <p id="uploading"></p>
-                            <progress value="0" max="100" id="progress"/>
+              <label htmlFor="uploadFile">Attach a file:</label><input type="file" id="uploadFile" name="fileUpload" placeholder="Choose your file..." onChange={(event) => this.setState({image: event.target.files[0]})} />
+                {/* <p id="uploading"></p>
+                <progress value="0" max="100" id="progress"/> */}
              {this.toggleButton()}
             </form>
           </section>
