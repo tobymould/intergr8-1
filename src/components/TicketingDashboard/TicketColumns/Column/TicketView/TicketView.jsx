@@ -81,7 +81,6 @@ class TicketView extends Component {
         updateInputResolve={this.updateInputResolve}
         toggleResolveTicketDisplay={this.toggleResolveTicketDisplay}
         closeTicket={this.props.closeTicket}
-        data={this.props.data}
       />
     ) : null;
     const displayResolveTicket = this.state.resolveTicketDisplay ? (

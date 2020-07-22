@@ -7,7 +7,6 @@ class ResolveTicketModal extends Component {
       toggleResolveTicketDisplay,
       toggleResolveModal,
       closeTicket,
-      data
       // updateInputResolve,
     } = this.props;
     return (
@@ -25,7 +24,7 @@ class ResolveTicketModal extends Component {
                   onClick={() => {
                     toggleResolveTicketDisplay();
                     toggleResolveModal();
-                    closeTicket(data);
+                    closeTicket();
                   }}
                 >
                   Confirm

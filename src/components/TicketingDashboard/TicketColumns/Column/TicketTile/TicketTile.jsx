@@ -8,13 +8,12 @@ class TicketTile extends Component {
     currentTicket: {},
   };
 
-  closeCurrentTicket = (data) => {
-    let dataClone = { ...data };
+  closeCurrentTicket = () => {
+    let dataClone = { ...this.state.currentTicket };
     dataClone.isOpen = !dataClone.isOpen;
     this.setState({
       currentTicket: dataClone,
     });
-   
   };
 
   toggleTicketModal = (obj) => {
