@@ -23,7 +23,7 @@ class CreateTicket extends Component {
     this.setState({
       eventLog,
       createdAtDate: currentTime,
-    }, () => this.captureAttachment(event));
+    }, () => this.pushTicketData());
   }
 
   captureMessage = (event) => {
@@ -57,15 +57,16 @@ class CreateTicket extends Component {
       .then((docRef) => {
         console.log(docRef.id)
         firestore.collection("tickets").doc(docRef.id).update({ ID: docRef.id });
+        this.captureAttachment(docRef.id);
         this.setState({querySent: true, message: this.state.eventLog[0].content.message});
       })
       .catch((err) => console.error(err));
   } 
 
-  captureAttachment = (event) => {
+  captureAttachment = (ID) => {
     const currentTime = new Date().toLocaleString()
     const fileName = Number(new Date());
-    const filePath = `${this.state.ID}/${fileName}`;  // need to get image path first
+    const filePath = `${ID}/${fileName}`; // need to get image path first
     if (this.state.image) {
       this.setState({
           eventLog: [...this.state.eventLog, {
@@ -78,14 +79,26 @@ class CreateTicket extends Component {
               date: currentTime,
           },]
       }, (() => {
-          this.pushTicketData();
+          this.updateTicketData(ID);
           this.sendAttachment(filePath);
           this.setState({image: ''});
           })
-      )} else {
-        this.pushTicketData();
-      } 
+      )} 
   }
+
+  updateTicketData = (ID) => {
+    firestore
+    .collection("tickets")
+    .doc(ID)
+    .update({
+        // arrayUnion pushes to the eventLog array
+        eventLog: firebase.firestore.FieldValue.arrayUnion(this.state.eventLog[this.state.eventLog.length - 1])
+    })
+    .then((docRef) => {
+        console.log('success')
+    })
+    .catch((err) => console.error(err));
+} 
 
   sendAttachment = (filePath) => {
       firebase
@@ -127,7 +140,7 @@ class CreateTicket extends Component {
               <span>Category: {category}</span>
               <span>Sub-Category: {subCategory}</span>
               <label htmlFor="">
-                Description
+                Description: 
                 {this.toggleQuerySubmitted()}
               </label>
               <label htmlFor="uploadFile">Attach a file:</label><input type="file" id="uploadFile" name="fileUpload" placeholder="Choose your file..." onChange={(event) => this.setState({image: event.target.files[0]})} />
