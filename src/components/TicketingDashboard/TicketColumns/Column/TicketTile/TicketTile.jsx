@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import styles from "./Tickettile.module.scss";
 import TicketView from "../TicketView/TicketView";
+import { firestore } from '../../../../../firebase';
+
 
 class TicketTile extends Component {
   state = {
@@ -14,6 +16,12 @@ class TicketTile extends Component {
     this.setState({
       currentTicket: dataClone,
     });
+    //firebase resolve
+    firestore
+      .collection('tickets')
+      .doc(dataClone.id)
+      .update({ isOpen: false })
+      .then(console.log(dataClone.id + "is now closed."))
   };
 
   openTicketModal = (obj) => {
