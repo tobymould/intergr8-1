@@ -103,9 +103,9 @@ class TicketView extends Component {
               <p>{this.props.data.ID}</p>
               <div className={`${styles.circle} ${this.setColour()}`}></div>
             </div>
-            <div>
-              <button className={styles.toggleTicketViewButton} onClick={this.props.closeTicketModal}>
-                WAPOOOOO
+            <div className={styles.ticketActionButtons}>
+              <button className={styles.closeTicketButton} onClick={this.props.closeTicketModal}>
+                ✕
               </button>
               <button className={styles.resolveBtn} onClick={this.toggleResolveModal}>
                 Resolve Ticket

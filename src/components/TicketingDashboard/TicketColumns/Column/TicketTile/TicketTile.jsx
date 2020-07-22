@@ -21,9 +21,14 @@ class TicketTile extends Component {
     this.setState({ ticketViewOpen: !this.state.ticketViewOpen, currentTicket: obj });
   };
 
+  closeTicketModal = () => {
+    this.setState({ ticketViewOpen: false })
+  }
+
   render() {
     const showModal = this.state.ticketViewOpen ? (
       <TicketView data={this.state.currentTicket} closeTicket={this.closeCurrentTicket}
+        closeTicketModal={this.closeTicketModal}
         toggleTicketView={this.state.ticketViewOpen} />
     ) : null;
     return (
