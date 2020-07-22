@@ -19,7 +19,7 @@ $white: #fcfcfb;
   top: 0;
   width: 100%; /* Full width */
   min-height: 100vh; /* Full height */
-  height: 200vh; /* Full height */
+  height: 100%; /* Full height */
   overflow: auto; /* Enable scroll if needed */
   backdrop-filter: blur(10px);
   background-color: $primary-black-transparent;
@@ -36,7 +36,9 @@ $white: #fcfcfb;
     justify-content: center;
     width: 100%;
     max-width: 700px;
+    min-height: 700px;
     height: max-content;
+    max-height: 80vh;
     margin: auto;
     // @media screen and (min-width: 900px) {
     //   width: 900px;
@@ -56,15 +58,22 @@ $white: #fcfcfb;
       .ticketHeader {
         justify-content: space-between;
         align-items: center;
-        height: max-content;
+        height: 80%;
+
+        h2 {
+          margin-bottom: 15%;
+        }
       }
       .ticketId {
         display: flex;
         flex-direction: column;
-        justify-content: space-evenly;
+        justify-content: space-between;
         align-items: center;
-        height: max-content;
+        height: 80%;
 
+        p {
+          height: 20%;
+        }
         .circle {
           border-radius: 50%;
           width: 50px;
@@ -86,28 +95,53 @@ $white: #fcfcfb;
         }
       }
       .ticketActionButtons {
+        position: relative;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        align-items: center;
+        height: 80%;
+
         .closeTicketButton {
+          display: flex;
+          top: 0;
+          right: 0;
+          flex-direction: column;
+          justify-content: space-around;
+          align-items: center;
           background-color: transparent;
           border: none;
+          font-size: 2rem;
+          height: 40px;
+          width: 100%;
+          border-radius: 5px;
+          outline: none;
+          transition: transform 0.1s ease-in-out;
+
+          &:hover {
+            transform: scale(1.2);
+          }
+
+          &:active {
+            transform: scale(0.4);
+          }
         }
-      }
-    }
 
-    .resolveBtn {
-      padding: $base-padding;
-      border: none;
-      background-color: $primary-black;
-      color: white;
-      height: 40px;
-      outline: none;
-      border-radius: 5px;
+        .resolveBtn {
+          padding: $base-padding;
+          border: none;
+          background-color: $primary-black;
+          color: white;
+          height: 40px;
+          width: 100%;
+          outline: none;
+          border-radius: 5px;
 
-      &:hover {
-        cursor: pointer;
-        background-color: $secondary-black-opaque;
+          &:hover {
+            cursor: pointer;
+            background-color: $secondary-black-opaque;
+          }
+        }
       }
     }
   }
