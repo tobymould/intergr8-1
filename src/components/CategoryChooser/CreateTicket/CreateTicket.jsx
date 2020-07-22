@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import styles from "./CreateTicket.module.scss";
-import {firestore} from '../../../firebase'
+import firebase, {firestore} from '../../../firebase'
+
 
 class CreateTicket extends Component {
   state = {
@@ -17,12 +18,13 @@ class CreateTicket extends Component {
   getDate = (event) => {
     event.preventDefault();
     const currentTime = new Date().toLocaleString();
-    const eventLog = {...this.state.eventLog};
+    const eventLog = [...this.state.eventLog];
     eventLog[0].date = currentTime;
+    console.log('getdate')
     this.setState({
       eventLog,
       createdAtDate: currentTime,
-    }, () => this.pushTicketData());
+    }, () => this.captureAttachment(event));
     ;
   }
 
@@ -35,14 +37,14 @@ class CreateTicket extends Component {
           name: this.props.user.uid,
           message: event.target.value,
         }
-      }],
+      },],
     })
   }
 
   pushTicketData = () => {
       firestore
       .collection("tickets")
-      .add(this.state)
+      .add(this.state) // need to exclude image and message from here 
       .then((docRef) => {
         console.log(docRef.id)
         firestore.collection("tickets").doc(docRef.id).update({ ID: docRef.id });
@@ -51,14 +53,90 @@ class CreateTicket extends Component {
       .catch((err) => console.error(err));
   } 
 
+  captureAttachment = (event) => {
+    console.log(this.state.eventLog)
+    const currentTime = new Date().toLocaleString()
+    const fileName = Number(new Date());
+    const filePath = `${this.state.ID}/${fileName}`;
+    if (this.state.image) {
+    console.log(this.state.eventLog)
+
+      this.setState({
+          eventLog: [...this.state.eventLog, {
+              type: 'fileUpload',
+              details: 'File was uploaded',
+              content: {
+                  name: this.props.user.uid,
+                  filePath: filePath,
+              },
+              date: currentTime,
+          },]
+      }, (() => {
+          this.pushTicketData();
+          this.sendAttachment(filePath);
+          this.setState({image: ''});
+          })
+      )} else {
+        this.pushTicketData();
+      } 
+  }
+
+  sendAttachment = (filePath) => {
+      firebase
+      .storage()
+      .ref(filePath)
+      .put(this.state.image)
+      .then(data => {
+          console.log('file sent');
+      })
+      .catch(error => console.log(error))
+  }
+
+  // captureMessage = (currentTime) => {
+  //     if (this.state.message) {
+  //     this.setState({
+  //         eventLog: [...this.state.eventLog, {
+  //             type: 'message',
+  //             details: 'New message received',
+  //             content: {
+  //                 name: this.props.user.uid,
+  //                 message: this.state.message,
+  //             },
+  //             date: currentTime,
+  //         }]
+  //       }, () => {
+  //           this.pushTicketData()
+  //           this.setState({message: ''})
+  //         }
+  //       )
+  //     }
+  // }
+  
+  // pushTicketData = () => {
+  //     firestore
+  //     .collection("tickets")
+  //     .doc(this.state.ID)
+  //     .update({
+  //         // arrayUnion pushes to the eventLog array
+  //         eventLog: firebase.firestore.FieldValue.arrayUnion(this.state.eventLog[this.state.eventLog.length - 1])
+  //     })
+  //     .then((docRef) => {
+  //         console.log('success')
+  //     })
+  //     .catch((err) => console.error(err));
+  // } 
+
   toggleQuerySubmitted = () => {
     // const finalMessage = {...this.state.eventLog}.eventLog.message;
     // console.log(finalMessage);
-    return this.state.querySent ? <p className={styles.italic}>{this.state.message}</p> : <textarea placeholder="Type here..." onChange={(event) => this.captureMessage(event)}></textarea>
+    return this.state.querySent ? <p className={styles.italic}>{this.state.message}</p> : <textarea required placeholder="Type here..." onChange={(event) => {
+      this.setState({ value: event.target.value }) 
+      this.captureMessage(event)
+    }} value={this.state.value}></textarea>
   }
 
   toggleButton = () => {
-    return this.state.querySent ? (<div className={styles.ticketSent}><h3>Ticket Sent</h3></div>) : <button
+    return this.state.querySent ? (<div className={styles.ticketSent}><h3>Ticket Sent</h3></div>) : <button disabled={!this.state.value}
     className={styles.btnCreateTicket} onClick={this.getDate}>Create Ticket</button>
   }
 
@@ -83,6 +161,9 @@ class CreateTicket extends Component {
                 {this.toggleQuerySubmitted()}
                 {/* <textarea placeholder="Type here..." onChange={(event) => this.captureMessage(event)}></textarea> */}
               </label>
+              <input type="file" id="uploadFile" name="fileUpload" placeholder="Choose your file..." onChange={(event) => this.setState({image: event.target.files[0]})} />
+                            <p id="uploading"></p>
+                            <progress value="0" max="100" id="progress"/>
              {this.toggleButton()}
             </form>
           </section>
