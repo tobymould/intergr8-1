@@ -157,17 +157,14 @@ class TicketView extends Component {
         .collection("tickets")
         .doc(this.state.ID)
         .update({
+            // arrayUnion pushes to the eventLog array
             eventLog: firebase.firestore.FieldValue.arrayUnion(this.state.eventLog[this.state.eventLog.length - 1])
-            // this.state.eventLog
         })
         .then((docRef) => {
             console.log('success')
         })
         .catch((err) => console.error(err));
     } 
-    
-
-    // Changed to here
 
     render() {
         const displayResolve = this.state.isDisplayResolve ? (<ResolveTicketModal toggleResolveModal={this.toggleResolveModal} updateInputResolve={this.updateInputResolve} toggleResolveTicketDisplay={this.toggleResolveTicketDisplay} />) : null;
