@@ -63,7 +63,6 @@ class SuperUserDashboard extends Component {
 
     return (
       <div className={styles.SuperUserContainer}>
-        <NavBar user={this.props.user} signOut={this.props.signOut} />
         <section className={styles.SuperUserHeader}>
           <div className={styles.superUserDetails}>
             <img src={olly} alt="" />

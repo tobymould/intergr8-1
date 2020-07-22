@@ -52,7 +52,6 @@ class TicketingDashboard extends Component {
     const { allTickets, percentUnassignedTickets, percentInProgressTickets, percentUserInProgressTickets } = this.state;
     return (
       <section className={styles.ticketingDashboard}>
-        <NavBar user={this.props.user} signOut={this.props.signOut} />
         <ChartPanel percentUnassignedTickets={percentUnassignedTickets} percentInProgressTickets={percentInProgressTickets} percentUserInProgressTickets={percentUserInProgressTickets} />
         <TicketColumns allTickets={allTickets}/>
       </section>

@@ -82,7 +82,6 @@ class TicketView extends Component {
         this.automaticUpdateState()
         return (
             <>
-                <NavBar signOut={this.props.signOut} />
                 <article className={styles.TicketView}>
                     <section className={styles.ticketTop}>
                         <div className={styles.ticketHeader}>

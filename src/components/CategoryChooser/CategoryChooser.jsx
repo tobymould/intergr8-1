@@ -99,7 +99,6 @@ class CategoryChooser extends Component {
   render() {
     return (
       <>
-        <NavBar />
         <section className={styles.categoryChooser}>
           {this.getCategory()}
           <div className={styles.backContainer}>
