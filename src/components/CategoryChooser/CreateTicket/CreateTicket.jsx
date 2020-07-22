@@ -49,7 +49,7 @@ class CreateTicket extends Component {
         createdBy: this.props.user.uid,
         assignedTo: [],
         createdAtDate: this.state.createdAtDate,
-        modifiedAtDate: [],
+        modifiedAtDate: [this.state.createdAtDate],
         isOpen: true,
         priority: 1,
         eventLog: this.state.eventLog,
@@ -69,6 +69,7 @@ class CreateTicket extends Component {
     const filePath = `${ID}/${fileName}`; // need to get image path first
     if (this.state.image) {
       this.setState({
+          modifiedAtDate: [...this.state.modifiedAtDate, currentTime],
           eventLog: [...this.state.eventLog, {
               type: 'fileUpload',
               details: 'File was uploaded',
@@ -80,18 +81,19 @@ class CreateTicket extends Component {
           },]
       }, (() => {
           this.updateTicketData(ID);
-          this.sendAttachment(filePath);
+          this.sendAttachment(filePath, currentTime);
           this.setState({image: ''});
           })
       )} 
   }
 
-  updateTicketData = (ID) => {
+  updateTicketData = (ID, newDate) => {
     firestore
     .collection("tickets")
     .doc(ID)
     .update({
-        // arrayUnion pushes to the eventLog array
+        // arrayUnion pushes to the named array
+        modifiedAtDate: firebase.firestore.FieldValue.arrayUnion(this.state.modifiedAtDate[this.state.modifiedAtDate.length - 1]),
         eventLog: firebase.firestore.FieldValue.arrayUnion(this.state.eventLog[this.state.eventLog.length - 1])
     })
     .then((docRef) => {
@@ -143,7 +145,8 @@ class CreateTicket extends Component {
                 Description: 
                 {this.toggleQuerySubmitted()}
               </label>
-              <label htmlFor="uploadFile">Attach a file:</label><input type="file" id="uploadFile" name="fileUpload" placeholder="Choose your file..." onChange={(event) => this.setState({image: event.target.files[0]})} />
+              <label htmlFor="uploadFile">Attach a file: </label>
+              <input type="file" id="uploadFile" name="fileUpload" placeholder="Choose your file..." onChange={(event) => this.setState({image: event.target.files[0]})} />
                 {/* <p id="uploading"></p>
                 <progress value="0" max="100" id="progress"/> */}
              {this.toggleButton()}

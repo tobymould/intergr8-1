@@ -20,6 +20,7 @@ class TicketView extends Component {
         manualOverRide: false,
         isDisplayResolve: false,
         inputResolve: '',
+        modifiedAtDate: [],
         resolveTicketDisplay: false,
         image: "",
         ID: '0V0Rt0Elqr6wvbDuD2DM',
@@ -135,6 +136,7 @@ class TicketView extends Component {
     captureMessage = (currentTime) => {
         if (this.state.message) {
         this.setState({
+            modifiedAtDate: [...this.state.modifiedAtDate, currentTime],
             eventLog: [...this.state.eventLog, {
                 type: 'message',
                 details: 'New message received',
@@ -157,7 +159,8 @@ class TicketView extends Component {
         .collection("tickets")
         .doc(this.state.ID)
         .update({
-            // arrayUnion pushes to the eventLog array
+            // arrayUnion pushes to the named array 
+            modifiedAtDate: firebase.firestore.FieldValue.arrayUnion(this.state.modifiedAtDate[this.state.modifiedAtDate.length - 1]),
             eventLog: firebase.firestore.FieldValue.arrayUnion(this.state.eventLog[this.state.eventLog.length - 1])
         })
         .then((docRef) => {
@@ -198,10 +201,11 @@ class TicketView extends Component {
                     <section className={styles.writingMessage}>
                         <div className={styles.messageContent}>
                             <textarea onChange={(event) => this.setState({message: event.target.value})}/>
+                            <label htmlFor="uploadFile">Attach a file: </label>
                             <input type="file" id="uploadFile" name="fileUpload" placeholder="Choose your file..." onChange={(event) => this.setState({image: event.target.files[0]})} />
                             <Button text={"Send"} logic={this.captureAttachment} />
-                            <p id="uploading"></p>
-                            <progress value="0" max="100" id="progress"/>
+                            {/* <p id="uploading"></p>
+                            <progress value="0" max="100" id="progress"/> */}
                         </div>
                     </section>
                 </article>
