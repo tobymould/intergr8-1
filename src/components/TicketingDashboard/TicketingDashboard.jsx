@@ -33,7 +33,7 @@ class TicketingDashboard extends Component {
         return { id: doc.id, ...doc.data() }
         })
       )
-      .then(data => data.filter(doc => doc.id.length === 20 && doc.createdAtDate[2]==='/'))
+      .then(data => data.filter(doc => doc.id.length === 20 && doc.createdAtDate))
       .then(data => this.setState({ allTickets: [...data] }) )
       .then(()=>{
         this.setState({
