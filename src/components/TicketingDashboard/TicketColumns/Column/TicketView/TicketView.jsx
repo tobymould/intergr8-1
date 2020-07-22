@@ -3,7 +3,6 @@ import styles from "./TicketView.module.scss";
 import Message from "./Message";
 import Button from "../../../../../utilities/Button";
 import ResolveTicketModal from "./ResolveTicketModal";
-import NavBar from "../../../../NavBar";
 
 import AssignedUser from "../../../../AssignedUser";
 
@@ -97,16 +96,21 @@ class TicketView extends Component {
         <article className={styles.TicketView}>
           <section className={styles.ticketTop}>
             <div className={styles.ticketHeader}>
-              <h2>{this.props.data.title}</h2>
+              <h2>{this.props.data.category}</h2>
               <AssignedUser />
             </div>
             <div className={styles.ticketId}>
               <p>{this.props.data.ID}</p>
               <div className={`${styles.circle} ${this.setColour()}`}></div>
             </div>
-            <button className={styles.resolveBtn} onClick={this.toggleResolveModal}>
-              Resolve Ticket
+            <div>
+              <button className={styles.toggleTicketViewButton} onClick={this.props.closeTicketModal}>
+                WAPOOOOO
+              </button>
+              <button className={styles.resolveBtn} onClick={this.toggleResolveModal}>
+                Resolve Ticket
             </button>
+            </div>
           </section>
           <div className={styles.messageContainer}>
             <Message userType={"Employee"} />
@@ -123,7 +127,7 @@ class TicketView extends Component {
           </section>
         </article>
         {displayResolve}
-      </div>
+      </div >
     );
   }
 }

@@ -5,7 +5,6 @@ import TicketingDashboard from '../components/TicketingDashboard';
 import CategoryChooser from '../components/CategoryChooser';
 import SuperUserDashboard from '../components/SuperUserDashboard';
 import CreateTicket from '../components/CategoryChooser/CreateTicket';
-import TicketView from '../components/TicketingDashboard/TicketColumns/Column/TicketView';
 
 class PrivateRoutes extends Component {
 
