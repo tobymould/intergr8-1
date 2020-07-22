@@ -8,9 +8,13 @@ class TicketTile extends Component {
     currentTicket: {},
   };
 
-  closeCurrentTicket = (obj) => {
-    let flipped = !obj.isOpen;
-    console.log(flipped);
+  closeCurrentTicket = (data) => {
+    let dataClone = { ...data };
+    dataClone.isOpen = !dataClone.isOpen;
+    this.setState({
+      currentTicket: dataClone,
+    });
+   
   };
 
   toggleTicketModal = (obj) => {
