@@ -5,21 +5,20 @@ import TicketView from "../TicketView/TicketView";
 class TicketTile extends Component {
   state = {
     ticketViewOpen: false,
+    currentTicket: "",
   };
 
-  toggleTicketModal = (e, obj) => {
-
+  toggleTicketModal = (obj) => {
+    console.log(obj);
     this.setState({ ticketViewOpen: !this.state.ticketViewOpen });
   };
 
   render() {
-    const ticketCondition = this.state.ticketViewOpen ? (
-      <TicketView data={this.props.data} />
-    ) : null;
+    const showModal = this.state.ticketViewOpen ? <TicketView data={this.props.data} /> : null;
     return (
       <div>
         {this.props.data.map((obj) => (
-          <section onClick={this.toggleTicketModal} className={styles.TicketTile}>
+          <section onClick={() => this.toggleTicketModal(obj)} className={styles.TicketTile}>
             <div>
               <h3>{obj.title}</h3>
               <p>Employee ID: {obj.createdBy}</p>
@@ -35,7 +34,7 @@ class TicketTile extends Component {
             </div>
           </section>
         ))}
-        {ticketCondition}
+        {showModal}
       </div>
     );
   }
