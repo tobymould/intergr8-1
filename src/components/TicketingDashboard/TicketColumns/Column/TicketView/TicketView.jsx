@@ -4,7 +4,7 @@ import Message from './Message';
 import Button from "../../../../../utilities/Button";
 import ResolveTicketModal from './ResolveTicketModal';
 import NavBar from '../../../../NavBar'
-import firebase from "../../../../../firebase"
+import firebase, {firestore} from "../../../../../firebase"
 // import { firestore, storage } from "../../../../../firebase";
 
 import AssignedUser from "../../../../AssignedUser";
@@ -21,7 +21,19 @@ class TicketView extends Component {
         isDisplayResolve: false,
         inputResolve: '',
         resolveTicketDisplay: false,
-        image: ""
+        image: "",
+        ID: '0V0Rt0Elqr6wvbDuD2DM',
+        eventLog: [
+            {
+                content: {
+                    message: "I'd like to apply for this job please? ",
+                    name: "GkKyeeKAXoaBV7TLXDK6H84B2yX2"
+                }, 
+                date: "20/07/2020, 18:46:41", 
+                details: "Ticket was created",
+                typed: "opened"
+            },
+        ], 
     }
     updateInputResolve = (event) => {
         this.setState({ inputResolve: event.target.value })
@@ -80,15 +92,83 @@ class TicketView extends Component {
         }
     }
 
-    sendMessage = (event) => {
+    // Changed from here 
+    captureAttachment = (event) => {
       event.preventDefault();
-      const timestamp = Number(new Date());
-      const storageRef = firebase.storage().ref(timestamp.toString());
-      const file_data = this.state.image;
-      console.log(file_data);
-
-      console.log(storageRef.put(file_data));
+      const currentTime = new Date().toLocaleString()
+      const fileName = Number(new Date());
+      const filePath = `${this.state.ID}/${fileName}`;
+      if (this.state.image) {
+        console.log(this.state.image)
+        this.setState({
+            eventLog: [...this.state.eventLog, {
+                type: 'fileUpload',
+                details: 'File was uploaded',
+                content: {
+                    name: this.props.user.uid,
+                    filePath: filePath,
+                },
+                date: currentTime,
+            }]
+        }, (() => {
+            this.pushTicketData();
+            this.sendAttachment(filePath);
+            this.captureMessage(currentTime);
+            this.setState({image: ''});
+            })
+        )} else {
+            this.captureMessage(currentTime)
+        };
     }
+
+    sendAttachment = (filePath) => {
+        firebase
+        .storage()
+        .ref(filePath)
+        .put(this.state.image)
+        .then(data => {
+            console.log('file sent');
+        })
+        .catch(error => console.log(error))
+    }
+
+    captureMessage = (currentTime) => {
+        if (this.state.message) {
+        this.setState({
+            eventLog: [...this.state.eventLog, {
+                type: 'message',
+                details: 'New message received',
+                content: {
+                    name: this.props.user.uid,
+                    message: this.state.message,
+                },
+                date: currentTime,
+            }]
+          }, () => {
+              this.pushTicketData()
+              this.setState({message: ''})
+            }
+          )
+        }
+    }
+    
+    pushTicketData = () => {
+        firestore
+        .collection("tickets")
+        .doc(this.state.ID)
+        .update({
+            eventLog: firebase.firestore.FieldValue.arrayUnion(this.state.eventLog[this.state.eventLog.length - 1])
+            // this.state.eventLog
+        })
+        .then((docRef) => {
+            console.log('success')
+        })
+        .catch((err) => console.error(err));
+    } 
+    
+
+    // Changed to here
+
     render() {
         const displayResolve = this.state.isDisplayResolve ? (<ResolveTicketModal toggleResolveModal={this.toggleResolveModal} updateInputResolve={this.updateInputResolve} toggleResolveTicketDisplay={this.toggleResolveTicketDisplay} />) : null;
         const displayResolveTicket = this.state.resolveTicketDisplay ? (<div className={styles.resolvedTicketText}><h3>Ticket status: <span>Resolved</span></h3><p>{this.state.inputResolve}</p></div>) : null;
@@ -97,8 +177,6 @@ class TicketView extends Component {
 
         return (
             <>
-              <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-app.js"></script>
-              <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-storage.js"></script>
                 <NavBar signOut={this.props.signOut} />
                 <article className={styles.TicketView}>
                     <section className={styles.ticketTop}>
@@ -122,9 +200,9 @@ class TicketView extends Component {
                     </div>
                     <section className={styles.writingMessage}>
                         <div className={styles.messageContent}>
-                            <textarea />
+                            <textarea onChange={(event) => this.setState({message: event.target.value})}/>
                             <input type="file" id="uploadFile" name="fileUpload" placeholder="Choose your file..." onChange={(event) => this.setState({image: event.target.files[0]})} />
-                            <Button text={"Send"} logic={this.sendMessage} />
+                            <Button text={"Send"} logic={this.captureAttachment} />
                             <p id="uploading"></p>
                             <progress value="0" max="100" id="progress"/>
                         </div>
