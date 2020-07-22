@@ -31,8 +31,9 @@ class TicketingDashboard extends Component {
       .get()
       .then((querySnapshot) => querySnapshot.docs.map(doc => {
         return { id: doc.id, ...doc.data() }
-      })
+        })
       )
+      .then(data => data.filter(doc => doc.id.length === 20))
       .then(data => this.setState({ allTickets: [...data] }) )
       .then(()=>{
         this.setState({
