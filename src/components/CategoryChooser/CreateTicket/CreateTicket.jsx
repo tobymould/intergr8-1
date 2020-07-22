@@ -16,7 +16,7 @@ class CreateTicket extends Component {
 
   getDate = (event) => {
     event.preventDefault();
-    const currentTime = new Date();
+    const currentTime = new Date().toLocaleString();
     const eventLog = { ...this.state.eventLog };
     eventLog[0].date = currentTime;
     this.setState({
