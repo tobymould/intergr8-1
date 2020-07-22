@@ -59,6 +59,7 @@ class Column extends Component {
   };
 
   render() {
+ 
     return (
       <>
         <article className={styles.TicketColumn}>
