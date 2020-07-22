@@ -80,6 +80,7 @@ class TicketView extends Component {
         toggleResolveModal={this.toggleResolveModal}
         updateInputResolve={this.updateInputResolve}
         toggleResolveTicketDisplay={this.toggleResolveTicketDisplay}
+        data={this.props.data}
       />
     ) : null;
     const displayResolveTicket = this.state.resolveTicketDisplay ? (
@@ -96,12 +97,11 @@ class TicketView extends Component {
         <article className={styles.TicketView}>
           <section className={styles.ticketTop}>
             <div className={styles.ticketHeader}>
-              <h2>Title</h2>
-              <h3>Category</h3>
+              <h2>{this.props.data.title}</h2>
               <AssignedUser />
             </div>
             <div className={styles.ticketId}>
-              <p>Ticket ID</p>
+              <p>{this.props.data.ID}</p>
               <div className={`${styles.circle} ${this.setColour()}`}></div>
             </div>
             <button className={styles.resolveBtn} onClick={this.toggleResolveModal}>
