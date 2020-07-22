@@ -23,12 +23,13 @@ class TicketTile extends Component {
 
   render() {
     const showModal = this.state.ticketViewOpen ? (
-      <TicketView data={this.state.currentTicket} closeTicket={this.closeCurrentTicket} />
+      <TicketView data={this.state.currentTicket} closeTicket={this.closeCurrentTicket}
+        toggleTicketView={this.state.ticketViewOpen} />
     ) : null;
     return (
       <div>
         {this.props.data.map((obj) => (
-          <section onClick={() => this.toggleTicketModal(obj)} className={styles.TicketTile}>
+          <section key={obj.ID} onClick={() => this.toggleTicketModal(obj)} className={styles.TicketTile}>
             <div>
               <h3>{obj.title}</h3>
               <p>Employee ID: {obj.createdBy}</p>
@@ -37,7 +38,7 @@ class TicketTile extends Component {
             </div>
             <div>{/* <input type="checkbox"/> */}</div>
             <div>
-              <select name="" id="">
+              <select name="" id={obj.ID} onClick={(e) => e.stopPropagation(e)}>
                 <option value="Agent1">Agent1</option>
                 <option value="Agent2">Agent2</option>
               </select>

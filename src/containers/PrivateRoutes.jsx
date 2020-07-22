@@ -27,7 +27,6 @@ class PrivateRoutes extends Component {
       <Router>
         <TicketingDashboard default path="dashboard" user={user} signOut={signOut} />
         <CategoryChooser path="catalogue" user={user} signOut={signOut} />
-        <TicketView path="viewticket" user={user} signOut={signOut} />
         <CreateTicket path="createticket" user={user} signOut={signOut} />
         <SuperUserDashboard path="superuser" user={user} signOut={signOut} />
       </Router>
