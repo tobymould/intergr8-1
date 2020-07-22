@@ -5,13 +5,13 @@ import TicketView from "../TicketView/TicketView";
 class TicketTile extends Component {
   state = {
     ticketViewOpen: false,
-    currentTicket: {
-    },
+    currentTicket: {},
   };
 
   closeCurrentTicket = (obj) => {
-    this.setState({ currentTicket: !obj.isopen })
-  }
+    let flipped = !obj.isOpen;
+    console.log(flipped);
+  };
 
   toggleTicketModal = (obj) => {
     console.log(obj);
@@ -19,7 +19,9 @@ class TicketTile extends Component {
   };
 
   render() {
-    const showModal = this.state.ticketViewOpen ? <TicketView data={this.state.currentTicket} /> : null;
+    const showModal = this.state.ticketViewOpen ? (
+      <TicketView data={this.state.currentTicket} closeTicket={this.closeCurrentTicket} />
+    ) : null;
     return (
       <div>
         {this.props.data.map((obj) => (

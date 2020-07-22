@@ -80,6 +80,7 @@ class TicketView extends Component {
         toggleResolveModal={this.toggleResolveModal}
         updateInputResolve={this.updateInputResolve}
         toggleResolveTicketDisplay={this.toggleResolveTicketDisplay}
+        closeTicket={this.props.closeTicket}
         data={this.props.data}
       />
     ) : null;
