@@ -3,24 +3,29 @@
 body {
   background-color: #f7f6f6;
   background-repeat: no-repeat;
-  background-size: cover;
 }
-.categoryChooser {
-  .backContainer {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    margin: 2.5% auto;
-    button {
-      margin: 0 auto;
-      width: 70%;
-    }
-  }
+.catalogueWrapper {
+  padding-top: 96px;
+  height: 100%;
 
-  h2 {
-    text-align: center;
-    padding-top: 50px;
-    font-size: 0.7 * $xlarge;
+  .categoryChooser {
+    height: 80vh;
+    .backContainer {
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      margin: 2.5% auto;
+      button {
+        margin: 0 auto;
+        width: 70%;
+      }
+    }
+
+    h2 {
+      text-align: center;
+      padding: 4%;
+      font-size: 0.7 * $xlarge;
+    }
   }
 }
