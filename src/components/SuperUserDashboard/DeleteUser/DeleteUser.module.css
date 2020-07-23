@@ -66,7 +66,7 @@
   }
 }
 
-.ResolveModal {
+.DeleteUserModal {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -99,7 +99,7 @@
   text-align: center;
 }
 
-.ResolveModal .ResolveContainer {
+.DeleteUserModal .DeleteUserContainer {
   -webkit-box-shadow: 0 10px 20px #14141433, 0 6px 6px #141414e6, 0 3px 3px #14141433, 0 1px 1px #14141433;
           box-shadow: 0 10px 20px #14141433, 0 6px 6px #141414e6, 0 3px 3px #14141433, 0 1px 1px #14141433;
   display: -webkit-box;
@@ -116,15 +116,23 @@
       -ms-flex-align: center;
           align-items: center;
   height: 40%;
-  width: 60%;
+  width: 80%;
   border: 4px solid #f2b423;
   background-color: transparent;
   background-image: -webkit-gradient(linear, left top, left bottom, from(#ffffffcc), to(#ffffffcc));
   background-image: linear-gradient(#ffffffcc 0%, #ffffffcc 100%);
   background-size: cover;
+  z-index: 2;
 }
 
-.ResolveModal .ModalContent {
+@media screen and (min-width: 600px) {
+  .DeleteUserModal .DeleteUserContainer {
+    height: 40%;
+    width: 40%;
+  }
+}
+
+.DeleteUserModal .DeleteUserModalContent {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -144,51 +152,19 @@
   background-color: transparent;
   width: 80%;
   height: 90%;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  text-align: left;
 }
 
-.ResolveModal .ModalContent .resolveReason {
-  width: 100%;
-  height: 200px;
-  background-color: #222222;
-  border: 1px solid #9a9a9a;
-  border-radius: 2px;
-  background-color: transparent;
-  color: #656565;
-  outline: none;
-  -webkit-transition: color ease-in-out 1s, background-color ease-in-out 1s, border-color ease-in-out 1s;
-  transition: color ease-in-out 1s, background-color ease-in-out 1s, border-color ease-in-out 1s;
+.DeleteUserModal .DeleteUserModalContent h2 {
+  text-align: center;
 }
 
-.ResolveModal .ModalContent .resolveReason:focus,
-.ResolveModal .ModalContent .resolveReason:focus ~ label {
-  color: white;
-  background-color: #222222e6;
-  outline: none;
-  border-color: #f2b423;
-}
-
-.ResolveModal .ModalContent .resolveReason:focus::-webkit-input-placeholder,
-.ResolveModal .ModalContent .resolveReason:focus ~ label::-webkit-input-placeholder {
-  color: #9a9a9a;
-}
-
-.ResolveModal .ModalContent .resolveReason:focus:-ms-input-placeholder,
-.ResolveModal .ModalContent .resolveReason:focus ~ label:-ms-input-placeholder {
-  color: #9a9a9a;
-}
-
-.ResolveModal .ModalContent .resolveReason:focus::-ms-input-placeholder,
-.ResolveModal .ModalContent .resolveReason:focus ~ label::-ms-input-placeholder {
-  color: #9a9a9a;
-}
-
-.ResolveModal .ModalContent .resolveReason:focus::placeholder,
-.ResolveModal .ModalContent .resolveReason:focus ~ label::placeholder {
-  color: #9a9a9a;
-}
-
-.ResolveModal .ModalContent .ButtonsWrapper {
-  width: 100%;
+.DeleteUserModal .DeleteUserModalContent div {
+  width: 90%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -196,10 +172,89 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
-.ResolveModal .ModalContent .ButtonsWrapper .btnConfirm,
-.ResolveModal .ModalContent .ButtonsWrapper .btnCancel {
+.DeleteUserModal .DeleteUserModalContent .DropDown {
+  -webkit-box-shadow: 0 3px 3px #14141433, 0 1px 1px #14141433;
+          box-shadow: 0 3px 3px #14141433, 0 1px 1px #14141433;
+  border-radius: 4px;
+  font-family: "Poppins", "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-size: 1rem;
+  border: 2px solid #f2b423;
+}
+
+.DeleteUserModal .DeleteUserModalContent input[type=text],
+.DeleteUserModal .DeleteUserModalContent input[type=tel],
+.DeleteUserModal .DeleteUserModalContent input[type=email] {
+  background-color: #222222;
+  border: 1px solid #9a9a9a;
+  border-radius: 2px;
+  background-color: transparent;
+  color: #656565;
+  height: 35px;
+  outline: none;
+  -webkit-transition: color ease-in-out 1s, background-color ease-in-out 1s, border-color ease-in-out 1s;
+  transition: color ease-in-out 1s, background-color ease-in-out 1s, border-color ease-in-out 1s;
+}
+
+.DeleteUserModal .DeleteUserModalContent input[type=text]:focus,
+.DeleteUserModal .DeleteUserModalContent input[type=tel]:focus,
+.DeleteUserModal .DeleteUserModalContent input[type=email]:focus {
+  color: white;
+  background-color: #222222e6;
+  outline: none;
+  border-color: #f2b423;
+}
+
+.DeleteUserModal .DeleteUserModalContent input[type=text]:focus::-webkit-input-placeholder,
+.DeleteUserModal .DeleteUserModalContent input[type=tel]:focus::-webkit-input-placeholder,
+.DeleteUserModal .DeleteUserModalContent input[type=email]:focus::-webkit-input-placeholder {
+  color: #9a9a9a;
+}
+
+.DeleteUserModal .DeleteUserModalContent input[type=text]:focus:-ms-input-placeholder,
+.DeleteUserModal .DeleteUserModalContent input[type=tel]:focus:-ms-input-placeholder,
+.DeleteUserModal .DeleteUserModalContent input[type=email]:focus:-ms-input-placeholder {
+  color: #9a9a9a;
+}
+
+.DeleteUserModal .DeleteUserModalContent input[type=text]:focus::-ms-input-placeholder,
+.DeleteUserModal .DeleteUserModalContent input[type=tel]:focus::-ms-input-placeholder,
+.DeleteUserModal .DeleteUserModalContent input[type=email]:focus::-ms-input-placeholder {
+  color: #9a9a9a;
+}
+
+.DeleteUserModal .DeleteUserModalContent input[type=text]:focus::placeholder,
+.DeleteUserModal .DeleteUserModalContent input[type=tel]:focus::placeholder,
+.DeleteUserModal .DeleteUserModalContent input[type=email]:focus::placeholder {
+  color: #9a9a9a;
+}
+
+.DeleteUserModal .DeleteUserModalContent input[type=file] {
+  width: 200px;
+}
+
+.DeleteUserModal .DeleteUserModalContent .cancelBtn {
+  background-color: #a0a0a0;
+  display: block;
+  width: 100%;
+  padding: 10px 0;
+  border: none;
+  border-radius: 3px;
+  outline: none;
+  margin-bottom: 10px;
+  cursor: pointer;
+  font-size: 1em;
+}
+
+.DeleteUserModal .DeleteUserModalContent .cancelBtn:hover {
+  background-color: #5b5959;
+}
+
+.DeleteUserModal .DeleteUserModalContent .submitBtn {
   background-color: #f2b423;
   display: block;
   width: 100%;
@@ -207,27 +262,13 @@
   border: none;
   border-radius: 3px;
   outline: none;
-  margin: 5px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  font-size: 1em;
+  font-weight: bold;
 }
 
-.ResolveModal .ModalContent .ButtonsWrapper .btnConfirm:hover,
-.ResolveModal .ModalContent .ButtonsWrapper .btnCancel:hover {
+.DeleteUserModal .DeleteUserModalContent .submitBtn:hover {
   background-color: #e39816;
 }
-
-.ResolveModal .ModalContent .ButtonsWrapper .btnCancel {
-  background-color: #141414;
-  color: white;
-  display: block;
-  width: 100%;
-  padding: 10px 0;
-  border: none;
-  border-radius: 3px;
-  outline: none;
-  margin: 5px;
-}
-
-.ResolveModal .ModalContent .ButtonsWrapper .btnCancel:hover {
-  background-color: #222222e6;
-}
-/*# sourceMappingURL=ResolveTicketModal.module.css.map */
+/*# sourceMappingURL=DeleteUser.module.css.map */

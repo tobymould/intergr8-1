@@ -1,0 +1,249 @@
+/* Yellows */
+/* Blacks and greys */
+/* Whites */
+/* Greens */
+/* Red */
+/* Border radiuses */
+/* Usage:
+  $large for outer containers
+  $medium for inner containers
+  $small for buttons
+  $extra-small for input fields
+*/
+/* Box shadows */
+/* Font sizes */
+/* Forms, boxes, lists */
+/* Waves background */
+/* Keyframes */
+@-webkit-keyframes slide-in-right {
+  0% {
+    -webkit-transform: translateX(1000px);
+    transform: translateX(1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes slide-in-right {
+  0% {
+    -webkit-transform: translateX(1000px);
+    transform: translateX(1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes slide-out-right {
+  0% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateX(1000px);
+    transform: translateX(1000px);
+    opacity: 0;
+  }
+}
+
+@keyframes slide-out-right {
+  0% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateX(1000px);
+    transform: translateX(1000px);
+    opacity: 0;
+  }
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.SuperUserContainer {
+  background-color: #ffffff;
+  background-image: url("../../assets/intergr8-login-background.svg");
+  background-size: cover;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  min-height: 100vh;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  width: 100%;
+}
+
+.SuperUserContainer .SuperUserHeader {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 12px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+@media screen and (min-width: 580px) {
+  .SuperUserContainer .SuperUserHeader {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+}
+
+.SuperUserContainer .SuperUserHeader .superUserDetails {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-width: 300px;
+}
+
+.SuperUserContainer .SuperUserHeader .superUserDetails img {
+  border-radius: 50%;
+  -webkit-box-shadow: 0 3px 3px #14141433, 0 1px 1px #14141433;
+          box-shadow: 0 3px 3px #14141433, 0 1px 1px #14141433;
+  margin: 0% 2.5%;
+  width: 100px;
+  height: 100px;
+}
+
+.SuperUserContainer .SuperUserHeader .searchBox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 1.2em;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: 1s;
+  transition: 1s;
+  position: relative;
+}
+
+.SuperUserContainer .SuperUserHeader .searchBox input {
+  border: 0;
+  border-bottom: 1px solid black;
+  padding: 10px 5px;
+  color: #656565;
+  width: 250px;
+  outline: none;
+  font-size: 1rem;
+  padding-right: 30px;
+}
+
+.SuperUserContainer .SuperUserHeader .searchBox input:focus {
+  border-bottom: 2px solid black;
+}
+
+.SuperUserContainer .SuperUserHeader .searchBox span {
+  position: absolute;
+  right: 5px;
+}
+
+.SuperUserContainer .SuperUserEmployee {
+  margin: 0 10px;
+  -webkit-box-shadow: 0 10px 20px #14141433, 0 6px 6px #14141433;
+          box-shadow: 0 10px 20px #14141433, 0 6px 6px #14141433;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.6);
+  overflow-x: auto;
+  position: relative;
+}
+
+.SuperUserContainer .SuperUserEmployee .tableHeader {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-bottom: 2px solid black;
+  font-size: 1.1em;
+  font-weight: bold;
+  background-color: white;
+  padding: 5px 10px;
+  min-width: 910px;
+  width: 100%;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.SuperUserContainer .SuperUserEmployee .tableHeader:first-child {
+  padding-left: 55px;
+}
+
+.SuperUserContainer .SuperUserEmployee .tableHeader p {
+  word-wrap: break-word;
+}
+
+.SuperUserContainer .SuperUserEmployee .tableHeader p.name {
+  width: 150px;
+}
+
+.SuperUserContainer .SuperUserEmployee .tableHeader p.email {
+  width: 200px;
+}
+
+.SuperUserContainer .SuperUserEmployee .tableHeader p.password {
+  width: 100px;
+}
+
+.SuperUserContainer .SuperUserEmployee .tableHeader p.userType {
+  width: 100px;
+}
+
+.SuperUserContainer .SuperUserEmployee .tableHeader .SuperUserAddBtn {
+  background-color: #f2b423;
+  padding: 5px 10px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.SuperUserContainer .SuperUserEmployee .tableHeader .SuperUserAddBtn p {
+  display: inline;
+  padding-right: 6px;
+}
+
+.SuperUserContainer .SuperUserEmployee .tableHeader .SuperUserAddBtn:hover {
+  background-color: #e39816;
+}
+
+.SuperUserContainer .SuperUserEmployee .tableRowScroll {
+  height: calc(100vh - 280px);
+  max-height: calc(100vh - 280px);
+}
+
+@media (min-width: 938px) {
+  .SuperUserContainer .SuperUserEmployee .tableRowScroll {
+    overflow-y: auto;
+  }
+}
+/*# sourceMappingURL=SuperUserDashboard.module.css.map */

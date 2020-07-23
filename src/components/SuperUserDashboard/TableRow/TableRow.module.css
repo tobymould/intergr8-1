@@ -1,0 +1,254 @@
+/* Yellows */
+/* Blacks and greys */
+/* Whites */
+/* Greens */
+/* Red */
+/* Border radiuses */
+/* Usage:
+  $large for outer containers
+  $medium for inner containers
+  $small for buttons
+  $extra-small for input fields
+*/
+/* Box shadows */
+/* Font sizes */
+/* Forms, boxes, lists */
+/* Waves background */
+/* Keyframes */
+@-webkit-keyframes slide-in-right {
+  0% {
+    -webkit-transform: translateX(1000px);
+    transform: translateX(1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes slide-in-right {
+  0% {
+    -webkit-transform: translateX(1000px);
+    transform: translateX(1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes slide-out-right {
+  0% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateX(1000px);
+    transform: translateX(1000px);
+    opacity: 0;
+  }
+}
+
+@keyframes slide-out-right {
+  0% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateX(1000px);
+    transform: translateX(1000px);
+    opacity: 0;
+  }
+}
+
+.TableRow {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 4px;
+  color: #141414;
+  width: 100%;
+  min-width: 910px;
+  position: relative;
+}
+
+.TableRow .modalPopupStyle {
+  position: absolute;
+  left: 10px;
+  bottom: -50px;
+  z-index: 20;
+  background: #f7f7f7;
+  padding: 10px;
+  border-radius: 4px;
+  width: 271px;
+  border: 1px solid grey;
+  -webkit-box-shadow: 0 8px 16px -4px rgba(9, 30, 66, 0.25), 0 0 0 1px rgba(9, 30, 66, 0.08);
+          box-shadow: 0 8px 16px -4px rgba(9, 30, 66, 0.25), 0 0 0 1px rgba(9, 30, 66, 0.08);
+}
+
+.TableRow .modalPopupStyle .closeIcon {
+  position: absolute;
+  top: 5px;
+  right: 7.5px;
+}
+
+.TableRow div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.TableRow div img,
+.TableRow div .icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-right: 15px;
+  margin-left: 0;
+}
+
+.TableRow p.name,
+.TableRow input.name,
+.TableRow select.name {
+  width: 150px;
+}
+
+.TableRow p.email,
+.TableRow input.email,
+.TableRow select.email {
+  width: 200px;
+}
+
+.TableRow p.password,
+.TableRow input.password,
+.TableRow select.password {
+  width: 100px;
+}
+
+.TableRow p.userType,
+.TableRow input.userType,
+.TableRow select.userType {
+  width: 100px;
+}
+
+.TableRow .buttonContainer {
+  width: 128.83px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.TableRow span {
+  margin-left: 20px;
+  cursor: pointer;
+}
+
+.assignedUserWrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.assignedUserWrapper .modalStyle .modalPopupStyle {
+  position: absolute;
+  left: 148px;
+  top: 77px;
+  z-index: 2;
+  background: #f7f7f7;
+  padding: 10px;
+  border-radius: 4px;
+  width: 271px;
+  border: 1px solid grey;
+  -webkit-box-shadow: 0 8px 16px -4px rgba(9, 30, 66, 0.25), 0 0 0 1px rgba(9, 30, 66, 0.08);
+          box-shadow: 0 8px 16px -4px rgba(9, 30, 66, 0.25), 0 0 0 1px rgba(9, 30, 66, 0.08);
+}
+
+.assignedUserWrapper .modalStyle .modalPopupStyle input {
+  margin: 2px 0 12px 0;
+  width: 92%;
+  padding: 4px 8px;
+}
+
+.assignedUserWrapper .modalStyle .modalPopupStyle .closeIcon {
+  position: absolute;
+  top: 5px;
+  right: 7.5px;
+}
+
+.assignedUserWrapper .modalStyle .modalPopupStyle .displayPeople {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 8px 0;
+}
+
+.assignedUserWrapper .modalStyle .modalPopupStyle img {
+  margin-right: 8px;
+  border: 1px solid #f1f1f1;
+}
+
+.assignedUserWrapper .assignedPerson {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.assignedUserWrapper .assignedPerson div {
+  width: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  padding: 5px;
+}
+
+.assignedUserWrapper .assignedPerson div div {
+  padding: 0;
+  margin: 0;
+}
+
+.assignedUserWrapper img {
+  height: 38px;
+  width: 38px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 50%;
+}
+/*# sourceMappingURL=TableRow.module.css.map */

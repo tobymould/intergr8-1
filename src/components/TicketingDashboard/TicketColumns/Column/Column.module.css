@@ -1,7 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
 /* Yellows */
-/* Blacks */
-/* Greys */
+/* Blacks and greys */
 /* Whites */
 /* Greens */
 /* Red */
@@ -69,18 +67,16 @@
 }
 
 .TicketColumn {
-  height: 600px;
   width: 30%;
   margin: 2.5%;
   -webkit-box-shadow: 0 10px 20px #14141433, 0 6px 6px #14141433;
           box-shadow: 0 10px 20px #14141433, 0 6px 6px #14141433;
   border-radius: 5px;
-  overflow-y: auto;
   padding: 12px;
   background-color: rgba(255, 255, 255, 0.6);
 }
 
-.topOfColumn {
+.TicketColumn .topOfColumn {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -91,16 +87,23 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 12px;
 }
 
-.topOfColumn h3 {
+.TicketColumn .topOfColumn h3 {
   font-size: 1rem;
-  padding: 6px;
 }
 
-.topOfColumn select {
+.TicketColumn .topOfColumn select {
   font-size: 0.85rem;
   padding: 1.2px;
-  margin-bottom: 12px;
+}
+
+.TicketColumn .ticketTileSection {
+  height: 600px;
+  overflow-y: auto;
 }
 /*# sourceMappingURL=Column.module.css.map */
