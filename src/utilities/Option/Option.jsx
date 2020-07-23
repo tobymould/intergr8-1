@@ -4,23 +4,22 @@ import styles from "./Option.module.scss";
 class Option extends Component {
   render() {
     return (
-      <>
-        {this.props.queries.map((query, index) => (
-          <p
-            key={index}
-            className={styles.option}
-            id={query}
-            onClick={(event) => {
-              let string = event.target.id
-              this.props.optionClick(string)
-            }
-          }
-          >
+      <section className={styles.tileParent}>
+      {this.props.queries.map((query, index) => (
+      <article className={styles.tileStyles} key={index} onClick={(event) => {
+        let string = event.target.id;
+        this.props.optionClick(string)
+        }}>
+        <p
+        className={styles.catTitle}
+        id={query}
+      >
             {query}
-          </p>
+        </p>
+      </article >
         ))}
-      </>
-    );
+    </section>
+  );
   }
 }
 

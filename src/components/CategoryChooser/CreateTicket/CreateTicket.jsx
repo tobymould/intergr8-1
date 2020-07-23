@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import styles from "./CreateTicket.module.scss";
-import firebase, {firestore} from '../../../firebase'
-
+import firebase, { firestore } from '../../../firebase'
 
 class CreateTicket extends Component {
   state = {
@@ -120,15 +119,6 @@ class CreateTicket extends Component {
   }
 
   toggleQuerySubmitted = () => {
-  //   return this.state.querySent ? <p className={styles.italic}>{this.state.message}</p> : <textarea required placeholder="Type here..." onChange={(event) => {
-  //     this.setState({ value: event.target.value }) 
-  //     this.captureMessage(event)
-  //   }} value={this.state.value}></textarea>
-  // }
-
-  // toggleButton = () => {
-  //   return this.state.querySent ? (<div className={styles.ticketSent}><h3>Ticket Sent</h3></div>) : <button disabled={!this.state.value}
-  //   className={styles.btnCreateTicket} onClick={this.getDate}>Create Ticket</button>
     // const finalMessage = {...this.state.eventLog}.eventLog.message;
     // console.log(finalMessage);
     return this.state.querySent ?
