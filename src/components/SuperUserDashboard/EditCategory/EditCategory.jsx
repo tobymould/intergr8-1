@@ -7,7 +7,6 @@ class EditCategory extends Component {
     isDisplayAddSubcategory: false,
     currentAddSubcategory: null,
     newSubcategoryInput: null,
-    currentQuery: null,
   }
 
   toggleAddSubcategoryInput = (isDisplayAddSubcategory, newSubcategoryInput, category) => {
@@ -39,7 +38,6 @@ class EditCategory extends Component {
       isDisplayAddSubcategory, 
       currentAddSubcategory, 
       newSubcategoryInput, 
-      currentQuery 
     } = this.state;
 
     return (
