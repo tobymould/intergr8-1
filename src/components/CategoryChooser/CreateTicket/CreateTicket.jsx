@@ -55,11 +55,16 @@ class CreateTicket extends Component {
   toggleQuerySubmitted = () => {
     // const finalMessage = {...this.state.eventLog}.eventLog.message;
     // console.log(finalMessage);
-    return this.state.querySent ? <p className={styles.italic}>{this.state.message}</p> : <textarea className={styles.typeHere} placeholder="Type here..." onChange={(event) => this.captureMessage(event)}></textarea>
+    return this.state.querySent ?
+      <p className={styles.italic}>
+        {this.state.message}
+      </p>
+      :
+      <textarea className={styles.typeHere} placeholder="Type here..." onChange={(event) => this.captureMessage(event)}></textarea>
   }
 
   toggleButton = () => {
-    return this.state.querySent ? (<div className={styles.ticketSent}><h3>Ticket Sent</h3></div>) : <button
+    return this.state.querySent ? (<div className={styles.ticketSent}><h3>Ticket Sent!</h3></div>) : <button
       className={styles.btnCreateTicket} onClick={this.getDate}>Create Ticket</button>
   }
 
@@ -74,16 +79,26 @@ class CreateTicket extends Component {
           <div className={styles.createTicketContainer}>
             <section className={styles.topField}>
               <p className={styles.topBanner}>New Ticket +</p>
+              <h2 className={styles.yourTicket}>
+                Almost done...</h2>
+              <h3>Add a description to help us out:</h3>
             </section>
             <section className={styles.formWrapper}>
               <form action="" className={styles.formCreateTicket}>
-                <span>Category: {category}</span>
-                <span>Sub-Category: {subCategory}</span>
-                <label htmlFor="">
-                  Description
-                {this.toggleQuerySubmitted()}
-                  {/* <textarea placeholder="Type here..." onChange={(event) => this.captureMessage(event)}></textarea> */}
-                </label>
+                <div className={styles.categoriesContainer}>
+                  <span>Category:</span>
+                  <span>{category}</span>
+                </div>
+                <div className={styles.categoriesContainer}>
+                  <span>Sub-Category:</span>
+                  <span>{subCategory}</span>
+                </div>
+                <div className={styles.descriptionContainer}>
+                  <label htmlFor="">
+                    Description:
+                  </label>
+                  {this.toggleQuerySubmitted()}
+                </div>
                 {this.toggleButton()}
               </form>
             </section>

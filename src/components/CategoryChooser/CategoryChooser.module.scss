@@ -2,7 +2,7 @@
 
 body {
   // background-image: url(../../assets/Frame3.png);
-  background-color:#F7F6F6;
+  background-color: #f7f6f6;
   background-repeat: no-repeat;
   background-size: cover;
 
@@ -12,20 +12,21 @@ body {
   }
 }
 .categoryChooser {
-    
-    .backContainer {
-      // width: 50%;
-      margin-top: 30px;
-      button {
-        margin: 0 auto;
-        width: 70%;
-      }
-
+  .backContainer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    margin: 2.5% auto;
+    button {
+      margin: 0 auto;
+      width: 70%;
     }
-  
+  }
+
   h2 {
     text-align: center;
     padding-top: 50px;
-    font-size: 0.7*$xlarge;
+    font-size: 0.7 * $xlarge;
   }
 }
