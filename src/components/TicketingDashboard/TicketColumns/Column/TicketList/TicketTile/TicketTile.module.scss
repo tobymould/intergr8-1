@@ -2,16 +2,15 @@
 
 .TicketTile {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   border: 1px solid black;
   border-right: 10px $primary-yellow ridge;
   border-radius: 5px;
   height: max-content;
   width: 100%;
   margin: 20px auto;
-  // z-index: 0;
   position: relative;
 }
 
@@ -19,6 +18,23 @@
   margin: 20px 0 5px 0;
   padding: 10% 5% 2% 2%;
 }
+
+.viewTicket {
+  margin: 5px 0 0 5px;
+  padding: 2px 7px;
+
+  border: none;
+  background-color: $primary-yellow;
+  color: $primary-black;
+  outline: none;
+  border-radius: 5px;
+  &:hover {
+    cursor: pointer;
+    background-color: $secondary-yellow;
+    color: $secondary-black;
+  }
+}
+
 .ticketUser {
   position: absolute;
   right: 0;

@@ -4,11 +4,21 @@ import Column from "./Column";
 
 class TicketColumns extends Component {
   render() {
+    const { allTickets, currentTicket, setCurrentTicket } = this.props;
     return (
       <section className={styles.TicketColumns}>
-        <Column filter={true} title={"Tickets to assign"} allTickets={this.props.allTickets} />
-        <Column filter={true} title={"My tickets"} allTickets={this.props.allTickets} />
-        <Column filter={true} title={"Outstanding"} allTickets={this.props.allTickets} />
+        <Column filter={true} title={"Tickets to assign"}
+          allTickets={allTickets}
+          currentTicket={currentTicket}
+          setCurrentTicket={setCurrentTicket} />
+        <Column filter={true} title={"My tickets"}
+          allTickets={allTickets}
+          currentTicket={currentTicket}
+          setCurrentTicket={setCurrentTicket} />
+        <Column filter={true} title={"Outstanding"}
+          allTickets={allTickets}
+          currentTicket={currentTicket}
+          setCurrentTicket={setCurrentTicket} />
       </section>
     );
   }

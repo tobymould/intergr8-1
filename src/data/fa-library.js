@@ -1,6 +1,7 @@
 import { library } from "@fortawesome/fontawesome-svg-core";
 import {
   faBookOpen,
+  faExpand,
   faPoundSign,
   faNetworkWired,
   faUserFriends,
@@ -43,5 +44,6 @@ export default library.add(
   faTimesCircle,
   faTimes,
   faUserCircle,
+  faExpand,
   faPlus
 );

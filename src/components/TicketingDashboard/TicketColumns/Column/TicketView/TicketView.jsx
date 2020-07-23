@@ -72,12 +72,13 @@ class TicketView extends Component {
     }
   };
   render() {
+    const { closeCurrentTicket, currentTicket, clearCurrentTicket } = this.props;
     const displayResolve = this.state.isDisplayResolve ? (
       <ResolveTicketModal
         toggleResolveModal={this.toggleResolveModal}
         updateInputResolve={this.updateInputResolve}
         toggleResolveTicketDisplay={this.toggleResolveTicketDisplay}
-        closeTicket={this.props.closeTicket}
+        closeCurrentTicket={closeCurrentTicket}
       />
     ) : null;
     const displayResolveTicket = this.state.resolveTicketDisplay ? (
@@ -94,17 +95,17 @@ class TicketView extends Component {
         <article className={styles.TicketView}>
           <section className={styles.ticketTop}>
             <div className={styles.ticketHeader}>
-              <h2>{this.props.data.category}</h2>
-            <div className={styles.ticketUser}>
-              <AssignedUser />
-            </div>
+              <h2>{currentTicket.category}</h2>
+              <div className={styles.ticketUser}>
+                <AssignedUser currentTicket={currentTicket} />
+              </div>
             </div>
             <div className={styles.ticketId}>
-              <p>{this.props.data.ID}</p>
+              <p>{currentTicket.ID}</p>
               <div className={`${styles.circle} ${this.setColour()}`}></div>
             </div>
             <div className={styles.ticketActionButtons}>
-              <button className={styles.closeTicketButton} onClick={this.props.closeTicketModal}>
+              <button className={styles.closeTicketButton} onClick={clearCurrentTicket}>
                 ✕
               </button>
               <button className={styles.resolveBtn} onClick={this.toggleResolveModal}>

@@ -3,6 +3,7 @@ import ChartPanel from './ChartPanel';
 import TicketColumns from './TicketColumns/TicketColumns';
 import styles from './TicketingDashboard.module.scss';
 import { firestore } from '../../firebase';
+import TicketView from './TicketColumns/Column/TicketView';
 
 class TicketingDashboard extends Component {
   state = {
@@ -14,7 +15,8 @@ class TicketingDashboard extends Component {
     userInProgressTickets: null,
     percentUnassignedTickets: null,
     percentInProgressTickets: null,
-    percentUserInProgressTickets: null
+    percentUserInProgressTickets: null,
+    currentTicket: {}
   };
 
   countTickets = () => this.state.allTickets.length;
@@ -23,6 +25,35 @@ class TicketingDashboard extends Component {
   countInProgressTickets = () => this.state.allTickets.filter(ticket => ticket.isOpen).length;
   countUserInProgressTickets = () => this.state.allTickets.filter(ticket => ticket.createdBy === this.state.user && ticket.isOpen).length;
   calculatePercent = (total, number) => number === 0 ? 100 : (number / total) * 100;
+
+  setCurrentTicket = (ticket) => {
+    const ticketCopy = { ...ticket };
+    this.setState({
+      currentTicket: ticketCopy,
+      ticketViewOpen: true
+    });
+    console.log(ticket);
+  }
+
+  clearCurrentTicket = () => {
+    this.setState({
+      currentTicket: {},
+      ticketViewOpen: false
+    });
+  }
+
+  closeCurrentTicket = (ticketData) => {
+    const dataClone = { ...ticketData };
+    dataClone.isOpen = !dataClone.isOpen;
+    this.setState({
+      currentTicket: dataClone,
+    });
+    firestore
+      .collection('tickets')
+      .doc(dataClone.id)
+      .update({ isOpen: false })
+      .then(console.log(dataClone.id + "is now closed."))
+  };
 
   componentDidMount() {
     firestore
@@ -48,11 +79,21 @@ class TicketingDashboard extends Component {
       .catch(err => console.log(err))
   }
   render() {
-    const { allTickets, percentUnassignedTickets, percentInProgressTickets, percentUserInProgressTickets } = this.state;
+    const { allTickets, currentTicket, percentUnassignedTickets, percentInProgressTickets, percentUserInProgressTickets } = this.state;
     return (
       <section className={styles.ticketingDashboard}>
         <ChartPanel percentUnassignedTickets={percentUnassignedTickets} percentInProgressTickets={percentInProgressTickets} percentUserInProgressTickets={percentUserInProgressTickets} />
-        <TicketColumns allTickets={allTickets} />
+        <TicketColumns
+          allTickets={allTickets}
+          currentTicket={currentTicket}
+          setCurrentTicket={this.setCurrentTicket}
+        />
+        {!this.state.ticketViewOpen ?
+          null :
+          <TicketView
+            closeCurrentTicket={this.closeCurrentTicket}
+            clearCurrentTicket={this.clearCurrentTicket}
+            currentTicket={currentTicket} />}
       </section>
     );
   }

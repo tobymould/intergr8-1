@@ -1,58 +1,40 @@
 import React, { Component } from "react";
 import styles from "./TicketTile.module.scss";
-import TicketView from "../../TicketView/TicketView";
 import AssignedUser from '../../../../../AssignedUser';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 
 class TicketTile extends Component {
 
-  ticketViewRender = () => {
-    return <TicketView
-      data={this.state.currentTicket}
-      closeTicket={this.closeCurrentTicket}
-      closeTicketModal={this.closeTicketModal}
-      toggleTicketView={this.state.ticketViewOpen} />
-  }
-
   render() {
-    const { ticketData, showModal,
-      closeCurrentTicket, openTicketModal,
-      closeTicketModal, setCurrentTicket,
-      showTicketView } = this.props;
+    const { ticket, setCurrentTicket } = this.props;
     return (
-      <article
-        key={ticketData.ID}
-        onClick={setCurrentTicket, openTicketModal}
-        className={styles.TicketTile} >
+      <article className={styles.TicketTile}>
+        <button className={styles.viewTicket} onClick={() => setCurrentTicket(ticket)}>
+          <FontAwesomeIcon icon="expand" />
+        </button>
         <div className={styles.ticketContent} >
-          <h3>{ticketData.category}</h3>
+
+          <h3>{ticket.category}</h3>
           <div>
-            <span className={styles.boldText}>Employee ID: </span><span >{ticketData.createdBy.substring(0, 10)}</span>
+            <span className={styles.boldText}>Employee ID: </span><span >{ticket.createdBy.substring(0, 10)}</span>
           </div>
           <div>
-            <span className={styles.boldText}>Ticket ID: </span><span > {ticketData.ID.substring(0, 10)}</span>
+            <span className={styles.boldText}>Ticket ID: </span><span > {ticket.ID.substring(0, 10)}</span>
           </div>
           <div>
-            <span className={styles.boldText}>Date: </span><span >{ticketData.createdAtDate}</span>
+            <span className={styles.boldText}>Date: </span><span >{ticket.createdAtDate}</span>
           </div>
           <div className={styles.ticketUser}>
             <AssignedUser
-              ticketData={ticketData}
-              setCurrentTicket={setCurrentTicket}
-
+              ticket={ticket}
             />
           </div>
         </div>
-      </article>
+      </article >
 
     )
   }
 }
 
 export default TicketTile;
-
-
-// this.props.closeCurrentTicket
-// this.props.openTicketModal
-// this.props.closeTicketModal
-// this.props.setCurrentTicket
