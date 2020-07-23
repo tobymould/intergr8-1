@@ -66,31 +66,32 @@
   }
 }
 
-.chart {
-  -webkit-box-shadow: 0 10px 20px #14141433, 0 6px 6px #14141433;
-          box-shadow: 0 10px 20px #14141433, 0 6px 6px #14141433;
-  -webkit-transform: rotate(-90deg);
-          transform: rotate(-90deg);
-  border-radius: 50%;
-  background: #c6bfaf;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+.buttonCheckout {
+  text-align: center;
+  line-height: 210px;
+  height: 210px;
+  width: 300px;
+  font-size: 1.5rem;
+  border-radius: 4px;
+  margin: 40px;
+  background-color: rgba(255, 255, 255, 0.8);
+  -webkit-box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.5);
+          box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.5);
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  margin-bottom: 110px;
 }
 
-.chart .innerCircle {
-  fill: #F1F1F1;
+.buttonCheckout:hover {
+  cursor: pointer;
+  font-weight: 500;
+  -webkit-box-shadow: 0px 15px 20px rgba(12, 175, 6, 0.781);
+          box-shadow: 0px 15px 20px rgba(12, 175, 6, 0.781);
+  -webkit-transform: translateY(-7px);
+          transform: translateY(-7px);
+  background-color: rgba(12, 175, 6, 0.781);
 }
-
-.chart .outerCircle {
-  fill: #c6bfaf;
-  stroke: #f2b423;
-  stroke-width: 120;
-}
-/*# sourceMappingURL=Chart.module.css.map */
+/*# sourceMappingURL=Checkout.module.css.map */

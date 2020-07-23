@@ -1,7 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
 /* Yellows */
-/* Blacks */
-/* Greys */
+/* Blacks and greys */
 /* Whites */
 /* Greens */
 /* Red */
@@ -76,15 +74,15 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   margin: auto;
   margin-top: 80px;
-  padding-bottom: 231px;
+  overflow-y: auto;
+  height: 400px;
+  padding: 10px;
+  width: 820px;
 }
 
 .ticketCat2 h1 {
@@ -93,7 +91,7 @@
 
 @media screen and (max-width: 800px) {
   .ticketCat2 {
-    width: 200px;
+    width: 375px;
   }
 }
 /*# sourceMappingURL=TicketCatStageTwo.module.css.map */
