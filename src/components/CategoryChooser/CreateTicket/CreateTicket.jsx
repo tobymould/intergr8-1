@@ -63,8 +63,21 @@ class CreateTicket extends Component {
       <textarea className={styles.typeHere} placeholder="Type here..." onChange={(event) => this.captureMessage(event)}></textarea>
   }
 
+  toggleTicketHeader = () => {
+    return this.state.querySent ?
+      <>
+        <h2 className={styles.yourTicket}>{"Ticket sent!"}</h2>
+        <h3>{"We'll get straight on this."}</h3>
+      </>
+      :
+      <>
+        <h2 className={styles.yourTicket}>{"Almost done..."}</h2>
+        <h3>{"Add a description to help us out:"}</h3>
+      </>
+  }
+
   toggleButton = () => {
-    return this.state.querySent ? (<div className={styles.ticketSent}><h3>Ticket Sent!</h3></div>) : <button
+    return this.state.querySent ? (<div className={styles.ticketSent}><h3>Thank you!</h3></div>) : <button
       className={styles.btnCreateTicket} onClick={this.getDate}>Create Ticket</button>
   }
 
@@ -79,9 +92,7 @@ class CreateTicket extends Component {
           <div className={styles.createTicketContainer}>
             <section className={styles.topField}>
               <p className={styles.topBanner}>New Ticket +</p>
-              <h2 className={styles.yourTicket}>
-                Almost done...</h2>
-              <h3>Add a description to help us out:</h3>
+              {this.toggleTicketHeader()}
             </section>
             <section className={styles.formWrapper}>
               <form action="" className={styles.formCreateTicket}>
