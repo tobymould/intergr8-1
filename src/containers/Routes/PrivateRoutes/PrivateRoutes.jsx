@@ -47,7 +47,14 @@ class PrivateRoutes extends Component {
   }
 
   render() {
-    const { user } = this.props;
+    const { 
+      user, 
+      setCategoriesState, 
+      addSubcategory, 
+      removeSubcategory, 
+      categories  
+    } = this.props;
+    
     return (
       <>
         <NavBar signOut={this.props.signOut} userRole={this.state.role}/>
@@ -60,13 +67,22 @@ class PrivateRoutes extends Component {
           <TicketView path="viewticket" user={user}  />
           <CreateTicket path="createticket" user={user}  />
           {this.state.role === 3
-          ? <SuperUserDashboard path="superuser" user={user}  /> 
-          : null}
+
+            ? <SuperUserDashboard
+              path="superuser"
+              user={user}
+              setCategoriesState={setCategoriesState}
+              addSubcategory={addSubcategory}
+              removeSubcategory={removeSubcategory}
+              categories={categories} />
+            : null}
+
         </Router>
       </>
     )
       ;
   }
 }
+
 
 export default PrivateRoutes;
