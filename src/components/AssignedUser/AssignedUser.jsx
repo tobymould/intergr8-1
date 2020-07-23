@@ -7,7 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 class AssignedUser extends Component {
   state = {
-    assignedPerson: "",
+    assignedTo: [],
     // appData: dataFile,
     modalPopup: false,
     searchTerm: "",
@@ -23,10 +23,10 @@ class AssignedUser extends Component {
     .collection('info')
     .get()
     .then((snapshot) => {
-      const users = snapshot.docs
-      .map((doc => doc.data()))
-      this.setState({ users })
-      })
+      const users = snapshot.docs.map(doc => doc.data())
+      //another firestore request that gets the ticket using the ticketID   this.getAssignedToData
+      this.setState({ users });
+    })
   }
 
   // ...tickets.ID, assignedTo: person.name 
@@ -75,32 +75,43 @@ class AssignedUser extends Component {
      firestore
       .collection('tickets')
       .doc(this.props.ticketID)
-      // .set({ assignedTo: event.target.id}, { merge: true })
       .update({ assignedTo:firebase.firestore.FieldValue.arrayUnion(event.target.id)})
-      // .then((res) => {
-        this.setState({
-          assignedPerson: event.target.id,
-          modalPopup: !this.state.modalPopup
-        // });  
-       })
+      .then(this.getAssignedToData);
   }
 
-  getAssignedPerson = () => {
-    return this.state.users.map(person => {
-      if(this.state.assignedPerson === person.ID) {
-        return (
-          <>
-          <img src={person.img} alt={person.name}/>
-          <span>{person.name}</span>
-          </>
-        )}
-      return null;
-  })
-}
-  
+  getAssignedToData = () => {
+    firestore
+      .collection('tickets')
+      .where("ID", "==", this.props.ticketID)
+      .get()
+      .then((snapshot) => {
+        const assignedTo = snapshot.docs[0].data().assignedTo;
+        this.setState({
+          assignedTo,
+          modalPopup: !this.state.modalPopup
+        });
+      })  
+  }
 
-  render() {
+
+  getAssignedPerson = () => {
+    const { assignedTo, users } = this.state;
+    if (assignedTo.length > 0) {
+      const user = users.find(person => person.ID === assignedTo[0]);
+      return (
+        <>
+          <img src={user.img} alt={user.name}/>
+          <span>{user.name}</span>
+          {(assignedTo.length > 1) ? <p>PLUS</p> : ""}
+        </>
+      )
+    } else {
+      return (<></>);
+    }
+  }
   
+  render() {
+      console.log(this.state.assignedTo);
       return (
         <div className={styles.assignedUserWrapper}>
           {/* Assign Person Button (that creates the Modal)*/}
