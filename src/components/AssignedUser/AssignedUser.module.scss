@@ -1,77 +1,80 @@
 @import "../../variables.scss";
 
 .assignedUserWrapper {
-    display: flex;
-    flex-direction: column;
-    // border: 2px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  // border: 2px solid black;
 
-    .modalStyle{
+  .modalStyle {
+    .modalPopupStyle {
+      position: absolute;
+      left: 148px;
+      top: 77px;
+      z-index: 2;
+      background: #f7f7f7;
+      padding: 10px;
+      border-radius: 4px;
+      width: 271px;
+      border: 1px solid grey;
+      box-shadow: 0 8px 16px -4px rgba(9, 30, 66, 0.25), 0 0 0 1px rgba(9, 30, 66, 0.08);
+      // height: 175px;
 
-        .modalPopupStyle{
-            position: absolute;
-            left: 148px;
-            top: 77px;
-            z-index: 2;
-            background: #f7f7f7;
-            padding: 10px;
-            border-radius: 4px;
-            width: 271px;
-            border: 1px solid grey;
-            box-shadow: 0 8px 16px -4px rgba(9,30,66,.25), 0 0 0 1px rgba(9,30,66,.08);
-            // height: 175px;
+      input {
+        margin: 2px 0 12px 0;
+        width: 92%;
+        padding: 4px 8px;
+      }
 
-            input{
-                margin: 2px 0 12px 0;
-                width: 92%;
-                padding: 4px 8px;
-            }
+      .closeIcon {
+        position: absolute;
+        top: 5px;
+        right: 7.5px;
+      }
 
-            .closeIcon {
-                position: absolute;
-                top: 5px;
-                right: 7.5px;
-            }
-
-            .displayPeople{
-                display: flex;
-                align-items: center;
-                margin: 8px 0;
-            }
-
-            img {
-                margin-right: 8px;
-                border: 1px solid #f1f1f1;
-            }
-        }
-    }
-
-    .assignedPerson{
+      .displayPeople {
         display: flex;
-        flex-direction: column;
-        // width: 100px;
-     
-        div{
-            width: 50px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 5px;
-            // background: blue;
+        align-items: center;
+        margin: 8px 0;
+      }
 
-            div {
-                // background: red;
-                padding: 0;
-                margin: 0;
-            }
-        }
+      img {
+        margin-right: 8px;
+        border: 1px solid #f1f1f1;
+      }
     }
+  }
 
-    img {
-        height: 38px;
-        width: 38px;
-        object-fit: cover;
-        border-radius: 50%;
+  .assignedPerson {
+    display: flex;
+    flex-direction: row;
+    margin-left: 20px;
+    align-items: center;
+    justify-content: space-evenly;
+
+    div {
+      width: 50px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 5px;
+      // background: blue;
+
+      div {
+        // background: red;
+        padding: 0;
+        margin: 0;
+      }
     }
+  }
+
+  img {
+    height: 38px;
+    width: 38px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
 }

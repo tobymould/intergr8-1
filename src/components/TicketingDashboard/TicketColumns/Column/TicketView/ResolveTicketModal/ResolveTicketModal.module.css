@@ -198,7 +198,8 @@
           flex-direction: column;
 }
 
-.ResolveModal .ModalContent .ButtonsWrapper .btnConfirm, .ResolveModal .ModalContent .ButtonsWrapper .btnCancel {
+.ResolveModal .ModalContent .ButtonsWrapper .btnConfirm,
+.ResolveModal .ModalContent .ButtonsWrapper .btnCancel {
   background-color: #f2b423;
   display: block;
   width: 100%;
@@ -209,7 +210,8 @@
   margin: 5px;
 }
 
-.ResolveModal .ModalContent .ButtonsWrapper .btnConfirm:hover, .ResolveModal .ModalContent .ButtonsWrapper .btnCancel:hover {
+.ResolveModal .ModalContent .ButtonsWrapper .btnConfirm:hover,
+.ResolveModal .ModalContent .ButtonsWrapper .btnCancel:hover {
   background-color: #e39816;
 }
 

@@ -111,6 +111,10 @@
   display: block;
 }
 
+.backGround form label .italic {
+  font-style: italic;
+}
+
 .backGround form label select {
   display: block;
   width: 250px;

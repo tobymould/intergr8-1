@@ -5,7 +5,6 @@ import TicketCatStageTwo from "./TicketCatStageTwo";
 import TicketCatStageThree from "./TicketCatStageThree";
 import CreateTicket from "./CreateTicket";
 import FAQs from "./FAQs";
-import NavBar from '../../components/NavBar';
 import Button from "../../utilities/Button";
 import { firestore } from "../../firebase";
 
@@ -19,19 +18,19 @@ class CategoryChooser extends Component {
   };
 
   componentDidMount() {
-      firestore
-        .collection('categories')
-        .get()
-        .then((snapshot) => {
-          snapshot.docs
+    firestore
+      .collection('categories')
+      .get()
+      .then((snapshot) => {
+        snapshot.docs
           .forEach((doc) => {
             this.setState({
-              categories: { ...this.state.categories, [doc.id]: doc.data()}
-            }) 
+              categories: { ...this.state.categories, [doc.id]: doc.data() }
+            })
           })
-        })
-    }
-  
+      })
+  }
+
 
   noSubCategories = (selector, count) => {
     let num = this.state.stage > 2 ? this.state.stage + count : this.state.stage + count * 2;
@@ -80,11 +79,11 @@ class CategoryChooser extends Component {
     } else if (this.state.stage === 1) {
       return (
         <>
-        <h2>Please select one of the following options...</h2>
-        <TicketCatStageTwo
-          queries={this.state.categories[this.state.selector[0]].queries}
-          optionClick={this.optionClick}
-        />
+          <h2>Please select one of the following options...</h2>
+          <TicketCatStageTwo
+            queries={this.state.categories[this.state.selector[0]].queries}
+            optionClick={this.optionClick}
+          />
         </>
       );
     } else if (this.state.stage === 2) {
@@ -99,13 +98,14 @@ class CategoryChooser extends Component {
   render() {
     return (
       <>
-        <NavBar />
-        <section className={styles.categoryChooser}>
-          {this.getCategory()}
-          <div className={styles.backContainer}>
-            {this.goBack()}
-          </div>
-        </section>
+        <div className={styles.catalogueWrapper}>
+          <section className={styles.categoryChooser}>
+            {this.getCategory()}
+            <div className={styles.backContainer}>
+              {this.goBack()}
+            </div>
+          </section>
+        </div>
       </>
     );
   }
