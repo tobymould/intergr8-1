@@ -17,10 +17,10 @@ class Column extends Component {
     return <DropDown filterOptions={["HR", "Payroll", "L&D", "Health & Safety", "Recruitment"]} />;
   }
 
-  unfilterUser = () => this.setState({filtering:false});
+  unfilterUser = () => this.setState({ filtering: false });
 
   filterByUser = (e) => {
-    if (!this.state.filtering) this.setState({filtering: true})
+    if (!this.state.filtering) this.setState({ filtering: true })
     const ticketsCopy = this.props.allTickets;
     const filteredTickets = ticketsCopy.filter((obj) => {
       return obj.category === e.target.value;
@@ -37,15 +37,15 @@ class Column extends Component {
   }
 
   sortOptions = (e) => {
-    if (!this.state.filtering) this.setState({filtering: true})
+    if (!this.state.filtering) this.setState({ filtering: true })
     const orderData = this.state.filtering ? [...this.state.filteredTickets] : [...this.props.allTickets];
-      if (e.target.value === "Newest") {
-        orderData.sort((a, b) => new Date(this.convertDataFormat(b.createdAtDate)) - new Date(this.convertDataFormat(a.createdAtDate)));
-      } else if (e.target.value === "Oldest") {
-        orderData.sort((a, b) => new Date(this.convertDataFormat(a.createdAtDate)) - new Date(this.convertDataFormat(b.createdAtDate)));
-      } else if (e.target.value === "Priority") {
-        orderData.sort((a, b) => a.priority - b.priority);
-      }
+    if (e.target.value === "Newest") {
+      orderData.sort((a, b) => new Date(this.convertDataFormat(b.createdAtDate)) - new Date(this.convertDataFormat(a.createdAtDate)));
+    } else if (e.target.value === "Oldest") {
+      orderData.sort((a, b) => new Date(this.convertDataFormat(a.createdAtDate)) - new Date(this.convertDataFormat(b.createdAtDate)));
+    } else if (e.target.value === "Priority") {
+      orderData.sort((a, b) => a.priority - b.priority);
+    }
     this.setState({
       filteredTickets: orderData,
     });
@@ -56,7 +56,7 @@ class Column extends Component {
     return (
       <>
         <article className={styles.TicketColumn}>
-            <h3>{this.props.title}</h3>
+          <h3>{this.props.title}</h3>
           <div className={styles.topOfColumn}>
             <div onChange={this.filterByUser}>{this.renderUser()}</div>
             <div onChange={this.sortOptions}>{this.renderFilter()}</div>

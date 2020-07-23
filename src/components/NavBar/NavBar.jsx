@@ -13,9 +13,6 @@ class NavBar extends Component {
   get navItems() {
     return [
       {
-        title: '[View Ticket]',
-        link: "/viewticket"
-      }, {
         title: 'Dashboard',
         link: '/dashboard'
       }, {
