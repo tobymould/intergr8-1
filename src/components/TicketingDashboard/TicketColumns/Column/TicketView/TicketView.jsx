@@ -23,6 +23,7 @@ class TicketView extends Component {
         modifiedAtDate: [],
         resolveTicketDisplay: false,
         image: "",
+        userRole: 1,
         // ID: '0V0Rt0Elqr6wvbDuD2DM',
         eventLog: [
             {
@@ -213,11 +214,11 @@ class TicketView extends Component {
           <section className={styles.ticketTop}>
             <div className={styles.ticketHeader}>
               <h2>{this.props.data.category}</h2>
-              <AssignedUser />
+              {this.props.userRole && this.props.userRole === 1 ? null : <AssignedUser />}
             </div>
             <div className={styles.ticketId}>
               <p>{this.props.data.ID}</p>
-              <div className={`${styles.circle} ${this.setColour()}`}></div>
+              {this.props.userRole && this.props.userRole === 1 ? null : <div className={`${styles.circle} ${this.setColour()}`}></div>}
             </div>
             <div className={styles.ticketActionButtons}>
               <button className={styles.closeTicketButton} onClick={this.props.closeTicketModal}>

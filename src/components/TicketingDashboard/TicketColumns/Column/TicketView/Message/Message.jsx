@@ -52,7 +52,7 @@ class Message extends Component {
       </div>
     );
 
-    if (this.state.user.name && this.state.user.name === this.props.user.uid) {
+    if (this.props.item.content.name && this.props.item.content.name === this.props.user.uid) {
       return (
         <>
           {pic} {message}
