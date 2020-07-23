@@ -13,18 +13,22 @@ class CreateTicket extends Component {
     modifiedAtDate: [],
     isOpen: true,
     priority: 1,
+    canSubmit: false
   };
 
   getDate = (event) => {
     event.preventDefault();
-    const currentTime = new Date().toLocaleString();
-    const eventLog = [...this.state.eventLog];
-    eventLog[0].date = currentTime;
-    this.setState({
-      eventLog,
-      createdAtDate: currentTime,
-    }, () => this.pushTicketData());
-    ;
+    if (this.state.canSubmit) {
+      const currentTime = new Date().toLocaleString();
+      const eventLog = [...this.state.eventLog];
+      eventLog[0].date = currentTime;
+      this.setState({
+        eventLog,
+        createdAtDate: currentTime,
+      }, () => this.pushTicketData());
+    } else {
+      alert("Please provide a description before creating your ticket");
+    }
   }
 
   captureMessage = (event) => {
@@ -36,8 +40,8 @@ class CreateTicket extends Component {
           name: this.props.user.uid,
           message: event.target.value,
         }
-      }],
-    })
+      }], canSubmit: event.target.value ? true : false,
+    });
   }
 
   pushTicketData = () => {
