@@ -44,7 +44,11 @@ class AssignedUser extends Component {
         if (index < 6) {
           return (
             <div className={styles.displayPeople}>
-              <img onClick={this.setAssignedPerson} id={person.ID} key={person.ID} src={person.img} alt={person.name} />
+              <img onClick={this.setAssignedPerson}
+                id={person.ID}
+                key={person.ID}
+                src={person.img}
+                alt={person.name} />
               <span>{person.name}</span>
             </div>
           )
@@ -74,9 +78,10 @@ class AssignedUser extends Component {
   }
 
   setAssignedPerson = (event) => {
+    console.log(this.props.currentTicket);
     firestore
       .collection('tickets')
-      .doc(this.props.ticketID)
+      .doc(this.props.ticket.ID)
       .update({ assignedTo: firebase.firestore.FieldValue.arrayUnion(event.target.id) })
       .then(this.getAssignedToData);
   }
@@ -84,7 +89,7 @@ class AssignedUser extends Component {
   getAssignedToData = () => {
     firestore
       .collection('tickets')
-      .where("ID", "==", this.props.ticketID)
+      .where("ID", "==", this.props.ticket.ID)
       .get()
       .then((snapshot) => {
         const assignedTo = snapshot.docs[0].data().assignedTo;

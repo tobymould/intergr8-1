@@ -97,7 +97,7 @@ class TicketView extends Component {
             <div className={styles.ticketHeader}>
               <h2>{currentTicket.category}</h2>
               <div className={styles.ticketUser}>
-                <AssignedUser currentTicket={currentTicket} />
+                <AssignedUser ticket={currentTicket} />
               </div>
             </div>
             <div className={styles.ticketId}>

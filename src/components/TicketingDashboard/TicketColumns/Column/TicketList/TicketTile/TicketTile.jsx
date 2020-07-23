@@ -7,7 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 class TicketTile extends Component {
 
   render() {
-    const { ticket, setCurrentTicket } = this.props;
+    const { ticket, currentTicket, setCurrentTicket } = this.props;
     return (
       <article className={styles.TicketTile}>
         <button className={styles.viewTicket} onClick={() => setCurrentTicket(ticket)}>
