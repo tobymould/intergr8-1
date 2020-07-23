@@ -7,7 +7,8 @@
     padding: $base-value;
     background-color: rgba(255, 255, 255, 0.6);
     box-shadow: 0 10px 20px $primary-black-transparent, 0 6px 6px $primary-black-transparent;
-    
+    align-items: flex-start;
+
     @media only screen and (max-width: 800px) {
      width: 85%;
      margin: $base-value auto;
@@ -40,16 +41,11 @@
         width: 120%;
         margin: $base-value auto;
        }
-
-      // width: 30%;
-      // margin-bottom: $base-value;
     }
   }
 
   .ticketTileSection{
     height: $base-value * 50;
     overflow-y: auto;
-    // border: 5px solid blue;
-    // background: blue;
   }
 }
