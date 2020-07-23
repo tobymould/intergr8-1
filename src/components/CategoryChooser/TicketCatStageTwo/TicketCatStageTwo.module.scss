@@ -2,18 +2,16 @@
 
 .ticketCat2 {
   h1 {
-    padding: 20px;
+    padding: 10% 5%;
   }
   display: flex;
   flex-direction: column;
   align-items: center;
   margin: auto;
-  margin-top: 80px;
   overflow-y: auto;
   height: 400px;
   padding: 10px;
   width: 820px;
-
 
   @media screen and (max-width: 800px) {
     width: 375px;
