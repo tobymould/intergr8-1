@@ -3,36 +3,8 @@ import styles from "./Chart.module.scss";
 
 class Chart extends Component {
 
-  state = {
-    multiplier: 1,
-  }
-
   render() {
     const { strokeDash, percent } = this.props;
-
-    // const whatever = window.matchMedia('(max-width: 800px)')
-    // console.log(whatever)
-
-    // const scaleDown = (num) => {
-    //   const whatever = window.matchMedia('(max-width: 800px)')
-    //   if (whatever.matches) return 0.8 * num;
-    // }
-    // const scaleDown = (num) => { return this.state.multiplier * num }
-
-
-    // const listenerFunc = (event) => {
-    //   let px = event.media.slice(12, 15)
-    //   this.setState({ multiplier: Number(px / 1000) })
-    // }
-
-    // const whatever = window.matchMedia('(max-width: 800px)')
-    // const whatevera = window.matchMedia('(max-width: 700px)')
-    // const whateverb = window.matchMedia('(max-width: 600px)')
-    // const whateverc = window.matchMedia('(max-width: 500px)')
-    // const array = [whatever, whatevera, whateverb, whateverc]
-    // array.forEach(el => el.addListener(listenerFunc))
-
-    // console.log(this.state)
 
     return (
       <>
