@@ -103,6 +103,7 @@ class TicketView extends Component {
       if (this.state.image) {
         console.log(this.state.image)
         this.setState({
+            modifiedAtDate: [...this.state.modifiedAtDate, currentTime],
             eventLog: [...this.state.eventLog, {
                 type: 'fileUpload',
                 details: 'File was uploaded',
@@ -185,6 +186,7 @@ class TicketView extends Component {
         })
         .then((docRef) => {
             console.log('success');
+            alert('Ticket sent, refresh dashboard to view')
             // this.updateTicketView();
         })
         .catch((err) => console.error(err));
