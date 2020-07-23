@@ -44,7 +44,7 @@ class TicketTile extends Component {
         {this.props.data.map((obj) => (
           <section key={obj.ID} onClick={() => this.openTicketModal(obj)} className={styles.TicketTile}>
             <div>
-              <h3>{obj.title}</h3>
+              <h3>{obj.category}</h3>
               <p>Employee ID: {obj.createdBy}</p>
               <p>Ticket ID: {obj.ID}</p>
               <p>Date: {obj.createdAtDate}</p>

@@ -8,7 +8,9 @@ describe("CreateTicket tests", () => {
   let component;
 
   beforeEach(() => {
-    component = shallow(<CreateTicket data={sampleTicket[4]} choices={["Health & Safety", "What health and safety policies are in place"]} />);
+    component = shallow(<CreateTicket user={{
+      id: 'hrigjgjnds'
+    }} choices={["Health & Safety", "What health and safety policies are in place"]} />);
   })
 
   it('should render', () => {

@@ -1,7 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
 /* Yellows */
-/* Blacks */
-/* Greys */
+/* Blacks and greys */
 /* Whites */
 /* Greens */
 /* Red */
@@ -69,27 +67,18 @@
 }
 
 .stageThree {
+  margin: 0 auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  text-align: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  height: 100%;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-}
-
-@media screen and (max-width: 800px) {
-  .stageThree {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    padding: 95px;
-    margin-left: 95px;
-  }
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-top: 80px;
+  width: 90%;
+  buttonCheckout-width: 300px;
 }
 /*# sourceMappingURL=TicketCatStageThree.module.css.map */

@@ -66,31 +66,17 @@
   }
 }
 
-.chart {
-  -webkit-box-shadow: 0 10px 20px #14141433, 0 6px 6px #14141433;
-          box-shadow: 0 10px 20px #14141433, 0 6px 6px #14141433;
-  -webkit-transform: rotate(-90deg);
-          transform: rotate(-90deg);
-  border-radius: 50%;
-  background: #c6bfaf;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+.button {
+  background-color: #f2b423;
+  display: block;
+  width: 100%;
+  padding: 10px 0;
+  border: none;
+  border-radius: 3px;
+  outline: none;
 }
 
-.chart .innerCircle {
-  fill: #F1F1F1;
+.button:hover {
+  background-color: #e39816;
 }
-
-.chart .outerCircle {
-  fill: #c6bfaf;
-  stroke: #f2b423;
-  stroke-width: 120;
-}
-/*# sourceMappingURL=Chart.module.css.map */
+/*# sourceMappingURL=SubmitButton.module.css.map */
