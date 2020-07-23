@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import firebase from "../firebase";
+import firebase from "../../../firebase";
 import { Router, globalHistory } from "@reach/router";
-import TicketingDashboard from '../components/TicketingDashboard';
-import CategoryChooser from '../components/CategoryChooser';
-import SuperUserDashboard from '../components/SuperUserDashboard';
-import CreateTicket from '../components/CategoryChooser/CreateTicket';
-import TicketView from '../components/TicketingDashboard/TicketColumns/Column/TicketView';
-import NavBar from '../components/NavBar';
+import TicketingDashboard from '../../../components/TicketingDashboard';
+import CategoryChooser from '../../../components/CategoryChooser';
+import SuperUserDashboard from '../../../components/SuperUserDashboard';
+import CreateTicket from '../../../components/CategoryChooser/CreateTicket';
+import TicketView from '../../../components/TicketingDashboard/TicketColumns/Column/TicketView';
+import NavBar from '../../../components/NavBar';
 
 
 class PrivateRoutes extends Component {
