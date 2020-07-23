@@ -14,6 +14,10 @@
      margin: 0.5*$base-value auto;
     }
 
+    @media only screen and (max-width: 700px) {
+      font-size: 0.9rem;
+    }
+
     .topOfColumn {
     // height: 10%;
     display: flex;
@@ -27,20 +31,11 @@
       font-size: $standard;
       // padding: 0.5*$base-value;
     }
+
     select {
       font-size: $small;
       padding: 0.1*$base-value;
       width: 100%;
-      @media only screen and (max-width: 1200px) {
-        max-width: 90px;
-        width: 100%;
-        margin: $base-value auto;
-       }
-      @media only screen and (max-width: 800px) {
-        max-width: 150px;
-        width: 120%;
-        margin: $base-value auto;
-       }
     }
   }
 
