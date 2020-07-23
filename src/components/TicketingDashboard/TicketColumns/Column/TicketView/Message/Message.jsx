@@ -15,7 +15,6 @@ class Message extends Component {
   // </section> */}
 
   typeOfMessage() {
-    let name;
     const pic = <img src={olly} alt="Employee pic" />;
     const message = (
       <div className={styles.messageContent}>
