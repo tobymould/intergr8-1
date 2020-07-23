@@ -86,8 +86,23 @@
       box-shadow: 0 5px 10px $primary-black-transparent, 0 3px 3px $primary-black-transparent;
       padding: 5px 10px;
 
+      .categoryTitle {
+        display: flex;
+        width: 20%;
+        justify-content: space-between;
+        margin-right: 16px;
+
+        &:last-child{
+          margin-right: 0;
+        }
+
+        span {
+          margin-left: 6px;
+        }
+      }
+
       &:first-child {
-        padding-left: 55px;
+        // padding-left: 55px; removed by Steph
       }
 
       p {
@@ -132,7 +147,36 @@
       height: calc(100vh - 280px);
     }
 
-    
+    .tableColumns {
+      height: calc(100vh - 280px);
+      // width: calc(100% - 20px);
+      display: flex;
+      flex-direction: row;
+      
+      .categoryColumn {
+        width: 20%;
+        padding: 8px 10px;
+        // border-right: 1px solid rgba(0, 0, 0, 0.075);
+
+        &:last-child{
+          border-right: none;
+        }
+
+        // &:first-child,
+        // &:nth-child(odd) {
+          
+        // }
+
+        .subcategoriesTitle {
+          display: flex;
+          justify-content: space-between;
+
+          .buttonContainer {
+            display: flex;
+          }
+        }
+      }
+    }
   }
 
 }

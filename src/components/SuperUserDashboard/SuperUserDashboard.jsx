@@ -14,6 +14,7 @@ class SuperUserDashboard extends Component {
     users: [],
     idDisplayDeleteUser: false,
     filterText: '',
+    isDisplayAddSubcategory: false,
   }
 
   toggleDeleteUser = (event) => {
@@ -52,7 +53,14 @@ class SuperUserDashboard extends Component {
       })
   }
 
+  // steph and niall
+
+  toggleAddSubcategoryInput = (event) => {
+    this.setState({ isDisplayAddSubcategory: !this.state.isDisplayAddSubcategory })
+  }
+
   render() {
+
     // const mapUserData = this.state.users
     //   .filter((user) => user.name.toLowerCase().includes(this.state.filterText))
     //   .map((person) => {
@@ -69,32 +77,63 @@ class SuperUserDashboard extends Component {
               <h3>Head of HR</h3>
             </div>
           </div>
-          <div className={styles.searchBox}>
+
+          {/* Removed by Steph */}
+          {/* <div className={styles.searchBox}>
             <input type="text" id="search" placeholder="Search users" autoComplete="false" onChange={e => this.setState({ filterText: e.target.value.toLowerCase() })} />
             <span>
               <label htmlFor="search">
                 <FontAwesomeIcon icon="search" />
               </label>
             </span>
-          </div>
+          </div> */}
         </section>
         <section className={styles.SuperUserEmployee}>
         <div className={styles.tableHeader}>
-          {/* 
-            <p className={styles.name}>Name</p>
-            <p className={styles.email}>Email</p>
-            <p className={styles.password}>Password</p>
-            <p className={styles.userType}>User Type</p>
-            <span className={styles.SuperUserAddBtn} onClick={this.toggleAddUser}>
-              <p>Add User</p>
-              <FontAwesomeIcon icon="user-plus" />
-            </span>
-          {this.displayAddUser()}
-          { {this.displayEditUser()} }
-          { {this.displayDeleteUser()} */}
+          {this.props.categories.map((category) => {
+          return (
+            <div className={styles.categoryTitle}>
+              <div className={styles.categoryTitleText}>
+                <p>{category.title}</p>
+              </div>
+              <div className={styles.buttonContainer}>
+                <span onClick={this.toggleAddSubcategoryInput}>
+                  <FontAwesomeIcon icon="plus-circle" title="Add Subcategory" />
+                </span>
+                <span>
+                  <FontAwesomeIcon icon="pencil-alt" title="Edit Subcategories" />
+                </span>
+              </div>
+            </div>
+          )})
+          } 
+          {/* {this.displayAddUser()} */}
+          {/* { {this.displayEditUser()} } */}
+          {/* { {this.displayDeleteUser()} */}
            </div>
-          <div className={styles.tableRowScroll}>
-            {this.props.categories.map((category) => <p>{category.title}</p>)}
+          <div className={styles.tableColumns}>
+          {this.props.categories.map((category) => {
+            return (  
+              <div className={styles.categoryColumn}>
+                <article>{category.queries.map(query => {
+                  return (
+                    <div className={styles.subcategoriesTitle}>
+                      <p>{query}</p>
+                      <div className={styles.buttonContainer}>
+                        <span>
+                          {/* <FontAwesomeIcon icon="trash-alt" /> */}
+                        </span>
+                      </div>
+                    </div>
+
+                  )
+                  })}</article>
+                
+              </div>
+            )
+
+          }
+          )}
             {/* {mapUserData} */}
           </div>
         </section>
