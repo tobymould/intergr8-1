@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import ChartPanel from './ChartPanel';
 import TicketColumns from './TicketColumns/TicketColumns';
 import styles from './TicketingDashboard.module.scss';
-import NavBar from '../../components/NavBar';
 import { firestore } from '../../firebase';
 
 class TicketingDashboard extends Component {

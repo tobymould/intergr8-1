@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import NavBar from "../NavBar";
 import styles from "./SuperUserDashboard.module.scss";
 import olly from '../TicketingDashboard/TicketColumns/Column/TicketView/olly.jpg';
 import TableRow from './TableRow'

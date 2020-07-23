@@ -3,7 +3,6 @@ import styles from './TicketView.module.scss';
 import Message from './Message';
 import Button from "../../../../../utilities/Button";
 import ResolveTicketModal from './ResolveTicketModal';
-import NavBar from '../../../../NavBar'
 
 import AssignedUser from "../../../../AssignedUser";
 
