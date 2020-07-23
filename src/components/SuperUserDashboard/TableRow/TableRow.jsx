@@ -4,8 +4,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { firestore } from "../../../firebase";
 import DeleteUser from '../DeleteUser';
 
-
-
 class TableRow extends Component {
 
   state = {
@@ -40,34 +38,12 @@ class TableRow extends Component {
         return "Employee";
     }
   }
-
-    buildDropDown = () => {
-      if (this.displayRole() === "Employee") {
-        return (
-          <>
-          <option value='Employee' selected>Employee</option>
-          <option value='Agent'>Agent</option>
-          <option value='SuperAgent'>SuperAgent</option>
-          </>
-        )
-      } else if (this.displayRole() === "Agent") {
-        return (
-          <>
-          <option value='Employee'>Employee</option>
-          <option value='Agent' selected>Agent</option>
-          <option value='SuperAgent'>SuperAgent</option>
-          </>
-        )
-      } else if (this.displayRole() === "Super Agent") {
-          return (
-            <>
-            <option value='Employee'>Employee</option>
-            <option value='Agent'>Agent</option>
-            <option value='SuperAgent' selected>SuperAgent</option>
-            </>
-          )
-        }
-      }
+  
+  buildDropDown = () => {
+    if (this.displayRole() === "Employee") return "Employee"
+      else if (this.displayRole() === "Agent") return "Agent"
+      else if (this.displayRole() === "Super Agent") return "SuperAgent"
+    }
 
   toggleEditUser = () => {
     this.setState({
@@ -108,14 +84,16 @@ class TableRow extends Component {
       return (
       <article className={styles.TableRow}>
         <div className={styles.imageEdit}>
-          <img src={img} alt="employee" id="img" onClick={this.displayModalPopup}/>
+          {img ? <img src={img} alt="employee" onClick={this.displayModalPopup}/> : <FontAwesomeIcon onClick={this.displayModalPopup} className={styles.icon} icon="user-circle"/>}
           {this.renderModalPopup()}
           <input className={styles.name} type="text" id="name" defaultValue={name} onInput={(e) => this.setState({ update: {...this.state.update, name: e.target.value } })}/>
         </div>
           <input className={styles.email} type="email" defaultValue={email} onInput={(e) => this.setState({ update: {...this.state.update, email: e.target.value } })}/>
           <input className={styles.password} type="password" defaultValue={password} onInput={(e) => this.setState({ update: {...this.state.update, password: e.target.value } })}/>
-        <select className={styles.userType} onChange={(e) => this.setState({ update: {...this.state.update, role: this.changeRole(e) }})}>
-          {this.buildDropDown()}
+        <select value={this.buildDropDown()} className={styles.userType} onChange={(e) => this.setState({ update: {...this.state.update, role: this.changeRole(e) }})}>
+            <option value='Employee'>Employee</option>
+            <option value='Agent'>Agent</option>
+            <option value='SuperAgent'>SuperAgent</option>
         </select>
         <div className={styles.buttonContainer}>
           <span>
@@ -130,7 +108,7 @@ class TableRow extends Component {
       return (
         <article className={styles.TableRow}>
           <div className={styles.imgName}>
-            <img src={img} alt="employee"/>
+          {img ? <img src={img} alt="employee"/> : <FontAwesomeIcon className={styles.icon} icon="user-circle"/>}
             <p className={styles.name}>{name}</p>
           </div>
             <p className={styles.email}>{email}</p>
@@ -156,9 +134,9 @@ class TableRow extends Component {
     .update({...this.state.update})
     .then((docRef) => {
       this.props.getUsers();
+      this.toggleEditUser();
     })
     .catch((err) => console.error(err));
-    this.toggleEditUser();
   }
 
   render() { 

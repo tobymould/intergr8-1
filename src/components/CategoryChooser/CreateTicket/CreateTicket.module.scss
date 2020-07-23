@@ -6,66 +6,305 @@
   box-sizing: border-box;
 }
 
-.backGround {
-  position: relative;
-  padding: 10px;
-  background-color: #f2b423;
-  margin: 100px auto;
-  border-radius: 10px;
-  width: 270px;
+.createTicketBackground {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  // display: none; /* Hidden by default */
+  width: 100%; /* Full width */
+  height: 75vh; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  text-align: center;
 
-  .topField {
-    display: flex;
+  .createTicketContainer {
+    @include standard_vertical_layout;
     justify-content: space-between;
-  }
-
-  .topBanner {
-    display: inline-block;
-    color: white;
-    border: 1px solid black;
-    background-color: black;
-    border-radius: 5px;
     position: relative;
-    left: -40px;
-    top: -15px;
-    padding: 10px;
-  }
+    background-color: transparent;
+    border: $medium solid $primary-yellow;
+    width: 60%;
+    min-width: 300px;
+    height: 80%;
+    min-height: 250px;
+    box-shadow: $primary-shadow, $secondary-shadow;
+    background-color: transparent;
+    background-image: linear-gradient($white-opaque 0%, $white-opaque 100%);
+    background-size: cover;
 
-  p {
-    display: inline-block;
-  }
+    .topField {
+      @include standard_vertical_layout;
+      height: 25%;
+      width: 100%;
+      text-align: center;
 
-  form {
+      > h2 {
+        padding: 0;
 
-    label {
-      display: block;
-
-      select {
-        display: block;
-        width: 250px;
-        border-radius: 5px;
+        @media screen and (max-width: 600px) {
+          font-size: 1.3em;
+        }
+      }
+      > h3 {
+        @media screen and (max-width: 600px) {
+          font-size: 1em;
+        }
       }
 
-    textarea {
-      display: block;
-      width: 250px;
-      height: 100px;
+      .yourTicket {
+        padding: 0;
+      }
+    }
+
+    .topBanner {
+      color: $secondary-yellow;
+      border: none;
+      outline: none;
+      position: absolute;
+      left: -40px;
+      top: -15px;
+      border: 1px solid $secondary-black;
       border-radius: 5px;
+      padding: 10px;
+      box-shadow: $secondary-shadow;
+      background-color: $secondary-black;
+
+      @media screen and (max-width: 700px) {
+        display: none;
+      }
     }
+
+    p {
+      display: inline-block;
     }
-  .btnCreateTicket {
-    background-color: maroon;
-    border-radius: 5px;
-    color: white;
-    width: 230px;
-    padding: 5px;
-    margin: 10px;
-  }
+
+    .formWrapper {
+      padding: 10px;
+      border-top: $primary-black 2px solid;
+      width: 100%;
+      height: 75%;
+    }
+
+    form {
+      @include standard_vertical_layout;
+      width: 100%;
+      height: 100%;
+
+      div {
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        text-align: left;
+        height: 20%;
+        width: 80%;
+
+        > * {
+          @media screen and (max-width: 600px) {
+            font-size: 0.8em;
+          }
+        }
+
+        &.categoriesContainer > :nth-child(2n) {
+          font-weight: bolder;
+        }
+
+        &.descriptionContainer {
+          height: 60%;
+          > textarea {
+            height: 90%;
+            outline: none;
+            resize: none;
+            padding: 10px 5px;
+            border: 1px solid $primary-black;
+            border-radius: 0px 2px 2px 0px;
+            background-color: transparent;
+            color: $secondary-black;
+            outline: none;
+            transition: border-color ease-in-out 1s;
+            @media screen and (max-width: 900px) {
+              width: 100%;
+            }
+
+            &:focus,
+            &:focus ~ label {
+              border-color: $primary-yellow;
+
+              &::placeholder {
+                color: $light-grey;
+              }
+            }
+
+            &:-webkit-autofill,
+            &:-webkit-autofill ~ label,
+            &:-webkit-autofill:focus,
+            &:-webkit-autofill:focus ~ label {
+              color: $secondary-yellow;
+              background-color: $secondary-black-opaque;
+              transition-duration: 0ms;
+            }
+          }
+
+          > label {
+            @media screen and (max-width: 900px) {
+              display: none;
+            }
+          }
+        }
+
+        span,
+        label,
+        textarea {
+          text-align: left;
+          width: 50%;
+          outline: none;
+        }
+
+        .italic {
+          font-style: italic;
+          width: 50%;
+          font-size: 1rem;
+        }
+      }
+      .btnCreateTicket {
+        background-color: $primary-black;
+        color: white;
+        display: block;
+        width: 80%;
+        padding: 10px 0;
+        border: none;
+        border-radius: 3px;
+        outline: none;
+
+        &:hover {
+          background-color: $secondary-black-opaque;
+          cursor: pointer;
+        }
+      }
+    }
   }
 }
 
-.formCreateTicket {
-  span {
-    display: block;
+@import "../../../variables.scss";
+
+.CreateUserModal {
+  @include standard_vertical_layout;
+  // display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  backdrop-filter: blur(10px);
+  background-color: $primary-black-transparent;
+  padding-top: 50px;
+  text-align: center;
+
+  .CreateUserContainer {
+    box-shadow: $primary-shadow, $secondary-shadow;
+    @include standard_vertical_layout;
+    height: 70%;
+    width: 90%;
+    border: $medium solid $primary-yellow;
+    background-color: transparent;
+    background-image: linear-gradient($white-opaque 0%, $white-opaque 100%);
+    background-size: cover;
+    z-index: 2;
+
+    @media screen and (min-width: 600px) {
+      height: 70%;
+      width: 40%;
+    }
+  }
+
+  .CreateUserModalContent {
+    @include standard_vertical_layout;
+    justify-content: center;
+    background-color: transparent;
+    width: 80%;
+    height: 90%;
+    display: flex;
+    justify-content: space-between;
+    text-align: left;
+
+    div {
+      width: 90%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .DropDown {
+      box-shadow: $secondary-shadow;
+      border-radius: $medium;
+      font-family: $main-fonts;
+      font-size: $standard;
+      border: 2px solid $primary-yellow;
+    }
+
+    input[type="text"],
+    input[type="tel"],
+    input[type="email"] {
+      //   width: 60%;
+      //   height: 200px;
+      background-color: $secondary-black;
+      border: 1px solid $light-grey;
+      border-radius: 2px;
+      background-color: transparent;
+      color: $dark-grey;
+      height: 35px;
+      outline: none;
+      transition: color ease-in-out 1s, background-color ease-in-out 1s, border-color ease-in-out 1s;
+
+      &:focus {
+        color: $white;
+        background-color: $secondary-black-opaque;
+        outline: none;
+        border-color: $primary-yellow;
+
+        &::placeholder {
+          color: $light-grey;
+        }
+      }
+    }
+
+    input[type="file"] {
+      width: 200px;
+    }
+
+    .cancelBtn {
+      background-color: rgb(160, 160, 160);
+      display: block;
+      width: 100%;
+      padding: 10px 0;
+      border: none;
+      border-radius: 3px;
+      outline: none;
+      margin-bottom: 10px;
+      cursor: pointer;
+      font-size: 1em;
+
+      &:hover {
+        background-color: rgb(91, 89, 89);
+      }
+    }
+
+    .submitBtn {
+      background-color: $primary-yellow;
+      display: block;
+      width: 100%;
+      padding: 10px 0;
+      border: none;
+      border-radius: 3px;
+      outline: none;
+      margin-bottom: 10px;
+      cursor: pointer;
+      font-size: 1em;
+      font-weight: bold;
+
+      &:hover {
+        background-color: $secondary-yellow;
+      }
+    }
   }
 }

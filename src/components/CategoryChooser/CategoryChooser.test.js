@@ -3,12 +3,11 @@ import CategoryChooser from "./CategoryChooser";
 import { shallow } from 'enzyme';
 import tileData  from "../../data/tileData";
 
-describe("CategoryChooser tests", () => {
-  
-  let component;
+describe("Stage1 component tests", () => {
+  let component
 
   beforeEach(() => {
-    component = shallow(<CategoryChooser />);
+    component = shallow(<CategoryChooser />, { disableLifecycleMethods: true });
   })
 
   it('should render', () => {

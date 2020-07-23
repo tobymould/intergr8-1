@@ -1,7 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
 /* Yellows */
-/* Blacks */
-/* Greys */
+/* Blacks and greys */
 /* Whites */
 /* Greens */
 /* Red */
@@ -196,18 +194,40 @@
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: horizontal;
-          flex-direction: horizontal;
-  -webkit-box-align: space-between;
-      -ms-flex-align: space-between;
-          align-items: space-between;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
-.ResolveModal .ModalContent .ButtonWrapper {
-  width: 40%;
-  padding: 5%;
+.ResolveModal .ModalContent .ButtonsWrapper .btnConfirm,
+.ResolveModal .ModalContent .ButtonsWrapper .btnCancel {
+  background-color: #f2b423;
+  display: block;
+  width: 100%;
+  padding: 10px 0;
+  border: none;
+  border-radius: 3px;
+  outline: none;
+  margin: 5px;
+}
+
+.ResolveModal .ModalContent .ButtonsWrapper .btnConfirm:hover,
+.ResolveModal .ModalContent .ButtonsWrapper .btnCancel:hover {
+  background-color: #e39816;
+}
+
+.ResolveModal .ModalContent .ButtonsWrapper .btnCancel {
+  background-color: #141414;
+  color: white;
+  display: block;
+  width: 100%;
+  padding: 10px 0;
+  border: none;
+  border-radius: 3px;
+  outline: none;
+  margin: 5px;
+}
+
+.ResolveModal .ModalContent .ButtonsWrapper .btnCancel:hover {
+  background-color: #222222e6;
 }
 /*# sourceMappingURL=ResolveTicketModal.module.css.map */
