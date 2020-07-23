@@ -199,6 +199,8 @@ class TicketView extends Component {
         updateInputResolve={this.updateInputResolve}
         toggleResolveTicketDisplay={this.toggleResolveTicketDisplay}
         closeTicket={this.props.closeTicket}
+        // firebaseCall={this.props.firebaseCall}
+     
       />
     ) : null;
     const displayResolveTicket = this.state.resolveTicketDisplay ? (
@@ -228,7 +230,7 @@ class TicketView extends Component {
               </button>
               <button className={styles.resolveBtn} onClick={this.toggleResolveModal}>
                 Resolve Ticket
-            </button>
+              </button>
             </div>
           </section>
           <div className={styles.messageContainer}>
@@ -246,7 +248,7 @@ class TicketView extends Component {
           </section>
         </article>
         {displayResolve}
-      </div >
+      </div>
     );
   }
 }
