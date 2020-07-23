@@ -29,7 +29,7 @@ class PrivateRoutes extends Component {
     .get()
     .then(doc => {
       if (doc.exists) {
-        this.setState({role: doc.data().role});
+        this.setState({role: doc.data().role}, () => console.log(this.state.role));
       } else {
           console.log("No such document!");
       }
@@ -50,7 +50,10 @@ class PrivateRoutes extends Component {
       <>
         <NavBar signOut={this.props.signOut} />
         <Router>
-          <TicketingDashboard default path="dashboard" user={user}  />
+          {this.state.role === 1
+          ? <UserDashboard default path="dashboard" user={user}  />
+          : <TicketingDashboard default path="dashboard" user={user}  />
+        }
           <CategoryChooser path="catalogue" user={user}  />
           <TicketView path="viewticket" user={user}  />
           <CreateTicket path="createticket" user={user}  />
