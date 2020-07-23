@@ -59,14 +59,14 @@ class PrivateRoutes extends Component {
       <>
         <NavBar signOut={this.props.signOut} userRole={this.state.role}/>
         <Router>
-          {this.state.role === 1
+          {this.state.role && this.state.role === 1
             ? <UserDashboard default path="dashboard" user={user}  />
             : <TicketingDashboard default path="dashboard" user={user}  />
           }
           <CategoryChooser path="catalogue" user={user} />
           <TicketView path="viewticket" user={user}  />
           <CreateTicket path="createticket" user={user}  />
-          {this.state.role === 3
+          {!this.state.role || this.state.role === 3
 
             ? <SuperUserDashboard
               path="superuser"

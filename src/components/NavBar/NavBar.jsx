@@ -47,10 +47,23 @@ class NavBar extends Component {
     return this.state.navOpen ? "arrow-right" : "bars";
   }
 
-  renderNav = () => {return this.navItems.filter((item, index) => {
-    return item.restrictedToRole <= this.props.userRole
-  })
+  renderNav = () => {
+    if (this.props.userRole) {
+      return this.navItems.filter((item, index) => {
+      return item.restrictedToRole <= this.props.userRole
+    })
     .map((item, index) => {
+      const { signOut } = this.props;
+      return <Link
+        key={index}
+        to={item.link}>
+        <h3 onClick={item.title === 'Logout' ? signOut : null}>
+          {item.title}
+        </h3>
+      </Link>
+    })
+    } else {
+    return this.navItems.map((item, index) => {
     const { signOut } = this.props;
     return <Link
       key={index}
@@ -60,7 +73,7 @@ class NavBar extends Component {
       </h3>
     </Link>
   })
-  }
+  }}
    // own components?
 
   render() {

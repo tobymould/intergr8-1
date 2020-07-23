@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import TicketColumns from './TicketColumns/TicketColumns';
 import styles from './UserDashboard.module.scss';
-import NavBar from '../NavBar';
 import { firestore } from '../../firebase';
 
 class userDashboard extends Component {
@@ -24,7 +23,6 @@ class userDashboard extends Component {
     const { allTickets } = this.state;
     return (
       <section className={styles.userDashboard}>
-        <NavBar user={this.props.user} signOut={this.props.signOut} />
         <TicketColumns allTickets={allTickets}/>
       </section>
     );
