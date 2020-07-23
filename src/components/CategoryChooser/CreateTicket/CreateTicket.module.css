@@ -1,7 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
 /* Yellows */
-/* Blacks */
-/* Greys */
+/* Blacks and greys */
 /* Whites */
 /* Greens */
 /* Red */
@@ -113,6 +111,10 @@
   display: block;
 }
 
+.backGround form label .italic {
+  font-style: italic;
+}
+
 .backGround form label select {
   display: block;
   width: 250px;
@@ -133,5 +135,9 @@
   width: 230px;
   padding: 5px;
   margin: 10px;
+}
+
+.formCreateTicket span {
+  display: block;
 }
 /*# sourceMappingURL=CreateTicket.module.css.map */

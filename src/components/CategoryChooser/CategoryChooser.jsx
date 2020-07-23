@@ -5,7 +5,6 @@ import TicketCatStageTwo from "./TicketCatStageTwo";
 import TicketCatStageThree from "./TicketCatStageThree";
 import CreateTicket from "./CreateTicket";
 import FAQs from "./FAQs";
-import NavBar from '../../components/NavBar';
 import Button from "../../utilities/Button";
 import { firestore } from "../../firebase";
 
@@ -99,7 +98,6 @@ class CategoryChooser extends Component {
   render() {
     return (
       <>
-        <NavBar />
         <section className={styles.categoryChooser}>
           {this.getCategory()}
           <div className={styles.backContainer}>

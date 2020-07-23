@@ -26,31 +26,32 @@
             // height: 175px;
         
 
-            input{
-                margin: 2px 0 12px 0;
-                width: 92%;
-                padding: 4px 8px;
-            }
+      input {
+        margin: 2px 0 12px 0;
+        width: 92%;
+        padding: 4px 8px;
+      }
 
-            .closeIcon {
-                position: absolute;
-                top: 5px;
-                right: 7.5px;
-            }
+      .closeIcon {
+        position: absolute;
+        top: 5px;
+        right: 7.5px;
+      }
 
-            .displayPeople{
-                display: flex;
-                align-items: center;
-                margin: 8px 0;
-            }
+      .displayPeople {
+        display: flex;
+        align-items: center;
+        margin: 8px 0;
+      }
 
-            img {
-                margin-right: 8px;
-                border: 1px solid #f1f1f1;
-            }
-        }
+      img {
+        margin-right: 8px;
+        border: 1px solid #f1f1f1;
+      }
     }
+  }
 
+<<<<<<< HEAD
     .assignedPerson{
         display: flex;
         flex-direction: column;
@@ -76,19 +77,38 @@
             text-align: center;
             padding: 5px;
             // background: blue;
+=======
+  .assignedPerson {
+    display: flex;
+    flex-direction: row;
+    margin-left: 20px;
+    align-items: center;
+    justify-content: space-evenly;
+>>>>>>> b9010e1c049b4f17b0a16d411d39630422749850
 
-            div {
-                // background: red;
-                padding: 0;
-                margin: 0;
-            }
-        }
-    }
+    div {
+      width: 50px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 5px;
+      // background: blue;
 
-    img {
-        height: 38px;
-        width: 38px;
-        object-fit: cover;
-        border-radius: 50%;
+      div {
+        // background: red;
+        padding: 0;
+        margin: 0;
+      }
     }
+  }
+
+  img {
+    height: 38px;
+    width: 38px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
 }
