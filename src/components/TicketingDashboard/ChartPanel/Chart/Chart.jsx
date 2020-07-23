@@ -28,12 +28,14 @@ class Chart extends Component {
             fill="url(#myGradient)"
           />
           <circle className={styles.innerCircle} r="44" cx="80" cy="80" />
-          <text
-            x="57.5"
+
+          <text 
+            x="48"
             y="-10"
-            style={{ "fontSize": 30, "fontFamily": "Poppins" }}
+            style={{ "fontSize": 30, "fontFamily": "Poppins", "background": "blue" }}
             transform="rotate(90, 30, 30)"
           >{`${Math.round(percent)}%`}</text>
+ 
         </svg>
       </>
     );

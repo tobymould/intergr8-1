@@ -12,7 +12,7 @@ state = {
       <div>
         {this.props.data.map((obj) => (
           <section className={styles.TicketTile}>
-            <div>
+            <div className={styles.TicketContent} >
               <h3>{obj.title}</h3>
               <p>Employee ID: {obj.createdBy}</p>
               <p>Ticket ID: {obj.ID}</p>
