@@ -3,7 +3,6 @@ import styles from './TicketView.module.scss';
 import Message from './Message';
 import Button from "../../../../../utilities/Button";
 import ResolveTicketModal from './ResolveTicketModal';
-import NavBar from '../../../../NavBar'
 
 import AssignedUser from "../../../../AssignedUser";
 
@@ -82,7 +81,6 @@ class TicketView extends Component {
         this.automaticUpdateState()
         return (
             <>
-                <NavBar signOut={this.props.signOut} />
                 <article className={styles.TicketView}>
                     <section className={styles.ticketTop}>
                         <div className={styles.ticketHeader}>

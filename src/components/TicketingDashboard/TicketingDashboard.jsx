@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import ChartPanel from './ChartPanel';
 import TicketColumns from './TicketColumns/TicketColumns';
 import styles from './TicketingDashboard.module.scss';
-import NavBar from '../../components/NavBar';
 import { firestore } from '../../firebase';
 
 class TicketingDashboard extends Component {
@@ -52,7 +51,6 @@ class TicketingDashboard extends Component {
     const { allTickets, percentUnassignedTickets, percentInProgressTickets, percentUserInProgressTickets } = this.state;
     return (
       <section className={styles.ticketingDashboard}>
-        <NavBar user={this.props.user} signOut={this.props.signOut} />
         <ChartPanel percentUnassignedTickets={percentUnassignedTickets} percentInProgressTickets={percentInProgressTickets} percentUserInProgressTickets={percentUserInProgressTickets} />
         <TicketColumns allTickets={allTickets}/>
       </section>
