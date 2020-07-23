@@ -72,17 +72,17 @@ class AssignedUser extends Component {
   } 
 
   setAssignedPerson = (event) => {
-    firestore
+     firestore
       .collection('tickets')
       .doc(this.props.ticketID)
-      .set({ assignedTo: event.target.id })
-      .then((res) => {
+      // .set({ assignedTo: event.target.id}, { merge: true })
+      .update({ assignedTo:firebase.firestore.FieldValue.arrayUnion(event.target.id)})
+      // .then((res) => {
         this.setState({
           assignedPerson: event.target.id,
           modalPopup: !this.state.modalPopup
-        });
-      })
-      .catch((err) => console.log(err));
+        // });  
+       })
   }
 
   getAssignedPerson = () => {
@@ -96,7 +96,8 @@ class AssignedUser extends Component {
         )}
       return null;
   })
-  }
+}
+  
 
   render() {
   
@@ -104,11 +105,11 @@ class AssignedUser extends Component {
         <div className={styles.assignedUserWrapper}>
           {/* Assign Person Button (that creates the Modal)*/}
           <div className={styles.modalStyle}>
-            <span>Assigned person: </span>
-            <span onClick={this.displayModalPopup}>
+            <span className={styles.trailer}>Assigned person: </span>
+            <span className={styles.trailer} onClick={this.displayModalPopup}>
               <FontAwesomeIcon icon="plus-circle"/>
             </span>
-            {this.renderModalPopup()}
+              {this.renderModalPopup()}
           </div>
 
           {/* Presents the SELECTED Person on the page */}

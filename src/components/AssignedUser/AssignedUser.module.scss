@@ -1,16 +1,21 @@
 @import "../../variables.scss";
 
 .assignedUserWrapper {
+    // background: blue;
     display: flex;
     flex-direction: column;
     // border: 2px solid black;
 
     .modalStyle{
+        z-index: 1;
+        // background: blue;
+        width: 170px;
 
         .modalPopupStyle{
-            position: absolute;
-            left: 148px;
-            top: 77px;
+            position: relative;
+            right: 100px;
+            // background: red;
+            // margin-right: 100px;
             z-index: 2;
             background: #f7f7f7;
             padding: 10px;
@@ -19,6 +24,7 @@
             border: 1px solid grey;
             box-shadow: 0 8px 16px -4px rgba(9,30,66,.25), 0 0 0 1px rgba(9,30,66,.08);
             // height: 175px;
+        
 
             input{
                 margin: 2px 0 12px 0;
@@ -48,7 +54,16 @@
     .assignedPerson{
         display: flex;
         flex-direction: column;
-        // width: 100px;
+        align-items: center;
+        z-index: 2;
+    
+        img {
+            border: 1px solid;
+        }
+
+        span {
+            text-align: center;
+        }
      
         div{
             width: 50px;

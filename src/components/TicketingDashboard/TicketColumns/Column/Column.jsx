@@ -58,7 +58,7 @@ class Column extends Component {
             <div onChange={this.sortOptions}>{this.renderFilter()}</div>
             <button onClick={this.unfilterUser}>Clear filter</button>
           </div>
-          <section title={this.props.title}>
+          <section title={this.props.title} className={styles.tileView}>
             <TicketTile data={this.state.filteredTickets} />
           </section>
         </article>

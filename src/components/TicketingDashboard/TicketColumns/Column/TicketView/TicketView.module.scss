@@ -38,6 +38,13 @@ $white: #fcfcfb;
     .ticketHeader {
       justify-content: space-around;
       padding: 5px;
+
+      .assignedUser {
+        position: absolute;
+        left: 148px;
+        top: 50px;
+        z-index: 2;
+      }
     }
     .ticketId {
       display: flex;
