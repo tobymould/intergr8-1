@@ -1,0 +1,43 @@
+@import "../../../../variables.scss";
+
+.TicketColumn {
+    max-width: 600px;
+    width: 100%;
+    margin: 2.5%;;
+    box-shadow: 0 10px 20px $primary-black-transparent, 0 6px 6px $primary-black-transparent;
+    border-radius: 5px;
+    padding: $base-value;
+    background-color: rgba(255, 255, 255, 0.6);
+
+    
+
+
+  .topOfColumn {
+    // height: 10%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: $base-value;
+    // background: blue;
+    
+    h3 {
+      font-size: $standard;
+      // padding: 0.5*$base-value;
+    }
+    select {
+      font-size: $small;
+      padding: 0.1*$base-value;
+      // margin-bottom: $base-value;
+    }
+  }
+
+  .ticketTileSection{
+    // height: $base-value * 50;
+    max-height: calc(100vh - 210px); 
+
+    overflow-y: auto;
+    // border: 5px solid blue;
+    // background: blue;
+  }
+}
