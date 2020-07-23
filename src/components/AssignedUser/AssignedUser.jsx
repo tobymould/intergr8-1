@@ -53,6 +53,7 @@ class AssignedUser extends Component {
     }
       
   displayModalPopup = (event) => {
+    event.stopPropagation();
     this.setState({modalPopup: !this.state.modalPopup, searchTerm: ""})
   }
 
@@ -101,8 +102,8 @@ class AssignedUser extends Component {
       return (
         <>
           <img src={user.img} alt={user.name}/>
-          <span>{user.name}</span>
-          {(assignedTo.length > 1) ? <p>PLUS</p> : ""}
+          <span>{user.name}{(assignedTo.length > 1) ? <p><FontAwesomeIcon icon="plus"/></p> : ""}</span>
+          
         </>
       )
     } else {

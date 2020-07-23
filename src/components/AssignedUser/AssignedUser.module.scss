@@ -47,11 +47,12 @@
       img {
         margin-right: 8px;
         border: 1px solid #f1f1f1;
+        width: 40px;
+        border-radius: 50%;
       }
     }
   }
 
-<<<<<<< HEAD
     .assignedPerson{
         display: flex;
         flex-direction: column;
@@ -77,14 +78,6 @@
             text-align: center;
             padding: 5px;
             // background: blue;
-=======
-  .assignedPerson {
-    display: flex;
-    flex-direction: row;
-    margin-left: 20px;
-    align-items: center;
-    justify-content: space-evenly;
->>>>>>> b9010e1c049b4f17b0a16d411d39630422749850
 
     div {
       width: 50px;
@@ -111,4 +104,5 @@
     border-radius: 50%;
     margin-right: 10px;
   }
+}
 }

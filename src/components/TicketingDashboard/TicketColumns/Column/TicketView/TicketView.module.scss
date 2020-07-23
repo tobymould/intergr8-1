@@ -1,15 +1,12 @@
 @import "../../../../../variables.scss";
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
-
 $base-padding: 10px;
 $dark-grey: #222222;
 $white: #fcfcfb;
-
 * {
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
-
 .ticketViewModal {
   @include standard_vertical_layout;
   // display: none; /* Hidden by default */
@@ -25,28 +22,13 @@ $white: #fcfcfb;
   background-color: $primary-black-transparent;
   padding-top: 6%;
   text-align: center;
-
+  z-index: 3;
+  
   .TicketView {
     border-radius: $medium;
     overflow: hidden;
     position: relative;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 15%;
-
-    .ticketHeader {
-      justify-content: space-around;
-      padding: 5px;
-
-      .assignedUser {
-        position: absolute;
-        left: 148px;
-        top: 50px;
-        z-index: 2;
-      }
-    }
-    .ticketId {
     flex-direction: column;
     box-shadow: $primary-shadow;
     justify-content: center;
@@ -59,7 +41,6 @@ $white: #fcfcfb;
     // @media screen and (min-width: 900px) {
     //   width: 900px;
     // }
-
     .ticketTop {
       background-color: $primary-yellow;
       padding: $base-padding/2 $base-padding $base-padding/2 $base-padding;
@@ -70,12 +51,10 @@ $white: #fcfcfb;
       justify-content: space-between;
       align-items: center;
       height: max-content;
-
       .ticketHeader {
         justify-content: space-between;
         align-items: center;
         height: 80%;
-
         h2 {
           margin-bottom: 15%;
         }
@@ -86,7 +65,6 @@ $white: #fcfcfb;
         justify-content: space-between;
         align-items: center;
         height: 80%;
-
         p {
           height: 20%;
         }
@@ -97,15 +75,12 @@ $white: #fcfcfb;
           box-shadow: $secondary-shadow;
           border: 2px solid white;
         }
-
         .green {
           background-color: green;
         }
-
         .amber {
           background-color: orange;
         }
-
         .red {
           background-color: red;
         }
@@ -117,7 +92,6 @@ $white: #fcfcfb;
         justify-content: space-between;
         align-items: center;
         height: 80%;
-
         .closeTicketButton {
           display: flex;
           top: 0;
@@ -133,16 +107,13 @@ $white: #fcfcfb;
           border-radius: 5px;
           outline: none;
           transition: transform 0.1s ease-in-out;
-
           &:hover {
             transform: scale(1.2);
           }
-
           &:active {
             transform: scale(0.4);
           }
         }
-
         .resolveBtn {
           padding: $base-padding;
           border: none;
@@ -152,7 +123,6 @@ $white: #fcfcfb;
           width: 100%;
           outline: none;
           border-radius: 5px;
-
           &:hover {
             cursor: pointer;
             background-color: $secondary-black-opaque;
@@ -161,14 +131,12 @@ $white: #fcfcfb;
       }
     }
   }
-
   .messageContainer {
     height: 100%;
     min-height: 250px;
     overflow-y: scroll;
     padding: 0 0.5 * $base-padding;
     background-color: #fff;
-
     .resolvedTicketText {
       box-shadow: 0 3px 3px $primary-black-transparent, 0 1px 1px $primary-black-transparent;
       border-radius: 6px;
@@ -181,7 +149,6 @@ $white: #fcfcfb;
       }
     }
   }
-
   .writingMessage {
     height: 30%;
     display: flex;
@@ -190,10 +157,8 @@ $white: #fcfcfb;
     align-items: center;
     background-color: $primary-black;
     padding: $base-padding;
-
     .messageContent {
       width: 100%;
-
       textarea {
         outline: none;
         width: 100%;

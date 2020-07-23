@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import styles from "./Tickettile.module.scss";
 import TicketView from "../TicketView/TicketView";
 import { firestore } from '../../../../../firebase';
+import AssignedUser from '../../../../AssignedUser';
 
 
 class TicketTile extends Component {
