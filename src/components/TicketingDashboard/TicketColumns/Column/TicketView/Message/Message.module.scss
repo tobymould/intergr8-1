@@ -22,7 +22,7 @@ $white: #fcfcfb;
             padding: 0;
             margin: 4px;
         }
-
+        
         &.messageContent {
             box-shadow: 0 3px 3px $primary-black-transparent, 0 1px 1px $primary-black-transparent;
             border-radius: 6px;
@@ -45,12 +45,19 @@ $white: #fcfcfb;
         }
     }
 
-    img {
+    img, 
+    .icon {
         border-radius: 50%;
         box-shadow: 0 3px 3px $primary-black-transparent, 0 1px 1px $primary-black-transparent;
         margin: 0% 2.5% 2.5% 2.5%;
         width: 15%;
         height: 15%;
+
+        &.attachment {
+            height: auto;
+            width: 90%;
+            border-radius: 0;
+        }
     }
 
     textarea {

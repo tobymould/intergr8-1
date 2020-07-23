@@ -1,52 +1,74 @@
 import React, { Component } from "react";
 import styles from "./Message.module.scss";
-import olly from "../olly.jpg";
+import firebase, {firestore} from '../../../../../../firebase';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+
 
 class Message extends Component {
-  // {/* <section>
-  // <div className={styles.messageContent}>
-  // <div  className={styles.nameAndDate}>
-  //     <h3>Ticket and Employee name</h3>
-  //     <p>Date and time</p>
-  // </div>
-  // <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id nam maxime sit. At est magnam voluptates, minus iusto sit inventore nisi illum laudantium sed in ullam, vitae rerum beatae officia?</p>
-  // </div>
-  //     <img src={olly} alt="HR person pic"/>
-  // </section> */}
+  state = {
+    user: {}
+  }
+  componentDidMount() {
+    firestore
+      .collection('info')
+      .where("ID", "==", this.props.item.content.name )
+      .get()
+        .then(snapshot => {
+          snapshot.docs
+            .forEach(doc => {
+              this.setState({user: doc.data()})
+            })
+        })
+      // })      
+      .catch(err => console.log(err))
+    this.getImage();
+  }
+
+  getImage = () => {
+    if (this.props.item.content.filePath) {
+      firebase
+      .storage()
+      .ref()
+      .child(this.props.item.content.filePath)
+      .getDownloadURL()
+      .then((url) => { this.setState({ img: url })})  
+    }
+  }
 
   typeOfMessage() {
-    const pic = <img src={olly} alt="Employee pic" />;
+    const { content, date } = this.props.item;
+    const pic =  this.state.user.img ? <img src={this.state.user.img} alt="Employee pic" /> : <FontAwesomeIcon className={styles.icon} icon="user-circle"/>
     const message = (
       <div className={styles.messageContent}>
         <div className={styles.nameAndDate}>
-          <h3>Employee Name</h3>
-          <p>Date and time</p>
+          <h3>{this.state.user.name ? this.state.user.name : `ID: ${content.name}`}</h3>
+          <p>{date}</p>
         </div>
+          {content.filePath ? <a href={this.state.img} target="_blank" rel="noopener noreferrer"><img className={styles.attachment} src={this.state.img} alt={content.filePath}/></a> : null}
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Id nam maxime sit. At est magnam
-          voluptates, minus iusto sit inventore nisi illum laudantium sed in ullam, vitae rerum
-          beatae officia?
+          {content.message ? content.message : null}
         </p>
       </div>
     );
 
-    if (this.props.userType === "Employee") {
+    if (this.props.item.content.name && this.props.user && this.props.item.content.name === this.props.user.uid) {
       return (
         <>
-          {pic} {message}
+          {message} {pic} 
         </>
       );
     } else {
       return (
         <>
-          {message} {pic}
+          {pic} {message} 
         </>
       );
     }
   }
 
   render() {
-    return <section className={styles.message}>{this.typeOfMessage()}</section>;
+    return <section className={styles.message} item={this.props.item}>{this.typeOfMessage()}</section>;
   }
 }
 

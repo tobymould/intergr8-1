@@ -47,8 +47,7 @@ class TicketTile extends Component {
         closeTicket={this.closeCurrentTicket}
         closeTicketModal={this.closeTicketModal}
         toggleTicketView={this.state.ticketViewOpen}
-        // firebaseCall={this.firebaseCall}
-      />
+        user={this.props.user} userRole={this.props.userRole}/>
     ) : null;
 
     return (

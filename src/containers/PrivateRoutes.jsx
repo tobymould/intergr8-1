@@ -58,8 +58,8 @@ class PrivateRoutes extends Component {
         <NavBar signOut={this.props.signOut} />
         <Router>
           {this.state.role && this.state.role === 1
-          ? <UserDashboard default path="dashboard" user={user}  />
-          : <TicketingDashboard default path="dashboard" user={user}  />
+          ? <UserDashboard default path="dashboard" user={user} userRole={this.state.role}  />
+          : <TicketingDashboard default path="dashboard" user={user} userRole={this.state.role}  />
         }
           <CategoryChooser path="catalogue" user={user}  />
           <TicketView path="viewticket" user={user}  />
@@ -71,7 +71,8 @@ class PrivateRoutes extends Component {
           setCategoriesState={setCategoriesState}
           addSubcategory={addSubcategory}
           removeSubcategory={removeSubcategory}
-          categories={categories} />
+          categories={categories}
+          userRole={this.state.role} />
         </Router>
       </>
     )

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import styles from "./SuperUserDashboard.module.scss";
-import olly from '../TicketingDashboard/TicketColumns/Column/TicketView/olly.jpg';
 import TableRow from './TableRow'
 import CreateUser from './CreateUser/CreateUser';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -52,7 +51,20 @@ class SuperUserDashboard extends Component {
 
   componentDidMount() {
     this.getUsers();
-  }
+      firestore
+        .collection('info')
+        .where("ID", "==", this.props.user.uid )
+        .get()
+          .then(snapshot => {
+            snapshot.docs
+              .forEach(doc => {
+                this.setState({userInfo: doc.data()})
+              })
+          })
+        // })      
+        .catch(err => console.log(err))
+    }
+  
 
   getUsers = () => {
     firestore
@@ -75,6 +87,19 @@ class SuperUserDashboard extends Component {
       return 'darkgrey';
   }
 
+  displayRole = () => {
+    switch(this.state.userInfo.name) {
+      case 1: 
+        return "Employee";
+      case 2:
+        return "Agent";
+      case 3: 
+        return "Super Agent"
+      default:
+        return "Employee";
+    }
+  }
+
   render() {
     const mapUserData = this.state.users
       .filter((user) => user.name.toLowerCase().includes(this.state.filterText))
@@ -89,10 +114,12 @@ class SuperUserDashboard extends Component {
       <div className={styles.SuperUserContainer}>
         <section className={styles.SuperUserHeader}>
           <div className={styles.superUserDetails}>
-            <img src={olly} alt="" />
+          {this.state.userInfo && this.state.userInfo.img ? <img src={this.state.userInfo.img} alt="Your pic" /> : <FontAwesomeIcon className={styles.icon} icon="user-circle"/>}
+
             <div>
-              <h2>Ollie Holden</h2>
-              <h3>Head of HR</h3>
+              <h2>{this.state.userInfo && this.state.userInfo.name ? this.state.userInfo.name : 'Your name'}</h2>
+              <h3>{this.state.userInfo && this.state.userInfo.name ? this.displayRole() : 'Your role'}</h3>
+
             </div>
           </div>
           <div className={styles.searchBox} style={{ "display": searchBarDisplay }}>

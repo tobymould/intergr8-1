@@ -23,7 +23,7 @@ class userDashboard extends Component {
     const { allTickets } = this.state;
     return (
       <section className={styles.userDashboard}>
-        <TicketColumns allTickets={allTickets}/>
+        <TicketColumns allTickets={allTickets} userRole={this.props.userRole} user={this.props.user}/>
       </section>
     );
   }

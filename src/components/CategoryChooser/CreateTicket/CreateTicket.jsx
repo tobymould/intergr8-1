@@ -62,7 +62,8 @@ class CreateTicket extends Component {
       .then((docRef) => {
         console.log(docRef.id)
         firestore.collection("tickets").doc(docRef.id).update({ ID: docRef.id });
-        this.setState({ querySent: true, message: this.state.eventLog[0].content.message });
+        this.captureAttachment(docRef.id);
+        this.setState({querySent: true, message: this.state.eventLog[0].content.message});
       })
       .catch((err) => console.error(err));
   }
@@ -125,7 +126,11 @@ class CreateTicket extends Component {
         {this.state.message}
       </p>
       :
-      <textarea className={styles.typeHere} placeholder="Type here..." onChange={(event) => this.captureMessage(event)}></textarea>
+      <textarea className={styles.typeHere} placeholder="Type here..." onChange={(event) => {
+        this.setState({ value: event.target.value })   // not sure if needed
+        this.captureMessage(event);
+
+      }}></textarea>
   }
 
   toggleTicketHeader = () => {
@@ -175,6 +180,11 @@ class CreateTicket extends Component {
                   </label>
                   {this.toggleQuerySubmitted()}
                 </div>
+                <div>
+                  <label htmlFor="uploadFile">Attach a file: </label>
+                  {/* check that this still works */}
+              <input type="file" id="uploadFile" name="fileUpload" placeholder="Choose your file..." onChange={(event) => this.setState({image: event.target.files[0]})} />
+              </div>
                 {this.toggleButton()}
               </form>
             </section>
