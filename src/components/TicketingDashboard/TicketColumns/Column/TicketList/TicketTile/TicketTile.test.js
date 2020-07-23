@@ -1,13 +1,12 @@
 import React from "react";
 import { shallow } from "enzyme";
 import TicketTile from "./TicketTile";
-import data from '../../../../../data/mockTicketOrderData.js'
 
 describe("ticket tile component tests", () => {
   let testComponent;
 
   beforeEach(() => {
-    testComponent = shallow(<TicketTile data={data} />);
+    testComponent = shallow(<TicketTile ticket={{ ID: "Woivoeriheowpecjewffwhkjh", createdBy: "David", createdAtDate: "02/02/2020" }} />);
   })
 
   it("should render", () => {
