@@ -95,7 +95,9 @@ class TicketView extends Component {
           <section className={styles.ticketTop}>
             <div className={styles.ticketHeader}>
               <h2>{this.props.data.category}</h2>
+            <div className={styles.ticketUser}>
               <AssignedUser />
+            </div>
             </div>
             <div className={styles.ticketId}>
               <p>{this.props.data.ID}</p>

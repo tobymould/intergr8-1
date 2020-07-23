@@ -25,7 +25,7 @@ class AssignedUser extends Component {
     .then((snapshot) => {
       const users = snapshot.docs.map(doc => doc.data())
       //another firestore request that gets the ticket using the ticketID   this.getAssignedToData
-      this.setState({ users });
+      this.setState({ users});
     })
   }
 
@@ -73,7 +73,7 @@ class AssignedUser extends Component {
   } 
 
   setAssignedPerson = (event) => {
-     firestore
+    firestore
       .collection('tickets')
       .doc(this.props.ticketID)
       .update({ assignedTo:firebase.firestore.FieldValue.arrayUnion(event.target.id)})
@@ -112,7 +112,7 @@ class AssignedUser extends Component {
   }
   
   render() {
-      console.log(this.state.assignedTo);
+      // console.log(this.state.assignedTo);
       return (
         <div className={styles.assignedUserWrapper}>
           {/* Assign Person Button (that creates the Modal)*/}

@@ -55,6 +55,14 @@ $white: #fcfcfb;
         justify-content: space-between;
         align-items: center;
         height: 80%;
+        left: 100px;
+
+        .ticketUser {
+          position:absolute;
+          left: 100px;
+          top: 100px;
+          padding: 5px;
+        }
         h2 {
           margin-bottom: 15%;
         }
