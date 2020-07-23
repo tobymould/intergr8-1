@@ -5,17 +5,15 @@
     padding: 20px;
   }
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  flex-direction: row;
   align-items: center;
-  margin: auto;
-  margin-top: 80px;
-  overflow-y: auto;
-  height: 400px;
+  justify-content: center;
+  // margin: auto;
+  // margin-top: 80px;
+  // overflow-y: auto;
+  // height: 400px;
   padding: 10px;
-  width: 820px;
+  // width: 820px;
 
-
-  @media screen and (max-width: 800px) {
-    width: 375px;
-  }
 }
