@@ -65,6 +65,16 @@ class SuperUserDashboard extends Component {
       })
   }
 
+  getUsersTabColour = () => {
+    if(this.state.panelShowingIs === 'users')
+      return 'darkgrey';
+  }
+
+  getCategoriesTabColour = () => {
+    if(this.state.panelShowingIs === 'categories')
+      return 'darkgrey';
+  }
+
   render() {
     const mapUserData = this.state.users
       .filter((user) => user.name.toLowerCase().includes(this.state.filterText))
@@ -72,8 +82,8 @@ class SuperUserDashboard extends Component {
         return <TableRow toggleEdit={this.toggleEdit} key={person.ID} data={person} getUsers={this.getUsers} />
       })
 
-      let searchBarDisplay;
-        this.state.panelShowingIs === 'users' ? searchBarDisplay = 'flex' : searchBarDisplay = 'none';    
+    let searchBarDisplay;
+      this.state.panelShowingIs === 'users' ? searchBarDisplay = 'flex' : searchBarDisplay = 'none';
 
     return (
       <div className={styles.SuperUserContainer}>
@@ -95,8 +105,8 @@ class SuperUserDashboard extends Component {
           </div>
         </section>
       <div className={styles.toggleTab}>
-        <span onClick={() => {this.showUsersPanel()}}>Users Panel </span>
-        <span onClick={() => {this.showCategoryPanel()}}>Categories Panel</span>
+        <span style={{ "background-color": this.getUsersTabColour() }} onClick={() => {this.showUsersPanel()}}>Users Panel </span>
+        <span style={{ "background-color": this.getCategoriesTabColour() }} onClick={() => {this.showCategoryPanel()}}>Categories Panel</span>
       </div>
       {this.state.panelShowingIs === 'users' ? 
         <section className={styles.SuperUserEmployee}>
@@ -129,9 +139,3 @@ class SuperUserDashboard extends Component {
 }
 
 export default SuperUserDashboard;
-
-
-
-      //   :
-
-      // }

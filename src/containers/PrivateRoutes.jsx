@@ -24,6 +24,7 @@ class PrivateRoutes extends Component {
   }
 
   render() {
+    {console.log(this.props.categories)}
     const { 
       user, 
       setCategoriesState, 
