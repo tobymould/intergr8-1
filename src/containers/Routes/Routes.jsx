@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Router } from '@reach/router';
-import PrivateRoutes from '../PrivateRoutes';
+import PrivateRoutes from './PrivateRoutes';
 import LogInBox from "../../components/LogInBox";
 class Routes extends Component {
 
