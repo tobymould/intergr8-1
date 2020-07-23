@@ -13,18 +13,16 @@ class Column extends Component {
     return <DropDown filterOptions={["Newest", "Oldest"]} />;
   }
 
-  unfilterUser = () => this.setState({filtering:false});
-
-  filterByUser = (e) => {
-    if (!this.state.filtering) this.setState({filtering: true})
-    const ticketsCopy = this.props.allTickets;
-    const filteredTickets = ticketsCopy.filter((obj) => {
-      return obj.category === e.target.value;
-    });
-    this.setState({
-      filteredTickets,
-    });
-  };
+  // filterByUser = (e) => {
+  //   if (!this.state.filtering) this.setState({filtering: true})
+  //   const ticketsCopy = this.props.allTickets;
+  //   const filteredTickets = ticketsCopy.filter((obj) => {
+  //     return obj.category === e.target.value;
+  //   });
+  //   this.setState({
+  //     filteredTickets,
+  //   });
+  // };
 
   convertDataFormat = (date) => {
     let arr = date.split('');
@@ -39,9 +37,7 @@ class Column extends Component {
         orderData.sort((a, b) => new Date(this.convertDataFormat(b.createdAtDate)) - new Date(this.convertDataFormat(a.createdAtDate)));
       } else if (e.target.value === "Oldest") {
         orderData.sort((a, b) => new Date(this.convertDataFormat(a.createdAtDate)) - new Date(this.convertDataFormat(b.createdAtDate)));
-      } else if (e.target.value === "Priority") {
-        orderData.sort((a, b) => a.priority - b.priority);
-      }
+      } 
     this.setState({
       filteredTickets: orderData,
     });
@@ -55,7 +51,6 @@ class Column extends Component {
             <h3>{this.props.title}</h3>
           <div className={styles.topOfColumn}>
             <div onChange={this.sortOptions}>{this.renderFilter()}</div>
-            <button onClick={this.unfilterUser}>Clear filter</button>
           </div>
           <section className={styles.ticketTileSection} title={this.props.title}>
             <TicketTile data={tickets} />

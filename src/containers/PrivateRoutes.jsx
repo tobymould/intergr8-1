@@ -42,15 +42,6 @@ class PrivateRoutes extends Component {
     this.checkUserRole();
   }
 
-  renderDashboard = () => {
-    if (this.state.role === 1) {
-      globalHistory.navigate("/userdashboard");
-      return null;
-    } else {
-      globalHistory.navigate("/dashboard");
-    }
-  }
-
   render() {
     const { signOut, user } = this.props;
     return (
@@ -59,8 +50,6 @@ class PrivateRoutes extends Component {
           <UserDashboard default path="dashboard" user={user} signOut={signOut} />          
           : <TicketingDashboard path="dashboard" user={user} signOut={signOut} />
         }
-        {/* <TicketingDashboard default path="dashboard" user={user} signOut={signOut} />
-        <UserDashboard path="userdashboard" user={user} signOut={signOut} /> */}
         <CategoryChooser path="catalogue" user={user} signOut={signOut} />
         <TicketView path="viewticket" user={user} signOut={signOut} />
         <CreateTicket path="createticket" user={user} signOut={signOut} />
