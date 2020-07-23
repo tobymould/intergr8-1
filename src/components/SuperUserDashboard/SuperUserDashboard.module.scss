@@ -1,3 +1,4 @@
+  
 @import "../../variables.scss";
 
 * {
@@ -17,6 +18,21 @@
   width: 100%;
   padding-top: 70px;
 
+  .toggleTab {
+    display: flex;
+    justify-content: flex-end;
+
+    span {
+      background-color: lightgrey;
+      padding: 10px 20px;
+      margin-right: 10px;
+      border-radius: 10px 10px 0 0;
+      display: flex;
+      align-items: flex-start;
+
+      //change bg color for show and hide
+    }
+  }
 
     // background
 
