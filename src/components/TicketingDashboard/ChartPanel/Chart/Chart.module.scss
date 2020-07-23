@@ -8,6 +8,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  // height: 160px;
+  width: auto;
+  max-height: 160px;
+  
+  @media only screen and (min-width: 600px) {
+    height: 160px;
+  }
 
   .innerCircle{
     fill: #F1F1F1;
@@ -19,3 +26,12 @@
     stroke-width: 120;
   }
 }
+
+
+@media only screen and (max-width: 800px) {
+  .chart {
+    // height: 
+  }
+  .innerCircle{}
+  .outerCircle{}
+ }
