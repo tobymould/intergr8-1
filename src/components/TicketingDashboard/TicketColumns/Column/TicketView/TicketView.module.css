@@ -1,7 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
 /* Yellows */
-/* Blacks */
-/* Greys */
+/* Blacks and greys */
 /* Whites */
 /* Greens */
 /* Red */
@@ -75,7 +73,42 @@
   font-family: "Poppins", sans-serif;
 }
 
-.TicketView {
+.ticketViewModal {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%;
+  /* Full width */
+  min-height: 100vh;
+  /* Full height */
+  height: 100%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  background-color: #14141433;
+  padding-top: 6%;
+  text-align: center;
+}
+
+.ticketViewModal .TicketView {
   border-radius: 4px;
   overflow: hidden;
   position: relative;
@@ -93,33 +126,49 @@
           justify-content: center;
   width: 100%;
   max-width: 700px;
-  max-height: 60vh;
+  min-height: 700px;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  max-height: 80vh;
   margin: auto;
 }
 
-.TicketView .ticketTop {
+.ticketViewModal .TicketView .ticketTop {
   background-color: #f2b423;
   padding: 5px 10px 5px 10px;
   margin: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  padding: 2%;
+  min-height: 150px;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 15%;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
 }
 
-.TicketView .ticketTop .ticketHeader {
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  padding: 5px;
+.ticketViewModal .TicketView .ticketTop .ticketHeader {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 80%;
 }
 
-.TicketView .ticketTop .ticketId {
+.ticketViewModal .TicketView .ticketTop .ticketHeader h2 {
+  margin-bottom: 15%;
+}
+
+.ticketViewModal .TicketView .ticketTop .ticketId {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -127,15 +176,20 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  height: 80%;
 }
 
-.TicketView .ticketTop .ticketId .circle {
+.ticketViewModal .TicketView .ticketTop .ticketId p {
+  height: 20%;
+}
+
+.ticketViewModal .TicketView .ticketTop .ticketId .circle {
   border-radius: 50%;
   width: 50px;
   height: 50px;
@@ -144,40 +198,99 @@
   border: 2px solid white;
 }
 
-.TicketView .ticketTop .ticketId .green {
+.ticketViewModal .TicketView .ticketTop .ticketId .green {
   background-color: green;
 }
 
-.TicketView .ticketTop .ticketId .amber {
+.ticketViewModal .TicketView .ticketTop .ticketId .amber {
   background-color: orange;
 }
 
-.TicketView .ticketTop .ticketId .red {
+.ticketViewModal .TicketView .ticketTop .ticketId .red {
   background-color: red;
 }
 
-.TicketView .ticketTop .resolveBtn {
+.ticketViewModal .TicketView .ticketTop .ticketActionButtons {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 80%;
+}
+
+.ticketViewModal .TicketView .ticketTop .ticketActionButtons .closeTicketButton {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  top: 0;
+  right: 0;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: transparent;
+  border: none;
+  font-size: 2rem;
+  height: 40px;
+  width: 100%;
+  border-radius: 5px;
+  outline: none;
+  -webkit-transition: -webkit-transform 0.1s ease-in-out;
+  transition: -webkit-transform 0.1s ease-in-out;
+  transition: transform 0.1s ease-in-out;
+  transition: transform 0.1s ease-in-out, -webkit-transform 0.1s ease-in-out;
+}
+
+.ticketViewModal .TicketView .ticketTop .ticketActionButtons .closeTicketButton:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+.ticketViewModal .TicketView .ticketTop .ticketActionButtons .closeTicketButton:active {
+  -webkit-transform: scale(0.4);
+          transform: scale(0.4);
+}
+
+.ticketViewModal .TicketView .ticketTop .ticketActionButtons .resolveBtn {
   padding: 10px;
   border: none;
   background-color: #141414;
   color: white;
   height: 40px;
+  width: 100%;
   outline: none;
   border-radius: 5px;
 }
 
-.TicketView .ticketTop .resolveBtn:hover {
+.ticketViewModal .TicketView .ticketTop .ticketActionButtons .resolveBtn:hover {
   cursor: pointer;
   background-color: #222222e6;
 }
 
-.TicketView .messageContainer {
-  height: 75%;
+.ticketViewModal .messageContainer {
+  height: 100%;
+  min-height: 250px;
   overflow-y: scroll;
   padding: 0 5px;
+  background-color: #fff;
 }
 
-.TicketView .messageContainer .resolvedTicketText {
+.ticketViewModal .messageContainer .resolvedTicketText {
   -webkit-box-shadow: 0 3px 3px #14141433, 0 1px 1px #14141433;
           box-shadow: 0 3px 3px #14141433, 0 1px 1px #14141433;
   border-radius: 6px;
@@ -187,12 +300,12 @@
   margin: 8px;
 }
 
-.TicketView .messageContainer .resolvedTicketText span {
+.ticketViewModal .messageContainer .resolvedTicketText span {
   color: green;
 }
 
-.TicketView .writingMessage {
-  height: 10%;
+.ticketViewModal .writingMessage {
+  height: 30%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -206,15 +319,15 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-color: #9a9a9a;
+  background-color: #141414;
   padding: 10px;
 }
 
-.TicketView .writingMessage .messageContent {
+.ticketViewModal .writingMessage .messageContent {
   width: 100%;
 }
 
-.TicketView .writingMessage .messageContent textarea {
+.ticketViewModal .writingMessage .messageContent textarea {
   outline: none;
   width: 100%;
   height: 80px;

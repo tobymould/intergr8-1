@@ -30,11 +30,11 @@ class TicketingDashboard extends Component {
       .get()
       .then((querySnapshot) => querySnapshot.docs.map(doc => {
         return { id: doc.id, ...doc.data() }
-        })
+      })
       )
       .then(data => data.filter(doc => doc.id.length === 20 && doc.createdAtDate))
-      .then(data => this.setState({ allTickets: [...data] }) )
-      .then(()=>{
+      .then(data => this.setState({ allTickets: [...data] }))
+      .then(() => {
         this.setState({
           totalTickets: this.countTickets(),
           unassignedTickets: this.countUnassignedTickets(),
@@ -52,7 +52,7 @@ class TicketingDashboard extends Component {
     return (
       <section className={styles.ticketingDashboard}>
         <ChartPanel percentUnassignedTickets={percentUnassignedTickets} percentInProgressTickets={percentInProgressTickets} percentUserInProgressTickets={percentUserInProgressTickets} />
-        <TicketColumns allTickets={allTickets}/>
+        <TicketColumns allTickets={allTickets} />
       </section>
     );
   }
