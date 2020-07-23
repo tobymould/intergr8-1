@@ -7,24 +7,28 @@ import logo from '../../assets/intergr8-logo-transparent-black-no-tagline.png';
 
 class NavBar extends Component {
   state = {
-    navOpen: false
+    navOpen: false, 
   }
 
   get navItems() {
     return [
       {
         title: 'Dashboard',
-        link: '/dashboard'
+        link: '/dashboard',
+        restrictedToRole: 1,
       }, {
         title: 'Catalogue',
-        link: '/catalogue'
+        link: '/catalogue',
+        restrictedToRole: 1,
       }, {
         title: 'Users',
-        link: '/superuser'
+        link: '/superuser',
+        restrictedToRole: 3,
       }
       , {
         title: 'Logout',
-        link: '/'
+        link: '/',
+        restrictedToRole: 1,
       }
     ]
   }
@@ -43,7 +47,10 @@ class NavBar extends Component {
     return this.state.navOpen ? "arrow-right" : "bars";
   }
 
-  renderNav = () => this.navItems.map((item, index) => {
+  renderNav = () => {return this.navItems.filter((item, index) => {
+    return item.restrictedToRole <= this.props.userRole
+  })
+    .map((item, index) => {
     const { signOut } = this.props;
     return <Link
       key={index}
@@ -52,7 +59,9 @@ class NavBar extends Component {
         {item.title}
       </h3>
     </Link>
-  }) // own components?
+  })
+  }
+   // own components?
 
   render() {
     return (
