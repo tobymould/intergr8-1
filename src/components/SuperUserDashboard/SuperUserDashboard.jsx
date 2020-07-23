@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import styles from "./SuperUserDashboard.module.scss";
-import olly from '../TicketingDashboard/TicketColumns/Column/TicketView/olly.jpg';
 import TableRow from './TableRow'
 import CreateUser from './CreateUser/CreateUser';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";

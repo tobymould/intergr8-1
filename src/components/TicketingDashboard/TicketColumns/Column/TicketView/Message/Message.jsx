@@ -45,7 +45,7 @@ class Message extends Component {
           <h3>{this.state.user.name ? this.state.user.name : `ID: ${content.name}`}</h3>
           <p>{date}</p>
         </div>
-          {content.filePath ? <a href={this.state.img} target="_blank"><img className={styles.attachment} src={this.state.img} alt={content.filePath}/></a> : null}
+          {content.filePath ? <a href={this.state.img} target="_blank" rel="noopener noreferrer"><img className={styles.attachment} src={this.state.img} alt={content.filePath}/></a> : null}
         <p>
           {content.message ? content.message : null}
         </p>
