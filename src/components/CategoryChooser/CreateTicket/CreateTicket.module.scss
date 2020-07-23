@@ -6,70 +6,234 @@
   box-sizing: border-box;
 }
 
-.backGround {
-  position: relative;
-  padding: 10px;
-  background-color: #f2b423;
-  margin: 100px auto;
-  border-radius: 10px;
-  width: 270px;
+.createTicketBackground {
+  @include standard_vertical_layout;
+  // display: none; /* Hidden by default */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 600px; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  padding-top: 50px;
+  text-align: center;
 
-  .topField {
-    display: flex;
+  .createTicketContainer {
+    @include standard_vertical_layout;
     justify-content: space-between;
-  }
-
-  .topBanner {
-    display: inline-block;
-    color: white;
-    border: 1px solid black;
-    background-color: black;
-    border-radius: 5px;
     position: relative;
-    left: -40px;
-    top: -15px;
-    padding: 10px;
-  }
+    background-color: transparent;
+    margin: 100px auto;
+    border: $medium solid $primary-yellow;
+    width: 60%;
+    height: 80%;
+    box-shadow: $primary-shadow, $secondary-shadow;
+    background-color: transparent;
+    background-image: linear-gradient($white-opaque 0%, $white-opaque 100%);
+    background-size: cover;
 
-  p {
-    display: inline-block;
-  }
+    .topField {
+      @include standard_vertical_layout;
+      height: 25%;
+      width: 100%;
+      text-align: center;
+      background: url("../../../assets/intergr8-logo-transparent-black-no-tagline.png") center/22% no-repeat;
+    }
 
-  form {
-
-    label {
-      display: block;
-
-      .italic {
-        font-style: italic;
-      }
-
-      select {
-        display: block;
-        width: 250px;
-        border-radius: 5px;
-      }
-
-    textarea {
-      display: block;
-      width: 250px;
-      height: 100px;
+    .topBanner {
+      color: $secondary-yellow;
+      border: none;
+      outline: none;
+      position: absolute;
+      left: -40px;
+      top: -15px;
+      border: 1px solid $secondary-black;
       border-radius: 5px;
+      padding: 10px;
+      box-shadow: $secondary-shadow;
+      background-color: $secondary-black;
     }
+
+    p {
+      display: inline-block;
     }
-  .btnCreateTicket {
-    background-color: maroon;
-    border-radius: 5px;
-    color: white;
-    width: 230px;
-    padding: 5px;
-    margin: 10px;
-  }
+
+    .formWrapper {
+      padding: 10px;
+
+      border-top: $primary-black 2px solid;
+      width: 100%;
+      height: 75%;
+    }
+
+    form {
+      @include standard_vertical_layout;
+      height: 65%;
+      width: 100%;
+
+      height: 100%;
+
+      span {
+        text-align: left;
+        width: 60%;
+      }
+
+      label {
+        display: block;
+
+        .italic {
+          font-style: italic;
+        }
+
+        select {
+          display: block;
+          width: 250px;
+          border-radius: 5px;
+        }
+
+        textarea {
+          display: block;
+          width: 250px;
+          height: 100px;
+          border-radius: 5px;
+        }
+      }
+      .btnCreateTicket {
+        background-color: $primary-black;
+        color: white;
+        display: block;
+        width: 100%;
+        padding: 10px 0;
+        border: none;
+        border-radius: 3px;
+        outline: none;
+      }
+    }
   }
 }
 
-.formCreateTicket {
-  span {
-    display: block;
+@import "../../../variables.scss";
+
+.CreateUserModal {
+  @include standard_vertical_layout;
+  // display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  backdrop-filter: blur(10px);
+  background-color: $primary-black-transparent;
+  padding-top: 50px;
+  text-align: center;
+
+  .CreateUserContainer {
+    box-shadow: $primary-shadow, $secondary-shadow;
+    @include standard_vertical_layout;
+    height: 70%;
+    width: 90%;
+    border: $medium solid $primary-yellow;
+    background-color: transparent;
+    background-image: linear-gradient($white-opaque 0%, $white-opaque 100%);
+    background-size: cover;
+    z-index: 2;
+
+    @media screen and (min-width: 600px) {
+      height: 70%;
+      width: 40%;
+    }
+  }
+
+  .CreateUserModalContent {
+    @include standard_vertical_layout;
+    justify-content: center;
+    background-color: transparent;
+    width: 80%;
+    height: 90%;
+    display: flex;
+    justify-content: space-between;
+    text-align: left;
+
+    div {
+      width: 90%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .DropDown {
+      box-shadow: $secondary-shadow;
+      border-radius: $medium;
+      font-family: $main-fonts;
+      font-size: $standard;
+      border: 2px solid $primary-yellow;
+    }
+
+    input[type="text"],
+    input[type="tel"],
+    input[type="email"] {
+      //   width: 60%;
+      //   height: 200px;
+      background-color: $secondary-black;
+      border: 1px solid $light-grey;
+      border-radius: 2px;
+      background-color: transparent;
+      color: $dark-grey;
+      height: 35px;
+      outline: none;
+      transition: color ease-in-out 1s, background-color ease-in-out 1s, border-color ease-in-out 1s;
+
+      &:focus {
+        color: $white;
+        background-color: $secondary-black-opaque;
+        outline: none;
+        border-color: $primary-yellow;
+
+        &::placeholder {
+          color: $light-grey;
+        }
+      }
+    }
+
+    input[type="file"] {
+      width: 200px;
+    }
+
+    .cancelBtn {
+      background-color: rgb(160, 160, 160);
+      display: block;
+      width: 100%;
+      padding: 10px 0;
+      border: none;
+      border-radius: 3px;
+      outline: none;
+      margin-bottom: 10px;
+      cursor: pointer;
+      font-size: 1em;
+
+      &:hover {
+        background-color: rgb(91, 89, 89);
+      }
+    }
+
+    .submitBtn {
+      background-color: $primary-yellow;
+      display: block;
+      width: 100%;
+      padding: 10px 0;
+      border: none;
+      border-radius: 3px;
+      outline: none;
+      margin-bottom: 10px;
+      cursor: pointer;
+      font-size: 1em;
+      font-weight: bold;
+
+      &:hover {
+        background-color: $secondary-yellow;
+      }
+    }
   }
 }
