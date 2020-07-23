@@ -55,13 +55,13 @@ class Message extends Component {
     if (this.props.item.content.name && this.props.item.content.name === this.props.user.uid) {
       return (
         <>
-          {pic} {message}
+          {message} {pic} 
         </>
       );
     } else {
       return (
         <>
-          {message} {pic}
+          {pic} {message} 
         </>
       );
     }

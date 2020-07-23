@@ -178,11 +178,13 @@ class CreateTicket extends Component {
                   <label htmlFor="">
                     Description:
                   </label>
+                  {this.toggleQuerySubmitted()}
+                </div>
+                <div>
                   <label htmlFor="uploadFile">Attach a file: </label>
                   {/* check that this still works */}
               <input type="file" id="uploadFile" name="fileUpload" placeholder="Choose your file..." onChange={(event) => this.setState({image: event.target.files[0]})} />
-                  {this.toggleQuerySubmitted()}
-                </div>
+              </div>
                 {this.toggleButton()}
               </form>
             </section>
