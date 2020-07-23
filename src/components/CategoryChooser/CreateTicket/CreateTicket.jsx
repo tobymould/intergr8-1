@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import styles from "./CreateTicket.module.scss";
-import { firestore } from '../../../firebase'
+import firebase, { firestore } from '../../../firebase'
 
 class CreateTicket extends Component {
   state = {
