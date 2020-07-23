@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import NavBar from "../NavBar";
 import styles from "./SuperUserDashboard.module.scss";
 import olly from '../TicketingDashboard/TicketColumns/Column/TicketView/olly.jpg';
 import TableRow from './TableRow'
@@ -63,7 +62,6 @@ class SuperUserDashboard extends Component {
 
     return (
       <div className={styles.SuperUserContainer}>
-        <NavBar user={this.props.user} signOut={this.props.signOut} />
         <section className={styles.SuperUserHeader}>
           <div className={styles.superUserDetails}>
             <img src={olly} alt="" />
