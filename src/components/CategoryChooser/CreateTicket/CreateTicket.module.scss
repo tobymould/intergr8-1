@@ -164,6 +164,11 @@
         border: none;
         border-radius: 3px;
         outline: none;
+
+        &:hover {
+          background-color: $secondary-black-opaque;
+          cursor: pointer;
+        }
       }
     }
   }
