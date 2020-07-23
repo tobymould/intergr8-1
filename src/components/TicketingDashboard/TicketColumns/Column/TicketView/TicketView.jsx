@@ -186,7 +186,7 @@ class TicketView extends Component {
         })
         .then((docRef) => {
             console.log('success');
-            alert('Ticket sent, refresh dashboard to view')
+            alert('Message sent, refresh dashboard to view')
             // this.updateTicketView();
         })
         .catch((err) => console.error(err));

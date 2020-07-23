@@ -37,7 +37,9 @@ class TicketTile extends Component {
     const showModal = this.state.ticketViewOpen ? (
       <TicketView data={this.state.currentTicket} closeTicket={this.closeCurrentTicket}
         closeTicketModal={this.closeTicketModal}
-        toggleTicketView={this.state.ticketViewOpen} />
+        toggleTicketView={this.state.ticketViewOpen} 
+        userRole={this.props.userRole}
+        user={this.props.user}/>
     ) : null;
     return (
       <div>

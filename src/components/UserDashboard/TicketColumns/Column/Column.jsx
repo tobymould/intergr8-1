@@ -53,7 +53,7 @@ class Column extends Component {
             <div onChange={this.sortOptions}>{this.renderFilter()}</div>
           </div>
           <section className={styles.ticketTileSection} title={this.props.title}>
-            <TicketTile data={tickets} />
+            <TicketTile data={tickets} userRole={this.props.userRole} user={this.props.user}/>
           </section>
         </article>
       </>
