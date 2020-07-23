@@ -1,0 +1,30 @@
+@import "../../../../../../variables.scss";
+
+.TicketTile {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid black;
+  border-right: 10px $primary-yellow ridge;
+  border-radius: 5px;
+  height: max-content;
+  width: 100%;
+  margin: 20px auto;
+  // z-index: 0;
+  position: relative;
+}
+
+.ticketContent {
+  margin: 20px 0 5px 0;
+  padding: 10% 5% 2% 2%;
+}
+.ticketUser {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 5px;
+}
+.boldText {
+  font-weight: bolder;
+}
