@@ -66,12 +66,12 @@ class CreateTicket extends Component {
   toggleTicketHeader = () => {
     return this.state.querySent ?
       <>
-        <h2 className={styles.yourTicket}>{"Ticket sent!"}</h2>
+        <h2 className={styles.headerMessage}>{"Ticket sent!"}</h2>
         <h3>{"We'll get straight on this."}</h3>
       </>
       :
       <>
-        <h2 className={styles.yourTicket}>{"Almost done..."}</h2>
+        <h2 className={styles.headerMessage}>{"Almost done..."}</h2>
         <h3>{"Add a description to help us out:"}</h3>
       </>
   }
