@@ -13,17 +13,14 @@ state = {
         {this.props.data.map((obj) => (
           <section className={styles.TicketTile}>
             <div className={styles.TicketContent} >
-              <h3>{obj.title}</h3>
-              <p>Employee ID: {obj.createdBy}</p>
-              <p>Ticket ID: {obj.ID}</p>
-              <p>Date: {obj.createdAtDate}</p>
+              <h3>{obj.category}</h3>
+              <p>Employee ID:{obj.createdBy.substring(0,10)}</p>
+              <p>Ticket ID:{obj.ID.substring(0,10)}</p>
+              <p>Date:{obj.createdAtDate}</p>
             </div>
-            <div>{/* <input type="checkbox"/> */}</div>
-            <div className={styles.assignUser}>
               <div className={styles.ticketUser}>
               <AssignedUser className={styles.assignUser} ticketID={obj.ID} />
               </div>
-            </div>
           </section>
         ))}
       </div>
