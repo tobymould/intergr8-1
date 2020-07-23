@@ -63,7 +63,7 @@ class Column extends Component {
             <button onClick={this.unfilterUser}>Clear filter</button>
           </div>
           <section className={styles.ticketTileSection} title={this.props.title}>
-            <TicketTile data={tickets} />
+            <TicketTile data={tickets} user={this.props.user} />
           </section>
         </article>
       </>
