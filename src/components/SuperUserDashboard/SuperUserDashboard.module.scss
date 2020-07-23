@@ -92,6 +92,14 @@
         justify-content: space-between;
         margin-right: 16px;
 
+        .addSubcat {
+          z-index: 999;
+
+          svg {
+            z-index: 998;
+          }
+        }
+
         &:last-child{
           margin-right: 0;
         }
@@ -160,6 +168,11 @@
 
         &:last-child{
           border-right: none;
+        }
+
+        .subcatInput {
+          width: 87.5%;
+          text-indent: 2.5px;
         }
 
         // &:first-child,

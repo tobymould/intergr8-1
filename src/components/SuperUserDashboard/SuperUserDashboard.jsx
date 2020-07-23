@@ -10,62 +10,46 @@ import DeleteUser from './DeleteUser/DeleteUser';
 
 class SuperUserDashboard extends Component {
   state = {
-    isDisplayAddUser: false,
-    users: [],
-    idDisplayDeleteUser: false,
-    filterText: '',
     isDisplayAddSubcategory: false,
+    currentAddSubcategory: null,
+    newSubcategoryInput: null,
+    currentQuery: null,
   }
 
-  toggleDeleteUser = (event) => {
-    this.setState({ idDisplayDeleteUser: !this.state.idDisplayDeleteUser })
+  toggleAddSubcategoryInput = (isDisplayAddSubcategory, newSubcategoryInput, category) => {
+    if (isDisplayAddSubcategory && newSubcategoryInput) {
+      // console.log(isDisplayAddSubcategory)
+      // console.log(newSubcategoryInput)
+      this.props.addSubcategory(category, newSubcategoryInput)
+    }
+
+    this.setState({
+      isDisplayAddSubcategory: !this.state.isDisplayAddSubcategory,
+      currentAddSubcategory: category
+    })
   }
 
-  displayDeleteUser = () => {
-    return this.state.isDisplayDeleteUser ? (<DeleteUser toggleDeleteUser={this.toggleDeleteUser} />) : null
+  handleInput = (inputText) => {
+    this.setState({
+      newSubcategoryInput: inputText.target.value
+    })
   }
 
-  toggleAddUser = (event) => {
-    this.setState({ isDisplayAddUser: !this.state.isDisplayAddUser })
-  }
-
-  displayAddUser = () => {
-    return this.state.isDisplayAddUser ? (<CreateUser toggleAddUser={this.toggleAddUser} getUsers={this.getUsers} />) : null
-  }
-
-  toggleEditUser = (event) => {
-    this.setState({ isDisplayEditUser: !this.state.isDisplayEditUser })
-  }
-
-  componentDidMount() {
-    this.getUsers();
-    this.props.setCategoriesState();
-  }
-
-  getUsers = () => {
-    firestore
-      .collection('info')
-      .get()
-      .then((snapshot) => {
-        const users = snapshot.docs
-          .map((doc => doc.data()))
-        this.setState({ users })
-      })
-  }
-
-  // steph and niall
-
-  toggleAddSubcategoryInput = (event) => {
-    this.setState({ isDisplayAddSubcategory: !this.state.isDisplayAddSubcategory })
+  deleteSubcategory = (currentAddSubcategory, query) => {
+    this.props.removeSubcategory(currentAddSubcategory, query);
+    this.setState({
+      newSubcategoryInput: null
+    })
   }
 
   render() {
+    const { 
+      isDisplayAddSubcategory, 
+      currentAddSubcategory, 
+      newSubcategoryInput, 
+      currentQuery 
+    } = this.state;
 
-    // const mapUserData = this.state.users
-    //   .filter((user) => user.name.toLowerCase().includes(this.state.filterText))
-    //   .map((person) => {
-    //     return <TableRow toggleEdit={this.toggleEdit} key={person.ID} data={person} getUsers={this.getUsers} />
-    //   })
     return (
       <div className={styles.SuperUserContainer}>
         <NavBar user={this.props.user} signOut={this.props.signOut} />
@@ -77,64 +61,61 @@ class SuperUserDashboard extends Component {
               <h3>Head of HR</h3>
             </div>
           </div>
-
-          {/* Removed by Steph */}
-          {/* <div className={styles.searchBox}>
-            <input type="text" id="search" placeholder="Search users" autoComplete="false" onChange={e => this.setState({ filterText: e.target.value.toLowerCase() })} />
-            <span>
-              <label htmlFor="search">
-                <FontAwesomeIcon icon="search" />
-              </label>
-            </span>
-          </div> */}
         </section>
         <section className={styles.SuperUserEmployee}>
-        <div className={styles.tableHeader}>
-          {this.props.categories.map((category) => {
-          return (
-            <div className={styles.categoryTitle}>
-              <div className={styles.categoryTitleText}>
-                <p>{category.title}</p>
-              </div>
-              <div className={styles.buttonContainer}>
-                <span onClick={this.toggleAddSubcategoryInput}>
-                  <FontAwesomeIcon icon="plus-circle" title="Add Subcategory" />
-                </span>
-                <span>
-                  <FontAwesomeIcon icon="pencil-alt" title="Edit Subcategories" />
-                </span>
-              </div>
-            </div>
-          )})
-          } 
-          {/* {this.displayAddUser()} */}
-          {/* { {this.displayEditUser()} } */}
-          {/* { {this.displayDeleteUser()} */}
-           </div>
+          <div className={styles.tableHeader}>
+            {this.props.categories.map((category) => {
+              return (
+                <div className={styles.categoryTitle}>
+                  <div className={styles.categoryTitleText}>
+                    <p>{category.title}</p>
+                  </div>
+                  <div className={styles.buttonContainer}>
+                    <span className={styles.addSubcat} onClick={() => this.toggleAddSubcategoryInput(isDisplayAddSubcategory, newSubcategoryInput, category.title)} >
+                      {
+                      isDisplayAddSubcategory && currentAddSubcategory === category.title ?
+                        <FontAwesomeIcon icon="check-circle" title="Save Subcategory" />
+                        :
+                        <FontAwesomeIcon icon="plus-circle" title="Add Subcategory" />
+                      }
+                    </span>
+                  </div>
+                </div>
+            )})
+            }
+          </div>
           <div className={styles.tableColumns}>
-          {this.props.categories.map((category) => {
-            return (  
-              <div className={styles.categoryColumn}>
-                <article>{category.queries.map(query => {
-                  return (
-                    <div className={styles.subcategoriesTitle}>
-                      <p>{query}</p>
-                      <div className={styles.buttonContainer}>
-                        <span>
-                          {/* <FontAwesomeIcon icon="trash-alt" /> */}
-                        </span>
-                      </div>
-                    </div>
-
-                  )
-                  })}</article>
-                
-              </div>
-            )
-
-          }
-          )}
-            {/* {mapUserData} */}
+            {this.props.categories.map((category) => {
+              return (
+                <div className={styles.categoryColumn}>
+                  <article>
+                    {
+                    isDisplayAddSubcategory && currentAddSubcategory === category.title ?
+                      <input type='text' onChange={this.handleInput} className={styles.subcatInput} placeholder='Enter new subcategory...'></input>
+                      : null
+                    }
+                    {category.queries.map(query => {
+                      return (
+                        <div className={styles.subcategoriesTitle}>
+                          <p>{query}</p>
+                          <div className={styles.buttonContainer} onClick={() => 
+                            this.deleteSubcategory(currentAddSubcategory, query)}>
+                            <span>
+                              {
+                              isDisplayAddSubcategory && currentAddSubcategory === category.title ?
+                                <FontAwesomeIcon icon="trash-alt" />
+                                :
+                                ''
+                              }
+                            </span>
+                          </div>
+                        </div>
+                      )
+                    })}
+                  </article>
+                </div>
+              )
+            })}
           </div>
         </section>
       </div>

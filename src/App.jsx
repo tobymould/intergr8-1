@@ -96,6 +96,7 @@ class App extends Component {
       .update({
         queries: firebase.firestore.FieldValue.arrayUnion(newSubcategory)
       })
+      .then(this.setCategoriesState)
       .catch((err) => console.log(err));
   };
 
@@ -106,6 +107,7 @@ class App extends Component {
       .update({
         queries: firebase.firestore.FieldValue.arrayRemove(queryToRemove)
       })
+      .then(this.setCategoriesState)
       .catch((err) => console.log(err));
   };
 
