@@ -1,3 +1,4 @@
+  
 @import "../../variables.scss";
 
 * {
@@ -15,7 +16,23 @@
   min-height: 100vh;
   height: max-content;
   width: 100%;
+  padding-top: 96px;
 
+  .toggleTab {
+    display: flex;
+    justify-content: flex-end;
+
+    span {
+      background-color: lightgrey;
+      padding: 10px 20px;
+      margin-right: 10px;
+      border-radius: 10px 10px 0 0;
+      display: flex;
+      align-items: flex-start;
+
+      //change bg color for show and hide
+    }
+  }
 
     // background
 
@@ -24,6 +41,11 @@
     justify-content: space-between;
     padding: $base-value;
     align-items: center;
+    flex-direction: column;
+    
+    @media screen and (min-width: 580px) {
+      flex-direction: row;
+    }
     
     .superUserDetails {
       display: flex;
@@ -74,6 +96,8 @@
     box-shadow: 0 10px 20px $primary-black-transparent, 0 6px 6px $primary-black-transparent;
     border-radius: 5px;
     background-color: rgba(255, 255, 255, 0.6);
+    overflow-x: auto;
+    position: relative;
 
     .tableHeader {
       display: flex;
@@ -82,38 +106,22 @@
       border-bottom: 2px solid black;
       font-size: 1.1em;
       font-weight: bold;
-      background-color: rgba(255, 255, 255, 0.9);
-      box-shadow: 0 5px 10px $primary-black-transparent, 0 3px 3px $primary-black-transparent;
+      background-color: rgba(255, 255, 255, 1);
+      // box-shadow: 0 5px 10px $primary-black-transparent, 0 3px 3px $primary-black-transparent;
       padding: 5px 10px;
-
-      .categoryTitle {
-        display: flex;
-        width: 20%;
-        justify-content: space-between;
-        margin-right: 16px;
-
-        .addSubcat {
-          z-index: 999;
-
-          svg {
-            z-index: 998;
-          }
-        }
-
-        &:last-child{
-          margin-right: 0;
-        }
-
-        span {
-          margin-left: 6px;
-        }
-      }
+      min-width: 910px;
+      width: 100%;
+      position: sticky;
+      top: 0;
+      z-index: 1;
 
       &:first-child {
-        // padding-left: 55px; removed by Steph
+        padding-left: 55px;
       }
 
       p {
+        word-wrap: break-word;
+
         &.name {
           width: 150px;
         }
@@ -151,45 +159,16 @@
     }
 
     .tableRowScroll {
-      overflow-y: auto;
-      height: calc(100vh - 280px);
-    }
-
-    .tableColumns {
-      height: calc(100vh - 280px);
-      // width: calc(100% - 20px);
-      display: flex;
-      flex-direction: row;
       
-      .categoryColumn {
-        width: 20%;
-        padding: 8px 10px;
-        // border-right: 1px solid rgba(0, 0, 0, 0.075);
-
-        &:last-child{
-          border-right: none;
-        }
-
-        .subcatInput {
-          width: 87.5%;
-          text-indent: 2.5px;
-        }
-
-        // &:first-child,
-        // &:nth-child(odd) {
-          
-        // }
-
-        .subcategoriesTitle {
-          display: flex;
-          justify-content: space-between;
-
-          .buttonContainer {
-            display: flex;
-          }
-        }
+      @media (min-width: 938px) {
+        overflow-y: auto;
       }
+      height: calc(100vh - 280px);
+      max-height: calc(100vh - 280px);
+
     }
+
+    
   }
 
 }

@@ -1,131 +1,75 @@
 @import "../../../variables.scss";
 
-.CreateUserModal {
-  @include standard_vertical_layout;
-  // display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  backdrop-filter: blur(10px);
-  background-color: $primary-black-transparent;
-  padding-top: 50px;
-  text-align: center;
+  .SuperUserCategory {
+    margin: 0 10px;
+    box-shadow: 0 10px 20px $primary-black-transparent, 0 6px 6px $primary-black-transparent;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.6);
 
-  .CreateUserContainer {
-    box-shadow: $primary-shadow, $secondary-shadow;
-    @include standard_vertical_layout;
-    height: 70%;
-    width: 90%;
-    border: $medium solid $primary-yellow;
-    background-color: transparent;
-    background-image: linear-gradient($white-opaque 0%, $white-opaque 100%);
-    background-size: cover;
-    z-index: 2;
-    
+    .tableHeader {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid black;
+      font-size: 1.1em;
+      font-weight: bold;
+      background-color: rgba(255, 255, 255, 0.9);
+      box-shadow: 0 5px 10px $primary-black-transparent, 0 3px 3px $primary-black-transparent;
+      padding: 5px 10px;
 
-    @media screen and (min-width: 600px) {
-      height: 70%;
-      width: 40%;
-    }
-  }
-
-  .CreateUserModalContent {
-    @include standard_vertical_layout;
-    justify-content: center;
-    background-color: transparent;
-    width: 80%;
-    height: 90%;
-    display: flex;
-    justify-content: space-between;
-    text-align: left;
-
-
-    div {
-        width: 90%;
+      .categoryTitle {
         display: flex;
-        flex-direction: column;
+        width: 20%;
         justify-content: space-between;
+        margin-right: 16px;
+
+        .addSubcat {
+          z-index: 999;
+
+          svg {
+            z-index: 998;
+          }
+        }
+
+        &:last-child{
+          margin-right: 0;
+        }
+
+        span {
+          margin-left: 6px;
+        }
+      }
+
     }
-
-    .DropDown {
-      box-shadow: $secondary-shadow;
-      border-radius: $medium;
-      font-family: $main-fonts;
-      font-size: $standard;
-      border: 2px solid $primary-yellow;
   }
+    .tableColumns {
+      height: calc(100vh - 280px);
+      // width: calc(100% - 20px);
+      display: flex;
+      flex-direction: row;
+      background-color: rgba(255, 255, 255, 0.8);
+      
+      .categoryColumn {
+        width: 20%;
+        padding: 8px 10px;
+        // border-right: 1px solid rgba(0, 0, 0, 0.075);
 
-    
-    input[type=text],
-    input[type=tel],
-    input[type=email] {
-        //   width: 60%;
-        //   height: 200px;
-        background-color: $secondary-black;
-        border: 1px solid $light-grey;
-        border-radius: 2px;
-        background-color: transparent;
-        color: $dark-grey;
-        height: 35px;
-        outline: none;
-        transition: color ease-in-out 1s, background-color ease-in-out 1s, border-color ease-in-out 1s;
-        
-      &:focus{
-        color: $white;
-        background-color: $secondary-black-opaque;
-        outline: none;
-        border-color: $primary-yellow;
+        &:last-child{
+          border-right: none;
+        }
 
-        &::placeholder {
-          color: $light-grey;
+        .subcatInput {
+          width: 87.5%;
+          text-indent: 2.5px;
+        }
+
+        .subcategoriesTitle {
+          display: flex;
+          justify-content: space-between;
+
+          .buttonContainer {
+            display: flex;
+          }
         }
       }
     }
-    
-    input[type=file] {
-      width: 200px;
-    }
-    
-    .cancelBtn {
-      background-color: rgb(160, 160, 160);
-      display: block;
-      width: 100%;
-      padding: 10px 0;
-      border: none;
-      border-radius: 3px;
-      outline: none;
-      margin-bottom: 10px;
-      cursor: pointer;
-      font-size: 1em;
-  
-      &:hover {
-          background-color: rgb(91, 89, 89);
-      }
-    }
-
-    .submitBtn {
-        background-color: $primary-yellow;
-        display: block;
-        width: 100%;
-        padding: 10px 0;
-        border: none;
-        border-radius: 3px;
-        outline: none;
-        margin-bottom: 10px;
-        cursor: pointer;
-        font-size: 1em;
-        font-weight: bold;
-    
-        &:hover {
-            background-color: $secondary-yellow;
-        }
-    }
-
-
-
-  }
-}

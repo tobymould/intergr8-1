@@ -1,24 +1,11 @@
-import React, { Component } from 'react';
-import CreateUser from './CreateUser';
+import React from "react";
 import { shallow } from "enzyme";
+import EditCategory from "./EditCategory";
 
-
-describe("CreateUser component tests", () => {
-
-  let testComponent;
-
-  beforeEach(() => {
-    testComponent = shallow(<CreateUser />);
-  })
+describe("Stage1 component tests", () => {
+  const component = shallow(<EditCategory />, { disableLifecycleMethods: true });
 
   it("should render", () => {
-    expect(testComponent).toBeTruthy();
-  })
-
-  it("should update name state from corresponding input field", () => {
-    testComponent.setState({ name: "" });
-
-    testComponent.find('.name').simulate('change', {target: {value: 'new value'}});
-    expect(testComponent.state('name')).toBe('new value');
-  })
-})
+    expect(component).toBeTruthy();
+  });
+});
