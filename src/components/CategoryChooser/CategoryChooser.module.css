@@ -1,7 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
 /* Yellows */
-/* Blacks */
-/* Greys */
+/* Blacks and greys */
 /* Whites */
 /* Greens */
 /* Red */
@@ -68,28 +66,31 @@
   }
 }
 
-.categoryChooser {
-  background-image: url(../../assets/Frame3.png);
+body {
+  background-color: #F7F6F6;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 100vh;
-  width: 100vw;
-}
-
-.categoryChooser h1 {
-  text-align: center;
-  padding-top: 150px;
-  font-size: 2.5rem;
 }
 
 @media screen and (max-width: 800px) {
-  .categoryChooser {
+  body {
     background-image: none;
     background-color: #f2b423;
-    height: 100%;
   }
-  .categoryChooser h1 {
-    padding-top: 60px;
-  }
+}
+
+.categoryChooser .backContainer {
+  margin-top: 30px;
+}
+
+.categoryChooser .backContainer button {
+  margin: 0 auto;
+  width: 70%;
+}
+
+.categoryChooser h2 {
+  text-align: center;
+  padding-top: 50px;
+  font-size: 1.75rem;
 }
 /*# sourceMappingURL=CategoryChooser.module.css.map */
