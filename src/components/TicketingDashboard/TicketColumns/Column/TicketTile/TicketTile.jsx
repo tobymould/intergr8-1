@@ -7,7 +7,6 @@ class TicketTile extends Component {
   state = {
     ticketViewOpen: false,
     currentTicket: {},
-    ticketStatus: "",
   };
 
   closeCurrentTicket = () => {
