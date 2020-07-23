@@ -8,6 +8,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  width: auto;
+  max-height: 160px;
+  
+  @media only screen and (min-width: 550px) {
+    height: 160px;
+  }
 
   .innerCircle{
     fill: #F1F1F1;
@@ -18,10 +24,4 @@
     stroke: $primary-yellow;
     stroke-width: 120;
   }
- 
-
-
-  
-
-  
 }

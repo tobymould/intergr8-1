@@ -20,6 +20,16 @@ export const ticketData = [
         },
         date: '13/07/2020 13:05:43'
       },
+      // Attachment
+      {
+        type: 'fileUpload',
+        details: 'File was uploaded',
+        content: {
+          name: "E00000002",
+          filePath: 'ticketid/filename'
+        },
+        date: '13/07/2020 13:05:43'
+      },
       {
         type: 'assignedTo',
         details: 'Ticket assigned to ',

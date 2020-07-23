@@ -6,6 +6,7 @@ import CreateUser from './CreateUser/CreateUser';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { firestore } from "../../firebase";
 import DeleteUser from './DeleteUser/DeleteUser';
+import EditCategory from './EditCategory';
 
 
 class SuperUserDashboard extends Component {
@@ -13,7 +14,8 @@ class SuperUserDashboard extends Component {
     isDisplayAddUser: false,
     users: [],
     idDisplayDeleteUser: false,
-    filterText: ''
+    filterText: '',
+    panelShowingIs: 'users',
   }
 
   toggleDeleteUser = (event) => {
@@ -36,7 +38,17 @@ class SuperUserDashboard extends Component {
     this.setState({ isDisplayEditUser: !this.state.isDisplayEditUser })
   }
 
+  showCategoryPanel = () => {
+    this.setState({
+      panelShowingIs: 'categories'
+    })
+  }
 
+  showUsersPanel = () => {
+    this.setState({
+      panelShowingIs: 'users'
+    })
+  }
 
   componentDidMount() {
     this.getUsers();
@@ -53,12 +65,25 @@ class SuperUserDashboard extends Component {
       })
   }
 
+  getUsersTabColour = () => {
+    if(this.state.panelShowingIs === 'users')
+      return 'darkgrey';
+  }
+
+  getCategoriesTabColour = () => {
+    if(this.state.panelShowingIs === 'categories')
+      return 'darkgrey';
+  }
+
   render() {
     const mapUserData = this.state.users
       .filter((user) => user.name.toLowerCase().includes(this.state.filterText))
       .map((person) => {
         return <TableRow toggleEdit={this.toggleEdit} key={person.ID} data={person} getUsers={this.getUsers} />
       })
+
+    let searchBarDisplay;
+      this.state.panelShowingIs === 'users' ? searchBarDisplay = 'flex' : searchBarDisplay = 'none';
 
     return (
       <div className={styles.SuperUserContainer}>
@@ -70,7 +95,7 @@ class SuperUserDashboard extends Component {
               <h3>Head of HR</h3>
             </div>
           </div>
-          <div className={styles.searchBox}>
+          <div className={styles.searchBox} style={{ "display": searchBarDisplay }}>
             <input type="text" id="search" placeholder="Search users" autoComplete="false" onChange={e => this.setState({ filterText: e.target.value.toLowerCase() })} />
             <span>
               <label htmlFor="search">
@@ -79,6 +104,11 @@ class SuperUserDashboard extends Component {
             </span>
           </div>
         </section>
+      <div className={styles.toggleTab}>
+        <span style={{ "background-color": this.getUsersTabColour() }} onClick={() => {this.showUsersPanel()}}>Users Panel </span>
+        <span style={{ "background-color": this.getCategoriesTabColour() }} onClick={() => {this.showCategoryPanel()}}>Categories Panel</span>
+      </div>
+      {this.state.panelShowingIs === 'users' ? 
         <section className={styles.SuperUserEmployee}>
           <div className={styles.tableHeader}>
             <p className={styles.name}>Name</p>
@@ -97,7 +127,13 @@ class SuperUserDashboard extends Component {
           {/* {this.displayEditUser()} */}
           {this.displayDeleteUser()}
         </section>
-      </div>
+      :  
+        <EditCategory 
+          setCategoriesState={this.props.setCategoriesState}
+          addSubcategory={this.props.addSubcategory}
+          removeSubcategory={this.props.removeSubcategory}
+          categories={this.props.categories} /> }
+    </div>
     );
   }
 }
