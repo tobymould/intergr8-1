@@ -120,6 +120,9 @@
             color: $secondary-black;
             outline: none;
             transition: border-color ease-in-out 1s;
+            @media screen and (max-width: 900px) {
+              width: 100%;
+            }
 
             &:focus,
             &:focus ~ label {
@@ -137,6 +140,12 @@
               color: $secondary-yellow;
               background-color: $secondary-black-opaque;
               transition-duration: 0ms;
+            }
+          }
+
+          > label {
+            @media screen and (max-width: 900px) {
+              display: none;
             }
           }
         }
