@@ -174,83 +174,84 @@ class TicketView extends Component {
 
     })
   }
+
+  pushTicketData = () => {
+    firestore
+      .collection("tickets")
+      .doc(this.props.data.ID)
+      .update({
+        // arrayUnion pushes to the named array 
+        modifiedAtDate: firebase.firestore.FieldValue.arrayUnion(this.state.modifiedAtDate[this.state.modifiedAtDate.length - 1]),
+        eventLog: firebase.firestore.FieldValue.arrayUnion(this.state.eventLog[this.state.eventLog.length - 1])
+      })
+      .then((docRef) => {
+        console.log('success');
+        alert('Message sent, refresh dashboard to view')
+        // this.updateTicketView();
+      })
+      .catch((err) => console.error(err));
+  }
+
+  render() {
+    const { closeCurrentTicket, currentTicket, clearCurrentTicket } = this.props;
+    const displayResolve = this.state.isDisplayResolve ? (
+      <ResolveTicketModal
+        toggleResolveModal={this.toggleResolveModal}
+        updateInputResolve={this.updateInputResolve}
+        toggleResolveTicketDisplay={this.toggleResolveTicketDisplay}
+        closeCurrentTicket={closeCurrentTicket}
+        closeTicket={this.props.closeTicket}
+      // firebaseCall={this.props.firebaseCall}
+      />
+    ) : null;
+    const displayResolveTicket = this.state.resolveTicketDisplay ? (
+      <div className={styles.resolvedTicketText}>
+        <h3>
+          Ticket status: <span>Resolved</span>
+        </h3>
+        <p>{this.state.inputResolve}</p>
+      </div>
+    ) : null;
+    this.automaticUpdateState();
+
+    return (
+      <div className={styles.ticketViewModal}>
+        <article className={styles.TicketView}>
+          <section className={styles.ticketTop}>
+            <div className={styles.ticketHeader}>
+              <h2>{currentTicket.category}</h2>
+              {this.props.userRole && this.props.userRole === 1 ? null : <div className={styles.ticketUser}><AssignedUser /></div>}
+            </div>
+            <div className={styles.ticketId}>
+              <p>{currentTicket.ID}</p>
+              {this.props.userRole && this.props.userRole === 1 ? null : <div className={`${styles.circle} ${this.setColour()}`}></div>}
+            </div>
+            <div className={styles.ticketActionButtons}>
+              <button className={styles.closeTicketButton} onClick={clearCurrentTicket}>
+                ✕
+              </button>
+              <button className={styles.resolveBtn} onClick={this.toggleResolveModal}>
+                Resolve Ticket
+              </button>
+            </div>
+          </section>
+          <div className={styles.messageContainer}>
+            {this.printTickets()}
+            {/* {/* <Message userType={"Employee"} /> */}
+            {/* <Message userType={"HR"} /> */}
+            {displayResolveTicket}
+          </div>
+          <section className={styles.writingMessage}>
+            <div className={styles.messageContent}>
+              <textarea onChange={(event) => this.setState({ message: event.target.value })} /><label className={styles.label} htmlFor="uploadFile">Attach a file: </label>
+              <input type="file" id="uploadFile" name="fileUpload" placeholder="Choose your file..." onChange={(event) => this.setState({ image: event.target.files[0] })} />
+              <Button text={"Send"} logic={this.captureAttachment} />
+            </div>
+          </section>
+        </article>
+        {displayResolve}
+      </div>
+    );
+  }
 };
-pushTicketData = () => {
-  firestore
-    .collection("tickets")
-    .doc(this.props.data.ID)
-    .update({
-      // arrayUnion pushes to the named array 
-      modifiedAtDate: firebase.firestore.FieldValue.arrayUnion(this.state.modifiedAtDate[this.state.modifiedAtDate.length - 1]),
-      eventLog: firebase.firestore.FieldValue.arrayUnion(this.state.eventLog[this.state.eventLog.length - 1])
-    })
-    .then((docRef) => {
-      console.log('success');
-      alert('Message sent, refresh dashboard to view')
-      // this.updateTicketView();
-    })
-    .catch((err) => console.error(err));
-}
-
-render() {
-  const { closeCurrentTicket, currentTicket, clearCurrentTicket } = this.props;
-  const displayResolve = this.state.isDisplayResolve ? (
-    <ResolveTicketModal
-      toggleResolveModal={this.toggleResolveModal}
-      updateInputResolve={this.updateInputResolve}
-      toggleResolveTicketDisplay={this.toggleResolveTicketDisplay}
-      closeCurrentTicket={closeCurrentTicket}
-      closeTicket={this.props.closeTicket}
-    // firebaseCall={this.props.firebaseCall}
-    />
-  ) : null;
-  const displayResolveTicket = this.state.resolveTicketDisplay ? (
-    <div className={styles.resolvedTicketText}>
-      <h3>
-        Ticket status: <span>Resolved</span>
-      </h3>
-      <p>{this.state.inputResolve}</p>
-    </div>
-  ) : null;
-  this.automaticUpdateState();
-
-  return (
-    <div className={styles.ticketViewModal}>
-      <article className={styles.TicketView}>
-        <section className={styles.ticketTop}>
-          <div className={styles.ticketHeader}>
-            <h2>{currentTicket.category}</h2>
-            {this.props.userRole && this.props.userRole === 1 ? null : <div className={styles.ticketUser}><AssignedUser /></div>}
-          </div>
-          <div className={styles.ticketId}>
-            <p>{currentTicket.ID}</p>
-            {this.props.userRole && this.props.userRole === 1 ? null : <div className={`${styles.circle} ${this.setColour()}`}></div>}
-          </div>
-          <div className={styles.ticketActionButtons}>
-            <button className={styles.closeTicketButton} onClick={clearCurrentTicket}>
-              ✕
-              </button>
-            <button className={styles.resolveBtn} onClick={this.toggleResolveModal}>
-              Resolve Ticket
-              </button>
-          </div>
-        </section>
-        <div className={styles.messageContainer}>
-          {this.printTickets()}
-          {/* {/* <Message userType={"Employee"} /> */}
-          {/* <Message userType={"HR"} /> */}
-          {displayResolveTicket}
-        </div>
-        <section className={styles.writingMessage}>
-          <div className={styles.messageContent}>
-            <textarea onChange={(event) => this.setState({ message: event.target.value })} /><label className={styles.label} htmlFor="uploadFile">Attach a file: </label>
-            <input type="file" id="uploadFile" name="fileUpload" placeholder="Choose your file..." onChange={(event) => this.setState({ image: event.target.files[0] })} />
-            <Button text={"Send"} logic={this.captureAttachment} />
-          </div>
-        </section>
-      </article>
-      {displayResolve}
-    </div>
-  );
-}
 export default TicketView;
