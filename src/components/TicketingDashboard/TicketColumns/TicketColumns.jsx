@@ -13,12 +13,12 @@ class TicketColumns extends Component {
           setCurrentTicket={setCurrentTicket}
           user={this.props.user} userRole={this.props.userRole} />
         <Column filter={true} title={"My tickets"}
-          allTickets={allTickets}
+          allTickets={allTickets.filter(item => item.assignedTo.includes(this.props.user.uid))}
           currentTicket={currentTicket}
           setCurrentTicket={setCurrentTicket}
           user={this.props.user} userRole={this.props.userRole} />
         <Column filter={true} title={"Outstanding"}
-          allTickets={allTickets}
+          allTickets={allTickets.filter(item => item.isOpen)}
           currentTicket={currentTicket}
           setCurrentTicket={setCurrentTicket}
           user={this.props.user} userRole={this.props.userRole} />
