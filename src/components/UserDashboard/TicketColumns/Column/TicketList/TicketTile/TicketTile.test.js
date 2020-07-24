@@ -7,7 +7,7 @@ describe("ticket tile component tests", () => {
 
   beforeEach(() => {
     testComponent = shallow(<TicketTile
-      key={"woiwrjoijwvojrwvw"}
+      key="woiwrjoijwvojrwvw"
       ticket={{
         ID: "WijGFghjBVftYHBVFthbvFTY",
         isOpen: true,
