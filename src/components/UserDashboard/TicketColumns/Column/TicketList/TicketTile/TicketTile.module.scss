@@ -13,12 +13,12 @@
   margin: 20px auto;
   position: relative;
   padding: 5px;
-  transition: transform ease 0.4s, background-color ease 0.75s;
+  z-index: 0;
+  transition: background-color ease 0.75s;
 
   &:hover {
     cursor: pointer;
     background-color: $primary-yellow-transparent;
-    transform: scale(1.01);
   }
 }
 
@@ -35,12 +35,12 @@
   margin: 20px auto;
   position: relative;
   padding: 5px;
-  transition: transform ease 0.4s, background-color ease 0.75s;
+  z-index: 0;
+  transition: background-color ease 0.75s;
 
   &:hover {
     cursor: pointer;
     background-color: #00800033;
-    transform: scale(1.01);
   }
 }
 

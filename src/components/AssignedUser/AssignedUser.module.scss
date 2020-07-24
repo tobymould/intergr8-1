@@ -1,33 +1,37 @@
 @import "../../variables.scss";
 
 .assignedUserWrapper {
+  // background: blue;
+  display: flex;
+  flex-direction: column;
+  // border: 2px solid black;
+
+  .modalStyle {
     // background: blue;
-    display: flex;
-    flex-direction: column;
-    // border: 2px solid black;
+    width: 170px;
 
-    .modalStyle{
-        // background: blue;
-        width: 170px;
+    .trailer {
+    }
 
-        .trailer {
+    .modalPopupStyle {
+      position: relative;
+      right: 100px;
+      // background: red;
+      // margin-right: 100px;
+      z-index: 20;
+      background: #f7f7f7;
+      padding: 10px;
+      border-radius: 4px;
+      width: 271px;
+      border: 1px solid grey;
+      box-shadow: 0 8px 16px -4px rgba(9, 30, 66, 0.25), 0 0 0 1px rgba(9, 30, 66, 0.08);
+      // height: 175px;
+      animation: fade 0.5s ease;
+      z-index: 1;
 
-        }
-
-        .modalPopupStyle{
-            position: relative;
-            right: 100px;
-            // background: red;
-            // margin-right: 100px;
-            z-index: 20;
-            background: #f7f7f7;
-            padding: 10px;
-            border-radius: 4px;
-            width: 271px;
-            border: 1px solid grey;
-            box-shadow: 0 8px 16px -4px rgba(9,30,66,.25), 0 0 0 1px rgba(9,30,66,.08);
-            // height: 175px;
-        
+      &:hover {
+        background-color: dark-grey;
+      }
 
       input {
         margin: 2px 0 12px 0;
@@ -56,31 +60,21 @@
     }
   }
 
-    .assignedPerson{
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        z-index: 2;
-        padding-left: 20px;
-        padding-top: 5px;
-    
-        img {
-            border: 1px solid;
-        }
+  .assignedPerson {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    z-index: 2;
+    padding-left: 20px;
+    padding-top: 5px;
 
-        span {
-            text-align: center;
-        }
+    img {
+      border: 1px solid;
+    }
 
-        div{
-            width: 50px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 5px;
-            // background: blue;
+    span {
+      text-align: center;
+    }
 
     div {
       width: 50px;
@@ -93,23 +87,41 @@
       // background: blue;
 
       div {
-        // background: red;
-        padding: 0;
-        margin: 0;
+        width: 50px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 5px;
+        // background: blue;
+
+        div {
+          // background: red;
+          padding: 0;
+          margin: 0;
+        }
       }
     }
-  }
 
-  img {
-    height: 38px;
-    width: 38px;
-    object-fit: cover;
-    border-radius: 50%;
-    margin-right: 10px;
+    img {
+      height: 38px;
+      width: 38px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-right: 10px;
+    }
   }
 }
-}
 
-.addIcon {
+@keyframes fade {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
 
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
