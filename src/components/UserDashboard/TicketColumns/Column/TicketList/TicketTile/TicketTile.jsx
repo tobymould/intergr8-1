@@ -28,6 +28,7 @@ class TicketTile extends Component {
         </button>
         <div className={styles.ticketContent} >
           <h3>{ticket.category}</h3>
+          {console.log(ticket)}
         </div>
         <div>
           <span className={styles.boldText}>Query: </span><span >{ticket.eventLog[0].content.message}</span>
