@@ -6,6 +6,12 @@ import { firestore } from '../../firebase';
 import TicketView from './TicketColumns/Column/TicketView';
 
 class TicketingDashboard extends Component {
+  constructor(props) {
+    super(props)
+    this.getTheDataAgain = this.getTheDataAgain.bind(this)
+  }
+
+
   state = {
     allTickets: [],
     user: 'S00000001', //this.context.user
@@ -16,7 +22,8 @@ class TicketingDashboard extends Component {
     percentUnassignedTickets: null,
     percentInProgressTickets: null,
     percentUserInProgressTickets: null,
-    currentTicket: {}
+    currentTicket: {},
+    ticketViewOpen: false
   };
 
   countTickets = () => this.state.allTickets.length;
@@ -32,7 +39,6 @@ class TicketingDashboard extends Component {
       currentTicket: ticketCopy,
       ticketViewOpen: true
     });
-    console.log(ticket);
   }
 
   clearCurrentTicket = () => {
@@ -40,13 +46,14 @@ class TicketingDashboard extends Component {
       currentTicket: {},
       ticketViewOpen: false
     });
+    this.getTheDataAgain();
   }
 
   closeCurrentTicket = () => {
-    const dataClone = { ...this.state.currentTicket };
+    const dataClone = Object.assign(this.state.currentTicket);
     dataClone.isOpen = !dataClone.isOpen;
     this.setState({
-      currentTicket: dataClone,
+      currentTicket: Object.assign(dataClone),
     });
     firestore
       .collection('tickets')
@@ -78,6 +85,32 @@ class TicketingDashboard extends Component {
       })
       .catch(err => console.log(err))
   }
+
+
+  getTheDataAgain = () => {
+    firestore
+      .collection('tickets')
+      .get()
+      .then((querySnapshot) => querySnapshot.docs.map(doc => {
+        return { id: doc.id, ...doc.data() }
+      })
+      )
+      .then(data => data.filter(doc => doc.id.length === 20 && doc.createdAtDate))
+      .then(data => this.setState({ allTickets: [...data] }))
+      .then(() => {
+        this.setState({
+          totalTickets: this.countTickets(),
+          unassignedTickets: this.countUnassignedTickets(),
+          inProgressTickets: this.countInProgressTickets(),
+          userInProgressTickets: this.countUserInProgressTickets(),
+          percentUnassignedTickets: this.calculatePercent(this.countTickets(), this.countUnassignedTickets()),
+          percentInProgressTickets: this.calculatePercent(this.countTickets(), this.countInProgressTickets()),
+          percentUserInProgressTickets: this.calculatePercent(this.countUserTickets(), this.countUserInProgressTickets())
+        });
+      })
+      .catch(err => console.log(err))
+  }
+
   render() {
     const { allTickets, currentTicket, percentUnassignedTickets, percentInProgressTickets, percentUserInProgressTickets } = this.state;
     return (
@@ -95,7 +128,8 @@ class TicketingDashboard extends Component {
             clearCurrentTicket={this.clearCurrentTicket}
             currentTicket={currentTicket}
             user={this.props.user}
-            userRole={this.props.userRole} />}
+            userRole={this.props.userRole}
+            getTheDataAgain={this.getTheDataAgain} />}
       </section>
     );
   }

@@ -77,14 +77,6 @@ class AssignedUser extends Component {
     }
   }
 
-  setAssignedPerson = (event) => {
-    console.log(this.props.currentTicket);
-    firestore
-      .collection('tickets')
-      .doc(this.props.ticket.ID)
-      .update({ assignedTo: firebase.firestore.FieldValue.arrayUnion(event.target.id) })
-      .then(this.getAssignedToData);
-  }
 
   getAssignedToData = () => {
     firestore
@@ -99,7 +91,14 @@ class AssignedUser extends Component {
         });
       })
   }
-
+  setAssignedPerson = (event) => {
+    console.log(this.props.currentTicket);
+    firestore
+      .collection('tickets')
+      .doc(this.props.ticket.ID)
+      .update({ assignedTo: firebase.firestore.FieldValue.arrayUnion(event.target.id) })
+      .then(this.getAssignedToData);
+  }
 
   getAssignedPerson = () => {
     const { assignedTo, users } = this.state;

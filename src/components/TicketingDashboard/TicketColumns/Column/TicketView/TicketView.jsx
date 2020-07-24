@@ -12,6 +12,8 @@ class TicketView extends Component {
     this.creationDate = new Date();
   }
 
+
+
   // Three priority levels: 1,2,3.
   state = {
     priority: 1,
@@ -170,7 +172,7 @@ class TicketView extends Component {
 
   printTickets = () => {
     return this.props.currentTicket.eventLog.map((item, index) => {
-      return <Message item={item} data={this.props.data} user={this.props.user} />
+      return <Message key={index} item={item} data={this.props.data} user={this.props.user} />
 
     })
   }
@@ -178,7 +180,7 @@ class TicketView extends Component {
   pushTicketData = () => {
     firestore
       .collection("tickets")
-      .doc(this.props.data.ID)
+      .doc(this.props.currentTicket.ID)
       .update({
         // arrayUnion pushes to the named array 
         modifiedAtDate: firebase.firestore.FieldValue.arrayUnion(this.state.modifiedAtDate[this.state.modifiedAtDate.length - 1]),
@@ -190,6 +192,7 @@ class TicketView extends Component {
         // this.updateTicketView();
       })
       .catch((err) => console.error(err));
+    this.props.getTheDataAgain();
   }
 
   render() {

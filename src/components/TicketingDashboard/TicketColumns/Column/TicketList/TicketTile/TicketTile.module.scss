@@ -1,6 +1,6 @@
 @import "../../../../../../variables.scss";
 
-.TicketTile {
+.normalTicketTile {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -14,9 +14,22 @@
   position: relative;
 }
 
+.resolvedTicketTile {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  border: 1px solid black;
+  border-right: 10px green ridge;
+  border-radius: 5px;
+  height: max-content;
+  width: 100%;
+  margin: 20px auto;
+  position: relative;
+}
+
 .ticketContent {
-  margin: 20px 0 5px 0;
-  padding: 10% 5% 2% 2%;
+  padding: 5% 2%;
 }
 
 .viewTicket {
@@ -43,4 +56,8 @@
 }
 .boldText {
   font-weight: bolder;
+}
+
+.green {
+  color: green;
 }
