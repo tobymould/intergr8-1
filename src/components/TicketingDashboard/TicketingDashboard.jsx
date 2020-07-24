@@ -42,8 +42,8 @@ class TicketingDashboard extends Component {
     });
   }
 
-  closeCurrentTicket = (ticketData) => {
-    const dataClone = { ...ticketData };
+  closeCurrentTicket = () => {
+    const dataClone = { ...this.state.currentTicket };
     dataClone.isOpen = !dataClone.isOpen;
     this.setState({
       currentTicket: dataClone,

@@ -6,7 +6,7 @@ class ResolveTicketModal extends Component {
     const {
       toggleResolveTicketDisplay,
       toggleResolveModal,
-      closeTicket,
+      closeCurrentTicket,
       // firebaseCall,
       // updateInputResolve,
     } = this.props;
@@ -25,7 +25,7 @@ class ResolveTicketModal extends Component {
                   onClick={() => {
                     toggleResolveTicketDisplay();
                     toggleResolveModal();
-                    closeTicket();
+                    closeCurrentTicket();
                     // firebaseCall();
                   }}
                 >

@@ -200,7 +200,6 @@ class TicketView extends Component {
         updateInputResolve={this.updateInputResolve}
         toggleResolveTicketDisplay={this.toggleResolveTicketDisplay}
         closeCurrentTicket={closeCurrentTicket}
-        closeTicket={this.props.closeTicket}
       // firebaseCall={this.props.firebaseCall}
       />
     ) : null;
@@ -220,7 +219,7 @@ class TicketView extends Component {
           <section className={styles.ticketTop}>
             <div className={styles.ticketHeader}>
               <h2>{currentTicket.category}</h2>
-              {this.props.userRole && this.props.userRole === 1 ? null : <div className={styles.ticketUser}><AssignedUser /></div>}
+              {this.props.userRole && this.props.userRole === 1 ? null : <div className={styles.ticketUser}><AssignedUser ticket={this.props.currentTicket} /></div>}
             </div>
             <div className={styles.ticketId}>
               <p>{currentTicket.ID}</p>
