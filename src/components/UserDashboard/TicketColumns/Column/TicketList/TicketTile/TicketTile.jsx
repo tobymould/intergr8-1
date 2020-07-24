@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import styles from "./TicketTile.module.scss";
-import AssignedUser from '../../../../../AssignedUser';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 class TicketTile extends Component {
