@@ -22,7 +22,7 @@ describe("ticket tile component tests", () => {
         createdBy: "Boaty McBoatface"
       }}
 
-      evetLog={[
+      eventLog={[
         { content: { message: "HELLO" } },
         { content: { message: "WHYHELLO!" } },
         { content: { message: "HOWRU?" } }
