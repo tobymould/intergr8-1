@@ -1,7 +1,6 @@
 import React from "react";
 import { shallow } from "enzyme";
 import TicketList from "./TicketList";
-import { firestore } from '../../../../../firebase';
 
 
 describe("ticket tile component tests", () => {

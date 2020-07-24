@@ -7,10 +7,9 @@
   justify-content: space-evenly;
   // background: green;
   @media only screen and (max-width: 1290px) {
-    padding: 0 2*$base-value;
+    padding: 0 2 * $base-value;
     // margin: 0 2*$base-value;
   }
-
 
   @media only screen and (max-width: 800px) {
     flex-direction: column;

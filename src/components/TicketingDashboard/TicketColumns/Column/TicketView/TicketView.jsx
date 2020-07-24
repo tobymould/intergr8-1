@@ -169,7 +169,7 @@ class TicketView extends Component {
   // }
 
   printTickets = () => {
-    return this.props.data.eventLog.map((item, index) => {
+    return this.props.currentTicket.eventLog.map((item, index) => {
       return <Message item={item} data={this.props.data} user={this.props.user} />
 
     })

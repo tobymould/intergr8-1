@@ -69,7 +69,7 @@ class Column extends Component {
               setCurrentTicket={this.props.setCurrentTicket}
               user={this.props.user}
               userRole={this.props.userRole}
-            />{console.log(tickets)}
+            />
           </section>
         </article>
       </>
