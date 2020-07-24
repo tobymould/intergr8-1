@@ -8,19 +8,16 @@ describe("ticket tile component tests", () => {
   let testComponent;
 
   beforeEach(() => {
-    let data = () => {
-      firestore
-        .collection('tickets')
-        .get()
-        .then((querySnapshot) => querySnapshot.docs.map(doc => {
-          return { id: doc.id, ...doc.data() }
-        })
-        )
-        .then(data => data.filter(doc => doc.id.length === 20 && doc.createdAtDate));
-      return data;
-    }
+    let data = [
+      {
+        id: "iuhiuhIUH"
+      },
+      { id: "iuhiuhIUH" },
+      { id: "iuhiuhIUH" }
+    ];
     testComponent = shallow(<TicketList data={data} />);
-  })
+  });
+
 
   it("should render", () => {
     expect(testComponent).toBeTruthy();

@@ -5,10 +5,10 @@ import TicketTile from './TicketTile';
 class TicketList extends Component {
 
   render() {
-    const { currentTicket, setCurrentTicket } = this.props;
+    const { data, currentTicket, setCurrentTicket } = this.props;
     return (
       <section className={styles.ticketList}>
-        {this.props.data.map(ticket => <TicketTile
+        {data.map(ticket => <TicketTile
           key={ticket.ID}
           ticket={ticket}
           currentTicket={currentTicket}
