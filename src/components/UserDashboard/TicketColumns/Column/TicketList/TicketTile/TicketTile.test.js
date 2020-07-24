@@ -11,7 +11,7 @@ describe("ticket tile component tests", () => {
         key="woiwrjoijwvojrwvw"
         ticket={{
           ID: "WijGFghjBVftYHBVFthbvFTY",
-          eventLog={
+          eventLog: {
             0: [
               { content: { message: "HELLO" } }
             ]
