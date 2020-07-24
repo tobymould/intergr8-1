@@ -7,6 +7,7 @@ class ResolveTicketModal extends Component {
       toggleResolveTicketDisplay,
       toggleResolveModal,
       closeTicket,
+      // firebaseCall,
       // updateInputResolve,
     } = this.props;
     return (
@@ -25,6 +26,7 @@ class ResolveTicketModal extends Component {
                     toggleResolveTicketDisplay();
                     toggleResolveModal();
                     closeTicket();
+                    // firebaseCall();
                   }}
                 >
                   Confirm

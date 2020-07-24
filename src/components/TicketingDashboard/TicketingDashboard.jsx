@@ -87,7 +87,7 @@ class TicketingDashboard extends Component {
           allTickets={allTickets}
           currentTicket={currentTicket}
           setCurrentTicket={this.setCurrentTicket}
-        />
+          user={this.props.user} userRole={this.props.userRole} />
         {!this.state.ticketViewOpen ?
           null :
           <TicketView

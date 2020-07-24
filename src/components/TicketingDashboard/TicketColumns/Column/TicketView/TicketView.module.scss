@@ -11,19 +11,19 @@ $white: #fcfcfb;
   @include standard_vertical_layout;
   // display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
+  z-index: 10; /* Sit on top */
   left: 0;
   top: 0;
   width: 100%; /* Full width */
   min-height: 100vh; /* Full height */
-  height: 100%; /* Full height */
+  height: 100vh; /* Full height */
   overflow: auto; /* Enable scroll if needed */
   backdrop-filter: blur(10px);
   background-color: $primary-black-transparent;
   padding-top: 6%;
   text-align: center;
   z-index: 3;
-  
+
   .TicketView {
     border-radius: $medium;
     overflow: hidden;
@@ -58,7 +58,7 @@ $white: #fcfcfb;
         left: 100px;
 
         .ticketUser {
-          position:absolute;
+          position: absolute;
           left: 100px;
           top: 100px;
           padding: 5px;
@@ -179,11 +179,17 @@ $white: #fcfcfb;
         border-radius: 4px;
       }
 
-      input[type=file] {
+      input[type="file"] {
         padding-bottom: 15px;
-        text-align: right; 
+        text-align: right;
+        color: white;
+        float: left;
       }
-
     }
+  }
+
+  .label {
+    color: white;
+    float: left;
   }
 }

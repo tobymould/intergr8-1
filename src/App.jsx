@@ -4,13 +4,14 @@ import { globalHistory } from '@reach/router';
 import Routes from './containers/Routes/Routes.jsx';
 import './data/fa-library';
 import firebase from './firebase';
-
+import { firestore } from './firebase';
 
 class App extends Component {
   state = {
     user: null,
     emailAddress: null,
-    password: null
+    password: null,
+    categories: []
   };
 
   componentDidMount() {
@@ -21,6 +22,7 @@ class App extends Component {
         this.setState({ user: null });
       }
     });
+    this.setCategoriesState();
   }
 
   userSignInAttempt = event => {
@@ -61,8 +63,68 @@ class App extends Component {
     console.log(event.target.value);
   };
 
+  getSubcategories = (category) => {
+    const categories = firestore.collection("categories").doc(category);
+
+    categories.get().then((doc) => {
+        doc.exists ? 
+            console.log("Document data:", doc.data().queries)
+        :
+            console.log("No such document!");
+        }
+    ).catch(function(error) {
+        console.log("Error getting document:", error);
+    });
+  }
+
+  setCategoriesState = () => {
+    firestore
+      .collection("categories")
+      .get()
+      .then((snapshot) => {
+        const categories = snapshot.docs
+        .map((doc) => doc.data());
+        this.setState({ categories });
+      })
+      .catch((err) => console.log(err));
+  };
+  
+  addSubcategory = (category, newSubcategory) => {
+    firestore
+      .collection("categories")
+      .doc(category)
+      .update({
+        queries: firebase.firestore.FieldValue.arrayUnion(newSubcategory)
+      })
+      .then(this.setCategoriesState)
+      .catch((err) => console.log(err));
+  };
+
+  removeSubcategory = (category, queryToRemove) => {
+    firestore
+      .collection("categories")
+      .doc(category)
+      .update({
+        queries: firebase.firestore.FieldValue.arrayRemove(queryToRemove)
+      })
+      .then(this.setCategoriesState)
+      .catch((err) => console.log(err));
+  };
+
   render() {
-    return <Routes userSignInAttempt={this.userSignInAttempt} signOut={this.signOut} setEmail={this.setEmail} setPassword={this.setPassword} user={this.state.user} emailAddress={this.state.emailAddress} password={this.state.password} />;
+    return <Routes 
+      userSignInAttempt={this.userSignInAttempt} 
+      signOut={this.signOut} 
+      setEmail={this.setEmail} 
+      setPassword={this.setPassword} 
+      user={this.state.user} 
+      emailAddress={this.state.emailAddress} 
+      password={this.state.password}
+      setCategoriesState={this.setCategoriesState}
+      addSubcategory={this.addSubcategory}
+      removeSubcategory={this.removeSubcategory}
+      categories={this.state.categories}
+    />;
   }
 }
 

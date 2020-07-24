@@ -66,7 +66,10 @@ class Column extends Component {
             <TicketList
               data={tickets}
               currentTicket={this.props.currentTicket}
-              setCurrentTicket={this.props.setCurrentTicket} />
+              setCurrentTicket={this.props.setCurrentTicket}
+              user={this.props.user}
+              userRole={this.props.userRole}
+            />
           </section>
         </article>
       </>
