@@ -9,7 +9,7 @@ describe("ticket tile component tests", () => {
     testComponent = shallow(<TicketTile
       key={"woiwrjoijwvojrwvw"}
       ticket={{
-        ID: WijGFghjBVftYHBVFthbvFTY,
+        ID: "WijGFghjBVftYHBVFthbvFTY",
         isOpen: true,
         name: "Seth McFarlane",
         createdBy: "Boaty McBoatface"
