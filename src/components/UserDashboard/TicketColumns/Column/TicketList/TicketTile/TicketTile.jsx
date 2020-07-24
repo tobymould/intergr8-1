@@ -27,7 +27,7 @@ class TicketTile extends Component {
           <FontAwesomeIcon icon="expand" />
         </button>
         <div className={styles.ticketContent} >
-          <h3>{ticket.eventLog[0].content.message}</h3>
+          <h3>{ticket.category}</h3>
         </div>
         <div>
           <span className={styles.boldText}>Query: </span><span >{ticket.eventLog[0].content.message}</span>
