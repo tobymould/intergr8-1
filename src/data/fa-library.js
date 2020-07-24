@@ -1,6 +1,7 @@
 import { library } from "@fortawesome/fontawesome-svg-core";
 import {
   faBookOpen,
+  faExpand,
   faPoundSign,
   faNetworkWired,
   faUserFriends,
@@ -18,7 +19,8 @@ import {
   faSearch,
   faCheckCircle,
   faTimesCircle,
-  faUserCircle
+  faUserCircle,
+  faPlus
 } from "@fortawesome/free-solid-svg-icons";
 
 export default library.add(
@@ -41,5 +43,7 @@ export default library.add(
   faCheckCircle,
   faTimesCircle,
   faTimes,
-  faUserCircle
+  faUserCircle,
+  faExpand,
+  faPlus
 );

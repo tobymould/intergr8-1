@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import styles from "./Column.module.scss";
 import DropDown from "../../../../utilities/DropDown";
-import TicketTile from "./TicketTile";
+import TicketList from "./TicketList";
 // import data from "../../../../data/mockTicketOrderData";
 
 class Column extends Component {
@@ -62,8 +62,14 @@ class Column extends Component {
             <div onChange={this.sortOptions}>{this.renderFilter()}</div>
             <button onClick={this.unfilterUser}>Clear filter</button>
           </div>
-          <section className={styles.ticketTileSection} title={this.props.title}>
-            <TicketTile data={tickets} user={this.props.user} userRole={this.props.userRole}/>
+          <section className={styles.ticketListSection} title={this.props.title}>
+            <TicketList
+              data={tickets}
+              currentTicket={this.props.currentTicket}
+              setCurrentTicket={this.props.setCurrentTicket}
+              user={this.props.user}
+              userRole={this.props.userRole}
+            />
           </section>
         </article>
       </>

@@ -43,9 +43,7 @@ class App extends Component {
       .signOut()
       .then(() => {
         globalHistory.navigate('dashboard');
-        console.log(this.state.user);
         this.setState({ user: null });
-        console.log(this.state.user);
       })
       .catch((error) => {
         alert("Sorry!" + error.message);
@@ -55,25 +53,23 @@ class App extends Component {
 
   setEmail = event => {
     this.setState({ emailAddress: event.target.value });
-    console.log(event.target.value);
   };
 
   setPassword = event => {
     this.setState({ password: event.target.value });
-    console.log(event.target.value);
   };
 
   getSubcategories = (category) => {
     const categories = firestore.collection("categories").doc(category);
 
     categories.get().then((doc) => {
-        doc.exists ? 
-            console.log("Document data:", doc.data().queries)
+      doc.exists ?
+        console.log("Document data:", doc.data().queries)
         :
-            console.log("No such document!");
-        }
-    ).catch(function(error) {
-        console.log("Error getting document:", error);
+        console.log("No such document!");
+    }
+    ).catch(function (error) {
+      console.log("Error getting document:", error);
     });
   }
 
@@ -83,12 +79,12 @@ class App extends Component {
       .get()
       .then((snapshot) => {
         const categories = snapshot.docs
-        .map((doc) => doc.data());
+          .map((doc) => doc.data());
         this.setState({ categories });
       })
       .catch((err) => console.log(err));
   };
-  
+
   addSubcategory = (category, newSubcategory) => {
     firestore
       .collection("categories")
@@ -112,13 +108,13 @@ class App extends Component {
   };
 
   render() {
-    return <Routes 
-      userSignInAttempt={this.userSignInAttempt} 
-      signOut={this.signOut} 
-      setEmail={this.setEmail} 
-      setPassword={this.setPassword} 
-      user={this.state.user} 
-      emailAddress={this.state.emailAddress} 
+    return <Routes
+      userSignInAttempt={this.userSignInAttempt}
+      signOut={this.signOut}
+      setEmail={this.setEmail}
+      setPassword={this.setPassword}
+      user={this.state.user}
+      emailAddress={this.state.emailAddress}
       password={this.state.password}
       setCategoriesState={this.setCategoriesState}
       addSubcategory={this.addSubcategory}

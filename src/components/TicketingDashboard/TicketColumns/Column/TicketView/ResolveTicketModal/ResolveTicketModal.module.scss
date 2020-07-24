@@ -24,6 +24,7 @@
     background-color: transparent;
     background-image: linear-gradient($white-opaque 0%, $white-opaque 100%);
     background-size: cover;
+    animation: fade 0.75s ease;
   }
 
   .ModalContent {
@@ -94,5 +95,17 @@
         }
       }
     }
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
   }
 }

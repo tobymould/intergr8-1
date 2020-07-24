@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import styles from "./Column.module.scss";
 import DropDown from "../../../../utilities/DropDown";
-import TicketTile from "./TicketTile";
+import TicketList from "./TicketList";
 
 class Column extends Component {
   state = {
@@ -31,13 +31,13 @@ class Column extends Component {
   }
 
   sortOptions = (e) => {
-    if (!this.state.filtering) this.setState({filtering: true})
+    if (!this.state.filtering) this.setState({ filtering: true })
     const orderData = this.state.filtering ? [...this.state.filteredTickets] : [...this.props.allTickets];
-      if (e.target.value === "Newest") {
-        orderData.sort((a, b) => new Date(this.convertDataFormat(b.createdAtDate)) - new Date(this.convertDataFormat(a.createdAtDate)));
-      } else if (e.target.value === "Oldest") {
-        orderData.sort((a, b) => new Date(this.convertDataFormat(a.createdAtDate)) - new Date(this.convertDataFormat(b.createdAtDate)));
-      } 
+    if (e.target.value === "Newest") {
+      orderData.sort((a, b) => new Date(this.convertDataFormat(b.createdAtDate)) - new Date(this.convertDataFormat(a.createdAtDate)));
+    } else if (e.target.value === "Oldest") {
+      orderData.sort((a, b) => new Date(this.convertDataFormat(a.createdAtDate)) - new Date(this.convertDataFormat(b.createdAtDate)));
+    }
     this.setState({
       filteredTickets: orderData,
     });
@@ -46,17 +46,21 @@ class Column extends Component {
   render() {
     const tickets = this.state.filtering ? this.state.filteredTickets : this.props.allTickets;
     return (
-      <>
-        <article className={styles.TicketColumn}>
-            <h3>{this.props.title}</h3>
-          <div className={styles.topOfColumn}>
-            <div onChange={this.sortOptions}>{this.renderFilter()}</div>
-          </div>
-          <section className={styles.ticketTileSection} title={this.props.title}>
-            <TicketTile data={tickets} userRole={this.props.userRole} user={this.props.user}/>
-          </section>
-        </article>
-      </>
+      <article className={styles.TicketColumn}>
+        <h3>{this.props.title}</h3>
+        <div className={styles.topOfColumn}>
+          <div onChange={this.sortOptions}>{this.renderFilter()}</div>
+        </div>
+        <section className={styles.ticketListSection} title={this.props.title}>
+          <TicketList
+            data={tickets}
+            currentTicket={this.props.currentTicket}
+            setCurrentTicket={this.props.setCurrentTicket}
+            user={this.props.user}
+            userRole={this.props.userRole}
+          />
+        </section>
+      </article>
     );
   }
 }
