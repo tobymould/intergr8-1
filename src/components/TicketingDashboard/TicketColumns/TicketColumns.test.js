@@ -3,7 +3,7 @@ import { shallow } from "enzyme";
 import TicketColumns from "./TicketColumns";
 
 describe("Stage1 component tests", () => {
-  const component = shallow(<TicketColumns />);
+  const component = shallow(<TicketColumns allTickets={[{assignedTo: [1,2]}]}/>);
 
   it("should render", () => {
     expect(component).toBeTruthy();
