@@ -8,11 +8,25 @@ describe("ticket tile component tests", () => {
   beforeEach(() => {
     testComponent = shallow(<TicketTile
       key={"woiwrjoijwvojrwvw"}
-      ticket={{ ID: WijGFghjBVftYHBVFthbvFTY, isOpen: true, name: "Seth McFarlane", createdBy: "Boaty McBoatface" }}
-      currentTicket={{ ID: WijGFghjBVftYHBVFthbvFTY, isOpen: true, name: "Seth McFarlane", createdBy: "Boaty McBoatface" }}
+      ticket={{
+        ID: WijGFghjBVftYHBVFthbvFTY,
+        isOpen: true,
+        name: "Seth McFarlane",
+        createdBy: "Boaty McBoatface"
+      }}
+
+      currentTicket={{
+        ID: WijGFghjBVftYHBVFthbvFTY,
+        isOpen: true, name:
+          "Seth McFarlane",
+        createdBy: "Boaty McBoatface"
+      }}
+
       setCurrentTicket={console.log("hello")}
-      className={styles.TicketTile} />
-  })
+
+      className={styles.TicketTile}
+    />)
+  });
 
   it("should render", () => {
     expect(testComponent).toBeTruthy();
