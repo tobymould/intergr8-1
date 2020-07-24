@@ -93,7 +93,9 @@ class TicketingDashboard extends Component {
           <TicketView
             closeCurrentTicket={this.closeCurrentTicket}
             clearCurrentTicket={this.clearCurrentTicket}
-            currentTicket={currentTicket} />}
+            currentTicket={currentTicket}
+            user={this.props.user}
+            userRole={this.props.userRole} />}
       </section>
     );
   }
