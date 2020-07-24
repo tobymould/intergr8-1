@@ -38,6 +38,7 @@ $white: #fcfcfb;
     height: max-content;
     max-height: 80vh;
     margin: auto;
+    animation: fade 0.75s ease;
     // @media screen and (min-width: 900px) {
     //   width: 900px;
     // }
@@ -191,5 +192,17 @@ $white: #fcfcfb;
   .label {
     color: white;
     float: left;
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
   }
 }
