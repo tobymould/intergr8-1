@@ -16,7 +16,7 @@ describe("ticket tile component tests", () => {
       }}
 
       currentTicket={{
-        ID: WijGFghjBVftYHBVFthbvFTY,
+        ID: "WijGFghjBVftYHBVFthbvFTY",
         isOpen: true, name:
           "Seth McFarlane",
         createdBy: "Boaty McBoatface"
