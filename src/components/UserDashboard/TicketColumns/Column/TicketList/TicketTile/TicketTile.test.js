@@ -22,6 +22,12 @@ describe("ticket tile component tests", () => {
         createdBy: "Boaty McBoatface"
       }}
 
+      evetLog={[
+        { content: { message: "HELLO" } },
+        { content: { message: "WHYHELLO!" } },
+        { content: { message: "HOWRU?" } }
+      ]}
+
       setCurrentTicket={console.log("hello")}
 
     />)
