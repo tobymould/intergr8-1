@@ -43,7 +43,7 @@ class AssignedUser extends Component {
       .map((person, index) => {
         if (index < 6) {
           return (
-            <div className={styles.displayPeople}>
+            <div className={styles.displayPeople} onClick={this.setAssignedPerson}>
               <img onClick={this.setAssignedPerson}
                 id={person.ID}
                 key={person.ID}
@@ -92,6 +92,7 @@ class AssignedUser extends Component {
       })
   }
   setAssignedPerson = (event) => {
+    event.stopPropagation();
     console.log(this.props.currentTicket);
     firestore
       .collection('tickets')
@@ -107,7 +108,7 @@ class AssignedUser extends Component {
       return (
         <>
           <img src={user.img} alt={user.name} />
-          <span>{user.name}{(assignedTo.length > 1) ? <p><FontAwesomeIcon icon="plus" /></p> : ""}</span>
+          <span>{user.name}{(assignedTo.length > 1) ? <p className={styles.addIcon}><FontAwesomeIcon icon="plus" /></p> : ""}</span>
 
         </>
       )

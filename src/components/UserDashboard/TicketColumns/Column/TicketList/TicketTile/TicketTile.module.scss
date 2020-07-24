@@ -13,6 +13,10 @@
   margin: 20px auto;
   position: relative;
   padding: 5px;
+
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 .resolvedTicketTile {
@@ -28,6 +32,9 @@
   margin: 20px auto;
   position: relative;
   padding: 5px;
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 .ticketContent {

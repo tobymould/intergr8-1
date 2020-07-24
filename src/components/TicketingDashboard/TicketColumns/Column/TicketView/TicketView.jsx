@@ -161,7 +161,7 @@ class TicketView extends Component {
   // updateTicketView = () => {
   //     firestore
   //     .collection("tickets")
-  //     .doc(this.props.data.ID)
+  //     .doc(this.props.currentTicket.ID)
   //     .get()
   //     .then((docRef) => {
   //         console.log('success')

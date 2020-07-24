@@ -22,7 +22,7 @@ class TicketTile extends Component {
   render() {
     const { ticket, setCurrentTicket } = this.props;
     return (
-      <article className={ticket.isOpen ? styles.normalTicketTile : styles.resolvedTicketTile}>
+      <article className={ticket.isOpen ? styles.normalTicketTile : styles.resolvedTicketTile} onClick={() => setCurrentTicket(ticket)}>
         <button className={styles.viewTicket} onClick={() => setCurrentTicket(ticket)}>
           <FontAwesomeIcon icon="expand" />
         </button>
@@ -44,7 +44,7 @@ class TicketTile extends Component {
           </span>
         </div>
         <div className={styles.ticketUser}>
-          <AssignedUser ticket={ticket} />
+          {/* <AssignedUser ticket={ticket} /> */}
         </div>
       </ article >
     )

@@ -5,7 +5,7 @@ import TicketTile from './TicketTile';
 class TicketList extends Component {
 
   render() {
-    const { data, currentTicket, setCurrentTicket } = this.props;
+    const { data, currentTicket, setCurrentTicket, userRole  } = this.props;
     return (
       <section>
         {data.map((ticket) => (
@@ -13,7 +13,8 @@ class TicketList extends Component {
             ticket={ticket}
             currentTicket={currentTicket}
             setCurrentTicket={setCurrentTicket}
-            className={styles.TicketTile} />
+            className={styles.TicketTile}
+            userRole={userRole} />
         ))}
       </section>
     )
