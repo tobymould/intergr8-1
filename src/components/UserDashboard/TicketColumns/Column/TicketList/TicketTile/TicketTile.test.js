@@ -12,7 +12,13 @@ describe("ticket tile component tests", () => {
         ID: "WijGFghjBVftYHBVFthbvFTY",
         isOpen: true,
         name: "Seth McFarlane",
-        createdBy: "Boaty McBoatface"
+        createdBy: "Boaty McBoatface",
+        eventLog=
+        [
+          { content: { message: "HELLO" } },
+          { content: { message: "WHYHELLO!" } },
+          { content: { message: "HOWRU?" } }
+        ]
       }}
 
       currentTicket={{
@@ -21,12 +27,6 @@ describe("ticket tile component tests", () => {
           "Seth McFarlane",
         createdBy: "Boaty McBoatface"
       }}
-
-      eventLog={[
-        { content: { message: "HELLO" } },
-        { content: { message: "WHYHELLO!" } },
-        { content: { message: "HOWRU?" } }
-      ]}
 
       setCurrentTicket={console.log("hello")}
 
