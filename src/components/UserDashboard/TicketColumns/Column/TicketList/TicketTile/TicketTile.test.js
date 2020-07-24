@@ -24,7 +24,6 @@ describe("ticket tile component tests", () => {
 
       setCurrentTicket={console.log("hello")}
 
-      className={styles.TicketTile}
     />)
   });
 
