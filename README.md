@@ -20,5 +20,7 @@ Visit my [portfolio website](https://tobymould.com/) and select the __'Intergr8H
 ### Try for yourself :raised_hands:
 1. Visit the [Intergr8HR website](https://intergr8-42df9.web.app/)
 2. Log in via a test account provided :shipit:
+_Username: test@intergr8.com_
+_Password: 123456_
 3. Play around with the website!
 4. Log out and try a different account!
