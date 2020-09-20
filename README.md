@@ -2,7 +2,7 @@
 > React-Firebase Client project completed within a team of 8 in collaboration with _nology.
 
 ## :satellite: Summary :satellite:
-   - __Status:__ COMPLETE 🏆
+   - __Status:__ COMPLETE MVP 🏆
 
 ## :hammer: Languages/Tools :hammer:
 __React.js | Sass | CSS3 | HTML5 | Firebase__
