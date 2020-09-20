@@ -1,5 +1,5 @@
 # Intergr8HR Client Project 🏢 :nerd_face:
-> React Firebase Client project in collaboration with _nology.
+> React-Firebase Client project completed within a team of 8 in collaboration with _nology.
 
 ## :satellite: Summary :satellite:
    - __Status:__ COMPLETE 🏆
@@ -12,7 +12,6 @@ __React.js | Sass | CSS3 | HTML5 | Firebase__
 2. __Backend__ - Firebase hosting|database|authentication. :fire:
 3. __Authentication/Authorisation__ - Private routing :ticket: that provides a different frontend experience depending on if the user is logged in as an Employee|HR User|Admin  :cop:. Also limits what collections :bookmark: of documents are accessible by the user.
 4. __Responsive Styles__ - Use of modern CSS practices using Sass preprocessor :nail_care: to make a nicely styled user interface.
-6. 
 
 ## :chart_with_upwards_trend: How to Use :chart_with_upwards_trend:
 ### Watch a demo :movie_camera:
