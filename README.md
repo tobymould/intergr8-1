@@ -1,10 +1,10 @@
 # Intergr8HR Client Project 🏢 :nerd_face:
 > React-Firebase Client project completed within a team of 8 in collaboration with _nology. I worked on:
-- Creating the 'assign person' feature for each ticket.
-- Setting up authentication and private routing.
-- Implementing CRUD functionality.
-- Responsive design for different device sizes.
-- Modelling the NoSQL data structure.
+> - Creating the 'assign person' feature for each ticket.
+> - Setting up authentication and private routing.
+> - Implementing CRUD functionality.
+> - Responsive design for different device sizes.
+> - Modelling the NoSQL data structure.
 
 ## :satellite: Summary :satellite:
    - __Status:__ COMPLETE MVP 🏆
